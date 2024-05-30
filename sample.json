@@ -1,0 +1,1103 @@
+{
+   "places": [
+     {
+       "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI",
+       "id": "ChIJOYhlWR5awokROi9Hpwx0iQI",
+       "types": [
+         "italian_restaurant",
+         "coffee_shop",
+         "cafe",
+         "restaurant",
+         "food",
+         "point_of_interest",
+         "store",
+         "establishment"
+       ],
+       "nationalPhoneNumber": "(212) 431-1112",
+       "internationalPhoneNumber": "+1 212-431-1112",
+       "formattedAddress": "323 Greenwich St, New York, NY 10013, USA",
+       "addressComponents": [
+         {
+           "longText": "323",
+           "shortText": "323",
+           "types": [
+             "street_number"
+           ],
+           "languageCode": "en-US"
+         },
+         {
+           "longText": "Greenwich Street",
+           "shortText": "Greenwich St",
+           "types": [
+             "route"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "Manhattan",
+           "shortText": "Manhattan",
+           "types": [
+             "sublocality_level_1",
+             "sublocality",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York",
+           "shortText": "New York",
+           "types": [
+             "locality",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York County",
+           "shortText": "New York County",
+           "types": [
+             "administrative_area_level_2",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York",
+           "shortText": "NY",
+           "types": [
+             "administrative_area_level_1",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "United States",
+           "shortText": "US",
+           "types": [
+             "country",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "10013",
+           "shortText": "10013",
+           "types": [
+             "postal_code"
+           ],
+           "languageCode": "en-US"
+         },
+         {
+           "longText": "3341",
+           "shortText": "3341",
+           "types": [
+             "postal_code_suffix"
+           ],
+           "languageCode": "en-US"
+         }
+       ],
+       "plusCode": {
+         "globalCode": "87G7PX8Q+WR",
+         "compoundCode": "PX8Q+WR New York, NY, USA"
+       },
+       "location": {
+         "latitude": 40.717264700000008,
+         "longitude": -74.0104673
+       },
+       "viewport": {
+         "low": {
+           "latitude": 40.715931469708508,
+           "longitude": -74.011923030291513
+         },
+         "high": {
+           "latitude": 40.718629430291507,
+           "longitude": -74.0092250697085
+         }
+       },
+       "rating": 4.4,
+       "googleMapsUri": "https://maps.google.com/?cid=182804857580105530",
+       "websiteUri": "http://gigino-trattoria.com/",
+       "regularOpeningHours": {
+         "openNow": false,
+         "periods": [
+           {
+             "open": {
+               "day": 0,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 0,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 1,
+               "hour": 16,
+               "minute": 0
+             },
+             "close": {
+               "day": 1,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 2,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 2,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 3,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 3,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 4,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 4,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 5,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 5,
+               "hour": 21,
+               "minute": 30
+             }
+           },
+           {
+             "open": {
+               "day": 6,
+               "hour": 12,
+               "minute": 0
+             },
+             "close": {
+               "day": 6,
+               "hour": 21,
+               "minute": 30
+             }
+           }
+         ],
+         "weekdayDescriptions": [
+           "Monday: 4:00 – 9:30 PM",
+           "Tuesday: 12:00 – 9:30 PM",
+           "Wednesday: 12:00 – 9:30 PM",
+           "Thursday: 12:00 – 9:30 PM",
+           "Friday: 12:00 – 9:30 PM",
+           "Saturday: 12:00 – 9:30 PM",
+           "Sunday: 12:00 – 9:30 PM"
+         ]
+       },
+       "utcOffsetMinutes": -240,
+       "adrFormatAddress": "\u003cspan class=\"street-address\"\u003e323 Greenwich St\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNew York\u003c/span\u003e, \u003cspan class=\"region\"\u003eNY\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e10013-3341\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+       "businessStatus": "OPERATIONAL",
+       "priceLevel": "PRICE_LEVEL_MODERATE",
+       "userRatingCount": 483,
+       "iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+       "iconBackgroundColor": "#FF9E67",
+       "displayName": {
+         "text": "Gigino Trattoria",
+         "languageCode": "en"
+       },
+       "primaryTypeDisplayName": {
+         "text": "Italian Restaurant",
+         "languageCode": "en-US"
+       },
+       "takeout": true,
+       "delivery": true,
+       "dineIn": true,
+       "curbsidePickup": true,
+       "reservable": true,
+       "servesBreakfast": false,
+       "servesLunch": true,
+       "servesDinner": true,
+       "servesBeer": true,
+       "servesWine": true,
+       "servesBrunch": true,
+       "servesVegetarianFood": true,
+       "currentOpeningHours": {
+         "openNow": false,
+         "periods": [
+           {
+             "open": {
+               "day": 0,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 2
+               }
+             },
+             "close": {
+               "day": 0,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 2
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 1,
+               "hour": 16,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 3
+               }
+             },
+             "close": {
+               "day": 1,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 3
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 2,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 4
+               }
+             },
+             "close": {
+               "day": 2,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 4
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 3,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 5
+               }
+             },
+             "close": {
+               "day": 3,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 5
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 4,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 5,
+                 "day": 30
+               }
+             },
+             "close": {
+               "day": 4,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 5,
+                 "day": 30
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 5,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 5,
+                 "day": 31
+               }
+             },
+             "close": {
+               "day": 5,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 5,
+                 "day": 31
+               }
+             }
+           },
+           {
+             "open": {
+               "day": 6,
+               "hour": 12,
+               "minute": 0,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 1
+               }
+             },
+             "close": {
+               "day": 6,
+               "hour": 21,
+               "minute": 30,
+               "date": {
+                 "year": 2024,
+                 "month": 6,
+                 "day": 1
+               }
+             }
+           }
+         ],
+         "weekdayDescriptions": [
+           "Monday: 4:00 – 9:30 PM",
+           "Tuesday: 12:00 – 9:30 PM",
+           "Wednesday: 12:00 – 9:30 PM",
+           "Thursday: 12:00 – 9:30 PM",
+           "Friday: 12:00 – 9:30 PM",
+           "Saturday: 12:00 – 9:30 PM",
+           "Sunday: 12:00 – 9:30 PM"
+         ]
+       },
+       "currentSecondaryOpeningHours": [
+         {
+           "openNow": false,
+           "periods": [
+             {
+               "open": {
+                 "day": 1,
+                 "hour": 15,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 3
+                 }
+               },
+               "close": {
+                 "day": 1,
+                 "hour": 18,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 3
+                 }
+               }
+             },
+             {
+               "open": {
+                 "day": 2,
+                 "hour": 15,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 4
+                 }
+               },
+               "close": {
+                 "day": 2,
+                 "hour": 18,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 4
+                 }
+               }
+             },
+             {
+               "open": {
+                 "day": 3,
+                 "hour": 15,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 5
+                 }
+               },
+               "close": {
+                 "day": 3,
+                 "hour": 18,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 5
+                 }
+               }
+             },
+             {
+               "open": {
+                 "day": 4,
+                 "hour": 15,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 5,
+                   "day": 30
+                 }
+               },
+               "close": {
+                 "day": 4,
+                 "hour": 18,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 5,
+                   "day": 30
+                 }
+               }
+             },
+             {
+               "open": {
+                 "day": 5,
+                 "hour": 15,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 5,
+                   "day": 31
+                 }
+               },
+               "close": {
+                 "day": 5,
+                 "hour": 18,
+                 "minute": 0,
+                 "date": {
+                   "year": 2024,
+                   "month": 5,
+                   "day": 31
+                 }
+               }
+             }
+           ],
+           "weekdayDescriptions": [
+             "Monday: 3:00 – 6:00 PM",
+             "Tuesday: 3:00 – 6:00 PM",
+             "Wednesday: 3:00 – 6:00 PM",
+             "Thursday: 3:00 – 6:00 PM",
+             "Friday: 3:00 – 6:00 PM",
+             "Saturday: Closed",
+             "Sunday: Closed"
+           ],
+           "secondaryHoursType": "HAPPY_HOUR"
+         },
+         {
+           "openNow": true,
+           "periods": [
+             {
+               "open": {
+                 "day": 4,
+                 "hour": 0,
+                 "minute": 0,
+                 "truncated": true,
+                 "date": {
+                   "year": 2024,
+                   "month": 5,
+                   "day": 30
+                 }
+               },
+               "close": {
+                 "day": 3,
+                 "hour": 23,
+                 "minute": 59,
+                 "truncated": true,
+                 "date": {
+                   "year": 2024,
+                   "month": 6,
+                   "day": 5
+                 }
+               }
+             }
+           ],
+           "weekdayDescriptions": [
+             "Monday: Open 24 hours",
+             "Tuesday: Open 24 hours",
+             "Wednesday: Open 24 hours",
+             "Thursday: Open 24 hours",
+             "Friday: Open 24 hours",
+             "Saturday: Open 24 hours",
+             "Sunday: Open 24 hours"
+           ],
+           "secondaryHoursType": "ONLINE_SERVICE_HOURS"
+         }
+       ],
+       "regularSecondaryOpeningHours": [
+         {
+           "openNow": false,
+           "periods": [
+             {
+               "open": {
+                 "day": 1,
+                 "hour": 15,
+                 "minute": 0
+               },
+               "close": {
+                 "day": 1,
+                 "hour": 18,
+                 "minute": 0
+               }
+             },
+             {
+               "open": {
+                 "day": 2,
+                 "hour": 15,
+                 "minute": 0
+               },
+               "close": {
+                 "day": 2,
+                 "hour": 18,
+                 "minute": 0
+               }
+             },
+             {
+               "open": {
+                 "day": 3,
+                 "hour": 15,
+                 "minute": 0
+               },
+               "close": {
+                 "day": 3,
+                 "hour": 18,
+                 "minute": 0
+               }
+             },
+             {
+               "open": {
+                 "day": 4,
+                 "hour": 15,
+                 "minute": 0
+               },
+               "close": {
+                 "day": 4,
+                 "hour": 18,
+                 "minute": 0
+               }
+             },
+             {
+               "open": {
+                 "day": 5,
+                 "hour": 15,
+                 "minute": 0
+               },
+               "close": {
+                 "day": 5,
+                 "hour": 18,
+                 "minute": 0
+               }
+             }
+           ],
+           "weekdayDescriptions": [
+             "Monday: 3:00 – 6:00 PM",
+             "Tuesday: 3:00 – 6:00 PM",
+             "Wednesday: 3:00 – 6:00 PM",
+             "Thursday: 3:00 – 6:00 PM",
+             "Friday: 3:00 – 6:00 PM",
+             "Saturday: Closed",
+             "Sunday: Closed"
+           ],
+           "secondaryHoursType": "HAPPY_HOUR"
+         },
+         {
+           "openNow": true,
+           "periods": [
+             {
+               "open": {
+                 "day": 0,
+                 "hour": 0,
+                 "minute": 0
+               }
+             }
+           ],
+           "weekdayDescriptions": [
+             "Monday: Open 24 hours",
+             "Tuesday: Open 24 hours",
+             "Wednesday: Open 24 hours",
+             "Thursday: Open 24 hours",
+             "Friday: Open 24 hours",
+             "Saturday: Open 24 hours",
+             "Sunday: Open 24 hours"
+           ],
+           "secondaryHoursType": "ONLINE_SERVICE_HOURS"
+         }
+       ],
+       "primaryType": "italian_restaurant",
+       "shortFormattedAddress": "323 Greenwich St, New York",
+       "editorialSummary": {
+         "text": "Veal, meats & pastas highlight this Tuscan-inspired, wood-accented space with high-ceilings.",
+         "languageCode": "en"
+       },
+       "reviews": [
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChdDSUhNMG9nS0VJQ0FnSURqNmNiOGhBRRAB",
+           "relativePublishTimeDescription": "in the last week",
+           "rating": 5,
+           "text": {
+             "text": "This was my favourite meal from my week’s stay in NYC. The pasta was absolutely delicious, the flavours were perfectly proportioned. The bread they give with the table was very tasty and fresh. The wine was great and was served chilled, which isn’t always a given in New York. I finished my meal with a Dirty Martini. I don’t have them a lot but this was by far the nicest I’ve ever had made for me. Service was great, not over the top, just there when you needed them.",
+             "languageCode": "en"
+           },
+           "originalText": {
+             "text": "This was my favourite meal from my week’s stay in NYC. The pasta was absolutely delicious, the flavours were perfectly proportioned. The bread they give with the table was very tasty and fresh. The wine was great and was served chilled, which isn’t always a given in New York. I finished my meal with a Dirty Martini. I don’t have them a lot but this was by far the nicest I’ve ever had made for me. Service was great, not over the top, just there when you needed them.",
+             "languageCode": "en"
+           },
+           "authorAttribution": {
+             "displayName": "Emma Armstrong",
+             "uri": "https://www.google.com/maps/contrib/116156717307526849035/reviews",
+             "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV1wRMiWW05iEjeUjkG7CYvekLZyQ0BzSpdIVtm6nAarw0d0eX_-Q=s128-c0x00000000-cc-rp-mo-ba3"
+           },
+           "publishTime": "2024-05-28T13:18:05Z"
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChdDSUhNMG9nS0VJQ0FnSUNEcUxUNmdRRRAB",
+           "relativePublishTimeDescription": "2 months ago",
+           "rating": 5,
+           "text": {
+             "text": "We have been dining here for almost 25 yrs yet my first review. Two words - Always Amazing ! The food / menu are consistently great, just like the service. I’ve taken everyone in my family here at some point. Great wine list too. A nice treat to see Patti and Bob there today . Cheers again from our family to all of you. ❤️Grazie Mille a tutti",
+             "languageCode": "en"
+           },
+           "originalText": {
+             "text": "We have been dining here for almost 25 yrs yet my first review. Two words - Always Amazing ! The food / menu are consistently great, just like the service. I’ve taken everyone in my family here at some point. Great wine list too. A nice treat to see Patti and Bob there today . Cheers again from our family to all of you. ❤️Grazie Mille a tutti",
+             "languageCode": "en"
+           },
+           "authorAttribution": {
+             "displayName": "Dennis Galante - Mr. Manhattan",
+             "uri": "https://www.google.com/maps/contrib/102893491486386406345/reviews",
+             "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX-SJ9qSeOT7gwv2KJrcokUu4k5U1RS_1eOoK7lxAUtpc6YCRGV=s128-c0x00000000-cc-rp-mo-ba5"
+           },
+           "publishTime": "2024-03-23T22:09:25Z"
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChdDSUhNMG9nS0VJQ0FnSUR4d3JPdHVnRRAB",
+           "relativePublishTimeDescription": "12 months ago",
+           "rating": 5,
+           "text": {
+             "text": "A hidden gem in this area… Cozily Classy Italian decor, food is amazingly delicious, service is fantastic… The very friendly owner moves around tables and takes care of the guests himself… great place to dine out!",
+             "languageCode": "en"
+           },
+           "originalText": {
+             "text": "A hidden gem in this area… Cozily Classy Italian decor, food is amazingly delicious, service is fantastic… The very friendly owner moves around tables and takes care of the guests himself… great place to dine out!",
+             "languageCode": "en"
+           },
+           "authorAttribution": {
+             "displayName": "Alice Yang",
+             "uri": "https://www.google.com/maps/contrib/107274351888912859114/reviews",
+             "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK2hfTTT6voHeoC00W5s_KbZt3YgxBCGK8sgAgoWUNqLdStCZc=s128-c0x00000000-cc-rp-mo"
+           },
+           "publishTime": "2023-06-04T20:25:20Z"
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChdDSUhNMG9nS0VJQ0FnSUNSaDZHWTJRRRAB",
+           "relativePublishTimeDescription": "a year ago",
+           "rating": 5,
+           "text": {
+             "text": "Service was amazing. Sara treated us more like friends after we started conversing and asking about dishes. The mushroom rissotto was extraordinary. The chicken parm and the sparagus soup were excellent. The only dish we did not care much for was the lasagna. Fried Calamari was a special treat!! And the canoli was really good too.  We had a great experience and service! Highly recommend",
+             "languageCode": "en"
+           },
+           "originalText": {
+             "text": "Service was amazing. Sara treated us more like friends after we started conversing and asking about dishes. The mushroom rissotto was extraordinary. The chicken parm and the sparagus soup were excellent. The only dish we did not care much for was the lasagna. Fried Calamari was a special treat!! And the canoli was really good too.  We had a great experience and service! Highly recommend",
+             "languageCode": "en"
+           },
+           "authorAttribution": {
+             "displayName": "Sandy T",
+             "uri": "https://www.google.com/maps/contrib/101508085175303350246/reviews",
+             "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUXxsdLzo3ubYvwnqQ4K4-nCS28YME4_zi_wcFbGr_IYDomTvOU7A=s128-c0x00000000-cc-rp-mo-ba6"
+           },
+           "publishTime": "2023-04-11T22:16:54Z"
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChZDSUhNMG9nS0VJQ0FnSUNKbzhMVlRnEAE",
+           "relativePublishTimeDescription": "11 months ago",
+           "rating": 3,
+           "text": {
+             "text": "The waitress stood out with her exceptional friendliness, patience, and hospitality. However, the food didn't meet expectations. The pesto lacked grace and was disappointingly plain in flavor. On the bright side, the restaurant offers a decent selection of wines.",
+             "languageCode": "en"
+           },
+           "originalText": {
+             "text": "The waitress stood out with her exceptional friendliness, patience, and hospitality. However, the food didn't meet expectations. The pesto lacked grace and was disappointingly plain in flavor. On the bright side, the restaurant offers a decent selection of wines.",
+             "languageCode": "en"
+           },
+           "authorAttribution": {
+             "displayName": "Zoraida",
+             "uri": "https://www.google.com/maps/contrib/114131418006639630763/reviews",
+             "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXSZPJOCn3IDHHqC1wq5tfbQVn5IRh4E49FbITIYrYi-88nrS0j=s128-c0x00000000-cc-rp-mo-ba4"
+           },
+           "publishTime": "2023-07-03T23:19:40Z"
+         }
+       ],
+       "photos": [
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnEXT-1W-PPTAvTazz_vzse88T_gl-5g4Jsu9KHQgqhrc0E5SM9LIBPxlvPpg_qK4Vqhfth4-5m3eZPbvD181cfUtbEij1f9XZe3Gk1vLuS_7dX6Jw5a07_B7k4SI6NT-oiPMH_NMU4PKwERD2lPK6WDxEdW78R9X8i",
+           "widthPx": 2000,
+           "heightPx": 1336,
+           "authorAttributions": [
+             {
+               "displayName": "Gigino Trattoria",
+               "uri": "//maps.google.com/maps/contrib/109566272033083422592",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWZTur7clZoQRzt7xrZJh-9QtjPHXdP0EGQMjN2FxF3OJ32KNw=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZkzmfVNqv3--0_pdb0GJ-5lrbyeFzLv-M-_dynIaqlRn2gUBn1iBCvMucO-McgPheHXF8WclWBINnga3FgBkmoLIrcZY4_V8nJXy0fGKqub4fXsh_7uTrPnxba_NzjXpdU8KgZn9p69vYElHmjZM-6tKo0zkHmThZJP",
+           "widthPx": 2231,
+           "heightPx": 1487,
+           "authorAttributions": [
+             {
+               "displayName": "Gigino Trattoria",
+               "uri": "//maps.google.com/maps/contrib/109566272033083422592",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWZTur7clZoQRzt7xrZJh-9QtjPHXdP0EGQMjN2FxF3OJ32KNw=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnrxiFJ-6KfJIelkTvJKKKPmOJ0KCLQn5I1qRXW-Et4xQoJw4hCRl024xmT_Aqqd8EJ2Dg7H67ooYa7DNa6xIfxezOoZk9Ly8-eUvHA4aed1c5U5fUWvz0rg0hxBmWsCpm2h0mnoayc7LqKrMVfq0PfFkHy7icQuxBx",
+           "widthPx": 250,
+           "heightPx": 250,
+           "authorAttributions": [
+             {
+               "displayName": "Gigino Trattoria",
+               "uri": "//maps.google.com/maps/contrib/109566272033083422592",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWZTur7clZoQRzt7xrZJh-9QtjPHXdP0EGQMjN2FxF3OJ32KNw=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZmruob1N31KR-q88SjLn7F1KHclC26HTyk7YaslLGzmbOIKVROHvjziVFbD7AaSa54e-bdm3FrM76JBAD7nbFU2cKvlcJQRVVBXE8J1obHKZakUAyDxJmbhSZtIWzY06Djk1rWaXtbsUHfBCNCtNmnpTsBSBkFZTaKW",
+           "widthPx": 400,
+           "heightPx": 600,
+           "authorAttributions": [
+             {
+               "displayName": "Gigino Trattoria",
+               "uri": "//maps.google.com/maps/contrib/109566272033083422592",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWZTur7clZoQRzt7xrZJh-9QtjPHXdP0EGQMjN2FxF3OJ32KNw=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZm4baL8AbHlUCoo9uf3C8iFoPsMhmHWgQHul-gu--g_PTwmrk7eXcnHOJd_oL8vbfubz5wS05c-2EFazD8DB5txSOauNk4sGA9BVypramaPiIl6YuQXk1PTJdzqr8sHjwIAUT2Re6NNGgqjwnV29hSEU-OQmpMx44g",
+           "widthPx": 2812,
+           "heightPx": 3581,
+           "authorAttributions": [
+             {
+               "displayName": "Cheli",
+               "uri": "//maps.google.com/maps/contrib/108323102389697337261",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjX6doTV9Vz927hjwRO9907UsqMB6vgyydqx0UCImXbFPMeM-bg=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnasD-HgzCXLI27qDsofGNesJDCD2iMzPstCvKBOQYSO0W3A4i0Y1J-FzUUUOdC7PURuGM93B1pkiOumykY45CVW-nV_3f-QK9_zO1ctnjeJm1gnCl1e4Xf4kszkk1-9YawsntDbL_-3mk0jWY1dVOFIi5HcUZFIAMy",
+           "widthPx": 4032,
+           "heightPx": 2268,
+           "authorAttributions": [
+             {
+               "displayName": "Tommy Söderberg",
+               "uri": "//maps.google.com/maps/contrib/118413936056001341824",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjUCsskW_Im6ZvkAJqw5DHik_Q0UTq2dH2YHhqp66Jn-sv38-l5Pbg=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnIOTyGebLTeJa0jUda9QVNwnC-P37Tb6puW83ykBKmTI_3YIHmHoKEO1tb3-tgJ2JUWCzWj2U0vRhKRhtzk9qTwlB5tIJ43BX8BcngYueUjTiYiw3Vo3G_N690UJqTXKyYhQ_C-d0soZa6kOjOIhLAGGefP4XFIXry",
+           "widthPx": 3024,
+           "heightPx": 4032,
+           "authorAttributions": [
+             {
+               "displayName": "Julie Zhuang",
+               "uri": "//maps.google.com/maps/contrib/113192107111684827583",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjXORMQhY-rgF1BTO5jUdyYVKU7ZMz77uNpJkzbSbFq5HDlt4CaP=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnIsFs-aPuYWb26y0F1cfT-obl2hDdR_UkJjOCkmbU7LVHS_LF6A_zIkTeKYQCuj4MAcNX-DPbURSQ3KerZs66SuhRFw_Pgqxeyp7Gnyz578tEEYqUBTQaAdiEMDO7THUVVo0goxFe51fmAgtfN31K3o7MVydMFVft-",
+           "widthPx": 4128,
+           "heightPx": 2322,
+           "authorAttributions": [
+             {
+               "displayName": "Bebe",
+               "uri": "//maps.google.com/maps/contrib/114896462862407384788",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWUGsQCFeSzyMASfyNyUqMXpDbQmtNJfMdyShzkrEMZDHdCF_uJ=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZnJnu8Kt_7qvnWPWsFrkgadskuy7fYVz6NMQt8cmk_Ct17uRJVcotK_tFTAEhWoBw-gIdIRxuOxIb-q0C2akn5uH2Rh1-UkOz8PdyZEOiXfk6_0F3xSUD5TKAbDQFbNFyvU5Ea8DPrwK7jjT7bveoNQrXq819fadaDp",
+           "widthPx": 4080,
+           "heightPx": 3072,
+           "authorAttributions": [
+             {
+               "displayName": "Massimiliano Hofer",
+               "uri": "//maps.google.com/maps/contrib/112736082581725380438",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjUuGs9u-IVpoz2kOQM73dNSIDdSqIv44wCbYEZ2GX5sP6bnrf1Urg=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/photos/AUGGfZmCSyuxmYSn_s_AcsdftTxB6aIJbN1eC_GJ7X6GO4qguIdO0puO7HboyKi5N0eB99TjnGnb0GXBStteednxNq4giVxYLLoI7gPB7koOOL3sNC88scdvjfqnO7Ry9aG56bYrMvc9Z6v8JuS1Al6j3qy0d63O8KCUMZ1G",
+           "widthPx": 768,
+           "heightPx": 1152,
+           "authorAttributions": [
+             {
+               "displayName": "Gigino Trattoria",
+               "uri": "//maps.google.com/maps/contrib/109566272033083422592",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWZTur7clZoQRzt7xrZJh-9QtjPHXdP0EGQMjN2FxF3OJ32KNw=s100-p-k-no-mo"
+             }
+           ]
+         }
+       ],
+       "outdoorSeating": true,
+       "liveMusic": false,
+       "servesCocktails": true,
+       "servesDessert": true,
+       "servesCoffee": true,
+       "goodForChildren": true,
+       "allowsDogs": false,
+       "restroom": true,
+       "goodForGroups": true,
+       "goodForWatchingSports": false,
+       "paymentOptions": {
+         "acceptsCreditCards": true,
+         "acceptsDebitCards": true,
+         "acceptsCashOnly": false,
+         "acceptsNfc": true
+       },
+       "parkingOptions": {
+         "valetParking": false
+       },
+       "accessibilityOptions": {
+         "wheelchairAccessibleEntrance": true,
+         "wheelchairAccessibleRestroom": true,
+         "wheelchairAccessibleSeating": true
+       },
+       "generativeSummary": {
+         "overview": {
+           "text": "Traditional Italian fare, including pasta dishes, seafood and pizza, served in a warm, casual room.",
+           "languageCode": "en-US"
+         },
+         "description": {
+           "text": "Beloved Italian trattoria in Tribeca offering authentic cuisine, plus wine and cocktails.\nThe menu features handmade pasta, seafood, and meat. Vegetarian and healthy choices are available, and people often order pizza, risotto, and gnocchi. Diners like the dessert and coffee and say the menu is fantastic.\nFeaturing a cozy, romantic atmosphere, the restaurant is good for kids and solo diners. It's open for brunch, lunch, and dinner, and accepts reservations. Fast service and attentive staff add to the experience.\nCustomers typically spend $30–50.",
+           "languageCode": "en-US"
+         },
+         "references": {
+           "reviews": [
+             {
+               "name": "places/ChIJOYhlWR5awokROi9Hpwx0iQI/reviews/ChdDSUhNMG9nS0VJQ0FnSUNldmFhRTd3RRAB",
+               "relativePublishTimeDescription": "a year ago",
+               "rating": 5,
+               "text": {
+                 "text": "We were walking, we wanted a quick bite to eat and just stopped to look at the menu.  The owner said, “it’s fantastic…don’t miss it.”  Well, he is 100% correct.  It is fantastic and you had better not miss it.",
+                 "languageCode": "en"
+               },
+               "originalText": {
+                 "text": "We were walking, we wanted a quick bite to eat and just stopped to look at the menu.  The owner said, “it’s fantastic…don’t miss it.”  Well, he is 100% correct.  It is fantastic and you had better not miss it.",
+                 "languageCode": "en"
+               },
+               "authorAttribution": {
+                 "displayName": "Mark Groesbeck",
+                 "uri": "https://www.google.com/maps/contrib/104250892460642911846/reviews",
+                 "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW9GhwC3URLn9m3lr_bYW6CrXB2vzdf2g1-i3BfpmEI2SvZk-A=s128-c0x00000000-cc-rp-mo-ba3"
+               },
+               "publishTime": "2022-09-21T17:11:58Z"
+             }
+           ]
+         }
+       }
+     },
+     {
+       "name": "places/ChIJe9NIAfZZwokRFfzzw5y8PYg",
+       "id": "ChIJe9NIAfZZwokRFfzzw5y8PYg",
+       "types": [
+         "restaurant",
+         "food",
+         "point_of_interest",
+         "establishment"
+       ],
+       "formattedAddress": "Empire State Trl, New York, NY 10013, USA",
+       "addressComponents": [
+         {
+           "longText": "Empire State Trail",
+           "shortText": "Empire State Trl",
+           "types": [
+             "route"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "Manhattan",
+           "shortText": "Manhattan",
+           "types": [
+             "sublocality_level_1",
+             "sublocality",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York",
+           "shortText": "New York",
+           "types": [
+             "locality",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York County",
+           "shortText": "New York County",
+           "types": [
+             "administrative_area_level_2",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "New York",
+           "shortText": "NY",
+           "types": [
+             "administrative_area_level_1",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "United States",
+           "shortText": "US",
+           "types": [
+             "country",
+             "political"
+           ],
+           "languageCode": "en"
+         },
+         {
+           "longText": "10013",
+           "shortText": "10013",
+           "types": [
+             "postal_code"
+           ],
+           "languageCode": "en-US"
+         }
+       ],
+       "plusCode": {
+         "globalCode": "87G7PXCP+2W",
+         "compoundCode": "PXCP+2W New York, NY, USA"
+       },
+       "location": {
+         "latitude": 40.7200516,
+         "longitude": -74.012683
+       },
+       "viewport": {
+         "low": {
+           "latitude": 40.7187829197085,
+           "longitude": -74.0138431802915
+         },
+         "high": {
+           "latitude": 40.7214808802915,
+           "longitude": -74.0111452197085
+         }
+       },
+       "googleMapsUri": "https://maps.google.com/?cid=9817210144226016277",
+       "utcOffsetMinutes": -240,
+       "adrFormatAddress": "\u003cspan class=\"street-address\"\u003eEmpire State Trl\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNew York\u003c/span\u003e, \u003cspan class=\"region\"\u003eNY\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e10013\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+       "businessStatus": "OPERATIONAL",
+       "iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+       "iconBackgroundColor": "#FF9E67",
+       "displayName": {
+         "text": "Banana King",
+         "languageCode": "en"
+       },
+       "primaryTypeDisplayName": {
+         "text": "Restaurant",
+         "languageCode": "en-US"
+       },
+       "takeout": true,
+       "dineIn": true,
+       "servesLunch": true,
+       "servesDinner": true,
+       "primaryType": "restaurant",
+       "shortFormattedAddress": "Empire State Trl, New York",
+       "photos": [
+         {
+           "name": "places/ChIJe9NIAfZZwokRFfzzw5y8PYg/photos/AUGGfZkE0EjCJ_SFdqtKAgAPRMlh_zN2MYUjymWG--kEN_1phQV6FUnssbGLxwrxlCRkGiEnQIp-aMHHKWCJnrq78PdLyrYJNpBdUnYi1KsJik5_t3v7roURShMcwfaqUHwHr5RFD_XqH6ZGjpJ49aYBRyCuaH8oIXucZNIK",
+           "widthPx": 3024,
+           "heightPx": 4032,
+           "authorAttributions": [
+             {
+               "displayName": "Mateus Rodrigues Fiuza",
+               "uri": "//maps.google.com/maps/contrib/101120657662658583716",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVvS0Sn0cFQ7o61iK9ue5Tijm21s_-FslXn4_murOpTzrlNSsJJPA=s100-p-k-no-mo"
+             }
+           ]
+         },
+         {
+           "name": "places/ChIJe9NIAfZZwokRFfzzw5y8PYg/photos/AUGGfZm3HLC5byibUzxPQG9xvjGq_B-rzyFeW2ciBZoZoVSjt9MketP02IRENCLm2s8pmh3UTgspHCkbQO8e_WrHjqQSWpH0KHwHF1yOsVjYigeSK_Q-OUhCAnGRmdUADBtw2t15S0kC5PcUojhIwwmQ_6KTG1lKIl2zLob-",
+           "widthPx": 3024,
+           "heightPx": 4032,
+           "authorAttributions": [
+             {
+               "displayName": "Mateus Rodrigues Fiuza",
+               "uri": "//maps.google.com/maps/contrib/101120657662658583716",
+               "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVvS0Sn0cFQ7o61iK9ue5Tijm21s_-FslXn4_murOpTzrlNSsJJPA=s100-p-k-no-mo"
+             }
+           ]
+         }
+       ],
+       "servesDessert": true
+     }
+   ]
+ }
+ 

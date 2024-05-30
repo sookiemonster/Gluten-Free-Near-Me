@@ -1,0 +1,17 @@
+{
+  "includedTypes": [
+    "restaurant"
+    
+  ],
+  "maxResultCount": 20,
+  "locationRestriction": {
+    "circle": {
+      "center": {
+        "latitude": 40.717887,
+        "longitude": -74.013257
+      },
+      "radius": 250
+    }
+  }
+  
+}
