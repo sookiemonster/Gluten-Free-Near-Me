@@ -31,8 +31,12 @@ const scrapeMap = async(map_uri) => {
   // Navigating to Google Food
   try {
     // Wait for Order Online Button to appear & click
-    await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
-    await page.click(orderOnlineSelector);
+    await Promise.all([
+      page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS}),
+      page.click(orderOnlineSelector),
+      page.waitForNavigation({waitUntil: 'networkidle2'})
+    ]);
+
 
   } catch (error) {
     // The Order Online Button did not appear (loading failure or order online not available)
