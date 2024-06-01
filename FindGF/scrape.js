@@ -1,6 +1,7 @@
 // Import puppeteer web scraper module
 const puppeteer = require('puppeteer');
 const gf = require('./parse-gluten-free');
+const codes = require('./gf-codes');
 
 // Redefine timeout
 const TIMEOUT_MS = 10000; 
@@ -9,21 +10,25 @@ const TIMEOUT_MS = 10000;
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
 const menuItemSelector = '.WV4Bob';
 
+// Scraping format
+const NAME = 0;
+const DESCRIPTION = 2;
+
 // Error Codes
 const NOT_FOUND = [];
 
 /**
  * Scrapes the specified Google Maps page for MenuItems
- * @param {String} map_uri The Google Maps uri to access a specified restauraut
+ * @param {String} mapUri The Google Maps uri to access a specified restauraut
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
-const scrapeMap = async(map_uri) => {
+const scrapeMap = async(mapUri) => {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   // Navigate the page to a URL
-  await page.goto(map_uri);
+  await page.goto(mapUri);
 
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
@@ -62,13 +67,53 @@ const scrapeMap = async(map_uri) => {
   return menuItems;
 };
 
-let main = async() => {
-  let menuItems = await scrapeMap("https://maps.app.goo.gl/16AUqQgefQuoBHBk6");
-  gf.filterGFMenuItems(menuItems);
-  console.log(menuItems);
+let getGFMenu = async(id, mapUri) => {
+  // Define the menuJSON response template
+  let menuJSON = {
+    [id] : {
+      "gfRank" : 0, 
+      "items" : []
+    }
+  };
+
+  // Scrape Google Maps for all menu items
+  let menuItems = await scrapeMap(mapUri);
+  
+  // HANDLE MENU NOT FOUND
+  if (menuItems == NOT_FOUND) {
+    menuJSON[id].gfRank = codes.MENU_NOT_ACCESSIBLE;
+    return; 
+  }  
+  
+  // Filter all GF items from the menu
+  gf.filterGFMenuItems(menuItems); 
+
+  // No explicitly-asserted GF items available
+  if (menuItems.length == 0) {
+    
+  }
+
+  // Append all GF items to the JSON response
+  menuItems.forEach(item => {
+    // Split item into name, price, description (ie. on newline)
+    let expandItem = item.split('\n');
+    menuJSON[id].items.push(
+      {"name" : expandItem[NAME], 
+      "desc" : expandItem[DESCRIPTION]}
+    );
+  });
+  console.log(menuJSON[id]);
+  
+  // console.log(menuItems);
 }
 
-main();
+let test = async() => {
+  getGFMenu("ChIJ8Q2WSpJZwokRQz-bYYgEskM", "https://maps.app.goo.gl/16AUqQgefQuoBHBk6");
+  // getGFMenu("https://maps.app.goo.gl/QaNzDfEq9Y1Zu8xR9");
+  // getGFMenu("https://maps.app.goo.gl/9doyvWjQNyt5r8Lp6");
+}
+
+test();
 // menuItems.forEach(element => {
 //   console.log(element);
 // });

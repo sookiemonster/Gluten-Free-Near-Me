@@ -1,25 +1,36 @@
 // Regex pattern for finding "GF", "gluten*free" (case-insensitive, * can be anything, for variations in hyphens, spaces, etc.)
 const GF_PATTERN = /\bGF\b|gluten[^a-zA-Z0-9]free/i;
 
+/**
+ * 
+ * @param {String} string Any string to search for gluten-free
+ * @returns True if the provided string mentions GF, gluten-free, gluten free, etc.
+ */
 let mentionsGlutenFree = (string) => {
-   return string.search(GF_PATTERN);
+   return string.search(GF_PATTERN) > -1;
 }
 
 /**
- * @param {String|Array} menuItems An array of food items (name, price, description); each descriptor is separated by a newline
- * @returns A JSON of food items labeled Gluten-Free or mentioning Gluten-Free in their description
+ * Removes all strings that don't mention gluten free
+ * @param {String|Array} menuItems An array of strings that represent food items (name\n price\n description\n)
  */
 let filterGFMenuItems = (menuItems) => {
-   // Validate input (ie. no null or empty lists)
-   if (!Array.isArray(menuItems) || menuItems.length == 0) { 
+   // Validate input (ie. no non-lists)
+   if (!Array.isArray(menuItems)) { 
       return []; 
    }
-   
-   // menuItems.forEach(element => {
-   //    console.log(element + " " + mentionsGlutenFree(element));
-   // });
-   menuItems = menuItems.filter((item) => mentionsGlutenFree(item) > -1);
-   console.log(menuItems);
+
+   let index = 0;
+   while (index < menuItems.length) {
+      if (mentionsGlutenFree(menuItems[index])) {
+         // Skip over the current element
+         index++;
+      } else {
+         // No mention of GF so we replace with the back and pop the duplicate
+         menuItems[index] = menuItems[menuItems.length - 1];
+         menuItems.length--;
+      }
+   }
 }
 
 module.exports = { filterGFMenuItems };
