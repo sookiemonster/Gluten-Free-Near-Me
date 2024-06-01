@@ -82,7 +82,7 @@ let getGFMenu = async(id, mapUri) => {
   // HANDLE MENU NOT FOUND
   if (menuItems == NOT_FOUND) {
     menuJSON[id].gfRank = codes.MENU_NOT_ACCESSIBLE;
-    return; 
+    return menuJSON; 
   }  
   
   // Filter all GF items from the menu
@@ -90,10 +90,12 @@ let getGFMenu = async(id, mapUri) => {
 
   // No explicitly-asserted GF items available
   if (menuItems.length == 0) {
-    
+    menuJSON[id].gfRank = codes.NO_MENTION_GF;
+    return menuJSON;
   }
 
   // Append all GF items to the JSON response
+  menuJSON[id].gfRank = codes.HAS_GF_ITEMS;
   menuItems.forEach(item => {
     // Split item into name, price, description (ie. on newline)
     let expandItem = item.split('\n');
@@ -102,23 +104,18 @@ let getGFMenu = async(id, mapUri) => {
       "desc" : expandItem[DESCRIPTION]}
     );
   });
-  console.log(menuJSON[id]);
-  
-  // console.log(menuItems);
+
+  return menuJSON;
+}
+
+let log = async(id, url) => {
+  console.log(await getGFMenu(id, url));
 }
 
 let test = async() => {
-  getGFMenu("ChIJ8Q2WSpJZwokRQz-bYYgEskM", "https://maps.app.goo.gl/16AUqQgefQuoBHBk6");
-  // getGFMenu("https://maps.app.goo.gl/QaNzDfEq9Y1Zu8xR9");
-  // getGFMenu("https://maps.app.goo.gl/9doyvWjQNyt5r8Lp6");
+  log("ChIJ8Q2WSpJZwokRQz-bYYgEskM", "https://maps.app.goo.gl/16AUqQgefQuoBHBk6");
+  log("L6f1WY5XwHvs5Dzu9", "https://maps.app.goo.gl/QaNzDfEq9Y1Zu8xR9");
+  log("ChIJOYhlWR5awokROi9Hpwx0iQI", "https://maps.google.com/?cid=4877966330195296067");
 }
 
 test();
-// menuItems.forEach(element => {
-//   console.log(element);
-// });
-  // .then((items) => {
-  //   items.forEach(element => {
-  //   });
-  // });
-  // .catch(TimeoutError)
