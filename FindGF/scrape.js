@@ -1,3 +1,5 @@
+// Scrape.js defines the routines for scraping Google Maps / Food.google for menu information
+
 // Import puppeteer web scraper module
 const puppeteer = require('puppeteer');
 const gf = require('./parse-gluten-free');

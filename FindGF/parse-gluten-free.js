@@ -1,3 +1,5 @@
+// parse-gluten-free.js defines the routines for checking whether a string / array of strings mentions gluten-free (or related keywords)
+
 // Regex pattern for finding "GF", "gluten*free" (case-insensitive, * can be anything, for variations in hyphens, spaces, etc.)
 const GF_PATTERN = /\bGF\b|gluten[^a-zA-Z0-9]free/i;
 
@@ -33,4 +35,4 @@ let filterGFMenuItems = (menuItems) => {
    }
 }
 
-module.exports = { filterGFMenuItems };
+module.exports = { mentionsGlutenFree, filterGFMenuItems };
