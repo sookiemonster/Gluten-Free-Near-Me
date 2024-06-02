@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as codes from './gf-codes.js';
 import { getGFMenu } from './scrape.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
-import { browser } from "./scrape-driver.js";
+import { browser, dispatchScraper, enqueueRestaurant } from "./scrape-driver.js";
 
 let getNearbyLocations = async(location_details) => {
    
@@ -76,12 +76,16 @@ let findGFNearby = async(placeData) => {
          console.log(gfReviews);
          // Send response with this info back to client
 
-      } else {  
-         getGFMenu(restaurant.id, restaurant.googleMapsUri)
-            .then((response) => {console.log(response)})
-            .catch((error) => {console.error(error); });
+      } else {
+         enqueueRestaurant(restaurant.id, restaurant.googleMapsUri);
+         dispatchScraper();
+         // getGFMenu(restaurant.id, restaurant.googleMapsUri)
+         //    .then((response) => {console.log(response)})
+         //    .catch((error) => {console.error(error); });
       }
    });
+
+   
 
    return ;
 }
