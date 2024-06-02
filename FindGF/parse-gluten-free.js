@@ -9,6 +9,9 @@ const GF_PATTERN = /\bGF\b|gluten[^a-zA-Z0-9]free/i;
  * @returns True if the provided string mentions GF, gluten-free, gluten free, etc.
  */
 let mentionsGlutenFree = (string) => {
+   if (typeof string != 'string' && !string instanceof String) {
+      return -1;
+   }
    return string.search(GF_PATTERN) > -1;
 }
 
@@ -35,4 +38,4 @@ let filterGFMenuItems = (menuItems) => {
    }
 }
 
-module.exports = { mentionsGlutenFree, filterGFMenuItems };
+export { mentionsGlutenFree, filterGFMenuItems };
