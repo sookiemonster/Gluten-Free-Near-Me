@@ -48,10 +48,7 @@ const scrapeMap = async(mapUri) => {
 
   } catch (error) {
     // The Order Online Button did not appear (loading failure or order online not available)
-    // closeTab(page);
-    await console.log(page.url());
     await closeTab(page);
-
     return NOT_FOUND;
   }
 
@@ -70,7 +67,6 @@ const scrapeMap = async(mapUri) => {
     //  so it may not be feasible as of now
     // closeTab(page);
     await closeTab(page);
-
     return NOT_FOUND;
   }
 
@@ -88,15 +84,10 @@ let getGFMenu = async(id, mapUri) => {
     return null;
   }
   await tallyScraper();
-  console.log(await tabCount);
+  // console.log(await tabCount);
 
   // Define the menuJSON response template
-  let menuJSON = {
-    [id] : {
-      "gfRank" : 0, 
-      "items" : []
-    }
-  };
+  let menuJSON = codes.resFormat(id);
 
   // Scrape Google Maps for all menu items
   let menuItems = await scrapeMap(mapUri);
@@ -121,7 +112,7 @@ let getGFMenu = async(id, mapUri) => {
   menuItems.forEach(item => {
     // Split item into name, price, description (ie. on newline)
     let expandItem = item.split('\n');
-    menuJSON[id].items.push(
+    menuJSON[id].gfItems.push(
       {"name" : expandItem[NAME], 
       "desc" : expandItem[DESCRIPTION]}
     );

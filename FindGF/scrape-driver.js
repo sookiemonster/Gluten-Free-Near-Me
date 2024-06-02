@@ -1,10 +1,11 @@
 import * as scrape from './scrape.js';
-import * as puppeteer from "puppeteer";
+import * as puppeteer from 'puppeteer';
+import { DEBUG } from './debug-control.js';
 
 // Define singular browser to be used
 export let browser = null;
 
-export const TAB_LIMIT = 3;
+export const TAB_LIMIT = 5;
 export let tabCount = 0;
 let scrapeQueue = [];
 
@@ -22,8 +23,9 @@ const options = {
    headless: true
  }
 
-export let enqueueRestaurant = async(id, mapUri) => {
-   scrapeQueue.push({"id" : id, "mapUri" : mapUri});
+
+export let initializePuppeteer = async() => {
+   if (!browser) { browser = await puppeteer.launch(options); }
 }
 
 export let dispatchScraper = async() => {
@@ -36,14 +38,13 @@ export let dispatchScraper = async() => {
       .then((response) => {
          if (response) {
             console.log(response); // do send here
-            console.log(tabCount);
             dispatchScraper();
          }
       });
 }
 
-export let initializePuppeteer = async() => {
-   if (!browser) { browser = await puppeteer.launch(options); }
+export let enqueueRestaurant = async(id, mapUri, usr) => {
+   scrapeQueue.push({"id" : id, "mapUri" : mapUri});
 }
 
 export let tallyScraper = async() => {
