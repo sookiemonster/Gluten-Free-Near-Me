@@ -5,11 +5,11 @@ import * as fs from 'fs';
 import * as codes from './gf-codes.js';
 import { getGFMenu } from './scrape.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
-import { enqueueRestaurant, processNextScrape } from "./scrape-driver.js";
+import { browser } from "./scrape-driver.js";
 
 let getNearbyLocations = async(location_details) => {
    
-   fs.readFile("small.json", (err, data) => { 
+   fs.readFile("sample_gf2.json", (err, data) => { 
       // Check for errors 
       if (err) throw err; 
       // Parse JSON and start looking for GF availabilites
@@ -61,25 +61,29 @@ let findGFNearby = async(placeData) => {
       return ;
    }
 
-   await placeData.places.forEach((restaurant) => {
+   placeData.places.forEach((restaurant) => {
+      if (!restaurant) { return; }
       console.log(restaurant.displayName.text);
       // Wrap summary into object to be edited in functions
       let gfSummary = { "val" : "" };
       let gfReviews = [];
       
-      // if (findGFSummary(restaurant, gfSummary)) {
-      //    console.log(gfSummary);
-      //    // Send response with this info back to client
+      if (findGFSummary(restaurant, gfSummary)) {
+         console.log(gfSummary);
+         // Send response with this info back to client
          
-      // } else if (findGFReviews(restaurant.reviews, gfReviews)) {
-      //    console.log(gfReviews);
-      //    // Send response with this info back to client
+      } else if (findGFReviews(restaurant.reviews, gfReviews)) {
+         console.log(gfReviews);
+         // Send response with this info back to client
 
-      // } else {
-      enqueueRestaurant(restaurant.id, restaurant.googleMapsUri);
+      } else {  
+         getGFMenu(restaurant.id, restaurant.googleMapsUri)
+            .then((response) => {console.log(response)})
+            .catch((error) => {console.error(error); });
+      }
    });
 
-   await processNextScrape();
+   return ;
 }
 
 getNearbyLocations("dummy");

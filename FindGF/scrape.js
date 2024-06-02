@@ -4,7 +4,7 @@
 import * as puppeteer from "puppeteer";
 import * as gf from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
-import { browser, initializePuppeteer, page, TIMEOUT_MS } from './scrape-driver.js';
+import { browser, initializePuppeteer, limitTabs, TIMEOUT_MS } from './scrape-driver.js';
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
@@ -24,12 +24,13 @@ const NOT_FOUND = [];
  */
 const scrapeMap = async(mapUri) => { 
   // Navigate the page to a URL
-  if (!page || !browser) {
+  if (!browser) {
     await initializePuppeteer();
   }
-
+  
+  await limitTabs();
+  let page = await browser.newPage();
   await page.goto(mapUri);
-
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
 
@@ -45,11 +46,13 @@ const scrapeMap = async(mapUri) => {
 
   } catch (error) {
     // The Order Online Button did not appear (loading failure or order online not available)
+    await page.close();
     return NOT_FOUND;
   }
 
   // Scrape available menu items
   let menuItems = [];
+
   try {
     // Wait for menu items to appear
     await page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS});
@@ -60,15 +63,17 @@ const scrapeMap = async(mapUri) => {
   } catch (error) {
     // Search other vendors, but Seamless & GrubHub block scraping with Captcha
     //  so it may not be feasible as of now
-    // await browser.close();
+    await page.close();
     return NOT_FOUND;
   }
 
-  // await browser.close();
+  await page.close();
   return menuItems;
 };
 
 let getGFMenu = async(id, mapUri) => {
+  if (!id || !mapUri) { return {}; }
+
   // Define the menuJSON response template
   let menuJSON = {
     [id] : {
