@@ -1,0 +1,2877 @@
+{
+  "places": [
+    {
+      "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI",
+      "id": "ChIJY3QILvlZwokRbb7uBOUi1aI",
+      "types": [
+        "brunch_restaurant",
+        "night_club",
+        "bar",
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "formattedAddress": "169 Bleecker St, New York, NY 10012, USA",
+      "addressComponents": [
+        {
+          "longText": "169",
+          "shortText": "169",
+          "types": [
+            "street_number"
+          ],
+          "languageCode": "en-US"
+        },
+        {
+          "longText": "Bleecker Street",
+          "shortText": "Bleecker St",
+          "types": [
+            "route"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "Manhattan",
+          "shortText": "Manhattan",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "New York",
+          "types": [
+            "locality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York County",
+          "shortText": "New York County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "NY",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "United States",
+          "shortText": "US",
+          "types": [
+            "country",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "10012",
+          "shortText": "10012",
+          "types": [
+            "postal_code"
+          ],
+          "languageCode": "en-US"
+        }
+      ],
+      "plusCode": {
+        "globalCode": "87G7PXHX+GV",
+        "compoundCode": "PXHX+GV New York, NY, USA"
+      },
+      "location": {
+        "latitude": 40.7288482,
+        "longitude": -74.0002763
+      },
+      "viewport": {
+        "low": {
+          "latitude": 40.727519019708495,
+          "longitude": -74.0016691802915
+        },
+        "high": {
+          "latitude": 40.730216980291495,
+          "longitude": -73.99897121970848
+        }
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=11733322771209305709",
+      "websiteUri": "https://www.bosconyc.com/",
+      "regularOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 11,
+              "minute": 0
+            },
+            "close": {
+              "day": 1,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 17,
+              "minute": 0
+            },
+            "close": {
+              "day": 2,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 17,
+              "minute": 0
+            },
+            "close": {
+              "day": 3,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 17,
+              "minute": 0
+            },
+            "close": {
+              "day": 4,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 17,
+              "minute": 0
+            },
+            "close": {
+              "day": 5,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 17,
+              "minute": 0
+            },
+            "close": {
+              "day": 6,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 11,
+              "minute": 0
+            },
+            "close": {
+              "day": 0,
+              "hour": 2,
+              "minute": 0
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 5:00 PM – 2:00 AM",
+          "Tuesday: 5:00 PM – 2:00 AM",
+          "Wednesday: 5:00 PM – 2:00 AM",
+          "Thursday: 5:00 PM – 2:00 AM",
+          "Friday: 5:00 PM – 2:00 AM",
+          "Saturday: 11:00 AM – 2:00 AM",
+          "Sunday: 11:00 AM – 2:00 AM"
+        ]
+      },
+      "utcOffsetMinutes": -240,
+      "adrFormatAddress": "\u003cspan class=\"street-address\"\u003e169 Bleecker St\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNew York\u003c/span\u003e, \u003cspan class=\"region\"\u003eNY\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e10012\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 482,
+      "iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+      "iconBackgroundColor": "#FF9E67",
+      "displayName": {
+        "text": "Bosco On Bleecker",
+        "languageCode": "en"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Bar",
+        "languageCode": "en-US"
+      },
+      "takeout": true,
+      "delivery": true,
+      "dineIn": true,
+      "curbsidePickup": false,
+      "reservable": true,
+      "servesBeer": true,
+      "servesWine": true,
+      "currentOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 11,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 23,
+              "minute": 59,
+              "truncated": true,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 0,
+              "minute": 0,
+              "truncated": true,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            },
+            "close": {
+              "day": 6,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 11,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            },
+            "close": {
+              "day": 0,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 5:00 PM – 2:00 AM",
+          "Tuesday: 5:00 PM – 2:00 AM",
+          "Wednesday: 5:00 PM – 2:00 AM",
+          "Thursday: 5:00 PM – 2:00 AM",
+          "Friday: 5:00 PM – 2:00 AM",
+          "Saturday: 11:00 AM – 2:00 AM",
+          "Sunday: 11:00 AM – 2:00 AM"
+        ]
+      },
+      "currentSecondaryOpeningHours": [
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 16,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 2
+                }
+              },
+              "close": {
+                "day": 1,
+                "hour": 2,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 3
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 1,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 3
+                }
+              },
+              "close": {
+                "day": 1,
+                "hour": 19,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 3
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 2,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 4
+                }
+              },
+              "close": {
+                "day": 2,
+                "hour": 19,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 4
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 3,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 5
+                }
+              },
+              "close": {
+                "day": 3,
+                "hour": 19,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 5
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 4,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 30
+                }
+              },
+              "close": {
+                "day": 4,
+                "hour": 19,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 30
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              },
+              "close": {
+                "day": 5,
+                "hour": 19,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: 5:00 – 7:00 PM",
+            "Tuesday: 5:00 – 7:00 PM",
+            "Wednesday: 5:00 – 7:00 PM",
+            "Thursday: 5:00 – 7:00 PM",
+            "Friday: 5:00 – 7:00 PM",
+            "Saturday: Closed",
+            "Sunday: 4:00 PM – 2:00 AM"
+          ],
+          "secondaryHoursType": "HAPPY_HOUR"
+        },
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 12,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 2
+                }
+              },
+              "close": {
+                "day": 0,
+                "hour": 16,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 2
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 12,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              },
+              "close": {
+                "day": 5,
+                "hour": 16,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 6,
+                "hour": 11,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 1
+                }
+              },
+              "close": {
+                "day": 6,
+                "hour": 16,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 1
+                }
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 12:00 – 4:00 PM",
+            "Saturday: 11:00 AM – 4:00 PM",
+            "Sunday: 12:00 – 4:00 PM"
+          ],
+          "secondaryHoursType": "BRUNCH"
+        }
+      ],
+      "regularSecondaryOpeningHours": [
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 16,
+                "minute": 0
+              },
+              "close": {
+                "day": 1,
+                "hour": 2,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 1,
+                "hour": 17,
+                "minute": 0
+              },
+              "close": {
+                "day": 1,
+                "hour": 19,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 2,
+                "hour": 17,
+                "minute": 0
+              },
+              "close": {
+                "day": 2,
+                "hour": 19,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 3,
+                "hour": 17,
+                "minute": 0
+              },
+              "close": {
+                "day": 3,
+                "hour": 19,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 4,
+                "hour": 17,
+                "minute": 0
+              },
+              "close": {
+                "day": 4,
+                "hour": 19,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 17,
+                "minute": 0
+              },
+              "close": {
+                "day": 5,
+                "hour": 19,
+                "minute": 0
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: 5:00 – 7:00 PM",
+            "Tuesday: 5:00 – 7:00 PM",
+            "Wednesday: 5:00 – 7:00 PM",
+            "Thursday: 5:00 – 7:00 PM",
+            "Friday: 5:00 – 7:00 PM",
+            "Saturday: Closed",
+            "Sunday: 4:00 PM – 2:00 AM"
+          ],
+          "secondaryHoursType": "HAPPY_HOUR"
+        },
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 12,
+                "minute": 0
+              },
+              "close": {
+                "day": 0,
+                "hour": 16,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 12,
+                "minute": 0
+              },
+              "close": {
+                "day": 5,
+                "hour": 16,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 6,
+                "hour": 11,
+                "minute": 0
+              },
+              "close": {
+                "day": 6,
+                "hour": 16,
+                "minute": 0
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 12:00 – 4:00 PM",
+            "Saturday: 11:00 AM – 4:00 PM",
+            "Sunday: 12:00 – 4:00 PM"
+          ],
+          "secondaryHoursType": "BRUNCH"
+        }
+      ],
+      "primaryType": "bar",
+      "shortFormattedAddress": "169 Bleecker St, New York",
+      "reviews": [
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSUNEeElhanlnRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 3,
+          "text": {
+            "text": "This place is pretty small. The table we sat at was a high top and pretty uncomfortable. There wasn’t enough room on the table for our food.\n\nThe bartender was so nice though. After she saw I didn’t drink my drink she asked if I wanted to swap and I did! It didn’t like it at all. I got the color and co. Which looked gorgeous. But didn’t taste sweet and fruity like the description said. Maybe it was the egg whites I didn’t like but I thought the drink tasted like plastic. She made me a paper plane with no complaints and that was good.\n\nThe happy hour deals are pretty good, for $20 you can get two share plates or an entree and a share plate. The food was just okay though. The chicken sandwhich was pretty spicy and was covered in coleslaw or something. I liked the big pickle with it though. The chicken wings were too spicy too and kind of dry. The salad I had should have been bigger.\n\nIf you are in the area I recommend to try another place for food.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "This place is pretty small. The table we sat at was a high top and pretty uncomfortable. There wasn’t enough room on the table for our food.\n\nThe bartender was so nice though. After she saw I didn’t drink my drink she asked if I wanted to swap and I did! It didn’t like it at all. I got the color and co. Which looked gorgeous. But didn’t taste sweet and fruity like the description said. Maybe it was the egg whites I didn’t like but I thought the drink tasted like plastic. She made me a paper plane with no complaints and that was good.\n\nThe happy hour deals are pretty good, for $20 you can get two share plates or an entree and a share plate. The food was just okay though. The chicken sandwhich was pretty spicy and was covered in coleslaw or something. I liked the big pickle with it though. The chicken wings were too spicy too and kind of dry. The salad I had should have been bigger.\n\nIf you are in the area I recommend to try another place for food.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Marisa",
+            "uri": "https://www.google.com/maps/contrib/110265999863098229891/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUy9S-ksfsptTguDajpWccYZGhZ-vu6hM35kE9wnPGUmYNJ-9QCdQ=s128-c0x00000000-cc-rp-mo-ba5"
+          },
+          "publishTime": "2024-03-24T13:40:23Z"
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSURqOWY2aTVnRRAB",
+          "relativePublishTimeDescription": "3 weeks ago",
+          "rating": 5,
+          "text": {
+            "text": "Great place to having fun with friend!\nThe drink was great. The food also taste delicious! And they also have happy hour everyday except sat!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Great place to having fun with friend!\nThe drink was great. The food also taste delicious! And they also have happy hour everyday except sat!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Elsa C",
+            "uri": "https://www.google.com/maps/contrib/101170856977079168565/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKpDOL2D99fFddlg1_DwiIO3M2Bae-6Q9t_F9NLCvr7hKOulQ=s128-c0x00000000-cc-rp-mo-ba6"
+          },
+          "publishTime": "2024-05-06T00:40:30Z"
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChZDSUhNMG9nS0VJQ0FnSUREcGZqR0V3EAE",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "First time here tonight, I love the vibe and seating here. My friends and I took a booth near the entrance and the music/ambiance volume is at a good level where you can carry regular volume conversation which was what we were looking for, something chill. The neon light is really cute in front. Had the chicken burrito which was yummy. The hurricane cocktail was a favorite. Young was our bartender and really appreciate their awesome service and great tasting drinks!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "First time here tonight, I love the vibe and seating here. My friends and I took a booth near the entrance and the music/ambiance volume is at a good level where you can carry regular volume conversation which was what we were looking for, something chill. The neon light is really cute in front. Had the chicken burrito which was yummy. The hurricane cocktail was a favorite. Young was our bartender and really appreciate their awesome service and great tasting drinks!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Jo-Anne Hyun",
+            "uri": "https://www.google.com/maps/contrib/104123433593990443898/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUkVaoxGR3WTJWRF7cHdI98u7_lmfwab6wQ5GT6ZKFy_QTB5PCl=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-04-12T04:22:02Z"
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSUNUczdMSnZ3RRAB",
+          "relativePublishTimeDescription": "a week ago",
+          "rating": 5,
+          "text": {
+            "text": "Visiting from the UK and popped in as we were nearby. Lily talked us through the menu and was so accommodating, helpful and friendly. Absolutely loved our cocktails and the free shots for following on Instagram were a really nice touch. Busy, happy atmosphere and lovely decor.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Visiting from the UK and popped in as we were nearby. Lily talked us through the menu and was so accommodating, helpful and friendly. Absolutely loved our cocktails and the free shots for following on Instagram were a really nice touch. Busy, happy atmosphere and lovely decor.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Frances Henderson",
+            "uri": "https://www.google.com/maps/contrib/116426610130872494013/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJtr-ghxegYFbDrd9A1y8NQbX_fR2LRCxjk8_sFklbLRm5PUA=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-05-18T23:06:34Z"
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChZDSUhNMG9nS0VJQ0FnSURUeXVYaGRBEAE",
+          "relativePublishTimeDescription": "in the last week",
+          "rating": 5,
+          "text": {
+            "text": "Finally got to try out Bosco after a few friends' high recommendations. Went during brunch and the ambiance and decor were so nice! Sat at the bar and after the bartender being so attentive and checking in on our food and drinks, I would say this was the best brunch experience I've had in Greenwich Village. Their loaded nachos were so yummy and I would highly recommend any of their spritzes for summertime!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Finally got to try out Bosco after a few friends' high recommendations. Went during brunch and the ambiance and decor were so nice! Sat at the bar and after the bartender being so attentive and checking in on our food and drinks, I would say this was the best brunch experience I've had in Greenwich Village. Their loaded nachos were so yummy and I would highly recommend any of their spritzes for summertime!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Danyelle Rillorta",
+            "uri": "https://www.google.com/maps/contrib/101438557593167057607/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWrIk975iI-11NxXN18rMIWnPDn4IEU6D0qKV6VQztoEfwAn96kgQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-05-23T22:07:40Z"
+        }
+      ],
+      "photos": [
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZlmOvUcEGvx4ZJBkBibhCpnXPS4vGi1JcQutH81GNf1aaXbpvB4yDrOwvt6y6PBIu-_aBTHmkiItZ_lAzX46xCv9oZQ-Tg8UKrmu2iPHl0mVmYP0cpTbZnlhLsF6HkhkRMdmK_zsy6UA-0cGPLbuw4VZ8Xwr20PNbkj",
+          "widthPx": 7952,
+          "heightPx": 5304,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZmJTyxs6aYY4s_RnCmdhnbXhQdlR3GVNT2Kav2nEAYCjHAyqlbXOgpZLesV6us_Tsq4ducCsvjsBK28mBUE-kyjFfPA7cGkMskBLWXj79Jot1w4-2YZ-Eg5SaBn_pr_YV0nt_NDBOghpijuqiEXYgJCP3lz-BTunNEI",
+          "widthPx": 6984,
+          "heightPx": 4658,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZmt7YrfI3y29xGTTzCtjptjiWpDNXIQ-lkIuD1IRkNnAf7CzRYfCA5REkOkvFnHSInQ6fqg1Njv3Oafg1J2uaLBIQflveMUJ9LW7X29KqE6nNbcgWVyowL-22BlaI7mbMS-uN00bhA6t5BqOVY3Fjlx3fuNvd4KUbxp",
+          "widthPx": 4284,
+          "heightPx": 5712,
+          "authorAttributions": [
+            {
+              "displayName": "Elsa C",
+              "uri": "//maps.google.com/maps/contrib/101170856977079168565",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocKpDOL2D99fFddlg1_DwiIO3M2Bae-6Q9t_F9NLCvr7hKOulQ=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZljFqXxMREK9deh0UjWtAKr_AoEQyePnbjVjfZqF3B8d5qZxhm2WMQRxB3bsuRauiI4KQGseonIzc_lZ51W6WsG7CsIh3eBFtivd2SPLkHHzUjQd-uDxyQxO81lF_1RuT30c2dujv047vh1CT4UXKxq7vrjcJWjNzZz",
+          "widthPx": 5304,
+          "heightPx": 7952,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZmbKEA46CkGurJ1Szj6UdFzjjyRbF57qQ1NzU3KCEcS_u48ickPY48SUCqqFRuxFMlXdQNNV2T1CnhWPTYk_6eDRMk2Y3kc50wh8NpNKqgx5SZNMvm-KPQxk_O8c5h1HBY8A5CP3H8uJJ2mietly-qJLkie61ZsE3iO",
+          "widthPx": 5304,
+          "heightPx": 7952,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZkHuDFXc4BX56sWd417Q9NQXmH5kZcr-MSU5ZF1sfNE3nSiKGGiESInXdNYDZzyKuxh2uveQPLavxVgHtsSMdydylKnbWWrfODLcB3e7EsWj2RkP7HaepmqlrHU5EC_A58PdlTMr4Fp9p2za-Ga51xpXfARMaL_xQTz",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Michelle Noonan",
+              "uri": "//maps.google.com/maps/contrib/115099469655713265937",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocKRsH1e39r2k7s_zzbcCfbe1iKm_OMCIh4dSkp6LyQWkHrWXQ=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZlBH2Z5ZHbRIX1PYeLduOrx9ptUyI7YacEPU92X6Sdot3Wp7PX205SvezkMFdWgLon6UigHQIqLqHuoqqV2DYNdQfPK4gSb8tV2YxO4Biq4AgF2Nz5A4yDi2-JBDUcumOlZBNEq-xy4l1oTTL11uuPuP3qMUOW-5miP",
+          "widthPx": 6000,
+          "heightPx": 4000,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZmA-lUHAZ3nh9CgvY9Vesyj6-q5r75VVM52aLAU1K0oRzdzGLSsMgB5PUdWnrq98emkQ62qtbWiOcGidYI95Drywvt9yIIXvoaQP2CYsMPOz8vov00Ve1y4H_j6FBtoeWlzi13LamfpaEEsb4KiIsjLLp_sYh3XU-9o",
+          "widthPx": 6984,
+          "heightPx": 4658,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZnAT_CvIT00N1wsPWnKf97QVQ5tKTqXCCeJ4sg7Vp9wOm-RoDKIU-SGAebeQysMsn-Ex6WMs57DytbWfM3D3_HAi9gh8QpovdfR1PmGpyywb5Rt-Z0NvEWzH0085lRR-ib7q6mcLHJYSab3KYwQn1B1UKc5pPmQIfX-",
+          "widthPx": 1080,
+          "heightPx": 811,
+          "authorAttributions": [
+            {
+              "displayName": "Bosco On Bleecker",
+              "uri": "//maps.google.com/maps/contrib/100598308586381412774",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocL2vUJLX9cide4skTEM7nR3-SWIqCl9zZWk1ZcjXF9XnVNbJw=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/photos/AUGGfZn6ONB5fxE47rjFyHwl93mfpJSMQBKaS6ByozKG2LTVR2ZqRRQTWOPMwO-RjCxtgkscjr5_2226mseZeAxc5Bu5NInBgsMi2889H5Fr3_ocJtn9-5XG_rdwvVMbpuE6noHWTgrOt511rD8oIOk3li9VBfqEtL-FknP4",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Carly Pisarri",
+              "uri": "//maps.google.com/maps/contrib/100330441817737024255",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjXCKs4w-3P_nqNd6sKITEqDxg_txDHE8wyCGyUUoFhydCrWCcoU=s100-p-k-no-mo"
+            }
+          ]
+        }
+      ],
+      "outdoorSeating": true,
+      "liveMusic": false,
+      "servesCocktails": true,
+      "restroom": true,
+      "goodForGroups": true,
+      "goodForWatchingSports": true,
+      "paymentOptions": {
+        "acceptsCreditCards": true,
+        "acceptsDebitCards": true,
+        "acceptsCashOnly": false,
+        "acceptsNfc": true
+      },
+      "accessibilityOptions": {
+        "wheelchairAccessibleParking": false,
+        "wheelchairAccessibleEntrance": true,
+        "wheelchairAccessibleRestroom": true
+      },
+      "generativeSummary": {
+        "overview": {
+          "text": "Tacos and other Mexican eats share the menu with Latin-inspired cocktails at this craft bar.",
+          "languageCode": "en-US"
+        },
+        "description": {
+          "text": "Cozy Greenwich Village cocktail bar offering Mexican food and brunch.\nThe menu features dishes such as tacos, guacamole, chicken wings, and elote. Customers like the drinks, including margaritas and mezcal negronis.\nThere's a happy hour, as well as live music and trivia nights. People appreciate the fast service and the friendly, attentive staff.\nCustomers typically spend $20–30.",
+          "languageCode": "en-US"
+        },
+        "references": {
+          "reviews": [
+            {
+              "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChZDSUhNMG9nS0VJQ0FnSUNKOU5xU2ZnEAE",
+              "relativePublishTimeDescription": "11 months ago",
+              "rating": 5,
+              "text": {
+                "text": "Went for happy hour with the gals and had the best time. The food and drink was unreal, and our server Niamh C was so lovely and made us feel so welcome. Would definitely come back!",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Went for happy hour with the gals and had the best time. The food and drink was unreal, and our server Niamh C was so lovely and made us feel so welcome. Would definitely come back!",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Kate Shortall",
+                "uri": "https://www.google.com/maps/contrib/116622134499626170301/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKuyYu4ddCOTJU948yFeap2g5JjvpzzjuG2CcBgDhqjGDeYlw=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-06-21T23:06:22Z"
+            },
+            {
+              "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChZDSUhNMG9nS0VJQ0FnSURKeHRPd0RREAE",
+              "relativePublishTimeDescription": "10 months ago",
+              "rating": 5,
+              "text": {
+                "text": "The place was very inviting and homely, the food was spectacular but the standout feature had to be the staff, our server was a nice Irish boy named caoimhin he was extremely kind and very helpful would 100% come again and would request him again",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "The place was very inviting and homely, the food was spectacular but the standout feature had to be the staff, our server was a nice Irish boy named caoimhin he was extremely kind and very helpful would 100% come again and would request him again",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "James McCauley",
+                "uri": "https://www.google.com/maps/contrib/100410321292017478910/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJYZxR2FrtSiUduH13gIFmBHANhbIrc2yKBKHhahr4U_tu36Q=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-07-15T23:58:08Z"
+            },
+            {
+              "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSUN4bWZlWnhnRRAB",
+              "relativePublishTimeDescription": "a year ago",
+              "rating": 5,
+              "text": {
+                "text": "Service was great and the food was pretty decent for NYC Mexican food",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Service was great and the food was pretty decent for NYC Mexican food",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Blaing Laing",
+                "uri": "https://www.google.com/maps/contrib/101680463742314684881/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXUXY60q4LzUAyU7TjT6AEy8wJcj4dQNAsZcdOenlUg-wQNccXSIA=s128-c0x00000000-cc-rp-mo-ba4"
+              },
+              "publishTime": "2023-05-21T05:53:59Z"
+            },
+            {
+              "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSURKaWJhWjlBRRAB",
+              "relativePublishTimeDescription": "10 months ago",
+              "rating": 5,
+              "text": {
+                "text": "Got some lovely food and cocktails here. All the staff were a credit to the establishment but one Irish guy called Caoimhin was exceptional. You could see he had a true passion for his job !",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Got some lovely food and cocktails here. All the staff were a credit to the establishment but one Irish guy called Caoimhin was exceptional. You could see he had a true passion for his job !",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "John O keeffe",
+                "uri": "https://www.google.com/maps/contrib/108374593037363248520/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJuGc4cJtV2vqHKrc24Q3Gz0-IK75l1cugnhTRH7rtWGjufEg=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-07-19T10:30:43Z"
+            },
+            {
+              "name": "places/ChIJY3QILvlZwokRbb7uBOUi1aI/reviews/ChdDSUhNMG9nS0VJQ0FnSURKeHN2Z3RRRRAB",
+              "relativePublishTimeDescription": "10 months ago",
+              "rating": 5,
+              "text": {
+                "text": "I was in town and stopped by. Was tended to fantastically by Evan a very diligent employee who catered to all our needs, requests and questions. Very happy with my experience because of him",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "I was in town and stopped by. Was tended to fantastically by Evan a very diligent employee who catered to all our needs, requests and questions. Very happy with my experience because of him",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Liam Barry",
+                "uri": "https://www.google.com/maps/contrib/115473950977907788437/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJNwTHKhtK2dR2wbR3S478NbjuV-8h-7xgcrT0F2-rv79igvw=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-07-16T00:07:41Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA",
+      "id": "ChIJ03Ng85FZwokRAn7njPV6FfA",
+      "types": [
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(212) 475-7775",
+      "internationalPhoneNumber": "+1 212-475-7775",
+      "formattedAddress": "206 Sullivan St, New York, NY 10012, USA",
+      "addressComponents": [
+        {
+          "longText": "206",
+          "shortText": "206",
+          "types": [
+            "street_number"
+          ],
+          "languageCode": "en-US"
+        },
+        {
+          "longText": "Sullivan Street",
+          "shortText": "Sullivan St",
+          "types": [
+            "route"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "Manhattan",
+          "shortText": "Manhattan",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "New York",
+          "types": [
+            "locality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York County",
+          "shortText": "New York County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "NY",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "United States",
+          "shortText": "US",
+          "types": [
+            "country",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "10012",
+          "shortText": "10012",
+          "types": [
+            "postal_code"
+          ],
+          "languageCode": "en-US"
+        }
+      ],
+      "plusCode": {
+        "globalCode": "87G7PXHX+JV",
+        "compoundCode": "PXHX+JV New York, NY, USA"
+      },
+      "location": {
+        "latitude": 40.7291136,
+        "longitude": -74.000337399999992
+      },
+      "viewport": {
+        "low": {
+          "latitude": 40.7277375197085,
+          "longitude": -74.0016292802915
+        },
+        "high": {
+          "latitude": 40.7304354802915,
+          "longitude": -73.998931319708475
+        }
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=17299868738663185922",
+      "websiteUri": "http://www.senzaglutennyc.com/",
+      "regularOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 0,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 1,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 2,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 3,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 4,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 5,
+              "hour": 23,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 12,
+              "minute": 0
+            },
+            "close": {
+              "day": 6,
+              "hour": 23,
+              "minute": 0
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 12:00 – 11:00 PM",
+          "Tuesday: 12:00 – 11:00 PM",
+          "Wednesday: 12:00 – 11:00 PM",
+          "Thursday: 12:00 – 11:00 PM",
+          "Friday: 12:00 – 11:00 PM",
+          "Saturday: 12:00 – 11:00 PM",
+          "Sunday: 12:00 – 11:00 PM"
+        ]
+      },
+      "utcOffsetMinutes": -240,
+      "adrFormatAddress": "\u003cspan class=\"street-address\"\u003e206 Sullivan St\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNew York\u003c/span\u003e, \u003cspan class=\"region\"\u003eNY\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e10012\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+      "businessStatus": "OPERATIONAL",
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "userRatingCount": 1167,
+      "iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "iconBackgroundColor": "#FF9E67",
+      "displayName": {
+        "text": "Senza Gluten",
+        "languageCode": "en"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Restaurant",
+        "languageCode": "en-US"
+      },
+      "takeout": true,
+      "delivery": true,
+      "dineIn": true,
+      "reservable": true,
+      "servesLunch": true,
+      "servesDinner": true,
+      "servesBeer": true,
+      "servesWine": true,
+      "servesBrunch": true,
+      "servesVegetarianFood": true,
+      "currentOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            },
+            "close": {
+              "day": 0,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            },
+            "close": {
+              "day": 6,
+              "hour": 23,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 12:00 – 11:00 PM",
+          "Tuesday: 12:00 – 11:00 PM",
+          "Wednesday: 12:00 – 11:00 PM",
+          "Thursday: 12:00 – 11:00 PM",
+          "Friday: 12:00 – 11:00 PM",
+          "Saturday: 12:00 – 11:00 PM",
+          "Sunday: 12:00 – 11:00 PM"
+        ]
+      },
+      "primaryType": "restaurant",
+      "shortFormattedAddress": "206 Sullivan St, New York",
+      "editorialSummary": {
+        "text": "Gluten-free versions of classic Italian dishes offered in a warm, intimate atmosphere.",
+        "languageCode": "en"
+      },
+      "reviews": [
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChZDSUhNMG9nS0VJQ0FnSURqcjRPU0RREAE",
+          "relativePublishTimeDescription": "3 weeks ago",
+          "rating": 5,
+          "text": {
+            "text": "Enjoyed every single thing I ate at this establishment. I'm not from NY so I made sure to make time to come here during my trip. It did not disappoint! It felt so great to eat delicious food without being worried about safety (I'm a newly diagnosed celiac). I will come here every time I'm in NYC, so you should go too!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Enjoyed every single thing I ate at this establishment. I'm not from NY so I made sure to make time to come here during my trip. It did not disappoint! It felt so great to eat delicious food without being worried about safety (I'm a newly diagnosed celiac). I will come here every time I'm in NYC, so you should go too!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Christina S.",
+            "uri": "https://www.google.com/maps/contrib/102587785465493817279/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVu3RDOpHDjp99SFuf5hk_HezWx9WKRYNkMjpjf8OvG0SYBE111AQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-05-09T01:50:12Z"
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSURUMDRHQzJnRRAB",
+          "relativePublishTimeDescription": "in the last week",
+          "rating": 5,
+          "text": {
+            "text": "For those Gluten free this is a must try. You can get your Italian fix with the great staff and helpful service. The lasagna and Mushroom Ravioli were delightful. Chicken parm you can skip.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "For those Gluten free this is a must try. You can get your Italian fix with the great staff and helpful service. The lasagna and Mushroom Ravioli were delightful. Chicken parm you can skip.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Jonathan Greenberg",
+            "uri": "https://www.google.com/maps/contrib/110888653527871863644/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV6y7fW7cVW7DQ2tiFe5qVJXYkczkYe6NStI-wSv40Mp3gOvXtR=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2024-05-27T14:59:47Z"
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChZDSUhNMG9nS0VJQ0FnSUNUcjlIU1Z3EAE",
+          "relativePublishTimeDescription": "a week ago",
+          "rating": 5,
+          "text": {
+            "text": "\"I recently dined with my family and was thoroughly impressed. The menu offers a fantastic variety of gluten-free dishes, all of which were delicious and beautifully presented. From the appetizers to the desserts, every bite was a culinary delight.\n\nThe service was equally outstanding. The staff was knowledgeable, attentive, and went above and beyond to ensure a wonderful dining experience. I highly recommend for anyone seeking amazing gluten-free cuisine and exceptional service.\"",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "\"I recently dined with my family and was thoroughly impressed. The menu offers a fantastic variety of gluten-free dishes, all of which were delicious and beautifully presented. From the appetizers to the desserts, every bite was a culinary delight.\n\nThe service was equally outstanding. The staff was knowledgeable, attentive, and went above and beyond to ensure a wonderful dining experience. I highly recommend for anyone seeking amazing gluten-free cuisine and exceptional service.\"",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Marga Caceres Cortes",
+            "uri": "https://www.google.com/maps/contrib/110699437980942810639/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVrmyeqWSrcqObNbXIvPRn4L9aVPyHY70oy79PAv_N9HoBupRSmPA=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-05-20T15:37:53Z"
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChZDSUhNMG9nS0VJQ0FnSURUaVplZFZREAE",
+          "relativePublishTimeDescription": "in the last week",
+          "rating": 5,
+          "text": {
+            "text": "If you’re celiac/GF- you’ve got to go here! It’s incredible to not have to worry about any cross contamination. The ambiance is very much like a little slice of Italy in New York. The food is very American- Italian so it’s good, but it’s not great. Will definitely come back because I have celiac!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "If you’re celiac/GF- you’ve got to go here! It’s incredible to not have to worry about any cross contamination. The ambiance is very much like a little slice of Italy in New York. The food is very American- Italian so it’s good, but it’s not great. Will definitely come back because I have celiac!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Samantha S.",
+            "uri": "https://www.google.com/maps/contrib/106425201491865639012/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI1OYkfe0vQmsvrn1TduyTl8TTlqyMYq__O8E3ycHQfMmGmkUs=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2024-05-25T17:23:33Z"
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChZDSUhNMG9nS0VJQ0FnSUM5c2ZqOUh3EAE",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "What an amazing experience. Food, staff, atmosphere 20/10. My wife had the 4 cheese and spinach gnocchi and I think she was almost brought to tears lol my seafood spaghetti was phenomenal. Empty plates and not a drop of food left. With this being 100% gluten free, this was a dream. Thank you for the experience!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "What an amazing experience. Food, staff, atmosphere 20/10. My wife had the 4 cheese and spinach gnocchi and I think she was almost brought to tears lol my seafood spaghetti was phenomenal. Empty plates and not a drop of food left. With this being 100% gluten free, this was a dream. Thank you for the experience!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Melissa Mak",
+            "uri": "https://www.google.com/maps/contrib/113012392207345897950/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVuJjayrt65yP__4H9L3-1Md-27a52AJ6J-oIowOcD28y5R9GoZ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-03-06T16:37:53Z"
+        }
+      ],
+      "photos": [
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZkp3Ibm5sgzdGQra1bdCQ31e2IclFrQAAkfjwxFQXu9KxHspnjaDMUcN0wnksN36DFqZyufjaN3N3iMmPX21cczuPMf7RRbSARgaFagNBG3cS6uJ26eTSyY9Q5Ait8WbX3vYoOBD_8bokThPg4j5iSxbwPftEMiXg5E",
+          "widthPx": 2012,
+          "heightPx": 1292,
+          "authorAttributions": [
+            {
+              "displayName": "Ruwan J.",
+              "uri": "//maps.google.com/maps/contrib/117808460219123378764",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjV3ZsyPMrEbmnRJbxSupxbpG5ZfsK3pdnD-bBbakYI8iI5ZpieMkQ=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZlW2_f9rpJEz9baR70RS26YCMjZNjWq1v08MYqL0LEFGLvUGJu1hxQMD_KBSGsrkScORooCmS5e4ZjhIWLgXe8tjmMco3-Th0HKyqVezodSbU8NvOlP2Vbaq90jbl7tDvc1rvTWU6tx1L1wAEjc2pa4m38LHGsHlogK",
+          "widthPx": 4032,
+          "heightPx": 3024,
+          "authorAttributions": [
+            {
+              "displayName": "T Funk",
+              "uri": "//maps.google.com/maps/contrib/104698659376730196128",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVtLVL7ZOM7dWY34XdRMWHU5r31q5xTzWSrPcy9SC6FjTlAf4Vl5Q=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZmEzQSMkAi97UNceoVKahqMLRDf6TXzHAp6BJY6PmLknkXm3PNRxX9d26xAMgNU5uADSeHbpcvQQP-1xTWc4Z-H2GuEJpYY_k2hDeisgJPuqFMxScHd6Xao_bo8QNPTCoVwjLs0Dz0P4sOJGhWV_mjV7G2DLewrtOeO",
+          "widthPx": 4032,
+          "heightPx": 3024,
+          "authorAttributions": [
+            {
+              "displayName": "Ronald Obmaces",
+              "uri": "//maps.google.com/maps/contrib/109327413015185278007",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWv4YWu8ttRlWmAxps6Y8wLoiP4gJr-V9YCGKrEtNMX6Ty9-NCV_A=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZntRlR1--wzxzEWQlOlMQS3q-mOOTIU-rEX_PqJkmUa6rmr8_IrGk9cdYHlF_5zQcjEZq-7XUJDa-eOnTGBrTtOXGwDxU4GPKa61ypTEDf0VOWx-u7fxZY9Refp2Cw1g8BzdM5POXxnSahH9I7wA7Nvnie6beWsGIw",
+          "widthPx": 4000,
+          "heightPx": 3000,
+          "authorAttributions": [
+            {
+              "displayName": "Michael Kelly",
+              "uri": "//maps.google.com/maps/contrib/100114475100992665629",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVcQ02qFOxIPTSxLe1CkH4iQ1PDizZHhnTyApFsNnYoLWYs0_Qh=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZnXB8lotTB8vtwg2OtQt83AOoLSVgc78S7l7z3MhaI-j5MwPIhaYTcchtbtUten6z2SclLk6bfRMmw_k3ETIeIXGXcw2ZaDEnij1_d532TCu8gTh9VIG0NboloJ8VCHB413U8BVGeR1ET14YLI4VfC0wxHGoKtJQPrh",
+          "widthPx": 4032,
+          "heightPx": 3024,
+          "authorAttributions": [
+            {
+              "displayName": "Dawn Parness",
+              "uri": "//maps.google.com/maps/contrib/108697655447887894644",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjV0JN4tQdv-UOhcDr6C9wusECrB8UqedJgvvFqDON_3nwOD6Q95Lg=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZk2m-fncLZmf_o7pkzxU-9fQ8d_BaOWnC160V48DQ0-7Eh7iiObCopToYv8NDQxAdO_rwovhSdCPOJ2mDIyEVkPj2AJBrOslKVxW5j4JiG3tqd7dFZnWl9tC8h_Nzg1jIDOsJSZRofZF0srTVkYclOOX3S8DyKtZEP4",
+          "widthPx": 4032,
+          "heightPx": 3024,
+          "authorAttributions": [
+            {
+              "displayName": "Jeff Edwards",
+              "uri": "//maps.google.com/maps/contrib/100642121585490899423",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWMH3HAeAO463nKzyx997O5aqs3CixJ16xSxf_UBCH_Svdduz2J=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZmPCC-cIiTaIhaaUY-zTkq2i-b6Z6k1P9bT4xZ7dyrnUBsE_N5bG0m5CWHlgYvnVzsrneOZEF2rMzINNYdUHrK_-cDjz685aAG-u0kXmtI3tInowdwOY1gD3BRf_rWJ0ABAXI3W4kaUHBmQpIAy9C9n-JKKSSSgqUV7",
+          "widthPx": 1594,
+          "heightPx": 1655,
+          "authorAttributions": [
+            {
+              "displayName": "Nuppi Nupper",
+              "uri": "//maps.google.com/maps/contrib/110068858157800967212",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVQMMICv6RP75EK7nMzZGU-Iu18ZQcPZl0gh8d1rMM5dGY5b6Q=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZkzP0KWhpFyFxNNnwcjM2gM2ZqqYJwjL06KK11pt87_D50vUfN-WROTKqFqmX0dpsdkGqpvXhNnE2sz2IoNrYoqukzDy2G4_-v0Lp9dDa07h2NwnGN1nnw43JPJ99R_Fd6z2vRKTTbVGzU73NzPWXj4Vs9iwJAzEIyF",
+          "widthPx": 4284,
+          "heightPx": 5712,
+          "authorAttributions": [
+            {
+              "displayName": "Marga Caceres Cortes",
+              "uri": "//maps.google.com/maps/contrib/110699437980942810639",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVrmyeqWSrcqObNbXIvPRn4L9aVPyHY70oy79PAv_N9HoBupRSmPA=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZm8SNd86Eq8_cUurv2_ylrdpBAiHcnNeffLUvLk1bU2uS83VpLLi5qZjPDYpPehsavaQEvaqZvMaKsXBwEzxNAhbHWGyP_DJXkLuGvd8hsvZzA8Dp0P7ZRg1t_tIyBmYxkFh38FFSq-Rsllg1yRuw1SesWivQyUbXv6",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Scott Harding",
+              "uri": "//maps.google.com/maps/contrib/108313448670556843670",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjXNGG8p_pFQJZP-dNCK2DawLjGY0n6XuAzoQptMonHdq_OpWYXI=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/photos/AUGGfZl_QwA3xko1obhOJr6vz7dvVEds9WTBAqxAoFYHBMBKW3fiDslkvqlf9ygRzrbfKKf6zEl8kcY8xJ5WTT6IxLgsGv9Ba1-NHXZQ0yGK1su6f9o7s01DdTCoKCjZFxD8-4D6TIArcffcDor_As8J7qXd43h2SNNvfZWw",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Nicholas Liveris",
+              "uri": "//maps.google.com/maps/contrib/118319270655026681326",
+              "photoUri": "//lh3.googleusercontent.com/a/ACg8ocI6EwZrPpMp269kt_lKYrpEcC01bqPFTmstemSy2yE9DwhzSw=s100-p-k-no-mo"
+            }
+          ]
+        }
+      ],
+      "outdoorSeating": true,
+      "liveMusic": false,
+      "menuForChildren": false,
+      "servesCocktails": true,
+      "servesDessert": true,
+      "servesCoffee": true,
+      "allowsDogs": false,
+      "restroom": true,
+      "goodForGroups": true,
+      "goodForWatchingSports": false,
+      "paymentOptions": {
+        "acceptsCreditCards": true,
+        "acceptsDebitCards": true,
+        "acceptsCashOnly": false
+      },
+      "parkingOptions": {
+        "valetParking": false
+      },
+      "accessibilityOptions": {
+        "wheelchairAccessibleParking": false,
+        "wheelchairAccessibleEntrance": true,
+        "wheelchairAccessibleSeating": true
+      },
+      "generativeSummary": {
+        "overview": {
+          "text": "Gluten-free Italian cuisine is served at this casual restaurant with a full bar.",
+          "languageCode": "en-US"
+        },
+        "description": {
+          "text": "Cozy, romantic restaurant in Greenwich Village offering 100% gluten-free Italian food for lunch and dinner, plus dessert, coffee, and cocktails. Vegetarian and healthy options are available.\nPopular dishes include pasta, lasagna, and tiramisu.\nDiners say the staff is attentive and the service is fast. The owner is described as sweet. Some people praise the atmosphere.\nCustomers typically spend $30–50.",
+          "languageCode": "en-US"
+        },
+        "references": {
+          "reviews": [
+            {
+              "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSUN4NTZQMDl3RRAB",
+              "relativePublishTimeDescription": "a year ago",
+              "rating": 5,
+              "text": {
+                "text": "Leny was the best waiter! Kitchen was closing and he was able to find us a table super quickly and we were able to eat.",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Leny was the best waiter! Kitchen was closing and he was able to find us a table super quickly and we were able to eat.",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Josefina Lecumberri",
+                "uri": "https://www.google.com/maps/contrib/107973911144169200666/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI-tzaMmAf7rTQZefXyNoj7GcT5odX_GEDaUMYZ7IcUcVb-sg=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-05-28T01:50:11Z"
+            },
+            {
+              "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSUN4enV2YXlBRRAB",
+              "relativePublishTimeDescription": "a year ago",
+              "rating": 5,
+              "text": {
+                "text": "Absolutely in love with this place! Been here multiple times because of my gluten and dairy allergies. Owner is super sweet and staff is super attentive. Definitely go here, I bring my non allergy friends too!",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Absolutely in love with this place! Been here multiple times because of my gluten and dairy allergies. Owner is super sweet and staff is super attentive. Definitely go here, I bring my non allergy friends too!",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Katie Burke",
+                "uri": "https://www.google.com/maps/contrib/115067472362098653395/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVB0-kjZhjb9YlamZezjFxTxS2NIB-ysfZyP6vl-vn3tbzmK4t1=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-05-17T18:45:41Z"
+            },
+            {
+              "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSUNKb1plejNRRRAB",
+              "relativePublishTimeDescription": "11 months ago",
+              "rating": 3,
+              "text": {
+                "text": "Overall I’d give Senza Gluten a 3.5 rating. I’m incredibly thankful that there is a space to have a 100% gluten free meal that’s safe for celiacs. The restaurant is typically busy and the staff is overwhelmed but remain professional and kind. There are a lot of options and the food is pretty good.  I find the food to be incredibly expensive for the quality. While you get a decent portion size for appetizers and mains the desserts are tiny and all cost $17 or more. I ordered the cannoli and received 2 pinky sized cannolis at almost $10 each, it’s a bit insulting. I’ll always go back because of the need to eat gluten free but I’ll just go around the corner to poshpop bakery if I feel like dessert.",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Overall I’d give Senza Gluten a 3.5 rating. I’m incredibly thankful that there is a space to have a 100% gluten free meal that’s safe for celiacs. The restaurant is typically busy and the staff is overwhelmed but remain professional and kind. There are a lot of options and the food is pretty good.  I find the food to be incredibly expensive for the quality. While you get a decent portion size for appetizers and mains the desserts are tiny and all cost $17 or more. I ordered the cannoli and received 2 pinky sized cannolis at almost $10 each, it’s a bit insulting. I’ll always go back because of the need to eat gluten free but I’ll just go around the corner to poshpop bakery if I feel like dessert.",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Schantel Williams",
+                "uri": "https://www.google.com/maps/contrib/114311737212512886581/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIKFYiYifLlONE7w_rg363ecK7D3ts65v5h90qY3Ujn4K7gnA=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-06-29T01:44:17Z"
+            },
+            {
+              "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSUR4ajRpd3pBRRAB",
+              "relativePublishTimeDescription": "11 months ago",
+              "rating": 5,
+              "text": {
+                "text": "Fantastic place.  Amazing atmosphere, staff and especially food.  The bread bowl is delicious and gluten free!",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "Fantastic place.  Amazing atmosphere, staff and especially food.  The bread bowl is delicious and gluten free!",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Doug Henderson",
+                "uri": "https://www.google.com/maps/contrib/113308189071373677606/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ3AvFtsMfcMT34MF_juF4P_VjRl6fnMcFEbx1twI2HqdrtAw=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-06-17T02:30:01Z"
+            },
+            {
+              "name": "places/ChIJ03Ng85FZwokRAn7njPV6FfA/reviews/ChdDSUhNMG9nS0VJQ0FnSURKakk2UHZ3RRAB",
+              "relativePublishTimeDescription": "10 months ago",
+              "rating": 5,
+              "text": {
+                "text": "I wanted to write this quick review cause i have been very surprised from this resturant. The service was flawless and the food was great. The menu is italian based and as italian i was impressed by the quality. The only recommendation goes to the spaghetti alle vongole which i prefer it to be a bit more salty or at least for the italian taste, i’d say it wasn’t enough salty. However, other than that, all was great and definitely i’d reccomend it to everyone italians and not!",
+                "languageCode": "en"
+              },
+              "originalText": {
+                "text": "I wanted to write this quick review cause i have been very surprised from this resturant. The service was flawless and the food was great. The menu is italian based and as italian i was impressed by the quality. The only recommendation goes to the spaghetti alle vongole which i prefer it to be a bit more salty or at least for the italian taste, i’d say it wasn’t enough salty. However, other than that, all was great and definitely i’d reccomend it to everyone italians and not!",
+                "languageCode": "en"
+              },
+              "authorAttribution": {
+                "displayName": "Matteo Nencioni",
+                "uri": "https://www.google.com/maps/contrib/106736553689671769052/reviews",
+                "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyQ0u-AmKxWSSZ8qYIQssC45xx4RKHzDZHZiZkPTYVsU5hqCbD=s128-c0x00000000-cc-rp-mo"
+              },
+              "publishTime": "2023-07-12T02:30:35Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk",
+      "id": "ChIJHzLX85FZwokRxM9KZpgq6Qk",
+      "types": [
+        "american_restaurant",
+        "night_club",
+        "bar",
+        "event_venue",
+        "restaurant",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(212) 260-7993",
+      "internationalPhoneNumber": "+1 212-260-7993",
+      "formattedAddress": "167 Bleecker St, New York, NY 10012, USA",
+      "addressComponents": [
+        {
+          "longText": "167",
+          "shortText": "167",
+          "types": [
+            "street_number"
+          ],
+          "languageCode": "en-US"
+        },
+        {
+          "longText": "Bleecker Street",
+          "shortText": "Bleecker St",
+          "types": [
+            "route"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "Manhattan",
+          "shortText": "Manhattan",
+          "types": [
+            "sublocality_level_1",
+            "sublocality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "New York",
+          "types": [
+            "locality",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York County",
+          "shortText": "New York County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "New York",
+          "shortText": "NY",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "United States",
+          "shortText": "US",
+          "types": [
+            "country",
+            "political"
+          ],
+          "languageCode": "en"
+        },
+        {
+          "longText": "10012",
+          "shortText": "10012",
+          "types": [
+            "postal_code"
+          ],
+          "languageCode": "en-US"
+        }
+      ],
+      "plusCode": {
+        "globalCode": "87G7PXHX+GX",
+        "compoundCode": "PXHX+GX New York, NY, USA"
+      },
+      "location": {
+        "latitude": 40.7288232,
+        "longitude": -74.000119500000011
+      },
+      "viewport": {
+        "low": {
+          "latitude": 40.72741356970851,
+          "longitude": -74.001535180291526
+        },
+        "high": {
+          "latitude": 40.730111530291509,
+          "longitude": -73.99883721970852
+        }
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=714148849954508740",
+      "websiteUri": "https://waysandmeansnyc.com/",
+      "regularOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 11,
+              "minute": 0
+            },
+            "close": {
+              "day": 1,
+              "hour": 0,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 15,
+              "minute": 30
+            },
+            "close": {
+              "day": 2,
+              "hour": 0,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 15,
+              "minute": 30
+            },
+            "close": {
+              "day": 3,
+              "hour": 0,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 15,
+              "minute": 30
+            },
+            "close": {
+              "day": 4,
+              "hour": 0,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 15,
+              "minute": 30
+            },
+            "close": {
+              "day": 5,
+              "hour": 2,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 11,
+              "minute": 0
+            },
+            "close": {
+              "day": 6,
+              "hour": 3,
+              "minute": 0
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 11,
+              "minute": 0
+            },
+            "close": {
+              "day": 0,
+              "hour": 4,
+              "minute": 0
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 3:30 PM – 12:00 AM",
+          "Tuesday: 3:30 PM – 12:00 AM",
+          "Wednesday: 3:30 PM – 12:00 AM",
+          "Thursday: 3:30 PM – 2:00 AM",
+          "Friday: 11:00 AM – 3:00 AM",
+          "Saturday: 11:00 AM – 4:00 AM",
+          "Sunday: 11:00 AM – 12:00 AM"
+        ]
+      },
+      "utcOffsetMinutes": -240,
+      "adrFormatAddress": "\u003cspan class=\"street-address\"\u003e167 Bleecker St\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNew York\u003c/span\u003e, \u003cspan class=\"region\"\u003eNY\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e10012\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+      "businessStatus": "OPERATIONAL",
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "userRatingCount": 30,
+      "iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "iconBackgroundColor": "#FF9E67",
+      "displayName": {
+        "text": "Ways and Means",
+        "languageCode": "en"
+      },
+      "primaryTypeDisplayName": {
+        "text": "American Restaurant",
+        "languageCode": "en-US"
+      },
+      "takeout": true,
+      "delivery": true,
+      "dineIn": true,
+      "curbsidePickup": true,
+      "reservable": true,
+      "servesBreakfast": true,
+      "servesLunch": true,
+      "servesDinner": true,
+      "servesBeer": true,
+      "servesWine": true,
+      "servesBrunch": true,
+      "servesVegetarianFood": true,
+      "currentOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "hour": 11,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 1,
+              "hour": 15,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 3
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 0,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 15,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 4
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 0,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 15,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 23,
+              "minute": 59,
+              "truncated": true,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 5
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 15,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 30
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 2,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 11,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 5,
+                "day": 31
+              }
+            },
+            "close": {
+              "day": 6,
+              "hour": 3,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 11,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 1
+              }
+            },
+            "close": {
+              "day": 0,
+              "hour": 4,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 6,
+                "day": 2
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 3:30 PM – 12:00 AM",
+          "Tuesday: 3:30 PM – 12:00 AM",
+          "Wednesday: 3:30 PM – 12:00 AM",
+          "Thursday: 3:30 PM – 2:00 AM",
+          "Friday: 11:00 AM – 3:00 AM",
+          "Saturday: 11:00 AM – 4:00 AM",
+          "Sunday: 11:00 AM – 12:00 AM"
+        ]
+      },
+      "currentSecondaryOpeningHours": [
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 1,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 3
+                }
+              },
+              "close": {
+                "day": 1,
+                "hour": 20,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 3
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 2,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 4
+                }
+              },
+              "close": {
+                "day": 2,
+                "hour": 20,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 4
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 3,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 5
+                }
+              },
+              "close": {
+                "day": 3,
+                "hour": 20,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 5
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 4,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 30
+                }
+              },
+              "close": {
+                "day": 4,
+                "hour": 20,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 30
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              },
+              "close": {
+                "day": 5,
+                "hour": 20,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: 3:00 – 8:00 PM",
+            "Tuesday: 3:00 – 8:00 PM",
+            "Wednesday: 3:00 – 8:00 PM",
+            "Thursday: 3:00 – 8:00 PM",
+            "Friday: 3:00 – 8:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+          ],
+          "secondaryHoursType": "HAPPY_HOUR"
+        },
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 11,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 2
+                }
+              },
+              "close": {
+                "day": 0,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 2
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 11,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              },
+              "close": {
+                "day": 5,
+                "hour": 17,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 5,
+                  "day": 31
+                }
+              }
+            },
+            {
+              "open": {
+                "day": 6,
+                "hour": 11,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 1
+                }
+              },
+              "close": {
+                "day": 6,
+                "hour": 15,
+                "minute": 0,
+                "date": {
+                  "year": 2024,
+                  "month": 6,
+                  "day": 1
+                }
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 11:00 AM – 5:00 PM",
+            "Saturday: 11:00 AM – 3:00 PM",
+            "Sunday: 11:00 AM – 5:00 PM"
+          ],
+          "secondaryHoursType": "BRUNCH"
+        }
+      ],
+      "regularSecondaryOpeningHours": [
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 1,
+                "hour": 15,
+                "minute": 0
+              },
+              "close": {
+                "day": 1,
+                "hour": 20,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 2,
+                "hour": 15,
+                "minute": 0
+              },
+              "close": {
+                "day": 2,
+                "hour": 20,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 3,
+                "hour": 15,
+                "minute": 0
+              },
+              "close": {
+                "day": 3,
+                "hour": 20,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 4,
+                "hour": 15,
+                "minute": 0
+              },
+              "close": {
+                "day": 4,
+                "hour": 20,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 15,
+                "minute": 0
+              },
+              "close": {
+                "day": 5,
+                "hour": 20,
+                "minute": 0
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: 3:00 – 8:00 PM",
+            "Tuesday: 3:00 – 8:00 PM",
+            "Wednesday: 3:00 – 8:00 PM",
+            "Thursday: 3:00 – 8:00 PM",
+            "Friday: 3:00 – 8:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+          ],
+          "secondaryHoursType": "HAPPY_HOUR"
+        },
+        {
+          "openNow": false,
+          "periods": [
+            {
+              "open": {
+                "day": 0,
+                "hour": 11,
+                "minute": 0
+              },
+              "close": {
+                "day": 0,
+                "hour": 17,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 5,
+                "hour": 11,
+                "minute": 0
+              },
+              "close": {
+                "day": 5,
+                "hour": 17,
+                "minute": 0
+              }
+            },
+            {
+              "open": {
+                "day": 6,
+                "hour": 11,
+                "minute": 0
+              },
+              "close": {
+                "day": 6,
+                "hour": 15,
+                "minute": 0
+              }
+            }
+          ],
+          "weekdayDescriptions": [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 11:00 AM – 5:00 PM",
+            "Saturday: 11:00 AM – 3:00 PM",
+            "Sunday: 11:00 AM – 5:00 PM"
+          ],
+          "secondaryHoursType": "BRUNCH"
+        }
+      ],
+      "primaryType": "american_restaurant",
+      "shortFormattedAddress": "167 Bleecker St, New York",
+      "reviews": [
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/reviews/ChdDSUhNMG9nS0VJQ0FnSUNUMHJhbDBBRRAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 5,
+          "text": {
+            "text": "What a gem! I stumbled on this place in the heart of the village amongst a sea of restaurants. They have an amazing brunch and great drink specials. I had the best Huevos Rancheros i ever had. The manager was very sweet and very inviting which is so refreshing these days. The bartender was very nice and professional and they  had this great jazz band playing as well. Kudos to the chef and team at Ways and Means. I definitely will be back for sure!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "What a gem! I stumbled on this place in the heart of the village amongst a sea of restaurants. They have an amazing brunch and great drink specials. I had the best Huevos Rancheros i ever had. The manager was very sweet and very inviting which is so refreshing these days. The bartender was very nice and professional and they  had this great jazz band playing as well. Kudos to the chef and team at Ways and Means. I definitely will be back for sure!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Joey Deluxe",
+            "uri": "https://www.google.com/maps/contrib/112602747070145569773/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL4C1OHhccr4LyDwDvSVDURLM73omEoWYcbRrP5BjnuD1M5Dw=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-05-12T22:36:34Z"
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/reviews/ChdDSUhNMG9nS0VJQ0FnSURqay03U2l3RRAB",
+          "relativePublishTimeDescription": "3 weeks ago",
+          "rating": 5,
+          "text": {
+            "text": "Went here to celebrate a birthday. 1st time visiting a live comedy show. Unfortunately, there was only myself, my bf and one other person for the show so they informed us that they were going to cancel. They offered us a partial refund or the opportunity to come back to another show. We explained that it was a special night and that we were really looking forward to this event. They then offered to do the show for us three and it was such an awesome experience. The comedians were great, we were so appreciative of them continuing the show and will definitely be back for more!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Went here to celebrate a birthday. 1st time visiting a live comedy show. Unfortunately, there was only myself, my bf and one other person for the show so they informed us that they were going to cancel. They offered us a partial refund or the opportunity to come back to another show. We explained that it was a special night and that we were really looking forward to this event. They then offered to do the show for us three and it was such an awesome experience. The comedians were great, we were so appreciative of them continuing the show and will definitely be back for more!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Sue Grant",
+            "uri": "https://www.google.com/maps/contrib/113698456296644977789/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKsZNzsl_fGefHcFvDFTi0BZXW9N10F5iY9ax2_lBkS29uq9w=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2024-05-07T06:01:44Z"
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/reviews/ChZDSUhNMG9nS0VJQ0FnSUR4b3JxOEFREAE",
+          "relativePublishTimeDescription": "12 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I don’t say this lightly - this might be the best all around menu in Manhattan. The burger is one of my favorites I’ve had in the city, and the cocktails are AMAZING! The bartenders are very fun and easy to talk to and all of the staff is welcoming and friendly. Amazing brunch, professional grade espresso machine for lattes, amazing drinks, AND they have comedy shows in the back every day. Perfect place to become a regular at.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I don’t say this lightly - this might be the best all around menu in Manhattan. The burger is one of my favorites I’ve had in the city, and the cocktails are AMAZING! The bartenders are very fun and easy to talk to and all of the staff is welcoming and friendly. Amazing brunch, professional grade espresso machine for lattes, amazing drinks, AND they have comedy shows in the back every day. Perfect place to become a regular at.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Rachel Griffin",
+            "uri": "https://www.google.com/maps/contrib/107482806674247888937/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLrERWNtDsZnz1Y_UH5qgIKbooEBToKmk3Eqo_DEXlzOB0xKQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2023-06-04T18:33:25Z"
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/reviews/ChdDSUhNMG9nS0VJQ0FnSUNKM1pqWG1BRRAB",
+          "relativePublishTimeDescription": "10 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Very quaint little spot in the Village. The food was delicious. No lie. Seriously the food is crazy good. I ordered the steak quesadilla and my wife ordered the Chicken Alfredo and a side of fries and some fried calamari. The steak quesadilla was full with great seasoned chunks of steak. It came with a side of guacamole,sour cream and salsa. OMG. I recommend 👌🏼. Had a taste of the chicken Alfredo. And it was out of this world. Fries were good. It's fries. The fried calamari was ok. But good. Can't knock them for that. Service was awesome. Very friendly. Coming back to try some more on the menu.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Very quaint little spot in the Village. The food was delicious. No lie. Seriously the food is crazy good. I ordered the steak quesadilla and my wife ordered the Chicken Alfredo and a side of fries and some fried calamari. The steak quesadilla was full with great seasoned chunks of steak. It came with a side of guacamole,sour cream and salsa. OMG. I recommend 👌🏼. Had a taste of the chicken Alfredo. And it was out of this world. Fries were good. It's fries. The fried calamari was ok. But good. Can't knock them for that. Service was awesome. Very friendly. Coming back to try some more on the menu.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Frankie Rodriguez",
+            "uri": "https://www.google.com/maps/contrib/112215069813271765756/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUnT8Wt0JyBUwHI7pVWH5pmRwvBhEFc6FQjY6Tma68O1ajcF_NhvA=s128-c0x00000000-cc-rp-mo-ba5"
+          },
+          "publishTime": "2023-07-27T04:03:14Z"
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/reviews/ChdDSUhNMG9nS0VJQ0FnSUM5NmFlajNRRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Always a good time here. The staff was super friendly and attentive. Next time I'll make sure to catch the comedy show",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Always a good time here. The staff was super friendly and attentive. Next time I'll make sure to catch the comedy show",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "R. Jeter",
+            "uri": "https://www.google.com/maps/contrib/116484522168899933286/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL_0SbY4uOHAiaoLkHT01YWrLb52rrRdNNaWgPXDb2UIGlfmg=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2024-03-07T03:34:49Z"
+        }
+      ],
+      "photos": [
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZkKaGqv67n0n50yBk55WosJp5IUBsW5hvszGsmYXItNXFwXkjGJGkMixsJhE0NINpk_7l00Ulkpc5S-zElZH5p6l07GnQSL0v7W2Jzfoh7x0HFAPZU9rxfWH7RFizVA_S4RR1ZQOr89hxN90C_a0IvWTfqB6YVNi45i",
+          "widthPx": 4080,
+          "heightPx": 3072,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZkaqr__xlYjdn4_zCQBts8Fn8uTOGGxvCEhPbSoRG8OioaW5ySqhsBFGPikUdAbvxpAUa3AyYvowFrOlgQTUhZVvuowyAtwumFSblTmaXvfcigSXofsdEMJqLaiNi2wQqdv91-6I9klKA98H81QG5wAuQ92bLB6BXJS",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZn-yejc2RuMdo0M9JJuPN8RBSNRwfcpUGv-LJvrpEcbGZvrL8aU3F6GY6Kms2CSzuEl4bLboGY0WvmDk8YUqbwdDVUx916m_VUaCTzgjZRiFM1DNeNVtnjBEiQa9MjKJHm3gFeo1lVP8ILkQdJ-_Kvbg7r8b-PNjIht",
+          "widthPx": 3024,
+          "heightPx": 3778,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZl-93CMOr7K5E6kVK7G0dI_ni1Jn_lsdwmwjgBH49rCEnk4tQ3IByJ2HBTg4FLhQxH9uG22MgLZIoNeaeAG1DdcaUmHVPU_FfvcjK9HvNNQyQSBqoeZJtwg3vvvsCLKEMyyc7Hdc2B4nQXYihwWvF55DZl-a6rau4Qs",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZkv15dzolnc8RhLMiU66CW5K8XOCDeP0TqGk6z7JYEvHtJWpzekZWXM_LQp3KciVat_jfsQnbr07zuBodYOe62QcYnGF9gJptrvUf3zkNv1lEQT12Qmb5bk91hmBa_aFzXXGomJ-fpcuM6CRlHG_OsAXvnBG6I0wDzr",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZnf43ne1Y8v1kpKKc56rLjC5kKaLCUiGFWS3YeTuxlZb-JNQB8bBa1G-bF7UkIWbMrte9IbrIdaN2v6MIsDAXmUEC-AxLzm_d3sM5Rx6HUnnpS0uJji7NoGY0PpqVsdHtMbGpNYLLcM7BmujkkLds2IoFQk20ra6sGy",
+          "widthPx": 3024,
+          "heightPx": 4032,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZlm6Tr8W6KqIQf4IOjPY_KczPV9lAaad_PfOkC9NIesRqJ9LKxIwK0jeXSU1GeZzje3jbtaQnAxVOqwIRNMCwdUJxXmPPgiM1gWmeCefaA8yr8Q5dfGdrwFAOX_5TcmQONTRSLzTC8LdysqXi0O8BSUzERUn7X6OBDO",
+          "widthPx": 4080,
+          "heightPx": 3072,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZmjkBisbJlV4ojz6ci2IziJBluudha8xOjyMIGf3PHjWsaj30jxUpylZKiw3E2FBIEI53L4Afgv0IJM7W8X6Ls7Vtv-Npknx77YTtWA0gT_-PotoWpgjgXD1W87fKsaVqB74_58MOQuaBagQ_ywzi6MWFvboeT5GlRC",
+          "widthPx": 1200,
+          "heightPx": 1600,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZmfripWz2xT32AkFLjp5t-Xq7zeI5b6j-83DaYOCe2S5AwBJGIL3cOZfVgfYIACuieEq4ONvLzQyMW8TNJCwBwhAlJVwvbTWkq5Rafao8qxCEQSbSiQBChsIAsDwUv1KzaCbBs6wA6h-DIOo8b2EgYyv1yBdHDJzy_w",
+          "widthPx": 1440,
+          "heightPx": 1796,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        },
+        {
+          "name": "places/ChIJHzLX85FZwokRxM9KZpgq6Qk/photos/AUGGfZmoPlE-HYB8ageIDr_01xz_YGThojcrbWJ9cet-Wba9qVpo67Hy70G-bcJ56ywttBZciscbsqcXk9BGdlSK9aDe1VZ6P9V3J9Z32Vo4cuR_gQd-VfE3U9oN7Tp2lqWkSDHHZ2LEcxHVw4vubS2sYdeS9KqMcl1G3M0z",
+          "widthPx": 3072,
+          "heightPx": 4080,
+          "authorAttributions": [
+            {
+              "displayName": "Ways and Means",
+              "uri": "//maps.google.com/maps/contrib/116177045783148162717",
+              "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVbBQPkgj-Ag9XpSJRL3-bsgNXY-904RrUnE4dtcXP1GBpe3_f5=s100-p-k-no-mo"
+            }
+          ]
+        }
+      ],
+      "outdoorSeating": true,
+      "liveMusic": true,
+      "menuForChildren": true,
+      "servesCocktails": true,
+      "servesDessert": true,
+      "servesCoffee": true,
+      "goodForChildren": true,
+      "allowsDogs": false,
+      "restroom": true,
+      "goodForGroups": true,
+      "goodForWatchingSports": false,
+      "paymentOptions": {
+        "acceptsCreditCards": true,
+        "acceptsDebitCards": true,
+        "acceptsCashOnly": false,
+        "acceptsNfc": true
+      },
+      "accessibilityOptions": {
+        "wheelchairAccessibleParking": true,
+        "wheelchairAccessibleEntrance": true,
+        "wheelchairAccessibleRestroom": true,
+        "wheelchairAccessibleSeating": true
+      }
+    }
+  ]
+}

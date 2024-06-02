@@ -1,12 +1,10 @@
 // Scrape.js defines the routines for scraping Google Maps / Food.google for menu information
 
 // Import puppeteer web scraper module
-const puppeteer = require('puppeteer');
-const gf = require('./parse-gluten-free');
-const codes = require('./gf-codes');
-
-// Redefine timeout
-const TIMEOUT_MS = 10000; 
+import * as puppeteer from "puppeteer";
+import * as gf from './parse-gluten-free.js';
+import * as codes from './gf-codes.js';
+import { browser, initializePuppeteer, page, TIMEOUT_MS } from './scrape-driver.js';
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
@@ -24,12 +22,12 @@ const NOT_FOUND = [];
  * @param {String} mapUri The Google Maps uri to access a specified restauraut
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
-const scrapeMap = async(mapUri) => {
-  // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
+const scrapeMap = async(mapUri) => { 
   // Navigate the page to a URL
+  if (!page || !browser) {
+    await initializePuppeteer();
+  }
+
   await page.goto(mapUri);
 
   // Set screen size
@@ -62,10 +60,11 @@ const scrapeMap = async(mapUri) => {
   } catch (error) {
     // Search other vendors, but Seamless & GrubHub block scraping with Captcha
     //  so it may not be feasible as of now
+    // await browser.close();
     return NOT_FOUND;
   }
 
-  await browser.close();
+  // await browser.close();
   return menuItems;
 };
 
@@ -114,10 +113,4 @@ let log = async(id, url) => {
   console.log(await getGFMenu(id, url));
 }
 
-let test = async() => {
-  log("ChIJ8Q2WSpJZwokRQz-bYYgEskM", "https://maps.app.goo.gl/16AUqQgefQuoBHBk6");
-  log("L6f1WY5XwHvs5Dzu9", "https://maps.app.goo.gl/QaNzDfEq9Y1Zu8xR9");
-  log("ChIJOYhlWR5awokROi9Hpwx0iQI", "https://maps.google.com/?cid=4877966330195296067");
-}
-
-test();
+export { getGFMenu };
