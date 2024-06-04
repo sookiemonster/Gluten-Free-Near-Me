@@ -7,7 +7,9 @@ let findNearby = async() => {
       body: JSON.stringify(data)
    }
 
-   fetch("http://localhost:5000/api/find-nearby", options);
+   fetch("http://localhost:5000/api/find-nearby", options)
+      .then((response) => { return response.json() })
+      .then((resJson) => console.log(resJson));
 }
 
 export { findNearby };
