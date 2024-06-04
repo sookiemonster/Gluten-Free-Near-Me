@@ -22,55 +22,33 @@ const NOT_FOUND = [];
  * @param {String} mapUri The Google Maps uri to access a specified restauraut
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
-const scrapeMap = async(mapUri) => { 
+const scrapeMap = async(mapUri, pageWrapper) => { 
   if (!browser) { await initializePuppeteer(); }
   
   let page = await browser.newPage();
-  try {
-    await page.goto(mapUri);
-  } catch (error) {
-    console.error("Error loading: " + mapUri);
-    await closeTab(page);
-    return NOT_FOUND;
-  }
+  pageWrapper.page = page;
+  await page.goto(mapUri);
+  
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
 
-  // Navigating to Google Food
-  try {
-    // Wait for Order Online Button to appear & click
-    await Promise.all([
-      page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS}),
-      page.click(orderOnlineSelector),
-      page.waitForNavigation({waitUntil: 'domcontentloaded'})
-    ]);
-
-
-  } catch (error) {
-    // The Order Online Button did not appear (loading failure or order online not available)
-    await closeTab(page);
-    return NOT_FOUND;
-  }
+  // Navigating to Google Food: ait for Order Online Button to appear & click
+  await Promise.all([
+    page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS}),
+    page.click(orderOnlineSelector),
+    page.waitForNavigation({waitUntil: 'domcontentloaded'})
+  ]);
 
   // Scrape available menu items
   let menuItems = [];
+  // Wait for menu items to appear
+  await page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS});
+  // Take the text content from menu items (name, price, description) and propogate allItems
+  menuItems = await page.evaluate(() => 
+    [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
+  );
 
-  try {
-    // Wait for menu items to appear
-    await page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS});
-    // Take the text content from menu items (name, price, description) and propogate allItems
-    menuItems = await page.evaluate(() => 
-      [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
-    );
-  } catch (error) {
-    // Search other vendors, but Seamless & GrubHub block scraping with Captcha
-    //  so it may not be feasible as of now
-    // closeTab(page);
-    await closeTab(page);
-    return NOT_FOUND;
-  }
-
-  await closeTab(page);
+  // await closeTab(page);
   return menuItems;
 };
 
@@ -90,7 +68,19 @@ let getGFMenu = async(id, mapUri) => {
   let menuJSON = codes.resFormat(id);
 
   // Scrape Google Maps for all menu items
-  let menuItems = await scrapeMap(mapUri);
+  let menuItems;
+  let pageWrapper = { page: null };
+  await scrapeMap(mapUri, pageWrapper)
+    .then(async(res) => {
+      menuItems = res;
+      await closeTab(pageWrapper.page);
+    })
+    .catch(async(error) => {
+      console.error(`Could not access: ${mapUri}: \n${error}`);
+      menuItems = NOT_FOUND
+      await closeTab(pageWrapper.page);
+    });
+
   
   // HANDLE MENU NOT FOUND
   if (menuItems == NOT_FOUND) {

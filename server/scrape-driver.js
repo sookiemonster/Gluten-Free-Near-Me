@@ -52,6 +52,7 @@ export let tallyScraper = async() => {
 }
 
 export let closeTab = async(page) => {
+   if (page == null) { return; }
    await page.close();
    tabCount--;
 }
