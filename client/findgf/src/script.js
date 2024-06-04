@@ -9,7 +9,8 @@ let findNearby = async() => {
 
    fetch("http://localhost:5000/api/find-nearby", options)
       .then((response) => { return response.json() })
-      .then((resJson) => console.log(resJson));
+      .then((resJson) => console.log(resJson))
+      .catch((error) => console.error("An error has occurred: " + error));
 }
 
 export { findNearby };

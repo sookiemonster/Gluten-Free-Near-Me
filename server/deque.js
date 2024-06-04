@@ -102,3 +102,5 @@ class Deque {
       console.log(str);
    }
 }
+
+export { Deque };
