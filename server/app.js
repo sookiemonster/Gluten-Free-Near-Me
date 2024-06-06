@@ -2,13 +2,19 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 
+import { Server } from 'socket.io';
+import { createServer } from 'node:http';
+
 import { router as indexRouter } from './routes/index.js';
 import { router as apiRouter } from './routes/api.js';
 
 const SERVER_PORT = 5000;
 const CLIENT_PORT = 3000;
 
-var app = express();
+const app = express();
+const server = createServer(app);
+// const io = new Server(server);
+
 app.use(express.json());
 
 
@@ -37,7 +43,7 @@ app.use(function(err, req, res, next) {
   // res.render('error');
 });
 
-app.listen(SERVER_PORT, (err) => {
+server.listen(SERVER_PORT, (err) => {
   if (err) console.log("Error in server setup")
     console.log(`Server listening on http://localhost:${SERVER_PORT}`);
 })
