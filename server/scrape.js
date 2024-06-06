@@ -4,7 +4,6 @@
 import * as puppeteer from "puppeteer";
 import * as gf from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
-import { browser, initializePuppeteer, tallyScraper, closeTab, TIMEOUT_MS, tabCount, TAB_LIMIT, enqueueRestaurant } from './scrape-driver.js';
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
@@ -16,6 +15,57 @@ const DESCRIPTION = 2;
 
 // Error Codes
 const NOT_FOUND = [];
+
+// Define singular browser to be used
+let browser = null;
+
+// Redefine timeout & configure browser options
+export const TIMEOUT_MS = 10000; 
+const options = {
+  args: [
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu'
+  ],
+  headless: true
+}
+
+// Define tab limit on browser and count to track the limit
+const TAB_LIMIT = 5;
+let tabCount = 0;
+let scrapeQueue = [];
+
+let initializePuppeteer = async() => {
+  if (!browser) { browser = await puppeteer.launch(options); }
+}
+
+let closeTab = async(page) => {
+  if (page == null) { return; }
+  await page.close();
+  tabCount--;
+}
+
+async function dispatchScraper() {
+  if (tabCount > TAB_LIMIT || scrapeQueue.length == 0) {
+     return ;
+  }
+  
+  let front = scrapeQueue.shift();
+  getGFMenu(front.id, front.mapUri)
+     .then((response) => {
+        if (response) {
+           console.log(response); // do send here
+           dispatchScraper();
+        }
+     });
+}
+
+let enqueueRestaurant = async(id, mapUri) => {
+  scrapeQueue.push({"id" : id, "mapUri" : mapUri});
+}
 
 /**
  * Scrapes the specified Google Maps page for MenuItems
@@ -57,11 +107,11 @@ let getGFMenu = async(id, mapUri) => {
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing
   // we re-add the restaurant to be scraped
-  if (tabCount + 1 > TAB_LIMIT) {
+  if (await (tabCount + 1 > TAB_LIMIT)) {
     enqueueRestaurant(id, mapUri);
     return null;
   }
-  await tallyScraper();
+  await (tabCount++);
   // console.log(await tabCount);
 
   // Define the menuJSON response template
@@ -71,16 +121,15 @@ let getGFMenu = async(id, mapUri) => {
   let menuItems;
   let pageWrapper = { page: null };
   await scrapeMap(mapUri, pageWrapper)
-    .then(async(res) => {
+    .then(res => {
       menuItems = res;
-      await closeTab(pageWrapper.page);
     })
-    .catch(async(error) => {
+    .catch(error => {
       console.error(`Could not access: ${mapUri}: \n${error}`);
-      menuItems = NOT_FOUND
-      await closeTab(pageWrapper.page);
-    });
-
+      menuItems = NOT_FOUND;
+    })
+    
+  await closeTab(pageWrapper.page);
   
   // HANDLE MENU NOT FOUND
   if (menuItems == NOT_FOUND) {
@@ -115,4 +164,4 @@ let log = async(id, url) => {
   console.log(await getGFMenu(id, url));
 }
 
-export { getGFMenu };
+export { getGFMenu, dispatchScraper, enqueueRestaurant };

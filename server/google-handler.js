@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import * as fs from 'fs';
 import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
-import { dispatchScraper, enqueueRestaurant } from "./scrape-driver.js";
+import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
 
 let getNearbyLocations = async(location_details, connection) => {
    
