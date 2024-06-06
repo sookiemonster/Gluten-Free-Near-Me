@@ -26,7 +26,12 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body>      
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script>
+      const socket = io("ws://localhost:5000", { transports : ['websocket'] });
+      console.log("client on");
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

@@ -12,14 +12,17 @@ const SERVER_PORT = 5000;
 const CLIENT_PORT = 3000;
 
 const app = express();
+// Allow fetch from client
+app.use(cors({origin: `http://localhost:${CLIENT_PORT}`}));
 const server = createServer(app);
-// const io = new Server(server);
+const io = new Server(server, cors(
+  { origin: `http://localhost:${CLIENT_PORT}`, 
+    methods: ["GET", "POST"]
+  }
+));
 
 app.use(express.json());
 
-
-// Allow fetch from client
-app.use(cors({origin: `http://localhost:${CLIENT_PORT}`}));
 
 // app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,6 +44,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err);
   // res.render('error');
+});
+
+io.on('connection', (socket) => {
+  console.log('user connected');
 });
 
 server.listen(SERVER_PORT, (err) => {
