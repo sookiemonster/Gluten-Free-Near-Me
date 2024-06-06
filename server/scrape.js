@@ -103,15 +103,19 @@ const scrapeMap = async(mapUri, pageWrapper) => {
 };
 
 let getGFMenu = async(id, mapUri) => {
+  // if (browser){
+  //   browser.pages()
+  //     .then(p => console.log(p));
+  // }
   if (!id || !mapUri) { return {}; }
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing
   // we re-add the restaurant to be scraped
-  if (await (tabCount + 1 > TAB_LIMIT)) {
+  if (tabCount + 1 > TAB_LIMIT) {
     enqueueRestaurant(id, mapUri);
     return null;
   }
-  await (tabCount++);
+  await tabCount++;
   // console.log(await tabCount);
 
   // Define the menuJSON response template
@@ -121,15 +125,16 @@ let getGFMenu = async(id, mapUri) => {
   let menuItems;
   let pageWrapper = { page: null };
   await scrapeMap(mapUri, pageWrapper)
-    .then(res => {
+    .then(async(res) => {
       menuItems = res;
+      await closeTab(pageWrapper.page);
     })
-    .catch(error => {
+    .catch(async(error) => {
       console.error(`Could not access: ${mapUri}: \n${error}`);
       menuItems = NOT_FOUND;
+      await closeTab(pageWrapper.page);
     })
     
-  await closeTab(pageWrapper.page);
   
   // HANDLE MENU NOT FOUND
   if (menuItems == NOT_FOUND) {
