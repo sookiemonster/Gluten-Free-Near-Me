@@ -37,12 +37,20 @@ const TAB_LIMIT = 5;
 let tabCount = 0;
 let scrapeQueue = [];
 
+/**
+ * Closes a page and decrements the tab counter
+ * @param page The page to be closed
+ */
 let closeTab = async(page) => {
   if (page == null) { return; }
   await page.close();
   tabCount--;
 }
 
+/**
+ * Decides whether to continue scraping the next restaurant in the scrapeQueue
+ * Scrapes if there are less tabs than the TAB LIMIT and there are more sites to be scraped 
+ */
 async function dispatchScraper() {
   if (tabCount > TAB_LIMIT || scrapeQueue.length == 0) {
      return ;
@@ -64,6 +72,11 @@ async function dispatchScraper() {
   }
 }
 
+/**
+ * Queues a restaurant to be scraped
+ * @param {String} id The Google place id of the target restaurant
+ * @param {String} mapUri The Google mapURI of the target restaurant
+ */
 let enqueueRestaurant = async(id, mapUri) => {
   scrapeQueue.push({"id" : id, "mapUri" : mapUri});
 }
@@ -71,7 +84,7 @@ let enqueueRestaurant = async(id, mapUri) => {
 /**
  * Scrapes the specified Google Maps page for MenuItems
  * @param {String} mapUri The Google Maps uri to access a specified restauraut
- * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
+ * @returns {Promise|String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
 const scrapeMap = async(mapUri, pageWrapper) => { 
 
@@ -112,11 +125,20 @@ const scrapeMap = async(mapUri, pageWrapper) => {
     });
 }
 
+/**
+ * Scrapes a given restaurant for all explicitly GF-marked items
+ * @param {String} id The Google place id of the target restaurant
+ * @param {String} mapUri The Google mapURI of the target restaurant
+ * @returns {JSON} Returns a JSON containing all GF-items offered at the restaurant in the following form:
+ *    <id> : {
+         "gfSum" : "",
+         "gfRank" : <GF_RANK>, 
+         "gfReviews" : [],
+         "gfItems" : [ITEM_1, ITEM_2, ...]
+      }
+ * @note The GF summary & reviews are empty.
+ */
 let getGFMenu = async(id, mapUri) => {
-  // if (browser){
-  //   browser.pages()
-  //     .then(p => console.log(p));
-  // }
   if (!id || !mapUri) { return {}; }
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing

@@ -7,6 +7,5 @@ var Emitter = function (app, io) {
 function broadcastRestaurant(menuJSON) {
    this.io.emit('restaurant', menuJSON);
 }
- 
 
 export { Emitter };
