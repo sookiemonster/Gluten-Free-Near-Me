@@ -74,8 +74,6 @@ let enqueueRestaurant = async(id, mapUri) => {
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
 const scrapeMap = async(mapUri, pageWrapper) => { 
-  // Scrape available menu items
-  let menuItems = [];
 
   // Navigating to Google Food: ait for Order Online Button to appear & click
   let page = await browser.newPage();
@@ -91,25 +89,27 @@ const scrapeMap = async(mapUri, pageWrapper) => {
     if(req.resourceType() === 'image' || req.resourceType() === 'media') { req.abort();}
     else { req.continue(); }
   });
-
-  // Wait for menu items to appear
-  await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
-  await page.click(orderOnlineSelector);
-  await page.waitForNavigation({waitUntil: 'domcontentloaded'});
-  await page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS});
-
-  // Take the text content from menu items (name, price, description) and propogate allItems
-  menuItems = await page.evaluate(() => 
-    [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
-  );
-
+  
   return new Promise((resolve, reject) => {
-    if (menuItems.length != 0) {
-      return resolve(menuItems);
-    } else {
-      return reject([]);
-    }
-  });
+    page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS})
+      .then(() => {return page.click(orderOnlineSelector)})
+      .then(() => {return page.waitForNavigation({waitUntil: 'domcontentloaded'})})
+      .then(() => {return page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS}) })
+      .then(() => {return page.evaluate(() => 
+        [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
+      )})
+      .then(menuItems => {
+        if (menuItems.length != 0) {
+            return resolve(menuItems);
+          } else {
+            return reject([]);
+          }
+      })
+      .catch(err => { 
+        console.error(err);
+        return reject([])
+      });
+    });
 }
 
 let getGFMenu = async(id, mapUri) => {
