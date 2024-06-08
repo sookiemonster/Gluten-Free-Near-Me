@@ -74,8 +74,9 @@ let enqueueRestaurant = async(id, mapUri) => {
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
 const scrapeMap = async(mapUri, pageWrapper) => { 
-  
-  
+  // Scrape available menu items
+  let menuItems = [];
+
   // Navigating to Google Food: ait for Order Online Button to appear & click
   let page = await browser.newPage();
   pageWrapper.page = page;
@@ -87,30 +88,29 @@ const scrapeMap = async(mapUri, pageWrapper) => {
   // Disable image loading
   await page.setRequestInterception(true);
   page.on('request', (req) => {
-    if(req.resourceType() === 'image'){
-        req.abort();
-    }
-    else {
-        req.continue();
-    }
+    if(req.resourceType() === 'image' || req.resourceType() === 'media') { req.abort();}
+    else { req.continue(); }
   });
-  await Promise.all([
-    page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS}),
-    page.click(orderOnlineSelector),
-    page.waitForNavigation({waitUntil: 'domcontentloaded'})
-  ]);
 
-  // Scrape available menu items
-  let menuItems = [];
   // Wait for menu items to appear
+  await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
+  await page.click(orderOnlineSelector);
+  await page.waitForNavigation({waitUntil: 'domcontentloaded'});
   await page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS});
+
   // Take the text content from menu items (name, price, description) and propogate allItems
   menuItems = await page.evaluate(() => 
     [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
   );
 
-  return menuItems;
-};
+  return new Promise((resolve, reject) => {
+    if (menuItems.length != 0) {
+      return resolve(menuItems);
+    } else {
+      return reject([]);
+    }
+  });
+}
 
 let getGFMenu = async(id, mapUri) => {
   // if (browser){
