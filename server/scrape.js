@@ -16,9 +16,6 @@ const DESCRIPTION = 2;
 // Error Codes
 const NOT_FOUND = [];
 
-// Define singular browser to be used
-let browser = null;
-
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 10000; 
 const options = {
@@ -30,17 +27,15 @@ const options = {
     '--single-process',
     '--disable-gpu'
   ],
-  headless: true
+  headless: false
 }
+// Define singular browser to be used
+let browser = await puppeteer.launch(options);;
 
 // Define tab limit on browser and count to track the limit
 const TAB_LIMIT = 5;
 let tabCount = 0;
 let scrapeQueue = [];
-
-let initializePuppeteer = async() => {
-  if (!browser) { browser = await puppeteer.launch(options); }
-}
 
 let closeTab = async(page) => {
   if (page == null) { return; }
@@ -54,13 +49,19 @@ async function dispatchScraper() {
   }
   
   let front = scrapeQueue.shift();
-  getGFMenu(front.id, front.mapUri)
-     .then((response) => {
-        if (response) {
-           console.log(response); // do send here
-           dispatchScraper();
-        }
-     });
+  if (front != null) {
+    getGFMenu(front.id, front.mapUri)
+       .then((response) => {
+          if (response) {
+            console.log(response); // do send here
+            dispatchScraper();
+          }
+       })
+       .catch(err => {
+          console.error(err);
+          dispatchScraper();
+       });
+  }
 }
 
 let enqueueRestaurant = async(id, mapUri) => {
@@ -73,8 +74,9 @@ let enqueueRestaurant = async(id, mapUri) => {
  * @returns {String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
 const scrapeMap = async(mapUri, pageWrapper) => { 
-  if (!browser) { await initializePuppeteer(); }
   
+  
+  // Navigating to Google Food: ait for Order Online Button to appear & click
   let page = await browser.newPage();
   pageWrapper.page = page;
   await page.goto(mapUri);
@@ -82,7 +84,16 @@ const scrapeMap = async(mapUri, pageWrapper) => {
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
 
-  // Navigating to Google Food: ait for Order Online Button to appear & click
+  // Disable image loading
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    if(req.resourceType() === 'image'){
+        req.abort();
+    }
+    else {
+        req.continue();
+    }
+  });
   await Promise.all([
     page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS}),
     page.click(orderOnlineSelector),
@@ -98,7 +109,6 @@ const scrapeMap = async(mapUri, pageWrapper) => {
     [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
   );
 
-  // await closeTab(page);
   return menuItems;
 };
 
@@ -116,53 +126,52 @@ let getGFMenu = async(id, mapUri) => {
     return null;
   }
   await tabCount++;
-  // console.log(await tabCount);
 
   // Define the menuJSON response template
   let menuJSON = codes.resFormat(id);
 
   // Scrape Google Maps for all menu items
-  let menuItems;
   let pageWrapper = { page: null };
-  await scrapeMap(mapUri, pageWrapper)
-    .then(async(res) => {
-      menuItems = res;
-      await closeTab(pageWrapper.page);
-    })
-    .catch(async(error) => {
-      console.error(`Could not access: ${mapUri}: \n${error}`);
-      menuItems = NOT_FOUND;
-      await closeTab(pageWrapper.page);
-    })
-    
-  
-  // HANDLE MENU NOT FOUND
-  if (menuItems == NOT_FOUND) {
-    menuJSON[id].gfRank = codes.MENU_NOT_ACCESSIBLE;
-    return menuJSON; 
-  }  
-  
-  // Filter all GF items from the menu
-  gf.filterGFMenuItems(menuItems); 
 
-  // No explicitly-asserted GF items available
-  if (menuItems.length == 0) {
-    menuJSON[id].gfRank = codes.NO_MENTION_GF;
-    return menuJSON;
-  }
+  return new Promise((resolve, reject) => {
+    scrapeMap(mapUri, pageWrapper)
+      .then(async(res) => {
+        await closeTab(pageWrapper.page);
+        return res;
+      })
+      .then((menuItems) => {
+        gf.filterGFMenuItems(menuItems); 
 
-  // Append all GF items to the JSON response
-  menuJSON[id].gfRank = codes.HAS_GF_ITEMS;
-  menuItems.forEach(item => {
-    // Split item into name, price, description (ie. on newline)
-    let expandItem = item.split('\n');
-    menuJSON[id].gfItems.push(
-      {"name" : expandItem[NAME], 
-      "desc" : expandItem[DESCRIPTION]}
-    );
+        // No explicitly-asserted GF items available
+        if (menuItems.length == 0) {
+          menuJSON[id].gfRank = codes.NO_MENTION_GF;
+          return menuJSON;
+        }
+
+        // Append all GF items to the JSON response
+        menuJSON[id].gfRank = codes.HAS_GF_ITEMS;
+        menuItems.forEach(item => {
+          // Split item into name, price, description (ie. on newline)
+          let expandItem = item.split('\n');
+          menuJSON[id].gfItems.push(
+            {"name" : expandItem[NAME], 
+            "desc" : expandItem[DESCRIPTION]}
+          );
+        });
+
+        return resolve(menuJSON);
+      })
+      
+      .catch(async(error) => {
+        console.error(`Could not access: ${mapUri}: \n${error}`);
+        await closeTab(pageWrapper.page);
+      })
+      .then(() => {
+        menuJSON[id].gfRank = codes.MENU_NOT_ACCESSIBLE;
+        return reject(menuJSON);
+      });
   });
 
-  return menuJSON;
 }
 
 let log = async(id, url) => {
