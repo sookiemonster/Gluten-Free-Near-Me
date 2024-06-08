@@ -106,7 +106,7 @@ const scrapeMap = async(mapUri, pageWrapper) => {
           }
       })
       .catch(err => { 
-        console.error(err);
+        // console.error(err);
         return reject([])
       });
     });
