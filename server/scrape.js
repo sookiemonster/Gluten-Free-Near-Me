@@ -102,12 +102,12 @@ const scrapeMap = async(mapUri, pageWrapper) => {
         if (menuItems.length != 0) {
             return resolve(menuItems);
           } else {
-            return reject([]);
+            return reject(NOT_FOUND);
           }
       })
       .catch(err => { 
         // console.error(err);
-        return reject([])
+        return reject(NOT_FOUND);
       });
     });
 }
