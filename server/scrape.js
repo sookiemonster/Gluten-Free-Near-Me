@@ -30,7 +30,7 @@ const options = {
   headless: false
 }
 // Define singular browser to be used
-let browser = await puppeteer.launch(options);;
+let browser = await puppeteer.launch(options);
 
 // Define tab limit on browser and count to track the limit
 const TAB_LIMIT = 5;
