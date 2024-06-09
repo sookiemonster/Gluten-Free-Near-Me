@@ -1,11 +1,13 @@
 // google-handler.js defines routines for retrieving nearby places & checking whether a response from the Google API mentions a restaurant being GF
 
 import fetch from "node-fetch";
-import * as fs from 'fs/promises';
+import 'dotenv/config';
 import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
 import { appEmitter } from "./app.js";
+
+const token = process.env.API_KEY;
 
 /**
  * Returns the body of a HTTP request to find nearby restaurants within a 250m radius about a specified center
@@ -38,7 +40,6 @@ let createRequestBody = (lat, long) => {
  */
 let rankNearbyPlaces = async(lat, long) => {
    try {
-      const token = await fs.readFile('secret', { encoding: 'utf8' });
       const data = {
          "method" : "POST", 
          "headers" :  {
