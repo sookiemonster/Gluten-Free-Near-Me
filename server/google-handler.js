@@ -43,7 +43,7 @@ let rankNearbyPlaces = async(lat, long) => {
          "method" : "POST", 
          "headers" :  {
             "Content-Type" : "application/json",
-            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.generativeSummary.overview,places.generativeSummary.description",
+            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.generativeSummary.overview,places.generativeSummary.description,places.location",
             "X-Goog-Api-Key" : token,
          },
          "body" : JSON.stringify(createRequestBody(lat, long))
@@ -128,23 +128,22 @@ let rankPlaces = async(placeData) => {
       if (!restaurant) { return; }
       console.log(restaurant.displayName.text);
       // Wrap summary into object to be edited in functions
-      let resJSON = codes.resFormat(restaurant.id);
+      let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude);
 
-      if (findGFSummary(restaurant, resJSON[restaurant.id])) {
-         resJSON[restaurant.id].gfRank = codes.SELF_DESCRIBED_GF;
-         appEmitter.broadcastRestaurant(resJSON);
+      if (findGFSummary(restaurant, resJSON)) {
+         resJSON.gfRank = codes.SELF_DESCRIBED_GF;
          console.log(resJSON);
+         appEmitter.broadcastRestaurant(resJSON);
          // Send response with this info back to client
          
-         } else if (findGFReviews(restaurant.reviews, resJSON[restaurant.id].gfReviews)) {
-            let resJSON = codes.resFormat(restaurant.id);
-            resJSON[restaurant.id].gfRank = codes.COMMENTS_MENTION_GF;
-            console.log(resJSON);
-            appEmitter.broadcastRestaurant(resJSON);
-         // Send response with this info back to client
+      } else if (findGFReviews(restaurant.reviews, resJSON.gfReviews)) {
+         resJSON.gfRank = codes.COMMENTS_MENTION_GF;
+         console.log(resJSON);
+         appEmitter.broadcastRestaurant(resJSON);
+      // Send response with this info back to client
 
       } else {
-         enqueueRestaurant(restaurant.id, restaurant.googleMapsUri);
+         enqueueRestaurant(resJSON);
          dispatchScraper();
       }
    });

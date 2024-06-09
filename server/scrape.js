@@ -25,7 +25,6 @@ const options = {
     '--disable-accelerated-2d-canvas',
     '--no-first-run',
     '--no-zygote',
-    '--single-process',
     '--disable-gpu'
   ],
   headless: false
@@ -58,31 +57,34 @@ async function dispatchScraper() {
   }
   
   let front = scrapeQueue.shift();
-  if (front != null) {
-    getGFMenu(front.id, front.mapUri)
-       .then((response) => {
-          if (response) {
-            // console.log(response); 
-            appEmitter.broadcastRestaurant(response);
-            dispatchScraper();
-          }
-        })
-        .catch(gfNotFound => {
-          // console.error("RETURNED: " + err);
-          appEmitter.broadcastRestaurant(gfNotFound);
+  if (front == null) { return; }
+
+  getGFMenu(front)
+      .then((response) => {
+        if (response) {
+          // console.log(response); 
+          appEmitter.broadcastRestaurant(response);
           dispatchScraper();
-      }
-    );
-  }
+        }
+      })
+      .catch(gfNotFound => {
+        // console.error("RETURNED: " + err);
+        appEmitter.broadcastRestaurant(gfNotFound);
+        dispatchScraper();
+    }
+  );
 }
 
 /**
  * Queues a restaurant to be scraped
  * @param {String} id The Google place id of the target restaurant
  * @param {String} mapUri The Google mapURI of the target restaurant
+ * @param {float} lat The latitutde of the restaurant
+ * @param {float} long The longitude of the restaurant
  */
-let enqueueRestaurant = async(id, mapUri) => {
-  scrapeQueue.push({"id" : id, "mapUri" : mapUri});
+let enqueueRestaurant = async(resJSON) => {
+  // console.log({"id" : id, "mapUri" : mapUri, "lat" : lat, "long" : long});
+  scrapeQueue.push(resJSON);
 }
 
 /**
@@ -139,28 +141,27 @@ const scrapeMap = async(mapUri, pageWrapper) => {
          "gfRank" : <GF_RANK>, 
          "gfReviews" : [],
          "gfItems" : [ITEM_1, ITEM_2, ...]
+         "lat" : <latitude>
+         "long" : <longitude>
       }
  * @note The GF summary & reviews are empty.
  */
-let getGFMenu = async(id, mapUri) => {
-  if (!id || !mapUri) { return {}; }
+let getGFMenu = async(resJSON) => {
+  if (!resJSON) { return null; }
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing
   // we re-add the restaurant to be scraped
   if (tabCount + 1 > TAB_LIMIT) {
-    enqueueRestaurant(id, mapUri);
+    enqueueRestaurant(resJSON);
     return null;
   }
   await tabCount++;
-
-  // Define the menuJSON response template
-  let menuJSON = codes.resFormat(id);
 
   // Scrape Google Maps for all menu items
   let pageWrapper = { page: null };
 
   return new Promise((resolve, reject) => {
-    scrapeMap(mapUri, pageWrapper)
+    scrapeMap(resJSON.mapUri, pageWrapper)
       .then(async(res) => {
         await closeTab(pageWrapper.page);
         return res;
@@ -170,31 +171,31 @@ let getGFMenu = async(id, mapUri) => {
 
         // No explicitly-asserted GF items available
         if (menuItems.length == 0) {
-          menuJSON[id].gfRank = codes.NO_MENTION_GF;
-          return menuJSON;
+          resJSON.gfRank = codes.NO_MENTION_GF;
+          return resJSON;
         }
 
         // Append all GF items to the JSON response
-        menuJSON[id].gfRank = codes.HAS_GF_ITEMS;
+        resJSON.gfRank = codes.HAS_GF_ITEMS;
         menuItems.forEach(item => {
           // Split item into name, price, description (ie. on newline)
           let expandItem = item.split('\n');
-          menuJSON[id].gfItems.push(
+          resJSON.gfItems.push(
             {"name" : expandItem[NAME], 
             "desc" : expandItem[DESCRIPTION]}
           );
         });
 
-        return resolve(menuJSON);
+        return resolve(resJSON);
       })
       
       .catch(async(error) => {
-        console.error(`Could not access: ${mapUri}: \n${error}`);
+        console.error(`Could not access: ${resJSON.mapUri}: \n${error}`);
         await closeTab(pageWrapper.page);
       })
       .then(() => {
-        menuJSON[id].gfRank = codes.MENU_NOT_ACCESSIBLE;
-        return reject(menuJSON);
+        resJSON.gfRank = codes.MENU_NOT_ACCESSIBLE;
+        return reject(resJSON);
       });
   });
 
