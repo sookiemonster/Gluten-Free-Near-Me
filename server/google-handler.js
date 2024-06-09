@@ -105,8 +105,9 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
    }
 
    restaurantReviews.forEach((review) => {
-      if (mentionsGlutenFree(review.text.text)) { 
-         storeGFReviews.push(review.text.text); 
+      // console.log(review);
+      if (mentionsGlutenFree(review?.text?.text)) { 
+         storeGFReviews.push(review?.text?.text); 
       }
    });
 

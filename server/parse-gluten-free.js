@@ -9,8 +9,8 @@ const GF_PATTERN = /\bGF\b|gluten[^a-zA-Z0-9]free\b|celiac/i;
  * @returns True if the provided string mentions GF, gluten-free, gluten free, etc.
  */
 let mentionsGlutenFree = (string) => {
-   if (typeof string != 'string' && !string instanceof String) {
-      return -1;
+   if (string == undefined || string == null || typeof string != 'string' && !string instanceof String) {
+      return false;
    }
    return string.search(GF_PATTERN) > -1;
 }
