@@ -1,19 +1,49 @@
 // google-handler.js defines routines for retrieving nearby places & checking whether a response from the Google API mentions a restaurant being GF
 
 import fetch from "node-fetch";
-import * as fs from 'fs';
+import * as fs from 'fs/promises';
 import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
+import { appEmitter } from "./app.js";
 
-let getNearbyLocations = async(location_details, connection) => {
-   
-   fs.readFile("sample_gf2.json", (err, data) => { 
-      // Check for errors 
-      if (err) throw err; 
-      // Parse JSON and start looking for GF availabilites
-      findGFNearby(JSON.parse(data), connection);
-   }); 
+let rankNearbyPlaces = async(lat, long) => {
+
+   let body = {
+      "includedTypes": [ "restaurant" ],
+      "maxResultCount": 20,
+      "rankPreference": "DISTANCE",
+      "locationRestriction": {
+         "circle": {
+            "center": {
+            "latitude": lat,
+            "longitude": long
+            },
+            "radius": 250
+         }
+      }
+   };
+
+   try {
+      const token = await fs.readFile('secret', { encoding: 'utf8' });
+      const data = {
+         "method" : "POST", 
+         "headers" :  {
+            "Content-Type" : "application/json",
+            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.generativeSummary.overview,places.generativeSummary.description",
+            "X-Goog-Api-Key" : token,
+         },
+         "body" : JSON.stringify(body)
+      }
+      
+      fetch("https://places.googleapis.com/v1/places:searchNearby", data)
+         .then((response) => { return response.json(); })
+         .then(resJSON => { rankPlaces(resJSON); })
+         .catch(err => { console.error(err); })
+   } catch (err) {
+      console.log(err);
+   }
+
 }
 
 let findGFSummary = (restaurantData, res) => {
@@ -50,8 +80,8 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
    return storeGFReviews.length > 0;
 }
 
-let findGFNearby = async(placeData, connection) => {
-   // Validate places informnation format
+let rankPlaces = async(placeData) => {
+   // Validate places information format
    if (!Array.isArray(placeData.places) || placeData.places.length == 0) {
       return ;
    }
@@ -64,20 +94,22 @@ let findGFNearby = async(placeData, connection) => {
 
       if (findGFSummary(restaurant, resJSON[restaurant.id])) {
          resJSON[restaurant.id].gfRank = codes.SELF_DESCRIBED_GF;
+         appEmitter.broadcastRestaurant(resJSON);
          console.log(resJSON);
          // Send response with this info back to client
          
-      } else if (findGFReviews(restaurant.reviews, resJSON[restaurant.id].gfReviews)) {
-         let resJSON = codes.resFormat(restaurant.id);
-         resJSON[restaurant.id].gfRank = codes.COMMENTS_MENTION_GF;
-         console.log(resJSON);
+         } else if (findGFReviews(restaurant.reviews, resJSON[restaurant.id].gfReviews)) {
+            let resJSON = codes.resFormat(restaurant.id);
+            resJSON[restaurant.id].gfRank = codes.COMMENTS_MENTION_GF;
+            console.log(resJSON);
+            appEmitter.broadcastRestaurant(resJSON);
          // Send response with this info back to client
 
       } else {
-         enqueueRestaurant(restaurant.id, restaurant.googleMapsUri, connection);
+         enqueueRestaurant(restaurant.id, restaurant.googleMapsUri);
          dispatchScraper();
       }
    });
 }
 
-getNearbyLocations("dummy", "usr-placeholder");
+export { rankNearbyPlaces }

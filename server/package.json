@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/url-signature": "^1.0.34",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",

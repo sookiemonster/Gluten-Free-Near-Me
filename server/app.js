@@ -22,7 +22,7 @@ const io = new Server(server, cors(
   }
 ));
 
-const emitter = new Emitter(app, io);
+const appEmitter = new Emitter(app, io);
 
 app.use(express.json());
 
@@ -51,11 +51,11 @@ app.use(function(err, req, res, next) {
 
 io.on('connection', (socket) => {
   console.log('user connected');
-  emitter.broadcastRestaurant("hi!");
+  // appEmitter.broadcastRestaurant("hi!");
 });
 
 server.listen(SERVER_PORT, (err) => {
   if (err) console.log("Error in server setup")
     console.log(`Server listening on http://localhost:${SERVER_PORT}`);
 })
-export { app, emitter };
+export { app, appEmitter };

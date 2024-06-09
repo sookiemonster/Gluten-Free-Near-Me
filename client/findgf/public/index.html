@@ -30,8 +30,8 @@
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <script>
       const socket = io("ws://localhost:5000", { transports : ['websocket'] });
-      socket.on('restaurant', () => {
-        console.log('woah!');
+      socket.on('restaurant', (data) => {
+        console.log(data);
       })
       console.log("client on");
     </script>

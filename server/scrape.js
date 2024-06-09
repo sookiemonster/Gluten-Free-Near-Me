@@ -4,6 +4,7 @@
 import * as puppeteer from "puppeteer";
 import * as gf from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
+import { appEmitter } from "./app.js";
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
@@ -61,14 +62,17 @@ async function dispatchScraper() {
     getGFMenu(front.id, front.mapUri)
        .then((response) => {
           if (response) {
-            console.log(response); // do send here
+            // console.log(response); 
+            appEmitter.broadcastRestaurant(response);
             dispatchScraper();
           }
-       })
-       .catch(err => {
-          console.error(err);
+        })
+        .catch(gfNotFound => {
+          // console.error("RETURNED: " + err);
+          appEmitter.broadcastRestaurant(gfNotFound);
           dispatchScraper();
-       });
+      }
+    );
   }
 }
 
