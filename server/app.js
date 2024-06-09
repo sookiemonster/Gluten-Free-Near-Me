@@ -3,7 +3,9 @@ import path from 'path';
 import cors from 'cors';
 
 import { Server } from 'socket.io';
-import { createServer } from 'node:http';
+import { createServer } from 'node:https';
+import * as fs from 'node:fs';
+// import { createServer } from 'node:http';
 
 import { router as indexRouter } from './routes/index.js';
 import { router as apiRouter } from './routes/api.js';
@@ -12,10 +14,17 @@ import { Emitter } from './socket-handler.js';
 const SERVER_PORT = 5000;
 const CLIENT_PORT = 3000;
 
+const httpsOptions = {
+  key: fs.readFileSync('localhost-key.pem'),
+  cert: fs.readFileSync('localhost.pem'),
+};
+
 const app = express();
 // Allow fetch from client
 app.use(cors({origin: `http://localhost:${CLIENT_PORT}`}));
-const server = createServer(app);
+
+const server = createServer(httpsOptions, app);
+
 const io = new Server(server, cors(
   { origin: `http://localhost:${CLIENT_PORT}`, 
     methods: ["GET", "POST"]
@@ -56,6 +65,6 @@ io.on('connection', (socket) => {
 
 server.listen(SERVER_PORT, (err) => {
   if (err) console.log("Error in server setup")
-    console.log(`Server listening on http://localhost:${SERVER_PORT}`);
+    console.log(`Server listening on https://localhost:${SERVER_PORT}`);
 })
 export { app, appEmitter };

@@ -11,11 +11,6 @@ let responseReady = async() => {
 router.post('/find-nearby', (req, res) => {
    console.log(req.body);
    rankNearbyPlaces(40.728940,-74.000321);
-   
-   // responseReady()
-      // .then((val) => 
-      //    res.send({ body: "Server responded (woah)"})
-      // )
 });
 
 export { router };

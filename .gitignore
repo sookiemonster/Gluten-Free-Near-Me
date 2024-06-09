@@ -133,4 +133,4 @@ dist
 secret
 
 # certifications
-.pem
+*.pem
