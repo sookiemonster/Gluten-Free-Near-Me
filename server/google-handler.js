@@ -44,7 +44,7 @@ let rankNearbyPlaces = async(lat, long) => {
          "method" : "POST", 
          "headers" :  {
             "Content-Type" : "application/json",
-            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.generativeSummary.overview,places.generativeSummary.description,places.location",
+            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.location",
             "X-Goog-Api-Key" : token,
          },
          "body" : JSON.stringify(createRequestBody(lat, long))
