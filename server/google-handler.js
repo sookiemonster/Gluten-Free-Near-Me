@@ -78,18 +78,22 @@ let findGFSummary = (restaurantData, res) => {
       return false;
    }
 
-   if (restaurantData.editorialSummary?.text && mentionsGlutenFree(restaurantData.editorialSummary.text)) {
-      // Include editorial summary as rest. summ
-      res.gfSum = restaurantData.editorialSummary.text;
+   res.gfSum = restaurantData.editorialSummary?.text;
+
+   if (mentionsGlutenFree(restaurantData.editorialSummary.text)) {
+      // Editorial summary as rest. mentions gf
+      return true;
    } else if (restaurantData?.generativeSummary?.overview?.text && mentionsGlutenFree(restaurantData.generativeSummary.overview.text)) {
       // Include generative summary overview as rest. summ
       res.gfSum = restaurantData.generativeSummary.overview.text;
+      return true;
    } else if (restaurantData?.generativeSummary?.description?.text && mentionsGlutenFree(restaurantData.generativeSummary.description.text)) {
       // Include generative summary descrption as rest summary
       res.gfSum = restaurantData.generativeSummary.description.text;
+      return true;
    }
 
-   return res.gfSum.length > 0;
+   return false;
 }
 
 /**
@@ -129,7 +133,7 @@ let rankPlaces = async(placeData) => {
       if (!restaurant) { return; }
       console.log(restaurant.displayName.text);
       // Wrap summary into object to be edited in functions
-      let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude);
+      let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
 
       if (findGFSummary(restaurant, resJSON)) {
          resJSON.gfRank = codes.SELF_DESCRIBED_GF;

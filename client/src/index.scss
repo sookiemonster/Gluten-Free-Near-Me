@@ -1,0 +1,37 @@
+$orange: #f79c47;
+$orange: #64cc3b;
+
+html,body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+     sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+     monospace;
+ }
+ 
+ header {
+   height: 2em;
+ }
+ 
+ #map {
+   height: 75%;
+   width: 100%;
+ }
+ 
+ .price-tag {
+   border-radius: 8px;
+   color: #FFFFFF;
+   font-size: 14px;
+   padding: 10px 15px;
+   position: relative;
+ }

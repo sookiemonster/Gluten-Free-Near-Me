@@ -20,11 +20,17 @@ async function initMap() {
   }
 
 initMap();
-let marker = (resLat, resLong) => {
+
+let marker = (resName, resLat, resLong) => {
+  let tag = document.createElement("div");
+
+  tag.className = "gf-tag";
+  tag.textContent = resName;
+
   return new AdvancedMarkerElement({
     map: map,
     position: { lat: resLat, lng: resLong },
-    title: "IT DID THE THING!",
+    content: tag
   });
 }
 export { marker };

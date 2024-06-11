@@ -6,9 +6,10 @@ const COMMENTS_MENTION_GF = 1;
 const NO_MENTION_GF = 0;
 const MENU_NOT_ACCESSIBLE = -1;
 
-const resFormat = (id, mapUri, lat, long) => {
+const resFormat = (id, mapUri, lat, long, name) => {
    return  {
       "id" : id,
+      "name" : name,
       "lat" : lat,
       "long": long,
       "mapUri" : mapUri,
