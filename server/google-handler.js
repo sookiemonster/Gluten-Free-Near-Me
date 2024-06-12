@@ -90,21 +90,16 @@ let findGFSummary = (restaurantData, res) => {
    if (!restaurantData) { return false; }
 
    // Try using Editorial summary
-   res.gfSum = restaurantData.editorialSummary?.text;
-   // If it fails, try using the generative summary
-   res.gfSum = (!res.gfSum) ? restaurantData?.generativeSummary?.overview?.text : undefined;
-
-   if (mentionsGlutenFree(restaurantData.editorialSummary?.text)) {
-      // Previously allocated summary mentions gf
-      return true;
-   } else if (mentionsGlutenFree(restaurantData?.generativeSummary?.overview?.text)) {
-      // Include generative summary overview as rest. summ
-      res.gfSum = restaurantData.generativeSummary.overview.text;
-      return true;
-   } else if (mentionsGlutenFree(restaurantData?.generativeSummary?.description?.text)) {
-      // Include generative summary descrption as rest summary
-      res.gfSum = restaurantData.generativeSummary.description.text;
-      return true;
+   let summaries = [restaurantData.editorialSummary?.text, restaurantData?.generativeSummary?.overview?.text, restaurantData?.generativeSummary?.description?.text];
+   
+   for (const summary of summaries) {
+      // Set the current summary if there is none already
+      if (!res.gfSum) { res.gfSum = summary; }
+      // If the current summary then mentions gluten-free, override and use it.
+      if (mentionsGlutenFree(summary)) {
+         res.gfSum = summary;
+         return true; 
+      }
    }
 
    return false;
@@ -130,7 +125,6 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
    };
 
    restaurantReviews.forEach((review) => {
-      // console.log(review);
       if (mentionsGlutenFree(review?.text?.text)) {
          storeGFReviews.push({
             author : review?.authorAttribution?.displayName,
