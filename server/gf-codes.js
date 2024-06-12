@@ -23,11 +23,11 @@ const resFormat = (id, mapUri, lat, long, name) => {
       "name" : name,
       "lat" : lat,
       "long": long,
-      "mapUri" : mapUri,
-      "gfSum" : "",
-      "gfRank" : 0, 
-      "gfReviews" : [],
-      "gfItems" : [],
+      "mapuri" : mapUri,
+      "summary" : "",
+      "gfrank" : 0, 
+      "reviews" : [],
+      "items" : [],
       "resolveAttempts" : 0
    };
 }

@@ -78,13 +78,13 @@ let rankNearbyPlaces = async(lat, long) => {
  * @param {Object} restaurantData The google maps place data for a given restaurant
  * @param {Object} res An object storing the response JSON for a given restaurant in the format: 
  *    <id> : {
-         "gfSum" : "",
-         "gfRank" : 0, 
-         "gfReviews" : [],
-         "gfItems" : []
+         "summary" : "",
+         "gfrank" : 0, 
+         "reviews" : [],
+         "items" : []
       }
  * @returns True if any of the restaurant summaries mention gluten-free
- * @post The object's gfSum property is updated with that summary
+ * @post The object's summary property is updated with that summary
  */
 let findGFSummary = (restaurantData, res) => {
    if (!restaurantData) { return false; }
@@ -94,10 +94,10 @@ let findGFSummary = (restaurantData, res) => {
    
    for (const summary of summaries) {
       // Set the current summary if there is none already
-      if (!res.gfSum) { res.gfSum = summary; }
+      if (!res.summary) { res.summary = summary; }
       // If the current summary then mentions gluten-free, override and use it.
       if (mentionsGlutenFree(summary)) {
-         res.gfSum = summary;
+         res.summary = summary;
          return true; 
       }
    }
@@ -155,13 +155,13 @@ let rankPlaces = async(placeData) => {
       let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
 
       if (findGFSummary(restaurant, resJSON)) {
-         resJSON.gfRank = codes.SELF_DESCRIBED_GF;
+         resJSON.gfrank = codes.SELF_DESCRIBED_GF;
          console.log(resJSON);
          appEmitter.broadcastRestaurant(resJSON);
          // Send response with this info back to client
          
-      } else if (findGFReviews(restaurant.reviews, resJSON.gfReviews)) {
-         resJSON.gfRank = codes.COMMENTS_MENTION_GF;
+      } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
+         resJSON.gfrank = codes.COMMENTS_MENTION_GF;
          console.log(resJSON);
          appEmitter.broadcastRestaurant(resJSON);
       // Send response with this info back to client

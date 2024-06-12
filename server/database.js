@@ -3,7 +3,7 @@ import pg from 'pg';
 const { Pool } = pg;
 import 'dotenv/config'; 
 
-import { isError, voidExceptID } from './gf-codes.js';
+import { isError, resFormat, voidExceptID } from './gf-codes.js';
 
 var Database = function() {
    // Initialize Database manager
@@ -11,21 +11,31 @@ var Database = function() {
    
    // Query methods
    this.updateRestaurantDetails = updateRestaurantDetails.bind(this);
+   this.getRestaurant = getRestaurant.bind(this);
 
    // Close pool
    this.end = () => { this.pool.end(); }
 }
 
-// id = text
-// name = text
-// lat = num 8,6
-// long = num 9,6
-// last_updated = date (default today)
-// gf_rank = num 1 
-// map_uri = text
-// summary = text
-// reviews = json[]
-// items = json[]
+async function getRestaurant(id) {
+   const query = {
+      text: "SELECT * FROM places WHERE id = $1",
+      values: [id]
+   }
+
+   return new Promise((resolve, reject) => {
+      this.pool.query(query)
+         .then((res) => {
+            // let resJSON = resFormat(res.id, res.mapuri, )
+            console.log(res.rows[0]);
+            return resolve(res.rows[0]);
+         })
+         .catch((err) => {
+            console.error(err);
+            return reject(err);
+         })
+   });
+}
 
 async function updateRestaurantDetails(resJSON) {
    // Do not propogate details if error. Only store ID.
@@ -43,21 +53,22 @@ async function updateRestaurantDetails(resJSON) {
 
 let db = new Database;
 
-db.updateRestaurantDetails(
-   {
-      "id" : "test4",
-      "name" : "test",
-      "lat" : 23.442,
-      "long": 180.233,
-      "mapUri" : "test.com",
-      "gfSum" : "A summary!",
-      "gfRank" : 3, 
-      "gfReviews" : [{"author" : "sarah", "text" : "a review!"}],
-      "gfItems" : [{"item" : "borgar", "description" : "very tasty."}],
-      "resolveAttempts" : 0
-   }
-)
+// await db.updateRestaurantDetails(
+//    {
+//       "id" : "test4",
+//       "name" : "test",
+//       "lat" : 23.442,
+//       "long": 180.233,
+//       "mapUri" : "test.com",
+//       "gfSum" : "A summary!",
+//       "gfRank" : 3, 
+//       "gfReviews" : [{"author" : "sarah", "text" : "a review!"}],
+//       "gfItems" : [{"item" : "borgar", "description" : "very tasty."}],
+//       "resolveAttempts" : 0
+//    }
+// )
 
+await db.getRestaurant("test4");
 
 // pool.query("SELECT * FROM places;")
 //    .then((result) => console.log(result.rows));

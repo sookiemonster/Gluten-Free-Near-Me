@@ -5,10 +5,10 @@ var Emitter = function (app, io) {
 }
 
 function broadcastRestaurant(menuJSON) {
+   // Remove the resolution attempt field (to minimize information sent)
+   delete menuJSON['resolveAttempts'];
    // Store in db here
 
-   // Remove the resolution attempt field (to minimize information stored)
-   delete menuJSON['resolveAttempts'];
    this.io.emit('restaurant', menuJSON);
 }
 

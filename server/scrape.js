@@ -145,11 +145,12 @@ const scrapeMap = async(mapUri, pageWrapper) => {
  * @param {String} id The Google place id of the target restaurant
  * @param {String} mapUri The Google mapURI of the target restaurant
  * @returns {JSON} Returns a JSON containing all GF-items offered at the restaurant in the following form:
- *    <id> : {
-         "gfSum" : "",
-         "gfRank" : <GF_RANK>, 
-         "gfReviews" : [],
-         "gfItems" : [ITEM_1, ITEM_2, ...]
+ *    {
+ *       "id" : <place-id>
+         "summary" : "<summary>",
+         "gfrank" : <GF_RANK>, 
+         "reviews" : [],
+         "items" : [ITEM_1, ITEM_2, ...]
          "lat" : <latitude>
          "long" : <longitude>
       }
@@ -171,7 +172,7 @@ let getGFMenu = async(resJSON) => {
   let pageWrapper = { page: null };
   
   return new Promise((resolve, reject) => {
-    scrapeMap(resJSON.mapUri, pageWrapper)
+    scrapeMap(resJSON.mapuri, pageWrapper)
       .then(async(res) => {
         await closeTab(pageWrapper.page);
         return res;
@@ -181,16 +182,16 @@ let getGFMenu = async(resJSON) => {
 
         // No explicitly-asserted GF items available
         if (menuItems.length == 0) {
-          resJSON.gfRank = codes.NO_MENTION_GF;
+          resJSON.gfrank = codes.NO_MENTION_GF;
           return resJSON;
         }
 
         // Append all GF items to the JSON response
-        resJSON.gfRank = codes.HAS_GF_ITEMS;
+        resJSON.gfrank = codes.HAS_GF_ITEMS;
         menuItems.forEach(item => {
           // Split item into name, price, description (ie. on newline)
           let expandItem = item.split('\n');
-          resJSON.gfItems.push(
+          resJSON.items.push(
             {"name" : expandItem[NAME], 
             "desc" : expandItem[DESCRIPTION]}
           );
@@ -201,7 +202,7 @@ let getGFMenu = async(resJSON) => {
       
       .catch(async(error) => {
         // console.error(`Could not access ${resJSON.name}: ${resJSON.mapUri}. Tried ${resJSON.resolveAttempts} times: \n${error}.`);
-        console.error(`Could not access ${resJSON.name}: ${resJSON.mapUri}. Tried ${resJSON.resolveAttempts} times: \n.`);
+        console.error(`Could not access ${resJSON.name}: ${resJSON.mapuri}. Tried ${resJSON.resolveAttempts} times: \n.`);
         await closeTab(pageWrapper.page);
         
         // If we have reached the number of attempts to scrape the map, stop scraping and send an inaccessible
@@ -210,9 +211,9 @@ let getGFMenu = async(resJSON) => {
         }
         
         if (error == LINK_FAILED) {
-          resJSON.gfRank = codes.LINK_INACCESSIBLE;
+          resJSON.gfrank = codes.LINK_INACCESSIBLE;
         } else {
-          resJSON.gfRank = codes.MENU_NOT_ACCESSIBLE;
+          resJSON.gfrank = codes.MENU_NOT_ACCESSIBLE;
         }
         return reject(resJSON);
       });
