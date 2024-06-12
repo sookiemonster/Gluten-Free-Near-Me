@@ -145,13 +145,13 @@ let parseRestaurantInfo = (restaurant) => {
       resJSON.gfrank = codes.SELF_DESCRIBED_GF;
       console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
-      // Send response with this info back to client
-      
+      db.updateRestaurantDetails(resJSON);
+   
    } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
       resJSON.gfrank = codes.COMMENTS_MENTION_GF;
       console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
-   // Send response with this info back to client
+      db.updateRestaurantDetails(resJSON);
 
    } else {
       enqueueRestaurant(resJSON);
@@ -175,13 +175,13 @@ let rankPlaces = async(placeData) => {
       
       db.getRestaurant(restaurant.id)
          .then((resJSON) => {
-            console.log(resJSON);
+            // console.log(resJSON);
             appEmitter.broadcastRestaurant(resJSON);
          })
          .catch((err) => {
             console.error(err);
-            parseRestaurantInfo(restaurant) }
-         );
+            parseRestaurantInfo(restaurant);
+         });
    });
 }
 

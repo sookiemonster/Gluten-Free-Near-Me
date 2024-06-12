@@ -38,37 +38,17 @@ async function getRestaurant(id) {
 }
 
 async function updateRestaurantDetails(resJSON) {
-   // do updates instead of inserting if already in table:
-   // https://stackoverflow.com/questions/1109061/insert-on-duplicate-update-in-postgresql/1109198#1109198
+   // Do not propogate details if error. Only store ID.
+   if (isError(resJSON)) { voidExceptID(resJSON); }
 
    const query = {
-      text: 'INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
-      values: [resJSON.id, resJSON.name, resJSON.lat, resJSON.long, resJSON.mapUri, resJSON.gfSum, resJSON.gfRank, resJSON.gfReviews, resJSON.gfItems]
+      text: `INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items) 
+               VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) 
+               ON CONFLICT(id) 
+               DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, last_updated) = ($2, $3, $4, $5, $6, $7, $8, $9, NOW()::DATE)`,
+      values: [resJSON.id, resJSON.name, resJSON.lat, resJSON.long, resJSON.mapuri, resJSON.summary, resJSON.gfrank, resJSON.reviews, resJSON.items]
    };
    return this.pool.query(query);
 }
-
-
-// await db.updateRestaurantDetails(
-//    {
-//       "id" : "test4",
-//       "name" : "test",
-//       "lat" : 23.442,
-//       "long": 180.233,
-//       "mapUri" : "test.com",
-//       "gfSum" : "A summary!",
-//       "gfRank" : 3, 
-//       "gfReviews" : [{"author" : "sarah", "text" : "a review!"}],
-//       "gfItems" : [{"item" : "borgar", "description" : "very tasty."}],
-//       "resolveAttempts" : 0
-//    }
-// )
-
-// await db.getRestaurant("test3");
-
-// pool.query("SELECT * FROM places;")
-//    .then((result) => console.log(result.rows));
-   
-// db.end();
 
 export { Database };

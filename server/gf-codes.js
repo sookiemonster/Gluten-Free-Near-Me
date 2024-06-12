@@ -11,7 +11,7 @@ const LINK_INACCESSIBLE = -2;
 const reviewThreshold = 90 * 24 * 60 * 60 * 1000;
 
 let isError = (resJSON) => {
-   return resJSON.gfRank < 0;
+   return resJSON.gfrank < 0;
 }
 
 let needsReview = (resJSON) => {
@@ -21,9 +21,13 @@ let needsReview = (resJSON) => {
 }
 
 let voidExceptID = (resJSON) => {
-   let voided = resFormat(resJSON.id, null, null, null, null);
-   voided.gfRank = resJSON.gfRank;
-   return voided;
+   resJSON.name = null;
+   resJSON.lat = null; 
+   resJSON.long = null; 
+   resJSON.mapuri = null; 
+   resJSON.summary = null; 
+   resJSON.reviews = null; 
+   resJSON.items = null;
 }
 
 const resFormat = (id, mapUri, lat, long, name) => {

@@ -1,4 +1,4 @@
-import { isError } from "./gf-codes";
+import { isError, voidExceptID } from "./gf-codes.js";
 
 var Emitter = function (app, io) {
    this.app = app;
@@ -8,9 +8,7 @@ var Emitter = function (app, io) {
 
 function broadcastRestaurant(menuJSON) {
    // Do not propogate details if error. Only store ID.
-   if (isError(resJSON)) { resJSON = voidExceptID(resJSON); }
-   // Store in db here
-
+   if (isError(menuJSON)) { voidExceptID(menuJSON); }
    this.io.emit('restaurant', menuJSON);
 }
 
