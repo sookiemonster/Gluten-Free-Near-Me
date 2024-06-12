@@ -9,7 +9,7 @@ import * as fs from 'node:fs';
 
 import { router as indexRouter } from './routes/index.js';
 import { router as apiRouter } from './routes/api.js';
-import { Emitter } from './socket-handler.js';
+import { Emitter } from './emitter.js';
 
 const SERVER_PORT = 5000;
 const CLIENT_PORT = 3000;

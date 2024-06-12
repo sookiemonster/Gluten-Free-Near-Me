@@ -7,6 +7,9 @@ import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
 import { appEmitter } from "./app.js";
 
+import * as fs from 'fs';
+
+
 const token = process.env.API_KEY;
 
 /**
@@ -39,6 +42,16 @@ let createRequestBody = (lat, long) => {
  * @post The places within the region are sent to be ranked
  */
 let rankNearbyPlaces = async(lat, long) => {
+   fs.readFile("small.json", (err, data) => { 
+      // Check for errors 
+      if (err) throw err; 
+      // Parse JSON and start looking for GF availabilites
+      rankPlaces(JSON.parse(data));
+   }); 
+
+   return;
+
+
    try {
       const data = {
          "method" : "POST", 
@@ -80,7 +93,7 @@ let findGFSummary = (restaurantData, res) => {
 
    res.gfSum = restaurantData.editorialSummary?.text;
 
-   if (mentionsGlutenFree(restaurantData.editorialSummary.text)) {
+   if (mentionsGlutenFree(restaurantData.editorialSummary?.text)) {
       // Editorial summary as rest. mentions gf
       return true;
    } else if (restaurantData?.generativeSummary?.overview?.text && mentionsGlutenFree(restaurantData.generativeSummary.overview.text)) {

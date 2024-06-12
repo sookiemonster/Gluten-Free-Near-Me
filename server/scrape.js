@@ -16,6 +16,8 @@ const DESCRIPTION = 2;
 
 // Error Codes
 const NOT_FOUND = [];
+const LINK_FAILED = [-1];
+const RESOLVE_LIMIT = 3;
 
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 10000; 
@@ -67,9 +69,12 @@ async function dispatchScraper() {
           dispatchScraper();
         }
       })
-      .catch(gfNotFound => {
+      .catch(errorJSON => {
         // console.error("RETURNED: " + err);
-        appEmitter.broadcastRestaurant(gfNotFound);
+        // Only emit if we actually tried resolving it enough times
+        if (errorJSON.resolveAttempts >= RESOLVE_LIMIT) {
+          appEmitter.broadcastRestaurant(errorJSON);
+        }
         dispatchScraper();
     }
   );
@@ -97,7 +102,11 @@ const scrapeMap = async(mapUri, pageWrapper) => {
   // Navigating to Google Food: ait for Order Online Button to appear & click
   let page = await browser.newPage();
   pageWrapper.page = page;
-  await page.goto(mapUri);
+  try {
+    await page.goto(mapUri);
+  } catch (error) {
+    throw LINK_FAILED; 
+  }
   
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
@@ -156,10 +165,11 @@ let getGFMenu = async(resJSON) => {
     return null;
   }
   await tabCount++;
-
+  resJSON.resolveAttempts++;
+  
   // Scrape Google Maps for all menu items
   let pageWrapper = { page: null };
-
+  
   return new Promise((resolve, reject) => {
     scrapeMap(resJSON.mapUri, pageWrapper)
       .then(async(res) => {
@@ -190,11 +200,20 @@ let getGFMenu = async(resJSON) => {
       })
       
       .catch(async(error) => {
-        console.error(`Could not access: ${resJSON.mapUri}: \n${error}`);
+        // console.error(`Could not access ${resJSON.name}: ${resJSON.mapUri}. Tried ${resJSON.resolveAttempts} times: \n${error}.`);
+        console.error(`Could not access ${resJSON.name}: ${resJSON.mapUri}. Tried ${resJSON.resolveAttempts} times: \n.`);
         await closeTab(pageWrapper.page);
-      })
-      .then(() => {
-        resJSON.gfRank = codes.MENU_NOT_ACCESSIBLE;
+        
+        // If we have reached the number of attempts to scrape the map, stop scraping and send an inaccessible
+        if (resJSON.resolveAttempts < RESOLVE_LIMIT) {
+          enqueueRestaurant(resJSON);
+        }
+        
+        if (error == LINK_FAILED) {
+          resJSON.gfRank = codes.LINK_INACCESSIBLE;
+        } else {
+          resJSON.gfRank = codes.MENU_NOT_ACCESSIBLE;
+        }
         return reject(resJSON);
       });
   });
