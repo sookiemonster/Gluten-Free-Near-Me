@@ -3,7 +3,7 @@ import pg from 'pg';
 const { Pool } = pg;
 import 'dotenv/config'; 
 
-import { isError, resFormat, voidExceptID } from './gf-codes.js';
+import { isError, voidExceptID, needsReview } from './gf-codes.js';
 
 var Database = function() {
    // Initialize Database manager
@@ -26,21 +26,18 @@ async function getRestaurant(id) {
    return new Promise((resolve, reject) => {
       this.pool.query(query)
          .then((res) => {
-            // let resJSON = resFormat(res.id, res.mapuri, )
-            console.log(res.rows[0]);
-            return resolve(res.rows[0]);
+            // If not found / it's been previously inaccessible
+            if (!res.rows[0] || needsReview(res.rows[0])) { throw null; }
+            resolve(res.rows[0]);
          })
          .catch((err) => {
-            console.error(err);
-            return reject(err);
+            // console.log(err);
+            reject(null);
          })
    });
 }
 
 async function updateRestaurantDetails(resJSON) {
-   // Do not propogate details if error. Only store ID.
-   if (isError(resJSON)) { resJSON = voidExceptID(resJSON); }
-
    // do updates instead of inserting if already in table:
    // https://stackoverflow.com/questions/1109061/insert-on-duplicate-update-in-postgresql/1109198#1109198
 
@@ -51,7 +48,6 @@ async function updateRestaurantDetails(resJSON) {
    return this.pool.query(query);
 }
 
-let db = new Database;
 
 // await db.updateRestaurantDetails(
 //    {
@@ -68,9 +64,11 @@ let db = new Database;
 //    }
 // )
 
-await db.getRestaurant("test4");
+// await db.getRestaurant("test3");
 
 // pool.query("SELECT * FROM places;")
 //    .then((result) => console.log(result.rows));
    
-db.end();
+// db.end();
+
+export { Database };

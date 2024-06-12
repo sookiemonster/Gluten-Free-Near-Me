@@ -5,7 +5,7 @@ import 'dotenv/config';
 import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
-import { appEmitter } from "./app.js";
+import { appEmitter, db } from "./app.js";
 
 import * as fs from 'fs';
 
@@ -138,6 +138,27 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
    return storeGFReviews.length > 0;
 }
 
+let parseRestaurantInfo = (restaurant) => {
+   let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
+
+   if (findGFSummary(restaurant, resJSON)) {
+      resJSON.gfrank = codes.SELF_DESCRIBED_GF;
+      console.log(resJSON);
+      appEmitter.broadcastRestaurant(resJSON);
+      // Send response with this info back to client
+      
+   } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
+      resJSON.gfrank = codes.COMMENTS_MENTION_GF;
+      console.log(resJSON);
+      appEmitter.broadcastRestaurant(resJSON);
+   // Send response with this info back to client
+
+   } else {
+      enqueueRestaurant(resJSON);
+      dispatchScraper();
+   }
+}
+
 /**
  * Parses and ranks each restaurant in placeData, broadcasting the result to all connected users
  * @param {Object} placeData The google maps JSON response from a nearbySearch
@@ -151,25 +172,16 @@ let rankPlaces = async(placeData) => {
    placeData.places.forEach((restaurant) => {
       if (!restaurant) { return; }
       console.log(restaurant.displayName.text);
-      // Wrap summary into object to be edited in functions
-      let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
-
-      if (findGFSummary(restaurant, resJSON)) {
-         resJSON.gfrank = codes.SELF_DESCRIBED_GF;
-         console.log(resJSON);
-         appEmitter.broadcastRestaurant(resJSON);
-         // Send response with this info back to client
-         
-      } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
-         resJSON.gfrank = codes.COMMENTS_MENTION_GF;
-         console.log(resJSON);
-         appEmitter.broadcastRestaurant(resJSON);
-      // Send response with this info back to client
-
-      } else {
-         enqueueRestaurant(resJSON);
-         dispatchScraper();
-      }
+      
+      db.getRestaurant(restaurant.id)
+         .then((resJSON) => {
+            console.log(resJSON);
+            appEmitter.broadcastRestaurant(resJSON);
+         })
+         .catch((err) => {
+            console.error(err);
+            parseRestaurantInfo(restaurant) }
+         );
    });
 }
 

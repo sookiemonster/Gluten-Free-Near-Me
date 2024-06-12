@@ -1,3 +1,5 @@
+import { isError } from "./gf-codes";
+
 var Emitter = function (app, io) {
    this.app = app;
    this.io = io;
@@ -5,8 +7,8 @@ var Emitter = function (app, io) {
 }
 
 function broadcastRestaurant(menuJSON) {
-   // Remove the resolution attempt field (to minimize information sent)
-   delete menuJSON['resolveAttempts'];
+   // Do not propogate details if error. Only store ID.
+   if (isError(resJSON)) { resJSON = voidExceptID(resJSON); }
    // Store in db here
 
    this.io.emit('restaurant', menuJSON);
