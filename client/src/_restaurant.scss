@@ -1,0 +1,158 @@
+@use 'variables' as *;
+
+#restaurants {
+   position: relative;
+   display: flex;
+   flex-flow: column nowrap;
+   overflow-y: scroll;
+   height: 100%;
+   width: 100%;;
+   gap: 20px;
+   margin-top: 2vh;
+   padding-right: 15px;
+}
+
+.restaurant-container {
+   $padding-side: 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+
+   position: relative;
+   background-color: $white;
+   width: 100%;
+   padding: 30px 33px 30px 30px;
+   border-radius: 12px;
+
+   .header {
+      display: flex;
+      width: 100%;
+
+      .restaurant-name {
+         display: block;
+         font-size: 1.25rem;
+         font-weight: 700;
+      }
+
+      .rating {
+      
+         margin-left: auto;
+         display: flex;
+      }
+
+
+      .stars {
+
+      }
+      .rating-num {
+         font-size: 1rem;
+         font-weight: 700;
+      }
+   }
+   
+   .offering-type {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .box {
+         width: 15px;
+         height: 15px;
+         border-radius: 5px;
+      }
+
+      .offering-description {
+         font-style: italic;
+         font-size: .9rem;
+      }
+   }
+
+   .restaurant-description {
+      color: $gray;
+   }
+
+   .offering-type.green {
+      .box { background-color: $green; }
+   }
+   .offering-type.yellow {
+      .box { background-color: $yellow; }
+   }
+
+
+   .refer-to-google {
+      position: absolute;
+      font-size: .9rem;
+      bottom: 28px;
+      right: $padding-side;
+      color: $link; 
+      a { color: $link; }
+   }
+
+   .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-height: 7rem;
+      overflow-y: scroll;
+      margin-bottom: 25px;
+   }
+
+   @supports not selector(::-webkit-scrollbar) {
+      .menu {
+         scrollbar-color: $scroll-handle $scroll-bg-light;
+         scrollbar-width: thin;
+      }
+   }
+   
+   .menu::-webkit-scrollbar {
+      width: 1ch;
+   }
+   
+   .menu::-webkit-scrollbar-track {
+      background-color: $scroll-bg-light;
+      border-radius: 10px;
+   }
+   
+   .menu::-webkit-scrollbar-thumb {
+      background: $scroll-handle;
+      border-radius: 10px;
+   }
+
+   .food-item {
+      padding-right: 1ch;
+      span {display: block;}
+      .item-name::before {
+         content: '- ';
+      }
+
+      .item-name {
+         font-weight: 600;
+         font-weight: .9rem;
+      }
+      .item-description {
+         font-size: .9rem;
+         line-height: 1.1rem;
+         color: $gray;
+      }
+   }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+   #restaurants {
+      scrollbar-color: $scroll-handle $scroll-bg-dark;
+      scrollbar-width: thin;
+   }
+}
+
+#restaurants::-webkit-scrollbar {
+   width: 1ch;
+}
+
+#restaurants::-webkit-scrollbar-track {
+   background-color: $scroll-bg-dark;
+   border-radius: 10px;
+}
+
+#restaurants::-webkit-scrollbar-thumb {
+   background: $scroll-handle-dark;
+   border-radius: 10px;
+}

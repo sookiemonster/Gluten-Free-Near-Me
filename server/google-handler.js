@@ -7,7 +7,7 @@ import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
 import { appEmitter, db } from "./app.js";
 
-import * as fs from 'fs';
+// import * as fs from 'fs';
 
 
 const token = process.env.API_KEY;
@@ -57,7 +57,7 @@ let rankNearbyPlaces = async(lat, long) => {
          "method" : "POST", 
          "headers" :  {
             "Content-Type" : "application/json",
-            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.location",
+            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.location, places.rating, ",
             "X-Goog-Api-Key" : token,
          },
          "body" : JSON.stringify(createRequestBody(lat, long))

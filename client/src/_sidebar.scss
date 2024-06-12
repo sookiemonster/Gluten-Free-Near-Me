@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+h1 {
+   margin: 0;
+   padding:0;
+   font-weight: 900;
+   font-size: 32;
+   color: $white;
+}
+
+#sidebar {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 550px;
+   height: 100vh;
+   padding: 45px 15px 30px 30px;
+   background-color: $dark;
+}
+
+.shadow {
+   position: relative;
+   display: block;
+   z-index: 99;
+   height: 10px;
+   background-color: red;
+   -webkit-box-shadow: 0px -18px 28px -11px rgba(0,0,0,0.72);
+   -moz-box-shadow: 0px -18px 28px -11px rgba(0,0,0,0.72);
+   box-shadow: 0px -18px 28px -11px rgba(0,0,0,0.72);
+}
+
+nav {
+   display: flex;
+   gap: 15px;
+   margin-top: auto;
+
+   a {
+      color: $white;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: .9rem;
+   }
+      
+   .active {
+      font-weight: 600;
+   }
+}
