@@ -87,20 +87,21 @@ let rankNearbyPlaces = async(lat, long) => {
  * @post The object's gfSum property is updated with that summary
  */
 let findGFSummary = (restaurantData, res) => {
-   if (!restaurantData) {
-      return false;
-   }
+   if (!restaurantData) { return false; }
 
+   // Try using Editorial summary
    res.gfSum = restaurantData.editorialSummary?.text;
+   // If it fails, try using the generative summary
+   res.gfSum = (!res.gfSum) ? restaurantData?.generativeSummary?.overview?.text : undefined;
 
    if (mentionsGlutenFree(restaurantData.editorialSummary?.text)) {
-      // Editorial summary as rest. mentions gf
+      // Previously allocated summary mentions gf
       return true;
-   } else if (restaurantData?.generativeSummary?.overview?.text && mentionsGlutenFree(restaurantData.generativeSummary.overview.text)) {
+   } else if (mentionsGlutenFree(restaurantData?.generativeSummary?.overview?.text)) {
       // Include generative summary overview as rest. summ
       res.gfSum = restaurantData.generativeSummary.overview.text;
       return true;
-   } else if (restaurantData?.generativeSummary?.description?.text && mentionsGlutenFree(restaurantData.generativeSummary.description.text)) {
+   } else if (mentionsGlutenFree(restaurantData?.generativeSummary?.description?.text)) {
       // Include generative summary descrption as rest summary
       res.gfSum = restaurantData.generativeSummary.description.text;
       return true;
@@ -111,8 +112,8 @@ let findGFSummary = (restaurantData, res) => {
 
 /**
  * Determines whether the place data reviews for a specified restaurant mention gluten-free
- * @param {String|Array} restaurantReviews An array of restaurant reviews
- * @param {String|Array} storeGFReviews An array to store reviews that mention gluten-free in
+ * @param {JSON|Array} restaurantReviews An array of restaurant reviews
+ * @param {JSON|Array} storeGFReviews An array to store reviews that mention gluten-free in
  * @returns True whether any reviews were added. False otherwise.
  * @post The storeGFReviews array is propogated with any reviews mentioning gluten-free
  */
@@ -122,10 +123,21 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
       return false;
    }
 
+   // Define a local function to format the timestamp 
+   let formatTimestamp = (dateString) => {
+      if (!dateString || dateString.length == 0) { return; }
+      return dateString.split('T')[0];
+   };
+
    restaurantReviews.forEach((review) => {
       // console.log(review);
-      if (mentionsGlutenFree(review?.text?.text)) { 
-         storeGFReviews.push(review?.text?.text); 
+      if (mentionsGlutenFree(review?.text?.text)) {
+         storeGFReviews.push({
+            author : review?.authorAttribution?.displayName,
+            rating: review?.rating,
+            text : review?.text?.text, 
+            publishDate : formatTimestamp(review?.publishTime)
+         }); 
       }
    });
 
