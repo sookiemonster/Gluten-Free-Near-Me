@@ -1,5 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+$font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
 
 // Tag Colors
 $yellow: #F6B409;
@@ -8,6 +11,7 @@ $green: #25A305;
 $dark-green: #123811;
 
 // Document Styling
+$dark-dark: #050020;
 $dark: #130C3E;
 $link: #8761F2;
 $white: #FFFFFF;

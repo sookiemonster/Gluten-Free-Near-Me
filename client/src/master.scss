@@ -1,4 +1,4 @@
-@use 'variables';
+@use 'variables' as *;
 @use 'button';
 @use 'map';
 @use 'restaurant';
@@ -8,10 +8,8 @@
   box-sizing: border-box;
 }
 
-html,body, #root{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+html,body, .App{
+  font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
@@ -20,8 +18,8 @@ html,body, #root{
   padding: 0;
 }
 
-#root {
-  display: grid;
+.App {
+  display: flex;
 }
  
 h1 {
@@ -36,17 +34,4 @@ code {
 
 header {
   height: 2em;
-}
-
-#map {
-  height: 75%;
-  width: 100%;
-}
-
-.price-tag {
-  border-radius: 8px;
-  color: #FFFFFF;
-  font-size: 14px;
-  padding: 10px 15px;
-  position: relative;
 }
