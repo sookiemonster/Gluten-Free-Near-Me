@@ -12,6 +12,7 @@ var Database = function() {
    // Query methods
    this.updateRestaurantDetails = updateRestaurantDetails.bind(this);
    this.getRestaurant = getRestaurant.bind(this);
+   this.getAllInBounds = getAllInBounds.bind(this);
 
    // Close pool
    this.end = () => { this.pool.end(); }
@@ -29,6 +30,26 @@ async function getRestaurant(id) {
             // If not found / it's been previously inaccessible
             if (!res.rows[0] || needsReview(res.rows[0])) { throw null; }
             resolve(res.rows[0]);
+         })
+         .catch((err) => {
+            // console.log(err);
+            reject(null);
+         })
+   });
+}
+
+async function getAllInBounds(bottomLeft, topRight) {
+   const query = {
+      text: "SELECT * FROM places WHERE lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4",
+      values: [bottomLeft.lat, topRight.lat, bottomLeft.long, topRight.long]
+   }
+
+   return new Promise((resolve, reject) => {
+      this.pool.query(query)
+         .then((res) => {
+            // If not found / it's been previously inaccessible
+            if (!res.rows[0]) { throw null; }
+            resolve(res.rows);
          })
          .catch((err) => {
             // console.log(err);

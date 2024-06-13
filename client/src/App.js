@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import { findNearby } from './script.js';
+// import { findNearby } from './script.js';
 import './master.css';
 // import './master.css';
 
@@ -10,6 +10,8 @@ function App() {
     <div className="App">
       <div id="sidebar">
         <h1>Gluten Free Near Me</h1>
+        <button id="finder">Send request</button> */}
+
         <div id="restaurants">
           <div className="restaurant-container"></div>
         </div>

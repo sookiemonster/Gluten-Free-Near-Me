@@ -1,3 +1,5 @@
+// import { viewportBounds } from "./find.js";
+
 // Request needed libraries.
 const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
   google.maps.importLibrary("marker"),
@@ -65,4 +67,4 @@ let marker = (resName, resLat, resLong) => {
   });
 }
 
-export { marker };
+export { marker, map };
