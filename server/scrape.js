@@ -17,7 +17,7 @@ const DESCRIPTION = 2;
 // Error Codes
 const NOT_FOUND = [];
 const LINK_FAILED = [-1];
-const RESOLVE_LIMIT = 3;
+const RESOLVE_LIMIT = 1;
 
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 10000; 
