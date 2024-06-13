@@ -1,6 +1,23 @@
-import { map } from './map.js';
+import { marker, map } from './map.js';
 
 let viewportBounds;
+
+// Define offset to cast multiple nearby searches
+const offset = 0.004;
+const maxSearches = 3;
+
+let getViewportSearches = () => { 
+   if (!viewportBounds) { return; }
+
+   // Create an array of centers offset sequentially
+   let result = [...Array(maxSearches).keys()];
+   return result.map((i) => 
+      ({ 
+         lat : (viewportBounds.bottomLeft.lat + viewportBounds.topRight.lat) / 2, 
+         long : viewportBounds.bottomLeft.long + (i * offset)
+      })
+   );
+}
 
 let findNearby = () => {
    if (!map) { return; }
@@ -18,10 +35,15 @@ let findNearby = () => {
          long: map.getBounds().getNorthEast().lng()
       }
    }
+   
+   let data = {};
+   data.searchFoci = getViewportSearches();
+   data.viewportBounds = viewportBounds;
+
    const options = {
       method: "Post", 
       headers: { "Content-Type" : "application/json"},
-      body: JSON.stringify(viewportBounds)
+      body: JSON.stringify(data)
    }
 
    // Now the API will emit locations within this region. 
