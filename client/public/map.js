@@ -18,7 +18,7 @@ async function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 18,
     minZoom: 17,
-    maxZoom: 18,
+    maxZoom: 20,
     center: position,
     zoomControl: false,
     streetViewControl: false,
@@ -53,16 +53,37 @@ async function initMap() {
 
 initMap();
 
-let marker = (resName, resLat, resLong) => {
+let marker = (resName, resID, resLat, resLong, gfrank) => {
   let tag = document.createElement("div");
 
   tag.className = "gf-tag";
+  switch (gfrank) {
+    case "3":
+      // self described gf
+      tag.className += " hasMention";
+      break;
+    case "2":
+      // reviews mention gf
+      tag.className += " hasComments";
+      break;
+    case "1":
+      // menu has gf items
+      tag.className += " hasMenu";
+      break;
+  }
   tag.textContent = resName;
 
-  return new google.maps.marker.AdvancedMarkerElement({
+  let tagMarker = new google.maps.marker.AdvancedMarkerElement({
     map: map,
     position: new google.maps.LatLng(resLat, resLong),
+    gmpClickable: true,
     content: tag
+  });
+
+  tagMarker.addEventListener('click', ()=> {
+    console.log("I clicked this marker!");
+    var card = document.getElementById(`m${resID}`);
+    card.scrollIntoView();
   });
 }
 

@@ -7,6 +7,6 @@ socket.on('restaurant', (restaurant) => {
    // Error or not in viewport, do not render
    if (restaurant.gfRank < 1 || !isInViewport(restaurant.lat, restaurant.long)) { return; }
    // Otherwise, render on the map
-   marker(restaurant.name, restaurant.lat, restaurant.long)
+   marker(restaurant.name, restaurant.id, restaurant.lat, restaurant.long, restaurant.gfrank);
 });
 console.log("client on");

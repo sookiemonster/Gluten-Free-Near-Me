@@ -1,4 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap");
+.gf-tag {
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 15px;
+  position: relative;
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+.gf-tag::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.gf-tag.hasMention {
+  background-color: #25A305;
+}
+
+.gf-tag.hasMention::after {
+  border-top: 8px solid #123811;
+}
+
+.gf-tag.hasMenu {
+  background-color: #F6B409;
+}
+
+.gf-tag.hasMenu::after {
+  border-top: 8px solid #903B0B;
+}
+
+.gf-tag.hasComments {
+  background-color: #631700;
+}
+
+.gf-tag.hasComments::after {
+  border-top: 8px solid #421102;
+}
+
 #map {
   height: 100%;
   width: 100%;
@@ -172,7 +217,7 @@ h1 {
 #search-container {
   display: flex;
   align-items: center;
-  width: calc(100% - 40px);
+  width: 330px;
   color: #FFFFFF;
   background-color: #050020;
   padding: 15px;
