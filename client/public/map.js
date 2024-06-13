@@ -1,5 +1,3 @@
-// import { viewportBounds } from "./find.js";
-
 // Request needed libraries.
 const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
   google.maps.importLibrary("marker"),
@@ -18,10 +16,11 @@ async function initMap() {
 
   // The map, centered at Uluru
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 16,
-    minZoom: 16,
-    maxZoom: 17,
+    zoom: 18,
+    minZoom: 17,
+    maxZoom: 18,
     center: position,
+    zoomControl: false,
     streetViewControl: false,
     mapTypeControl: false,
     fullscreenControl: false,
@@ -43,7 +42,7 @@ async function initMap() {
       map.fitBounds(place.viewport);
     } else {
       map.setCenter(place.location);
-      map.setZoom(17);
+      map.setZoom(18);
     }
     
     locator.position = place.location;
@@ -60,9 +59,9 @@ let marker = (resName, resLat, resLong) => {
   tag.className = "gf-tag";
   tag.textContent = resName;
 
-  return new AdvancedMarkerElement({
+  return new google.maps.marker.AdvancedMarkerElement({
     map: map,
-    position: { lat: resLat, lng: resLong },
+    position: new google.maps.LatLng(resLat, resLong),
     content: tag
   });
 }

@@ -59,7 +59,7 @@ let isBetween = (target, min, max) => {
 
 let isInViewport = (placeLat, placeLong) => {
  // We have no viewport to get the bounds of
- if (!viewport) { return false; }
+ if (!viewportBounds) { return false; }
  return isBetween(placeLat, viewportBounds.bottomLeft.lat, viewportBounds.topRight.lat) && isBetween(placeLong, viewportBounds.bottomLeft.long, viewportBounds.topRight.long);
 }
 

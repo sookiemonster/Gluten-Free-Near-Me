@@ -15,6 +15,7 @@ function broadcastRestaurant(menuJSON) {
 }
 
 function broadcastBatch(collection) {
+   if (!collection || collection.length == 0) { return; }
    collection.forEach(resJSON => {
       this.broadcastRestaurant(resJSON);
    });

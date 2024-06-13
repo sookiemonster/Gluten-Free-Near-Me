@@ -42,14 +42,15 @@ let createRequestBody = (lat, long) => {
  * @post The places within the region are sent to be ranked
  */
 let rankNearbyPlaces = async(lat, long) => {
-   fs.readFile("small.json", (err, data) => { 
-      // Check for errors 
-      if (err) throw err; 
-      // Parse JSON and start looking for GF availabilites
-      rankPlaces(JSON.parse(data));
-   }); 
+   if (!lat || !long) {return;}
+   // fs.readFile("small.json", (err, data) => { 
+   //    // Check for errors 
+   //    if (err) throw err; 
+   //    // Parse JSON and start looking for GF availabilites
+   //    rankPlaces(JSON.parse(data));
+   // }); 
 
-   return;
+   // return;
 
 
    try {
@@ -57,20 +58,26 @@ let rankNearbyPlaces = async(lat, long) => {
          "method" : "POST", 
          "headers" :  {
             "Content-Type" : "application/json",
-            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.location, places.rating, ",
+            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.rating,places.location",
             "X-Goog-Api-Key" : token,
          },
          "body" : JSON.stringify(createRequestBody(lat, long))
       }
       
       fetch("https://places.googleapis.com/v1/places:searchNearby", data)
-         .then(response => { return response.json(); })
-         .then(resJSON => { rankPlaces(resJSON); })
+         .then(response => { 
+            db.pushLog(lat, long);
+            return response.json(); 
+         })
+         .then(resJSON => { 
+            if (resJSON?.error?.code == 400) { throw resJSON; }
+            console.log(resJSON);
+            rankPlaces(resJSON); 
+         })
          .catch(err => { console.error(err); })
    } catch (err) {
       console.log(err);
    }
-
 }
 
 /**
@@ -86,7 +93,7 @@ let rankNearbyPlaces = async(lat, long) => {
  * @returns True if any of the restaurant summaries mention gluten-free
  * @post The object's summary property is updated with that summary
  */
-let findGFSummary = (restaurantData, res) => {
+var findGFSummary = (restaurantData, res) => {
    if (!restaurantData) { return false; }
 
    // Try using Editorial summary
@@ -112,7 +119,7 @@ let findGFSummary = (restaurantData, res) => {
  * @returns True whether any reviews were added. False otherwise.
  * @post The storeGFReviews array is propogated with any reviews mentioning gluten-free
  */
-let findGFReviews = (restaurantReviews, storeGFReviews) => {
+var findGFReviews = (restaurantReviews, storeGFReviews) => {
    // Validate array
    if (!Array.isArray(restaurantReviews) || restaurantReviews.length == 0) {
       return false;
@@ -138,7 +145,7 @@ let findGFReviews = (restaurantReviews, storeGFReviews) => {
    return storeGFReviews.length > 0;
 }
 
-let parseRestaurantInfo = (restaurant) => {
+var parseRestaurantInfo = (restaurant) => {
    let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
 
    if (findGFSummary(restaurant, resJSON)) {
@@ -163,7 +170,7 @@ let parseRestaurantInfo = (restaurant) => {
  * Parses and ranks each restaurant in placeData, broadcasting the result to all connected users
  * @param {Object} placeData The google maps JSON response from a nearbySearch
  */
-let rankPlaces = async(placeData) => {
+var rankPlaces = async(placeData) => {
    // Validate places information format
    if (!Array.isArray(placeData.places) || placeData.places.length == 0) {
       return ;
