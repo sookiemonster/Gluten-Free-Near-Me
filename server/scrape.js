@@ -20,7 +20,7 @@ const LINK_FAILED = [-1];
 const RESOLVE_LIMIT = 1;
 
 // Redefine timeout & configure browser options
-export const TIMEOUT_MS = 10000; 
+export const TIMEOUT_MS = 4000; 
 const options = {
   args: [
     '--disable-dev-shm-usage',
