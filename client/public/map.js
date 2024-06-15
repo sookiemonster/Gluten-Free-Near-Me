@@ -57,7 +57,7 @@ let marker = (resName, resID, resLat, resLong, gfrank) => {
   let tag = document.createElement("div");
 
   tag.className = "gf-tag";
-  switch (gfrank) {
+  switch (String(gfrank)) {
     case "3":
       // self described gf
       tag.className += " hasMention";
@@ -80,7 +80,7 @@ let marker = (resName, resID, resLat, resLong, gfrank) => {
     content: tag
   });
 
-  tagMarker.addEventListener('click', ()=> {
+  tagMarker.addEventListener('gmp-click', ()=> {
     console.log("I clicked this marker!");
     var card = document.getElementById(`m${resID}`);
     card.scrollIntoView();
