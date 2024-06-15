@@ -40,44 +40,49 @@ let createRequestBody = (lat, long) => {
  * @param {float} lat The latitude of the center 
  * @param {float} long The longitude of the center
  * @post The places within the region are sent to be ranked
+ * @return {String|Array} The list of places being ranked
  */
 let rankNearbyPlaces = async(lat, long) => {
    if (!lat || !long) {return;}
-   // fs.readFile("small.json", (err, data) => { 
-   //    // Check for errors 
-   //    if (err) throw err; 
-   //    // Parse JSON and start looking for GF availabilites
-   //    rankPlaces(JSON.parse(data));
-   // }); 
 
-   // return;
-
-
-   try {
-      const data = {
-         "method" : "POST", 
-         "headers" :  {
-            "Content-Type" : "application/json",
-            "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.rating,places.location",
-            "X-Goog-Api-Key" : token,
-         },
-         "body" : JSON.stringify(createRequestBody(lat, long))
-      }
+   const data = {
+      "method" : "POST", 
+      "headers" :  {
+         "Content-Type" : "application/json",
+         "X-Goog-FieldMask" : "places.id,places.displayName,places.formattedAddress,places.reviews,places.googleMapsUri,places.editorialSummary,places.generativeSummary.overview,places.generativeSummary.description,places.rating,places.location",
+         "X-Goog-Api-Key" : token,
+      },
+      "body" : JSON.stringify(createRequestBody(lat, long))
+   }
       
+   return new Promise((resolve, reject) => {
       fetch("https://places.googleapis.com/v1/places:searchNearby", data)
          .then(response => { 
             db.pushLog(lat, long);
             return response.json(); 
          })
-         .then(resJSON => { 
-            if (resJSON?.error?.code == 400) { throw resJSON; }
-            console.log(resJSON);
-            rankPlaces(resJSON); 
+         .then(nearbyPlaces => { 
+            if (nearbyPlaces?.error?.code == 400) { throw nearbyPlaces; }
+            console.log(nearbyPlaces);
+            
+            // Validate placeData list
+            if (!Array.isArray(nearbyPlaces.places) || nearbyPlaces.places.length == 0) {
+               resolve([-1]);
+               return;
+            }
+            rankPlaces(nearbyPlaces);
+            // Return an array of IDs corresponding to the places to be scraped 
+
+            console.log("add ids");
+            let ids = nearbyPlaces.places.map(place => place.id);
+            console.log(ids);
+            resolve(ids); 
          })
-         .catch(err => { console.error(err); })
-   } catch (err) {
-      console.log(err);
-   }
+         .catch(err => { 
+            console.error(err);
+            resolve([-2]);
+         })
+   });
 }
 
 /**
@@ -171,11 +176,6 @@ var parseRestaurantInfo = (restaurant) => {
  * @param {Object} placeData The google maps JSON response from a nearbySearch
  */
 var rankPlaces = async(placeData) => {
-   // Validate places information format
-   if (!Array.isArray(placeData.places) || placeData.places.length == 0) {
-      return ;
-   }
-
    placeData.places.forEach((restaurant) => {
       if (!restaurant) { return; }
       console.log(restaurant.displayName.text);

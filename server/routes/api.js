@@ -19,24 +19,42 @@ router.post('/find-nearby', (req, res) => {
          console.error(err);
       });
 
+   let searchPromises = [];
+   let isValid = false;
    for (let point of searchFoci) {
       console.log(point);
-      db.isValidSearch(point)
-         .then((isValid) => {
-            console.log(point);
-            console.log(isValid);
-            if (!isValid) { return; }
-            console.log('RANKING');
-            rankNearbyPlaces(point.lat, point.long);
-         })
-         .catch(err => {
-            console.log(err)
-            console.log("WE HAVE AN ERROR");
-            rankNearbyPlaces(point.lat, point.long);
-         });
+      searchPromises.push(new Promise((resolve) => {
+         db.isValidSearch(point)
+            .then((validationResult) => {
+               isValid = validationResult;
+               console.log(point);
+               console.log(isValid);
+            })
+            .catch(err => {
+               // There was an error querying the database, so just use this search point
+               console.error("There was an error querying the database.");
+               console.error(err);
+               isValid = true;
+            }).then(() => {
+               if (!isValid) { return; }
+               console.log("Ranking: ");
+               rankNearbyPlaces(point.lat, point.long)
+                  .then((ids) => resolve(ids));
+            });
+      }));
    }
-   // rankNearbyPlaces(40.728940,-74.000321);
-   // rankNearbyPlaces(40.690665,-73.850745);
+
+   
+   Promise.all(searchPromises)
+      .then((allIDsWrapper) => {
+         console.log("all ids: ");
+         console.log(allIDsWrapper);
+         console.log("all id end");
+         res.send(allIDsWrapper);
+      }) 
+      .catch((err) => {
+         console.error(err);
+      })
 });
 
 export { router };
