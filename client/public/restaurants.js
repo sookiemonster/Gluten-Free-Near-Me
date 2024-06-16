@@ -1,0 +1,2 @@
+NO_RESULTS_WIDTH = "330x;"
+FOUND_WIDTH = "550px";

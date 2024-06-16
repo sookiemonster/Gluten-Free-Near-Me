@@ -57,6 +57,7 @@ let marker = (resName, resID, resLat, resLong, gfrank) => {
   let tag = document.createElement("div");
 
   tag.className = "gf-tag";
+  tag.id = "m" + resID;
   switch (String(gfrank)) {
     case "3":
       // self described gf

@@ -20,7 +20,9 @@ html,body, .App{
 }
 
 .App {
-  display: flex;
+  display: grid;
+  grid-template-areas: "sidebar map";
+  grid-template-columns: 550px 1fr;
 }
  
 h1 {

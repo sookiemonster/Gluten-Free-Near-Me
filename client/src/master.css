@@ -208,7 +208,6 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 550px;
   height: 100vh;
   padding: 45px 15px 30px 30px;
   background-color: #130C3E;
@@ -257,7 +256,9 @@ html, body, .App {
 }
 
 .App {
-  display: flex;
+  display: grid;
+  grid-template-areas: "sidebar map";
+  grid-template-columns: 550px 1fr;
 }
 
 h1 {
