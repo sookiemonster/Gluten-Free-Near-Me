@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 
 function MapReferral({mapUri}) {
    return (
@@ -89,16 +89,16 @@ function Rating({ratingValue}) {
             { starPath }
             <svg id="all-stars">
                {/* Make 5 stars*/}
-               { [...Array(5).keys().map((i) => <use href="#star" x={i * (starWidth + gap)} y="0" />)] }
+               { [...Array(5).keys().map((i) => <use key={i} href="#star" x={i * (starWidth + gap)} y="0" />)] }
             </svg>
          </defs>
          <clipPath id="clip-stars">
             {/* Make 5 stars as a clipping mask */}
-            { [...Array(5).keys().map((i) => <use href="#star" x={i * (starWidth + gap)} y="0" />)] }
+            { [...Array(5).keys().map((i) => <use key={i} href="#star" x={i * (starWidth + gap)} y="0" />)] }
          </clipPath>
          {/* Extend a rectangle scaling by the rating */}
          <use href="#all-stars" fill={bgColor} />
-         <rect x="0" y="0" width={ratingValue * 16 + (ratingValue -1 ) * 4} height="50" clip-path="url(#clip-stars)" />
+         <rect x="0" y="0" width={ratingValue * 16 + (ratingValue -1 ) * 4} height="50" clipPath="url(#clip-stars)" />
          </svg>
       </div>
    <span className="rating-num">{ ratingValue }</span>
@@ -122,4 +122,20 @@ function Restaurant ({name, id, summary, rating, mapUri, gfrank, reviews=[], men
    );
 }
 
-export default Restaurant;
+function Restaurants() {
+   const [restaurantCollection, setRestaurantCollection] = useState([]);
+
+   function addRestaurant(name, id, summary, rating, mapUri, gfrank, reviews=[], menu=[]) {
+      let test = <Restaurant key={restaurantCollection.length} name ={name} id={id} summary={summary} rating={rating} mapUri={mapUri} gfrank={gfrank} reviews={reviews} menu={menu} />;
+      var updatedCollection = restaurantCollection;
+      updatedCollection.push(test);
+   }
+
+   return (
+   <div id="restaurants" onClick={addRestaurant("test", "id", "wd", "4.0", "/", "3")}>
+      { restaurantCollection }   
+   </div>
+   );
+}
+
+export default Restaurants;
