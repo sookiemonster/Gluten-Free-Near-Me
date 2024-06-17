@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React from 'react';
 // import { findNearby } from './script.js';
 import Restaurants from './Restaurants.js';
+import { store } from './ReduxHandler.js';
 import './master.css';
 // import './master.css';
 

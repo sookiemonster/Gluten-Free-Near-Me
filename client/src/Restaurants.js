@@ -127,7 +127,7 @@ function Restaurants() {
 
    function addRestaurant(name, id, summary, rating, mapUri, gfrank, reviews=[], menu=[]) {
       let test = <Restaurant key={restaurantCollection.length} name ={name} id={id} summary={summary} rating={rating} mapUri={mapUri} gfrank={gfrank} reviews={reviews} menu={menu} />;
-      var updatedCollection = restaurantCollection;
+      const updatedCollection = restaurantCollection.slice();
       updatedCollection.push(test);
    }
 
