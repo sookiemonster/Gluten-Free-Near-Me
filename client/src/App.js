@@ -3,6 +3,7 @@ import React from 'react';
 // import { findNearby } from './script.js';
 import Restaurants from './Restaurants.js';
 import store from './Store.js';
+import {APIProvider, Map} from '@vis.gl/react-google-maps';
 import './master.css';
 // import './master.css';
 
@@ -26,9 +27,22 @@ function App() {
             </nav>
         </div>
 
+  
         <div id="map-container">
-          <div id="map"></div>
-        </div>
+          <APIProvider apiKey={process.env.REACT_APP_API_KEY}>
+          <Map
+            id="map"
+            style={{width: '100%', height: '100'}}
+            defaultCenter={{lat: 40.7174, lng: -73.985}}
+            defaultZoom={18}
+            minZoom={17}
+            maxZoom={20}
+            gestureHandling={'greedy'}
+            disableDefaultUI={true}
+            mapId={"map-id"}
+            />
+          </APIProvider>
+          </div>
       </div>
   );
 }
