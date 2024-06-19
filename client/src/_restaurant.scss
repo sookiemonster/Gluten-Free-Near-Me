@@ -141,10 +141,11 @@
 
       .item-name {
          font-weight: 600;
-         font-weight: .9rem;
+         font-size: .9rem;
+         text-transform: capitalize;
       }
       .item-description {
-         font-size: .9rem;
+         font-size: .8rem;
          line-height: 1.1rem;
          color: $gray;
       }

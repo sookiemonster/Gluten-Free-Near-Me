@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 import { useSelector } from 'react-redux'
 
 function MapReferral({mapUri}) {
@@ -21,7 +21,7 @@ function Meal({name, description}) {
    let renderDescription = (description) ? (<span className="item-description"><q>{ description }</q></span>) : "";
    return (
       <div className="food-item">
-         <span className="item-name">{ name }</span>
+         <span className="item-name">{ name.toLowerCase() }</span>
          { renderDescription }
       </div>
    );
@@ -130,7 +130,7 @@ function Restaurants() {
 
    return (
    <div id="restaurants">
-      { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapUri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} /> )}
+      { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapuri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} /> )}
    </div>
    );
 }

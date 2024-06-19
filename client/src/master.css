@@ -180,10 +180,11 @@
 }
 .restaurant-container .food-item .item-name {
   font-weight: 600;
-  font-weight: 0.9rem;
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }
 .restaurant-container .food-item .item-description {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.1rem;
   color: #757575;
 }
