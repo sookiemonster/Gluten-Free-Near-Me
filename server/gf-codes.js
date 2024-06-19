@@ -28,15 +28,17 @@ let voidExceptID = (resJSON) => {
    resJSON.summary = null; 
    resJSON.reviews = null; 
    resJSON.items = null;
+   resJSON.rating = null;
 }
 
-const resFormat = (id, mapUri, lat, long, name) => {
+const resFormat = (id, mapUri, lat, long, name, rating) => {
    return  {
       "id" : id,
       "name" : name,
       "lat" : lat,
       "long": long,
       "mapuri" : mapUri,
+      "rating" : rating,
       "summary" : "",
       "gfrank" : 0, 
       "reviews" : [],

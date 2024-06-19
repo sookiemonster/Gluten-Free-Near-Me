@@ -67,11 +67,11 @@ async function updateRestaurantDetails(resJSON) {
    if (isError(resJSON)) { voidExceptID(resJSON); }
 
    const query = {
-      text: `INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items) 
-               VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) 
+      text: `INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items, rating) 
+               VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
                ON CONFLICT(id) 
-               DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, last_updated) = ($2, $3, $4, $5, $6, $7, $8, $9, NOW()::DATE)`,
-      values: [resJSON.id, resJSON.name, resJSON.lat, resJSON.long, resJSON.mapuri, resJSON.summary, resJSON.gfrank, resJSON.reviews, resJSON.items]
+               DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, rating, last_updated) = ($2, $3, $4, $5, $6, $7, $8, $9, $10, NOW()::DATE)`,
+      values: [resJSON.id, resJSON.name, resJSON.lat, resJSON.long, resJSON.mapuri, resJSON.summary, resJSON.gfrank, resJSON.reviews, resJSON.items, resJSON.rating]
    };
    return this.pool.query(query);
 }

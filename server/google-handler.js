@@ -151,7 +151,7 @@ var findGFReviews = (restaurantReviews, storeGFReviews) => {
 }
 
 var parseRestaurantInfo = (restaurant) => {
-   let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text);
+   let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text, restaurant.rating);
 
    if (findGFSummary(restaurant, resJSON)) {
       resJSON.gfrank = codes.SELF_DESCRIBED_GF;
