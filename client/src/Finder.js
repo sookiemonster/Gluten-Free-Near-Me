@@ -1,4 +1,5 @@
-import { map } from './map.js';
+import React, { useEffect } from 'react'; 
+import { useMap } from '@vis.gl/react-google-maps';
 
 let viewportBounds;
 
@@ -6,9 +7,7 @@ let viewportBounds;
 const offset = 0.004;
 const maxSearches = 3;
 
-let getViewportSearches = () => { 
-   if (!viewportBounds) { return; }
-
+let getSearchPoints = (viewportBounds) => { 
    // Create an array of centers offset sequentially
    let result = [...Array(maxSearches).keys()];
    return result.map((i) => 
@@ -19,13 +18,8 @@ let getViewportSearches = () => {
    );
 }
 
-let findNearby = () => {
-   if (!map) { return; }
-
-   // console.log(lat0, lng0, lat1, lng1);
-   
-   console.log("click!");
-   viewportBounds = {
+let getViewportBounds = (map) => {   
+   return {
       bottomLeft : {
          lat: map.getBounds().getSouthWest().lat(),
          long: map.getBounds().getSouthWest().lng()
@@ -34,11 +28,16 @@ let findNearby = () => {
          lat: map.getBounds().getNorthEast().lat(),
          long: map.getBounds().getNorthEast().lng()
       }
-   }
-   
+   };
+}
+
+let findNearby = (map) => {
+   if (!map) {return;}
+
+   console.log("click!");
    let data = {};
-   data.searchFoci = getViewportSearches();
-   data.viewportBounds = viewportBounds;
+   data.viewportBounds = getViewportBounds(map);
+   data.searchFoci = getSearchPoints(data.viewportBounds);
 
    const options = {
       method: "Post", 
@@ -53,16 +52,20 @@ let findNearby = () => {
       .catch((error) => console.error("An error has occurred: " + error));
 }
 
-let isBetween = (target, min, max) => {
-   return min <= target && target <= max;
+function Finder() {
+   const map = useMap("map");
+   console.log(map);
+   
+
+   // useEffect(() => {
+   //    if (!map) { return; }
+   //    viewportBounds = map.getBounds();
+   // }, [map])
+
+   return (
+      // <button onClick={console.log(getSearchPoints(getViewportBounds(map)))}>Test!</button>
+      <button onClick={() => findNearby(map)}>Test!</button>
+   );
 }
 
-let isInViewport = (placeLat, placeLong) => {
- // We have no viewport to get the bounds of
- if (!viewportBounds) { return false; }
- return isBetween(placeLat, viewportBounds.bottomLeft.lat, viewportBounds.topRight.lat) && isBetween(placeLong, viewportBounds.bottomLeft.long, viewportBounds.topRight.long);
-}
-
-document.getElementById("finder").addEventListener('click', findNearby);
-
-export { isInViewport };
+export default Finder;

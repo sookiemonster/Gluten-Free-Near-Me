@@ -51,8 +51,6 @@ async function initMap() {
 
 }
 
-initMap();
-
 let marker = (resName, resID, resLat, resLong, gfrank) => {
   let tag = document.createElement("div");
 
