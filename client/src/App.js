@@ -12,6 +12,9 @@ import io from 'socket.io-client';
 import { resAdded } from './RestaurantSlice.js';
 // import { resAdded } from './RestaurantSlice.js';
 
+import {enableMapSet} from "immer";
+enableMapSet();
+
 
 function App() {
   const socket = io("wss://localhost:5000", { transports : ['websocket'] });

@@ -24,7 +24,7 @@ function MapContainer() {
                      fontWeight: "500", 
                      className: "pin-title", 
                      path: ""}} 
-                  position={{lat: Number(place.lat), lng: Number(place.lng)}} 
+                  position={{lat: Number(place.lat), lng: Number(place.long)}} 
                />
             )}
          </Map>
