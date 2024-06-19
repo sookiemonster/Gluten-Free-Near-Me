@@ -11,7 +11,8 @@ const resSlice = createSlice({
       if (action.type !== 'restaurants/resAdded') { return state; }
       let copyResList = state.resList.slice();
       copyResList.push(action.payload);
-      console.log()
+      console.log('adding restaurant:');
+      console.log(action.payload);
       // Otherwise continue
       return {
          resList: copyResList

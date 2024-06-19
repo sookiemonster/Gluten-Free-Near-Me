@@ -74,7 +74,7 @@ function MapContainer() {
                      fontWeight: "500", 
                      className: "pin-title", 
                      path: ""}} 
-                  position={{lat: place.lat, lng: place.lng}} 
+                  position={{lat: Number(place.lat), lng: Number(place.lng)}} 
                />
             )}
             {/* { restaurants.map((place) => console.log(place)) } */}

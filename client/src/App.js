@@ -7,6 +7,7 @@ import MapContainer from './MapContainer.js';
 import './master.css';
 import { Provider } from 'react-redux'
 import { APIProvider } from '@vis.gl/react-google-maps';
+import { resAdded } from './RestaurantSlice.js';
 // import './master.css';
 
 function App() {
@@ -22,6 +23,15 @@ function App() {
           <div id="search-container">
             <span id="search-prompt">Search </span>
 
+            {/* <button onClick={() => {
+              store.dispatch(resAdded({
+              id: "aba" + String(Math.random()),
+              name: "testRandom",
+              lat: 40.717 + Math.random() * (0.001), 
+              lng: -73.985 + Math.random() * (0.001), 
+            }))}
+            
+            }>Do test</button> */}
             </div>
             <nav id="nav">
                 <a className="active" href="/">Home</a>
