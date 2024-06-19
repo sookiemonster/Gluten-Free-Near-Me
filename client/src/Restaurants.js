@@ -9,12 +9,22 @@ function MapReferral({mapUri}) {
    );
 }
 
-function Review({author, body}) {
-   return "";
+function Review({author, body, rating}) {
+   return (
+   <div className="review">
+      <span className="review-author">{ author }</span>
+      <Rating ratingValue={rating} />
+      <span className="review-body"><q>{ body }</q></span>
+   </div>
+   );
 }
 
 function ReviewContainer({reviews}) {
-   return "";
+   return (
+      <div className="offering-container">
+         { reviews.map((review) => <Review author={review.author} body={review.text} rating={review.rating} />)}
+      </div>
+   );
 }
 
 function Meal({name, description}) {
@@ -29,7 +39,7 @@ function Meal({name, description}) {
 
 function Menu({items}) {
    return (
-      <div className="menu">
+      <div className="offering-container">
          { items.map((meal, index) => <Meal name={ meal.name } description={ meal.description } key = { index }/>) }
       </div>
    );
@@ -57,7 +67,7 @@ function GFOfferingType({gfrank, reviews, menu}) {
       case "1":
          return (
          <>
-            <div className="offering-type yellow">
+            <div className="offering-type brown">
                <div className="box"></div>
                <span className="offering-description">Reviews mention <b>GF</b></span>
             </div>

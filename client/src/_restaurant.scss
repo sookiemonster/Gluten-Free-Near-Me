@@ -48,21 +48,22 @@
          font-size: 1.25rem;
          font-weight: 700;
       }
+   }
 
-      .rating {
-      
-         margin-left: auto;
-         display: flex;
-      }
+   .rating {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: nowrap;
+   }
 
-
-      .stars {
-
-      }
-      .rating-num {
-         font-size: 1rem;
-         font-weight: 700;
-      }
+   .rating-num {
+      font-size: 1rem;
+      font-weight: 700;
+   }
+   
+   .small-rating {
+      font-size: .8rem;
+      font-weight: 700;
    }
    
    .offering-type {
@@ -91,6 +92,9 @@
    .offering-type.yellow {
       .box { background-color: $yellow; }
    }
+   .offering-type.brown {
+      .box { background-color: $brown; }
+   }
 
 
    .refer-to-google {
@@ -102,7 +106,7 @@
       a { color: $link; }
    }
 
-   .menu {
+   .offering-container {
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -110,24 +114,17 @@
       overflow-y: auto;
       margin-bottom: 25px;
    }
-
-   // @supports not selector(::-webkit-scrollbar) {
-   //    .menu {
-   //       scrollbar-color: $scroll-handle $scroll-bg-light;
-   //       scrollbar-width: thin;
-   //    }
-   // }
    
-   .menu::-webkit-scrollbar {
+   .offering-container::-webkit-scrollbar {
       width: 1ch;
    }
    
-   .menu::-webkit-scrollbar-track {
+   .offering-container::-webkit-scrollbar-track {
       background-color: $scroll-bg-light;
       border-radius: 10px;
    }
    
-   .menu::-webkit-scrollbar-thumb {
+   .offering-container::-webkit-scrollbar-thumb {
       background: $scroll-handle;
       border-radius: 10px;
    }
@@ -148,6 +145,33 @@
          font-size: .8rem;
          line-height: 1.1rem;
          color: $gray;
+      }
+   }
+
+   .review {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding-right: 2ch;
+      font-size: .9rem;
+
+      .stars {
+         transform: scale(0.75);
+         // Adjust margin since scaling does not alter DOM width
+         margin-right: -10px;
+      }
+
+      .rating-num {
+         font-size: .9rem;
+      }
+      
+      .review-author {
+         font-weight: 700;
+      }
+
+      .review-body {
+         color: $gray;
+         grid-column: -1/1;
       }
    }
 }

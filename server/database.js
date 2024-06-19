@@ -115,9 +115,4 @@ async function isValidSearch(point) {
    });
 }
 
-// let test = new Database();
-// test.isValidSearch({ lat: 0.0010, long: 23.4})
-//    .then(res => console.log(res))
-//    .catch(err => console.error(err));
-
 export { Database };
