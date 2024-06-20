@@ -134,3 +134,6 @@ secret
 
 # certifications
 *.pem
+
+# SVG Files
+*.ai
