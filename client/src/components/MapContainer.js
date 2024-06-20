@@ -11,8 +11,8 @@ const markerStrokeScheme = {
 
 const markerFillScheme = {
    "3" : "#25A305",
-   "2" : "#F6B409",
-   "1" : "#631700"
+   "2" : "#f69709",
+   "1" : "#611D00"
 }
 
 function GFMarker({place}) {
@@ -63,7 +63,7 @@ function MapContainer() {
          minZoom={17}
          maxZoom={20}
          disableDefaultUI={true}
-         mapId={"beb67932d5e5a0ce"}>
+         mapId={"e46937705745938a"}>
             { restaurants.map((place) => 
                <GFMarker place={place} />
             )}
