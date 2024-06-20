@@ -6,8 +6,8 @@ import Finder from './components/Finder.js';
 
 // Import Redux-related Components & info
 import { Provider } from 'react-redux'
-import { resAdded } from './RestaurantSlice.js';
-import store from './Store.js';
+import { resAdded } from './redux/RestaurantSlice.js';
+import store from './redux/Store.js';
 
 // Improt Google API Provider
 import { APIProvider } from '@vis.gl/react-google-maps';
