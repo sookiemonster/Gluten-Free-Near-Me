@@ -82,20 +82,17 @@ async function dispatchScraper() {
 }
 
 /**
- * Queues a restaurant to be scraped
- * @param {String} id The Google place id of the target restaurant
- * @param {String} mapUri The Google mapURI of the target restaurant
- * @param {float} lat The latitutde of the restaurant
- * @param {float} long The longitude of the restaurant
+ * Queues a restaurant to be scraped by passing the RestaurantDetails of the target restaurant to the scraper
+ * @param {RestaurantDetails} resJSON An object specifying the restaurant to be scraped
  */
 let enqueueRestaurant = async(resJSON) => {
-  // console.log({"id" : id, "mapUri" : mapUri, "lat" : lat, "long" : long});
   scrapeQueue.push(resJSON);
 }
 
 /**
- * Scrapes the specified Google Maps page for MenuItems
+ * Scrapes the specified Google Maps page for menu items
  * @param {String} mapUri The Google Maps uri to access a specified restauraut
+ * @param {Object} pageWrapper An object of the form { page : <Puppeteer_Page_Object> }
  * @returns {Promise|String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
 const scrapeMap = async(mapUri, pageWrapper) => { 
@@ -142,20 +139,8 @@ const scrapeMap = async(mapUri, pageWrapper) => {
 }
 
 /**
- * Scrapes a given restaurant for all explicitly GF-marked items
- * @param {String} id The Google place id of the target restaurant
- * @param {String} mapUri The Google mapURI of the target restaurant
- * @returns {JSON} Returns a JSON containing all GF-items offered at the restaurant in the following form:
- *    {
- *       "id" : <place-id>
-         "summary" : "<summary>",
-         "gfrank" : <GF_RANK>, 
-         "reviews" : [],
-         "items" : [ITEM_1, ITEM_2, ...]
-         "lat" : <latitude>
-         "long" : <longitude>
-      }
- * @note The GF summary & reviews are empty.
+ * Scrapes a given restaurant for all explicitly GF-marked items and stores any GF menu items into the RestaurantDetails object
+ * @param {RestaurantDetails} resJSON The restaurant details object to store the newly scraped menu information
  */
 let getGFMenu = async(resJSON) => {
   if (!resJSON) { return null; }
@@ -220,10 +205,6 @@ let getGFMenu = async(resJSON) => {
       });
   });
 
-}
-
-let log = async(id, url) => {
-  console.log(await getGFMenu(id, url));
 }
 
 export { getGFMenu, dispatchScraper, enqueueRestaurant };

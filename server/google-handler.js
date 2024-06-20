@@ -6,6 +6,7 @@ import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
 import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
 import { appEmitter, db } from "./app.js";
+import { Point } from './database.js'
 
 // import * as fs from 'fs';
 
@@ -58,7 +59,8 @@ let rankNearbyPlaces = async(lat, long) => {
    return new Promise((resolve, reject) => {
       fetch("https://places.googleapis.com/v1/places:searchNearby", data)
          .then(response => { 
-            db.pushLog(lat, long);
+            let center = Point(lat, long);
+            db.pushLog(center);
             return response.json(); 
          })
          .then(nearbyPlaces => { 
@@ -151,7 +153,7 @@ var findGFReviews = (restaurantReviews, storeGFReviews) => {
 }
 
 var parseRestaurantInfo = (restaurant) => {
-   let resJSON = codes.resFormat(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text, restaurant.rating);
+   let resJSON = codes.RestaurantDetails(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text, restaurant.rating);
 
    if (findGFSummary(restaurant, resJSON)) {
       resJSON.gfrank = codes.SELF_DESCRIBED_GF;

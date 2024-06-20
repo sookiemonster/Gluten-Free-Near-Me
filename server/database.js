@@ -7,6 +7,14 @@ import { isError, voidExceptID, needsReview } from './gf-codes.js';
 const LATITUDE_TOLERANCE = 0.001; // .001 degrees ~= 100m
 const LONGITUDE_TOLERANCE = 0.001;
 
+/**
+ * Creates a Point object representing a pair of coordinates (latitude, longitude)
+ * @param {Number} lat 
+ * @param {Number} long 
+ */
+export function Point(lat, long) {
+   return { "lat" : lat, "long" : long };
+}
 
 var Database = function() {
    // Initialize Database manager
@@ -23,6 +31,11 @@ var Database = function() {
    this.end = () => { this.pool.end(); }
 }
 
+/**
+ * Fetches the restaurant details stored in the Database using its Google Place ID
+ * @param {String} id The Google Place ID of the target restaurant
+ * @returns {Promise|RestaurantDetails} Returns a promise for an object following the restaurant details format
+ */
 async function getRestaurant(id) {
    const query = {
       text: "SELECT * FROM places WHERE id = $1",
@@ -43,6 +56,15 @@ async function getRestaurant(id) {
    });
 }
 
+/**
+ * Selects and returns all restaurants stored in the Database 
+ * that are in within a box defined by the lat / long coordinates 
+ * of the bottom left and top right of the box
+ * 
+ * @param {Point} bottomLeft 
+ * @param {Point} topRight 
+ * @returns {Promise|Array|RestaurantDetails} An array of objects following the RestaurantDetails format
+ */
 async function getAllInBounds(bottomLeft, topRight) {
    const query = {
       text: "SELECT * FROM places WHERE lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4",
@@ -62,6 +84,11 @@ async function getAllInBounds(bottomLeft, topRight) {
    });
 }
 
+/**
+ * Upserts the information of a given restaurant within the Database
+ * @param {RestaurantDetails} resJSON 
+ * @returns The query result
+ */
 async function updateRestaurantDetails(resJSON) {
    // Do not propogate details if error. Only store ID.
    if (isError(resJSON)) { voidExceptID(resJSON); }
@@ -76,12 +103,18 @@ async function updateRestaurantDetails(resJSON) {
    return this.pool.query(query);
 }
 
-async function pushLog(lat, long) {
-   if (!lat || !long) { return; }
+/**
+ * Logs a record of a pair of lat/long coordinates defining where a Nearby Search had been executed 
+ *    Used to prevent Nearby Searches around identical / nominally different centers
+ * @param {Point} center A pair of coordinates specifying a the centerpoint for a Nearby Search
+ * @returns The result of the query
+ */
+async function pushLog(center) {
+   if (!center.lat || !center.long) { return; }
    
    // Store logs with 4 decimal places (since highly unlikely for very close coordinates to be the same)
-   lat = lat.toFixed(4);
-   long = long.toFixed(4);
+   let lat = center.lat.toFixed(4);
+   let long = center.long.toFixed(4);
    // Create a unique string token by appending latitudes and longitudes
    const query = {
       text: `INSERT INTO log (id, lat, long) 
@@ -93,13 +126,21 @@ async function pushLog(lat, long) {
    return this.pool.query(query);
 }
 
-async function isValidSearch(point) {
-   if (!point) { return; }
+/**
+ * Determines whether a center point for a Nearby Search should be executed or not
+ * A search is exectued if: 
+ *    -> There have been no Nearby Searches that use a center within a given lat/long tolerance threshold (LATITUDE_TOLERANCE / LONGITUDE_TOLERANCE)
+ *    -> OR all Nearby Searches within that threshold have been executed more than 20 days ago
+ * @param {Point} center An object of the form: { lat : <NUM>, long : <NUM> }
+ * @returns True if the given point should be used as a center for a Nearby Search. False if it should not be.
+ */
+async function isValidSearch(center) {
+   if (!center) { return; }
 
    // 20 days for a search nearby request to be stale; get all logs that are near the specified point
    const query = {
       text: `SELECT id FROM log WHERE last_updated >= NOW()::DATE - INTERVAL '20 days' AND lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4`,
-      values: [point.lat - LATITUDE_TOLERANCE, point.lat + LATITUDE_TOLERANCE, point.long - LONGITUDE_TOLERANCE, point.long + LONGITUDE_TOLERANCE]
+      values: [center.lat - LATITUDE_TOLERANCE, center.lat + LATITUDE_TOLERANCE, center.long - LONGITUDE_TOLERANCE, center.long + LONGITUDE_TOLERANCE]
    }
 
    return new Promise((resolve, reject) => {
