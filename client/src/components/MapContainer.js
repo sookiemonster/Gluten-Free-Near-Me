@@ -39,6 +39,7 @@ function GFMarker({place}) {
             fillOpacity: 1.0,
             strokeColor: markerStroke,
             strokeOpacity: 0.25,
+            anchor: {x : 14, y: 30},
             labelOrigin: {x: 16, y: 30}
          }
       }
