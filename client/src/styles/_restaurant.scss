@@ -176,13 +176,6 @@
    }
 }
 
-// @supports not selector(::-webkit-scrollbar) {
-//    #restaurants {
-//       scrollbar-color: $scroll-handle $scroll-bg-dark;
-//       scrollbar-width: thin;
-//    }
-// }
-
 #restaurants::-webkit-scrollbar {
    width: 1ch;
 }

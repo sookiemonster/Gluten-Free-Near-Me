@@ -22,7 +22,7 @@ function Review({author, body, rating}) {
 function ReviewContainer({reviews}) {
    return (
       <div className="offering-container">
-         { reviews.map((review) => <Review author={review.author} body={review.text} rating={review.rating} />)}
+         { reviews.map((review, index) => <Review author={review.author} body={review.text} rating={review.rating} key={index}/>)}
       </div>
    );
 }
@@ -85,6 +85,10 @@ function GFOfferingType({gfrank, reviews, menu}) {
 }
 
 function Rating({ratingValue}) {
+   if (ratingValue === null) {
+      return <div className="rating"></div>
+   }
+
    ratingValue = Number(ratingValue);
 
    // Star path attribution: https://icons.getbootstrap.com/icons/star-fill/
@@ -95,7 +99,7 @@ function Rating({ratingValue}) {
    let bgColor = "#d1cdcd";
 
    return (
-   <div className="rating" data-rating-value={ratingValue}>
+   <div className="rating">
       <div className="stars">
          <svg height={starWidth} width={(starWidth + gap) * 5}> 
          <defs>
