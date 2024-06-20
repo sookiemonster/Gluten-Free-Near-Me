@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react'; 
+import React from 'react'; 
 import { useMap } from '@vis.gl/react-google-maps';
-
-let viewportBounds;
 
 // Define offset to cast multiple nearby searches
 const offset = 0.004;
@@ -34,7 +32,6 @@ let getViewportBounds = (map) => {
 let findNearby = (map) => {
    if (!map) {return;}
 
-   console.log("click!");
    let data = {};
    data.viewportBounds = getViewportBounds(map);
    data.searchFoci = getSearchPoints(data.viewportBounds);
@@ -53,17 +50,10 @@ let findNearby = (map) => {
 }
 
 function Finder() {
+   // Get the underlying Google Maps Object of the restaurant map
    const map = useMap("map");
-   console.log(map);
-   
-
-   // useEffect(() => {
-   //    if (!map) { return; }
-   //    viewportBounds = map.getBounds();
-   // }, [map])
 
    return (
-      // <button onClick={console.log(getSearchPoints(getViewportBounds(map)))}>Test!</button>
       <button onClick={() => findNearby(map)}>Test!</button>
    );
 }
