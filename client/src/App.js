@@ -43,8 +43,6 @@ function App() {
       <div className="App">
         <div id="sidebar">
           <h1>Gluten Free Near Me</h1>
-          <Finder />
-
           <Restaurants />
             <nav id="nav">
                 <a className="active" href="/">Home</a>

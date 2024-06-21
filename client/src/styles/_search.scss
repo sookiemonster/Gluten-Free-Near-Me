@@ -9,7 +9,6 @@
 // }
 
 #search-container {
-   position: absolute;
    display: flex;
    gap: 5px;
    width: 300px;
@@ -36,5 +35,21 @@
 }
 
 #search-button {
+   display: block;
+   width: 220px;
+   border-radius: 30px;
+
+   margin: 30px;
+   padding: 14px 14px;
+
+   font-family: $font;
+   font-weight: 600;
+   font-size: 1rem;
+
+   color: $white;
+   background-color: $button-body;
    
+   cursor: pointer;
+   border: none;
+   outline: none;
 }

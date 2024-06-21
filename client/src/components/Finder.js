@@ -54,8 +54,9 @@ function Finder() {
    const map = useMap("map");
 
    return (
-      <button onClick={() => findNearby(map)}>Test!</button>
+      <button id="search-button" onClick={() => findNearby(map)}>Search Here</button>
    );
 }
 
 export default Finder;
+export { findNearby }

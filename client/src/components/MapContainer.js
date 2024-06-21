@@ -2,6 +2,7 @@ import { Map, MapControl, ControlPosition, Marker } from '@vis.gl/react-google-m
 import React from 'react'; 
 import { useSelector } from 'react-redux';
 import AutocompleteSearch from './AutocompleteSearch.js';
+import Finder from './Finder.js';
 
 // Define marker color-scheme
 const markerStrokeScheme = {
@@ -65,8 +66,11 @@ function MapContainer() {
          maxZoom={20}
          disableDefaultUI={true}
          mapId={"e46937705745938a"}>
-            <MapControl position={ControlPosition.TOP_LEFT}>
+            <MapControl position={ControlPosition.TOP_CENTER}>
                <AutocompleteSearch />
+            </MapControl>
+            <MapControl position={ControlPosition.BOTTOM_CENTER}>
+               <Finder />
             </MapControl>
             { restaurants.map((place) => 
                <GFMarker place={place} />
