@@ -39,7 +39,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <APIProvider apiKey="AIzaSyA5Jtb97DX2_YGOh1zwpfiHqdumhDfKC9c">
+      <APIProvider apiKey={process.env.REACT_APP_API_KEY}>
       <div className="App">
         <div id="sidebar">
           <h1>Gluten Free Near Me</h1>
