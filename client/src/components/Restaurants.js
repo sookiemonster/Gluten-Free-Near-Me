@@ -40,7 +40,7 @@ function Meal({name, description}) {
 function Menu({items}) {
    return (
       <div className="offering-container">
-         { items.map((meal, index) => <Meal name={ meal.name } description={ meal.description } key = { index }/>) }
+         { items.map((meal, index) => <Meal name={ meal.name } description={ meal.desc } key = { index }/>) }
       </div>
    );
 }
