@@ -1,5 +1,5 @@
-import { Map, MapControl, ControlPosition, Marker } from '@vis.gl/react-google-maps';
-import React from 'react'; 
+import { useMap, Map, MapControl, ControlPosition, Marker } from '@vis.gl/react-google-maps';
+import React, { useEffect, useState } from 'react'; 
 import { useSelector } from 'react-redux';
 import AutocompleteSearch from './AutocompleteSearch.js';
 import Finder from './Finder.js';
@@ -50,11 +50,26 @@ function GFMarker({place}) {
    );
 }
 
+function MapHandler({place}) {
+   // Get reference to the underlying Google maps object
+   const map = useMap('map');
 
+  useEffect(() => {
+      if (!map || !place) return;
+
+      // Pan to the lat / long location of the selected place
+      if (place.geometry?.location) {
+         map.panTo(place.geometry?.location);
+      }
+  }, [map, place]);
+
+  return null;
+}
 
 function MapContainer() {
+   const [selectedPlace, setSelectedPlace] = useState(null);
+
    let restaurants = useSelector((state) => state.restaurants.resList);
-   console.log("state in component: ", restaurants);
    return (
       <div id="map-container">
          <Map
@@ -67,7 +82,7 @@ function MapContainer() {
          disableDefaultUI={true}
          mapId={"e46937705745938a"}>
             <MapControl position={ControlPosition.TOP_CENTER}>
-               <AutocompleteSearch />
+               <AutocompleteSearch onPlaceSelect={setSelectedPlace} />
             </MapControl>
             <MapControl position={ControlPosition.BOTTOM_CENTER}>
                <Finder />
@@ -76,6 +91,7 @@ function MapContainer() {
                <GFMarker place={place} />
             )}
          </Map>
+         <MapHandler place={selectedPlace}></MapHandler>
       </div>
    );
 }
