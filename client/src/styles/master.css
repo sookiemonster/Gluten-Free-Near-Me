@@ -1,4 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap");
+#search-container {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  width: 300px;
+  background-color: #FFFFFF;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  z-index: 99;
+  box-shadow: 0 0 5px #A7ACD7;
+}
+#search-container span {
+  color: #050020;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+#search-container input {
+  border: none;
+  outline: none;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
 #map {
   height: 100%;
   width: 100%;
@@ -9,9 +34,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-}
-#map-container div {
-  height: 100%;
 }
 
 .pin-title {
@@ -207,19 +229,6 @@ h1 {
   height: 100vh;
   padding: 45px 15px 30px 30px;
   background-color: #130C3E;
-}
-
-#search-container {
-  display: flex;
-  align-items: center;
-  width: 330px;
-  color: #FFFFFF;
-  background-color: #050020;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  z-index: 99;
 }
 
 nav {

@@ -46,9 +46,6 @@ function App() {
           <Finder />
 
           <Restaurants />
-          <div id="search-container">
-            <span id="search-prompt">Search </span>
-            </div>
             <nav id="nav">
                 <a className="active" href="/">Home</a>
                 <a href="/about">About</a>

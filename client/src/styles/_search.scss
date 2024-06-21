@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+// .pac-target-input {
+//    border: none;
+//    outline: none;
+//    width: 100%;
+//    font-family: $font;
+//    font-size: 0.9rem;
+// }
+
+#search-container {
+   position: absolute;
+   display: flex;
+   gap: 5px;
+   width: 300px;
+   background-color: $white;
+   padding: 15px;
+   margin: 30px;
+   border-radius: 5px;
+   font-weight: 700;
+   z-index: 99;
+   box-shadow: 0 0 5px $scroll-bg-light;
+    
+   span {
+      color: $dark-dark;
+      font-family: $font;
+      font-size: 0.9rem;
+   }
+
+   input {
+      border: none;
+      outline: none;
+      font-family: $font;
+      font-size: 0.9rem;
+   }
+}
+
+#search-button {
+   
+}
