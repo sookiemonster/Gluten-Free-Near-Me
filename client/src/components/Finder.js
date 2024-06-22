@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { useMap } from '@vis.gl/react-google-maps';
+import { Grid } from 'react-loader-spinner';
 
 // Define offset to cast multiple nearby searches
 const offset = 0.004;
@@ -56,7 +57,17 @@ function Finder() {
    const map = useMap("map");
 
    return (
-      <button id="search-button" onClick={() => findNearby(map)}>Search Here</button>
+      <button id="search-button" onClick={() => findNearby(map)}>Search Here
+      <Grid
+  visible={true}
+  height="18"
+  width="18"
+  color="#FFFFFF"
+  ariaLabel="grid-loading"
+  radius="10"
+  wrapperStyle={{}}
+  wrapperClass="grid-wrapper"
+  /></button>
    );
 }
 
