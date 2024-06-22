@@ -21,7 +21,7 @@ var CenterPoint = function(coordinates) {
 
 const resSlice = createSlice({
   name: 'restaurants',
-  initialState: { resList: [], renderedRestaurants: [], idSet: new Set(), expectedIds: [], mapObject: null },
+  initialState: { resList: [], renderedRestaurants: [], idSet: new Set(), expecting: new Set(), mapObject: null },
   reducers: {
     storeMap(state, action) {
       // If not the right action / no map object provided don't modify the state
@@ -42,12 +42,40 @@ const resSlice = createSlice({
       let updatedIdSet = new Set(state.idSet);
 
       updatedResList.push(action.payload);
-      updatedIdSet.add(action.payload.id);
+      updatedIdSet.add(action.payload.id);      
 
       return {
          ...state,
+         idSet : updatedIdSet,
          resList: updatedResList, 
-         idSet: updatedIdSet
+      }
+    },
+
+    receive(state, action) { 
+      console.log('performing receive', action);
+      if (action.type !== 'restaurants/receive' || !action.payload) { return state; }
+
+      let updatedExpectations = new Set(state.expecting);
+      updatedExpectations.delete(action.payload);
+      console.log("waiting on", updatedExpectations.size, "restaurants: ", updatedExpectations);
+
+      return {
+         ...state,
+         expecting: updatedExpectations
+      }
+    },
+
+    expect(state, action) {
+      // If not the right action, or there is no restaurant id, don't modify the state
+      if (action.type !== 'restaurants/expect' || !action.payload || action.payload === -1) { return state; }
+
+      let updatedExpectations = new Set(state.expecting);
+      updatedExpectations.add(action.payload);
+      console.log("waiting on", updatedExpectations.size, "restaurants");
+
+      return {
+         ...state,
+         expecting: updatedExpectations
       }
     },
 
@@ -97,14 +125,13 @@ const resSlice = createSlice({
 
       const result = (viewportBounds.bottomLeft.lat <= point.lat && point.lat <= viewportBounds.topRight.lat) && 
         (viewportBounds.bottomLeft.long <= point.long && point.long <= viewportBounds.topRight.long);
-      console.log(result);
 
       return result;
     }
 
     const updatedRenderList = state.resList.filter((place) => isInViewport(getViewportBounds(state.mapObject), place));
-    console.log(JSON.parse(JSON.stringify(state.resList)));
-    console.log(JSON.parse(JSON.stringify(updatedRenderList)));
+    // console.log(JSON.parse(JSON.stringify(state.resList)));
+    // console.log(JSON.parse(JSON.stringify(updatedRenderList)));
 
     return {
       ...state, 
@@ -115,5 +142,5 @@ const resSlice = createSlice({
 }
 })
 
-export const { resAdded, restrictViewportMarkers, storeMap } = resSlice.actions
+export const { resAdded, restrictViewportMarkers, storeMap, expect, receive} = resSlice.actions
 export default resSlice.reducer

@@ -12,8 +12,6 @@ var Emitter = function (app, io) {
  * @param {RestaurantDetails} resJSON 
  */
 function broadcastRestaurant(resJSON) {
-   // Do not broadcast errors
-   if (isError(resJSON)) { return; }
    this.io.emit('restaurant', resJSON);
 }
 
