@@ -6,7 +6,7 @@ import Finder from './components/Finder.js';
 
 // Import Redux-related Components & info
 import { Provider } from 'react-redux'
-import { resAdded } from './redux/RestaurantSlice.js';
+import { resAdded, restrictViewportMarkers } from './redux/RestaurantSlice.js';
 import store from './redux/Store.js';
 
 // Improt Google API Provider
@@ -29,6 +29,7 @@ function App() {
 
     function onRestaurantFound(resJSON) {
       store.dispatch(resAdded(resJSON));
+      store.dispatch(restrictViewportMarkers());
     }
 
     socket.on('connect', () => console.log('connected'));

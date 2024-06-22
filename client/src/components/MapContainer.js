@@ -1,4 +1,6 @@
-import { useMap, Map, MapControl, ControlPosition, Marker } from '@vis.gl/react-google-maps';
+import { useMap, Map, MapControl, ControlPosition, Marker, useApiIsLoaded } from '@vis.gl/react-google-maps';
+import store from '../redux/Store.js';
+import { restrictViewportMarkers, storeMap } from '../redux/RestaurantSlice.js';
 import React, { useEffect, useState } from 'react'; 
 import { useSelector } from 'react-redux';
 import AutocompleteSearch from './AutocompleteSearch.js';
@@ -53,15 +55,31 @@ function GFMarker({place}) {
 function MapHandler({place}) {
    // Get reference to the underlying Google maps object
    const map = useMap('map');
+   const apiIsLoaded = useApiIsLoaded();
 
-  useEffect(() => {
-      if (!map || !place) return;
+   useEffect(() => {
+      if (!apiIsLoaded) { return; }
+      store.dispatch( storeMap({ 'map' : map }) );
+   }, [apiIsLoaded, map]);
 
-      // Pan to the lat / long location of the selected place
-      if (place.geometry?.location) {
-         map.panTo(place.geometry?.location);
-      }
-  }, [map, place]);
+   useEffect(() => {
+         if (!map || !place) return;
+
+         // Pan to the lat / long location of the selected place
+         if (place.geometry?.location) {
+            map.panTo(place.geometry?.location);
+            store.dispatch(restrictViewportMarkers());
+         }
+   }, [map, place]);
+
+   useEffect(() => {
+      console.log(map);
+      if (!map) return;
+
+      map.addListener('dragend', () => {
+         store.dispatch(restrictViewportMarkers());
+      });
+   }, [map]);
 
   return null;
 }
@@ -69,18 +87,18 @@ function MapHandler({place}) {
 function MapContainer() {
    const [selectedPlace, setSelectedPlace] = useState(null);
 
-   let restaurants = useSelector((state) => state.restaurants.resList);
+   let restaurants = useSelector((state) => state.restaurants.renderedRestaurants);
    return (
       <div id="map-container">
          <Map
-         id="map"
-         style={{width: '100%', height: '100%'}}
-         defaultCenter={{lat: 40.7174, lng: -73.985}}
-         defaultZoom={18}
-         minZoom={17}
-         maxZoom={20}
-         disableDefaultUI={true}
-         mapId={"e46937705745938a"}>
+            id="map"
+            style={{width: '100%', height: '100%'}}
+            defaultCenter={{lat: 40.7174, lng: -73.985}}
+            defaultZoom={18}
+            minZoom={17}
+            maxZoom={20}
+            disableDefaultUI={true}
+            mapId={"e46937705745938a"}>
             <MapControl position={ControlPosition.TOP_CENTER}>
                <AutocompleteSearch onPlaceSelect={setSelectedPlace} />
             </MapControl>

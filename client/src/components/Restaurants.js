@@ -140,7 +140,7 @@ function Restaurant ({name, id, summary, rating, mapUri, gfrank, reviews=[], men
 }
 
 function Restaurants() {
-   let restaurants = useSelector((state) => state.restaurants.resList); 
+   let restaurants = useSelector((state) => state.restaurants.renderedRestaurants); 
 
    return (
    <div id="restaurants">

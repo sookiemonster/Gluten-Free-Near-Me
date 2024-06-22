@@ -17,6 +17,8 @@ let getSearchPoints = (viewportBounds) => {
 }
 
 let getViewportBounds = (map) => {   
+   if (!map) { return; }
+
    return {
       bottomLeft : {
          lat: map.getBounds().getSouthWest().lat(),
@@ -59,4 +61,4 @@ function Finder() {
 }
 
 export default Finder;
-export { findNearby }
+export { findNearby, getViewportBounds }
