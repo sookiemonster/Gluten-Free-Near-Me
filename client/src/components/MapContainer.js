@@ -44,7 +44,7 @@ function GFMarker({place}) {
             strokeColor: markerStroke,
             strokeOpacity: 0.25,
             anchor: {x : 14, y: 30},
-            labelOrigin: {x: 16, y: 30}
+            labelOrigin: {x: 14, y: -10}
          }
       }
       onClick={scrollToCard}
@@ -68,7 +68,6 @@ function MapHandler({place}) {
          // Pan to the lat / long location of the selected place
          if (place.geometry?.location) {
             map.panTo(place.geometry?.location);
-            store.dispatch(restrictViewportMarkers());
          }
    }, [map, place]);
 
@@ -76,7 +75,7 @@ function MapHandler({place}) {
       console.log(map);
       if (!map) return;
 
-      map.addListener('dragend', () => {
+      map.addListener('idle', () => {
          store.dispatch(restrictViewportMarkers());
       });
    }, [map]);
