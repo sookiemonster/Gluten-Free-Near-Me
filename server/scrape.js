@@ -1,14 +1,18 @@
 // Scrape.js defines the routines for scraping Google Maps / Food.google for menu information
 
-// Import puppeteer web scraper module
-import * as puppeteer from "puppeteer";
 import * as gf from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
-import { appEmitter, db } from "./app.js";
+
+// Import puppeteer web scraper module
+import * as puppeteer from "puppeteer";
+import { Cluster } from 'puppeteer-cluster';
+// import { appEmitter, db } from "./app.js";
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
-const menuItemSelector = '.WV4Bob';
+const itemContainerSelector = '.WV4Bob';
+const itemNameSelector = '.bWZFsc';
+const itemDescSelector = '.gQjSre';
 
 // Scraping format
 const NAME = 0;
@@ -53,57 +57,47 @@ let closeTab = async(page) => {
  * Decides whether to continue scraping the next restaurant in the scrapeQueue
  * Scrapes if there are less tabs than the TAB LIMIT and there are more sites to be scraped 
  */
-async function dispatchScraper() {
-  if (tabCount > TAB_LIMIT || scrapeQueue.length == 0) {
-     return ;
-  }
+// async function dispatchScraper() {
+//   if (tabCount > TAB_LIMIT || scrapeQueue.length == 0) {
+//      return ;
+//   }
   
-  let front = scrapeQueue.shift();
-  if (front == null) { return; }
+//   let front = scrapeQueue.shift();
+//   if (front == null) { return; }
 
-  getGFMenu(front)
-    .then((response) => {
-      if (!response) { return; }
-      console.log(response); 
-      db.updateRestaurantDetails(response);
-      appEmitter.broadcastRestaurant(response);
-      dispatchScraper();
-    })
-    .catch(errorJSON => {
-      // console.error("RETURNED: " + err);
-      // Only emit if we actually tried resolving it enough times
-      if (errorJSON.resolveAttempts >= RESOLVE_LIMIT) {
-        db.updateRestaurantDetails(errorJSON);
-        appEmitter.broadcastRestaurant(errorJSON);
-      }
-      dispatchScraper();
-    }
-  );
-}
-
-/**
- * Queues a restaurant to be scraped by passing the RestaurantDetails of the target restaurant to the scraper
- * @param {RestaurantDetails} resJSON An object specifying the restaurant to be scraped
- */
-let enqueueRestaurant = async(resJSON) => {
-  scrapeQueue.push(resJSON);
-}
+//   getGFMenu(front)
+//     .then((response) => {
+//       if (!response) { return; }
+//       console.log(response); 
+//       db.updateRestaurantDetails(response);
+//       appEmitter.broadcastRestaurant(response);
+//       dispatchScraper();
+//     })
+//     .catch(errorJSON => {
+//       // console.error("RETURNED: " + err);
+//       // Only emit if we actually tried resolving it enough times
+//       if (errorJSON.resolveAttempts >= RESOLVE_LIMIT) {
+//         db.updateRestaurantDetails(errorJSON);
+//         appEmitter.broadcastRestaurant(errorJSON);
+//       }
+//       dispatchScraper();
+//     }
+//   );
+// }
 
 /**
  * Scrapes the specified Google Maps page for menu items
  * @param {String} mapUri The Google Maps uri to access a specified restauraut
- * @param {Object} pageWrapper An object of the form { page : <Puppeteer_Page_Object> }
  * @returns {Promise|String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
  */
-const scrapeMap = async(mapUri, pageWrapper) => { 
+const scrapeMenu = async(mapUri) => { 
 
-  // Navigating to Google Food: ait for Order Online Button to appear & click
+  // Navigating to Google Food: Wait for Order Online Button to appear & click
   let page = await browser.newPage();
-  pageWrapper.page = page;
   try {
     await page.goto(mapUri);
   } catch (error) {
-    throw LINK_FAILED; 
+    throw {name: "LINK_NOT_ACCESSIBLE", message: "There was a problem accessing the URL: " + mapUri}; 
   }
   
   // Set screen size
@@ -115,27 +109,41 @@ const scrapeMap = async(mapUri, pageWrapper) => {
     if(req.resourceType() === 'image' || req.resourceType() === 'media') { req.abort();}
     else { req.continue(); }
   });
-  
-  return new Promise((resolve, reject) => {
-    page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS})
-      .then(() => {return page.click(orderOnlineSelector)})
-      .then(() => {return page.waitForNavigation({waitUntil: 'domcontentloaded'})})
-      .then(() => {return page.waitForSelector(menuItemSelector, {timeout: TIMEOUT_MS}) })
-      .then(() => {return page.evaluate(() => 
-        [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText)
-      )})
-      .then(menuItems => {
-        if (menuItems.length != 0) {
-            return resolve(menuItems);
-          } else {
-            return reject(NOT_FOUND);
-          }
-      })
-      .catch(err => { 
-        // console.error(err);
-        return reject(NOT_FOUND);
-      });
-    });
+
+  try {
+    await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
+  } catch (error) {
+    // Order Online button doesn't appear
+    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapUri};
+  }
+  await page.click(orderOnlineSelector);
+  await page.waitForNavigation({waitUntil: 'domcontentloaded'});
+  try {
+    await page.waitForSelector(itemContainerSelector, {timeout: TIMEOUT_MS});
+  } catch (error) {
+    // Google Foods menu doesn't appear (only lists third-party providers)
+    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapUri};
+  }
+
+  // const menuItems = await page.evaluate(() => [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText));
+  const menuItems = await page.evaluate((itemContainerSelector, itemNameSelector, itemDescSelector) => {
+    // Get all menu item containers
+    const productCollection = document.querySelectorAll(itemContainerSelector);
+    const result = [];
+    
+    // Get the name and description for each menu item.
+    productCollection.forEach((product) => {
+      const itemName = product.querySelector(itemNameSelector)?.innerText;
+      const itemDescription = product.querySelector(itemDescSelector)?.innerText;
+
+      result.push({name : itemName, desc: itemDescription});
+    })
+
+    return result;
+  }, itemContainerSelector, itemNameSelector, itemDescSelector);
+  console.log(menuItems);
+
+  return menuItems;
 }
 
 /**
@@ -143,6 +151,13 @@ const scrapeMap = async(mapUri, pageWrapper) => {
  * @param {RestaurantDetails} resJSON The restaurant details object to store the newly scraped menu information
  */
 let getGFMenu = async(resJSON) => {
+  try {
+    await scrapeMenu(resJSON.mapuri);
+  } catch (error) {
+    console.log(error);
+  }
+  return resJSON;
+
   if (!resJSON) { return null; }
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing
@@ -158,7 +173,7 @@ let getGFMenu = async(resJSON) => {
   let pageWrapper = { page: null };
   
   return new Promise((resolve, reject) => {
-    scrapeMap(resJSON.mapuri, pageWrapper)
+    scrapeMenu(resJSON.mapuri, pageWrapper)
       .then(async(res) => {
         await closeTab(pageWrapper.page);
         return res;
@@ -207,4 +222,8 @@ let getGFMenu = async(resJSON) => {
 
 }
 
-export { getGFMenu, dispatchScraper, enqueueRestaurant };
+getGFMenu({mapuri:"https://maps.app.goo.gl/fFjYc9CHoGAtvvNSA"});
+// getGFMenu({mapuri:"https://maps.app.goo.gl/B75aKExVfp678XxS6"});
+
+
+// export { getGFMenu, dispatchScraper };
