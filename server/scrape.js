@@ -1,11 +1,15 @@
 // Scrape.js defines the routines for scraping Google Maps / Food.google for menu information
 
-import * as gf from './parse-gluten-free.js';
+import { filterGFMenuItems } from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
 
 // Import puppeteer web scraper module
 import * as puppeteer from "puppeteer";
 import { Cluster } from 'puppeteer-cluster';
+
+
+import { RestaurantDetails } from './gf-codes.js';
+
 // import { appEmitter, db } from "./app.js";
 
 // Selectors for elements
@@ -80,7 +84,6 @@ await cluster.task(async({ page, data }) => {
 
     return result;
   }, itemContainerSelector, itemNameSelector, itemDescSelector);
-  console.log(menuItems);
 
   return menuItems;
 });
@@ -91,79 +94,41 @@ await cluster.task(async({ page, data }) => {
  */
 let getGFMenu = async(resJSON) => {
   if (!resJSON) { return null; }
+
+  let menuItems = [];
   
-  // Since we pop the front of the queue in dispatch, if we don't end up processing
-  // we re-add the restaurant to be scraped
-  if (tabCount + 1 > TAB_LIMIT) {
-    enqueueRestaurant(resJSON);
-    return null;
+  try {
+    menuItems = await cluster.execute(resJSON.mapuri);
+    filterGFMenuItems(menuItems); 
   }
-  await tabCount++;
-  resJSON.resolveAttempts++;
+  catch (error) {
+      // Stub error handling for now
+      if (error.name === "MENU_NOT_FOUND") { 
+        resJSON.gfrank = codes.MENU_NOT_ACCESSIBLE;
+        return resJSON; 
+      }
+      if (error.name === "LINK_NOT_ACCESSIBLE") { 
+        resJSON.gfrank = codes.LINK_INACCESSIBLE;
+        return resJSON; 
+      }
+  }
   
-  // Scrape Google Maps for all menu items
-  let pageWrapper = { page: null };
-  
-  return new Promise((resolve, reject) => {
-    scrapeMenu(resJSON.mapuri, pageWrapper)
-      .then(async(res) => {
-        await closeTab(pageWrapper.page);
-        return res;
-      })
-      .then((menuItems) => {
-        gf.filterGFMenuItems(menuItems); 
-
-        // No explicitly-asserted GF items available
-        if (menuItems.length == 0) {
-          resJSON.gfrank = codes.NO_MENTION_GF;
-          return resJSON;
-        }
-
-        // Append all GF items to the JSON response
-        resJSON.gfrank = codes.HAS_GF_ITEMS;
-        menuItems.forEach(item => {
-          // Split item into name, price, description (ie. on newline)
-          let expandItem = item.split('\n');
-          resJSON.items.push(
-            {"name" : expandItem[NAME], 
-            "desc" : expandItem[DESCRIPTION]}
-          );
-        });
-
-        return resolve(resJSON);
-      })
-      
-      .catch(async(error) => {
-        // console.error(`Could not access ${resJSON.name}: ${resJSON.mapUri}. Tried ${resJSON.resolveAttempts} times: \n${error}.`);
-        console.error(`Could not access ${resJSON.name}: ${resJSON.mapuri}. Tried ${resJSON.resolveAttempts} times: \n.`);
-        await closeTab(pageWrapper.page);
-        
-        // If we have reached the number of attempts to scrape the map, stop scraping and send an inaccessible
-        if (resJSON.resolveAttempts < RESOLVE_LIMIT) {
-          enqueueRestaurant(resJSON);
-        }
-        
-        if (error == LINK_FAILED) {
-          resJSON.gfrank = codes.LINK_INACCESSIBLE;
-        } else {
-          resJSON.gfrank = codes.MENU_NOT_ACCESSIBLE;
-        }
-        return reject(resJSON);
-      });
-  });
-
+  // No explicitly-asserted GF items available
+  if (menuItems.length == 0) {
+    resJSON.gfrank = codes.NO_MENTION_GF;
+  } else {
+    resJSON.items = menuItems;
+    resJSON.gfrank = codes.HAS_GF_ITEMS;
+  }
+  return resJSON;
 }
-
-cluster.execute("https://maps.app.goo.gl/B75aKExVfp678XxS6")
-  .then(menuItems => console.log(menuItems))
-  .catch(error => console.error(error));
-
-cluster.execute("https://maps.app.goo.gl/fFjYc9CHoGAtvvNSA")
-  .then(menuItems => console.log(menuItems))
-  .catch(error => console.error(error));
   // console.log(result);
 
-// getGFMenu({mapuri:"https://maps.app.goo.gl/B75aKExVfp678XxS6"});
+getGFMenu(RestaurantDetails("id", "https://maps.app.goo.gl/B75aKExVfp678XxS6", 0.0, 0.0, "A place!", 5.0))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+getGFMenu(RestaurantDetails("id", "https://maps.app.goo.gl/tPSujJrVK2TjKnot7", 0.0, 0.0, "A place!", 5.0))
+  .then(res => console.log(res))
+  .catch(err => console.error(err))
 
-
-// export { getGFMenu, dispatchScraper };
+export { getGFMenu };

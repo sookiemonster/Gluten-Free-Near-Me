@@ -27,7 +27,7 @@ let filterGFMenuItems = (menuItems) => {
 
    let index = 0;
    while (index < menuItems.length) {
-      if (mentionsGlutenFree(menuItems[index])) {
+      if (mentionsGlutenFree(menuItems[index].name) || mentionsGlutenFree(menuItems[index].desc)) {
          // Skip over the current element
          index++;
       } else {
