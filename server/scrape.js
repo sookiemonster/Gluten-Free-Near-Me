@@ -25,77 +25,17 @@ const RESOLVE_LIMIT = 1;
 
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 4000; 
-const options = {
-  args: [
-    '--disable-dev-shm-usage',
-    '--disable-accelerated-2d-canvas',
-    '--no-first-run',
-    '--no-zygote',
-    '--disable-gpu'
-  ],
-  headless: false
-}
-// Define singular browser to be used
-let browser = await puppeteer.launch(options);
 
-// Define tab limit on browser and count to track the limit
-const TAB_LIMIT = 5;
-let tabCount = 0;
-let scrapeQueue = [];
+const cluster = await Cluster.launch({
+  concurrency: Cluster.CONCURRENCY_CONTEXT,
+  maxConcurrency: 5,
+})
 
-/**
- * Closes a page and decrements the tab counter
- * @param page The page to be closed
- */
-let closeTab = async(page) => {
-  if (page == null) { return; }
-  await page.close();
-  tabCount--;
-}
+await cluster.task(async({ page, data }) => {
+  const mapuri = data;
 
-/**
- * Decides whether to continue scraping the next restaurant in the scrapeQueue
- * Scrapes if there are less tabs than the TAB LIMIT and there are more sites to be scraped 
- */
-// async function dispatchScraper() {
-//   if (tabCount > TAB_LIMIT || scrapeQueue.length == 0) {
-//      return ;
-//   }
-  
-//   let front = scrapeQueue.shift();
-//   if (front == null) { return; }
-
-//   getGFMenu(front)
-//     .then((response) => {
-//       if (!response) { return; }
-//       console.log(response); 
-//       db.updateRestaurantDetails(response);
-//       appEmitter.broadcastRestaurant(response);
-//       dispatchScraper();
-//     })
-//     .catch(errorJSON => {
-//       // console.error("RETURNED: " + err);
-//       // Only emit if we actually tried resolving it enough times
-//       if (errorJSON.resolveAttempts >= RESOLVE_LIMIT) {
-//         db.updateRestaurantDetails(errorJSON);
-//         appEmitter.broadcastRestaurant(errorJSON);
-//       }
-//       dispatchScraper();
-//     }
-//   );
-// }
-
-/**
- * Scrapes the specified Google Maps page for menu items
- * @param {String} mapUri The Google Maps uri to access a specified restauraut
- * @returns {Promise|String|Array} Array of menu-items and their descriptions; or an empty list if no items could be scraped from its food.google page
- */
-const scrapeMenu = async(mapUri) => { 
-
-  // Navigating to Google Food: Wait for Order Online Button to appear & click
-  let page = await browser.newPage();
   try {
-    await page.goto(mapUri);
+    await page.goto(mapuri);
   } catch (error) {
     throw {name: "LINK_NOT_ACCESSIBLE", message: "There was a problem accessing the URL: " + mapUri}; 
   }
@@ -114,7 +54,7 @@ const scrapeMenu = async(mapUri) => {
     await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
   } catch (error) {
     // Order Online button doesn't appear
-    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapUri};
+    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
   await page.click(orderOnlineSelector);
   await page.waitForNavigation({waitUntil: 'domcontentloaded'});
@@ -122,10 +62,9 @@ const scrapeMenu = async(mapUri) => {
     await page.waitForSelector(itemContainerSelector, {timeout: TIMEOUT_MS});
   } catch (error) {
     // Google Foods menu doesn't appear (only lists third-party providers)
-    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapUri};
+    throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
 
-  // const menuItems = await page.evaluate(() => [...document.querySelectorAll('.WV4Bob')].map(({ innerText }) => innerText));
   const menuItems = await page.evaluate((itemContainerSelector, itemNameSelector, itemDescSelector) => {
     // Get all menu item containers
     const productCollection = document.querySelectorAll(itemContainerSelector);
@@ -144,20 +83,13 @@ const scrapeMenu = async(mapUri) => {
   console.log(menuItems);
 
   return menuItems;
-}
+});
 
 /**
  * Scrapes a given restaurant for all explicitly GF-marked items and stores any GF menu items into the RestaurantDetails object
  * @param {RestaurantDetails} resJSON The restaurant details object to store the newly scraped menu information
  */
 let getGFMenu = async(resJSON) => {
-  try {
-    await scrapeMenu(resJSON.mapuri);
-  } catch (error) {
-    console.log(error);
-  }
-  return resJSON;
-
   if (!resJSON) { return null; }
   
   // Since we pop the front of the queue in dispatch, if we don't end up processing
@@ -222,7 +154,15 @@ let getGFMenu = async(resJSON) => {
 
 }
 
-getGFMenu({mapuri:"https://maps.app.goo.gl/fFjYc9CHoGAtvvNSA"});
+cluster.execute("https://maps.app.goo.gl/B75aKExVfp678XxS6")
+  .then(menuItems => console.log(menuItems))
+  .catch(error => console.error(error));
+
+cluster.execute("https://maps.app.goo.gl/fFjYc9CHoGAtvvNSA")
+  .then(menuItems => console.log(menuItems))
+  .catch(error => console.error(error));
+  // console.log(result);
+
 // getGFMenu({mapuri:"https://maps.app.goo.gl/B75aKExVfp678XxS6"});
 
 
