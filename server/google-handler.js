@@ -152,7 +152,7 @@ var findGFReviews = (restaurantReviews, storeGFReviews) => {
    return storeGFReviews.length > 0;
 }
 
-var parseRestaurantInfo = (restaurant) => {
+var parseRestaurantInfo = async(restaurant) => {
    let resJSON = codes.RestaurantDetails(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text, restaurant.rating);
 
    if (findGFSummary(restaurant, resJSON)) {

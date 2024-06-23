@@ -4,28 +4,14 @@ import { filterGFMenuItems } from './parse-gluten-free.js';
 import * as codes from './gf-codes.js';
 
 // Import puppeteer web scraper module
-import * as puppeteer from "puppeteer";
 import { Cluster } from 'puppeteer-cluster';
-
-
 import { RestaurantDetails } from './gf-codes.js';
-
-// import { appEmitter, db } from "./app.js";
 
 // Selectors for elements
 const orderOnlineSelector = 'a[href^="https://food.google.com/chooseprovider"';
 const itemContainerSelector = '.WV4Bob';
 const itemNameSelector = '.bWZFsc';
 const itemDescSelector = '.gQjSre';
-
-// Scraping format
-const NAME = 0;
-const DESCRIPTION = 2;
-
-// Error Codes
-const NOT_FOUND = [];
-const LINK_FAILED = [-1];
-const RESOLVE_LIMIT = 1;
 
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 4000; 

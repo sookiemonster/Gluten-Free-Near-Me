@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use "sass:color";
 
 #restaurants {
    position: relative;
@@ -188,4 +189,31 @@
 #restaurants::-webkit-scrollbar-thumb {
    background: $scroll-handle-dark;
    border-radius: 10px;
+}
+
+#pending-parse-notif {
+   display: flex;
+   gap: 5px;
+   
+   padding: 4px;
+   margin: 0 50px;
+   border-radius: 20px;
+   
+   
+   justify-content: center;
+   align-items: center;
+
+   color: white;
+   background-color: $scroll-bg-dark;
+
+   animation-duration: 3s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: infinite;
+   animation-name: pending-parse-flicker;
+}
+
+@keyframes pending-parse-flicker {
+   0%   {background-color: $scroll-bg-dark}
+   50%  {background-color: color.scale($scroll-bg-dark, $lightness: 30%, $saturation: -20%)}
+   100% {background-color: $scroll-bg-dark}
 }

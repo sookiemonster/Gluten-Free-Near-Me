@@ -1,5 +1,6 @@
-import React from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import { useSelector } from 'react-redux'
+import { ColorRing } from 'react-loader-spinner';
 
 function MapReferral({mapUri}) {
    return (
@@ -141,9 +142,31 @@ function Restaurant ({name, id, summary, rating, mapUri, gfrank, reviews=[], men
 
 function Restaurants() {
    let restaurants = useSelector((state) => state.restaurants.renderedRestaurants); 
+   let stillExpecting = useSelector((state) => state.restaurants.expecting);  
+   const [pending, setPending] = useState("");
+   
+   useEffect(() => {
+      if (stillExpecting.size === 0) {
+         setPending("")
+      } else {
+         setPending(
+         <div id="pending-parse-notif">Parsing restaurant menus
+         <ColorRing
+         visible={true}
+         height="2rem"
+         width="2rem"
+         ariaLabel="color-ring-loading"
+         wrapperStyle={{}}
+         wrapperClass="color-ring-wrapper"
+         colors={['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff']}
+         />
+         </div>)
+      }
+   }, [stillExpecting]);
 
    return (
    <div id="restaurants">
+      {pending}
       { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapuri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} /> )}
    </div>
    );

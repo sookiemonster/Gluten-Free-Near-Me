@@ -1,12 +1,5 @@
 @use 'variables' as *;
-
-// .pac-target-input {
-//    border: none;
-//    outline: none;
-//    width: 100%;
-//    font-family: $font;
-//    font-size: 0.9rem;
-// }
+@use 'sass:color';
 
 #search-container {
    display: flex;
@@ -56,4 +49,24 @@
    cursor: pointer;
    border: none;
    outline: none;
+
+   transition: all 250ms;
+}
+
+#search-button:hover {
+   letter-spacing: 1px;
+   background-color: color.scale($button-body, $lightness: 25%)
+}
+
+@keyframes pending {
+   0%   {background-color: $button-body}
+   50%  {background-color: color.scale($button-body, $lightness: 50%)}
+   100% {background-color: $button-body}
+}
+
+.pending {
+   background-color: $button-body;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-name: pending;
 }

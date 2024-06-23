@@ -4,7 +4,7 @@ import { Grid } from 'react-loader-spinner';
 
 import { useSelector } from 'react-redux';
 import store from '../redux/Store';
-import { expect } from '../redux/RestaurantSlice';
+import { expect, clearExpectations } from '../redux/RestaurantSlice';
 
 // Define offset to cast multiple nearby searches
 const offset = 0.004;
@@ -39,6 +39,8 @@ let getViewportBounds = (map) => {
 let findNearby = (map) => {
    if (!map) {return;}
 
+   store.dispatch(clearExpectations());
+
    let data = {};
    data.viewportBounds = getViewportBounds(map);
    data.searchFoci = getSearchPoints(data.viewportBounds);
@@ -66,14 +68,10 @@ function Finder() {
    // Get the underlying Google Maps Object of the restaurant map
    const map = useMap("map");
    let stillExpecting = useSelector((state) => state.restaurants.expecting); 
-   const [waitingObject, setWaitingObject] = useState("");
-   
-   useEffect(() => {
-      if (stillExpecting.size === 0) {
-         setWaitingObject("");
-      } else {
-         setWaitingObject(
-            <Grid
+   const [buttonText, setButtonText] = useState("Search Here");
+   const [buttonPending, setButtonPending] = useState("");
+
+   let loadingIcon = <Grid
             visible={true}
             height="18"
             width="18"
@@ -81,13 +79,20 @@ function Finder() {
             ariaLabel="grid-loading"
             radius="10"
             wrapperStyle={{}}
-            wrapperClass="grid-wrapper"/>
-         );
+            wrapperClass="grid-wrapper"/>;
+   
+   useEffect(() => {
+      if (stillExpecting.size === 0) {
+         setButtonText("Search Here");
+         setButtonPending("");
+      } else {
+         setButtonText(<>{loadingIcon}Seaching{loadingIcon}</>);
+         setButtonPending("pending");
       }
    }, [stillExpecting])
 
    return (
-      <button id="search-button" onClick={() => findNearby(map)}>{waitingObject}Search Here{waitingObject}</button>
+      <button id="search-button" className={buttonPending} onClick={() => findNearby(map)}>{buttonText}</button>
    );
 }
 

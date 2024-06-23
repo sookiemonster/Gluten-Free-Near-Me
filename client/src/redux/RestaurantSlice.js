@@ -66,8 +66,8 @@ const resSlice = createSlice({
     },
 
     expect(state, action) {
-      // If not the right action, or there is no restaurant id, don't modify the state
-      if (action.type !== 'restaurants/expect' || !action.payload || action.payload === -1) { return state; }
+      // If not the right action, or there is no restaurant id, or we already have the information (eg. from a previous scrape) don't modify the state
+      if (action.type !== 'restaurants/expect' || !action.payload || action.payload === -1 || state.idSet.has(action.payload)) { return state; }
 
       let updatedExpectations = new Set(state.expecting);
       updatedExpectations.add(action.payload);
@@ -76,6 +76,14 @@ const resSlice = createSlice({
       return {
          ...state,
          expecting: updatedExpectations
+      }
+    },
+
+    clearExpectations(state, action) {
+      if (action.type !== 'restaurants/clearExpectations') { return state; }
+      return {
+        ...state, 
+        expecting: new Set()
       }
     },
 
@@ -142,5 +150,5 @@ const resSlice = createSlice({
 }
 })
 
-export const { resAdded, restrictViewportMarkers, storeMap, expect, receive} = resSlice.actions
+export const { resAdded, restrictViewportMarkers, storeMap, expect, receive, clearExpectations} = resSlice.actions
 export default resSlice.reducer
