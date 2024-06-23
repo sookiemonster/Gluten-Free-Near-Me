@@ -121,6 +121,11 @@
   width: 100%;
   padding: 30px 33px 30px 30px;
   border-radius: 12px;
+  transition: background-color 100ms ease-out;
+}
+.restaurant-container:hover {
+  background-color: #eae2f3;
+  cursor: pointer;
 }
 .restaurant-container .header {
   display: flex;

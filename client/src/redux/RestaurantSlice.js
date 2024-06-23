@@ -35,6 +35,10 @@ const resSlice = createSlice({
       updatedIdSet.add(action.payload.id);      
       updatedExpectations.delete(action.payload);
 
+      if (updatedExpectations.size === 0 && state.mapObject) { 
+        state.mapObject.setOptions({gestureHandling: "auto "})
+      }
+
       return {
          ...state,
          idSet : updatedIdSet,

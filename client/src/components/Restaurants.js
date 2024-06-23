@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
 import { useSelector } from 'react-redux'
 import { ColorRing } from 'react-loader-spinner';
+import { useMap } from '@vis.gl/react-google-maps';
 
 function MapReferral({mapUri}) {
    return (
@@ -124,11 +125,12 @@ function Rating({ratingValue}) {
    );
 }
 
-function Restaurant ({name, id, summary, rating, mapUri, gfrank, reviews=[], menu=[]}) {
+function Restaurant ({name, id, summary, rating, mapUri, gfrank, location, reviews=[], menu=[]}) {
    let DOMid = "card-" + id;
+   const map = useMap('map');
 
    return (
-   <div className="restaurant-container" id={DOMid}>
+   <div className="restaurant-container" id={DOMid} onClick={() => map.panTo(location)} >
       <div className="header">
          <span className="restaurant-name">{name}</span>
          <Rating ratingValue={rating}/>
@@ -167,7 +169,7 @@ function Restaurants() {
    return (
    <div id="restaurants">
       {pending}
-      { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapuri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} /> )}
+      { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapuri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} location={{lat : Number(place.lat), lng : Number(place.long) }} /> )}
    </div>
    );
 }

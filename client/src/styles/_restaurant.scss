@@ -40,6 +40,13 @@
    padding: 30px 33px 30px 30px;
    border-radius: 12px;
 
+   transition: background-color 100ms ease-out;
+
+   &:hover {
+      background-color: $light-gray;
+      cursor: pointer;
+   }
+
    .header {
       display: flex;
       width: 100%;
