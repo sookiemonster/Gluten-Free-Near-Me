@@ -29,9 +29,6 @@ function App() {
 
     function onRestaurantFound(resJSON) {
       console.log("Received packet", resJSON);
-      store.dispatch(receive(resJSON.id));
-
-      if (resJSON.gfrank <= 0) { return; }
       store.dispatch(resAdded(resJSON));
       store.dispatch(restrictViewportMarkers());
     }

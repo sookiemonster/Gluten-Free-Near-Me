@@ -40,6 +40,8 @@ let findNearby = (map) => {
    if (!map) {return;}
 
    store.dispatch(clearExpectations());
+   // Constrain map to current viewport
+   map.setOptions({gestureHandling: false});
 
    let data = {};
    data.viewportBounds = getViewportBounds(map);

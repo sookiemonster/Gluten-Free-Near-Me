@@ -150,7 +150,7 @@ function Restaurants() {
          setPending("")
       } else {
          setPending(
-         <div id="pending-parse-notif">Parsing restaurant menus
+         <div id="pending-parse-notif">Checking restaurants
          <ColorRing
          visible={true}
          height="2rem"

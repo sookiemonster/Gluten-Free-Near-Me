@@ -1,23 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { getViewportBounds } from '../components/Finder';
 
-var CenterPoint = function(coordinates) {
-  this.lat = Number(coordinates.lat());
-  this.long = Number(coordinates.lng());
-
-  this.quadranceToPlace = (place) => {
-    let latDiff = this.lat - Number(place.lat);
-    let lngDiff = this.lng - Number(place.long);
-    
-    return (latDiff * latDiff) + (lngDiff * lngDiff);
-  }
-
-  this.compare = (placeA, placeB) => {
-    console.log("place a",placeA)
-    console.log("place b",placeB)
-    return this.quadranceToPlace(placeA) < this.quadranceToPlace(placeB);
-  }
-}
+// Define a set of constants to allow for listing restaurants just outside the viewport
+const LAT_TOLERANCE = .001;
+const LONG_TOLERANCE = .001;
 
 const resSlice = createSlice({
   name: 'restaurants',
@@ -40,27 +26,19 @@ const resSlice = createSlice({
       // Create copies to maintain immutability
       let updatedResList = state.resList.slice();
       let updatedIdSet = new Set(state.idSet);
+      let updatedExpectations = new Set(state.expecting);
 
-      updatedResList.push(action.payload);
+      // Only allow the restaurant to be rendered if it has GF options
+      if (action.payload.gfrank > 0) { 
+        updatedResList.push(action.payload);
+      }
       updatedIdSet.add(action.payload.id);      
+      updatedExpectations.delete(action.payload);
 
       return {
          ...state,
          idSet : updatedIdSet,
          resList: updatedResList, 
-      }
-    },
-
-    receive(state, action) { 
-      console.log('performing receive', action);
-      if (action.type !== 'restaurants/receive' || !action.payload) { return state; }
-
-      let updatedExpectations = new Set(state.expecting);
-      updatedExpectations.delete(action.payload);
-      console.log("waiting on", updatedExpectations.size, "restaurants: ", updatedExpectations);
-
-      return {
-         ...state,
          expecting: updatedExpectations
       }
     },
@@ -131,8 +109,8 @@ const resSlice = createSlice({
     let isInViewport = (viewportBounds, point) => {
       if (!viewportBounds) { return false; }
 
-      const result = (viewportBounds.bottomLeft.lat <= point.lat && point.lat <= viewportBounds.topRight.lat) && 
-        (viewportBounds.bottomLeft.long <= point.long && point.long <= viewportBounds.topRight.long);
+      const result = (viewportBounds.bottomLeft.lat - point.lat <= LAT_TOLERANCE && point.lat - viewportBounds.topRight.lat <= LAT_TOLERANCE) && 
+        (viewportBounds.bottomLeft.long - point.long <= LONG_TOLERANCE && point.long - viewportBounds.topRight.long <= LONG_TOLERANCE);
 
       return result;
     }
@@ -150,5 +128,5 @@ const resSlice = createSlice({
 }
 })
 
-export const { resAdded, restrictViewportMarkers, storeMap, expect, receive, clearExpectations} = resSlice.actions
+export const { resAdded, restrictViewportMarkers, storeMap, expect, clearExpectations} = resSlice.actions
 export default resSlice.reducer
