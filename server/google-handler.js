@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import 'dotenv/config';
 import * as codes from './gf-codes.js';
 import { mentionsGlutenFree } from "./parse-gluten-free.js";
-import { dispatchScraper, enqueueRestaurant } from "./scrape.js";
+import { getGFMenu } from "./scrape.js";
 import { appEmitter, db } from "./app.js";
 import { Point } from './database.js'
 
@@ -168,8 +168,12 @@ var parseRestaurantInfo = (restaurant) => {
       db.updateRestaurantDetails(resJSON);
 
    } else {
-      enqueueRestaurant(resJSON);
-      dispatchScraper();
+      getGFMenu(resJSON)
+         .then(resJSON => {
+            appEmitter.broadcastRestaurant(resJSON);
+            db.updateRestaurantDetails(resJSON);
+         })
+         .catch(err => console.error(err));    
    }
 }
 

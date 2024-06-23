@@ -122,13 +122,5 @@ let getGFMenu = async(resJSON) => {
   }
   return resJSON;
 }
-  // console.log(result);
-
-getGFMenu(RestaurantDetails("id", "https://maps.app.goo.gl/B75aKExVfp678XxS6", 0.0, 0.0, "A place!", 5.0))
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
-getGFMenu(RestaurantDetails("id", "https://maps.app.goo.gl/tPSujJrVK2TjKnot7", 0.0, 0.0, "A place!", 5.0))
-  .then(res => console.log(res))
-  .catch(err => console.error(err))
 
 export { getGFMenu };
