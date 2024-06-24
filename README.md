@@ -1,6 +1,8 @@
 # Gluten Free Near Me
 A web-application to find restaurants offering gluten-free options near you! 
 
+![image](https://github.com/sookiemonster/Gluten-Free-Near-Me/assets/71859934/311ebd28-a961-4602-972a-1d8f5dd1a740)
+
 ## Behind the Scenes / How it works:
 There aren't any widely accessible APIs to retrieve menu information; but if we can Google it, then chances are we can get it (for the most part, see later). 
 1. First we see if Google has already done the work for us. That is to say, if a restaurant's description mentions gluten-free right off the bat, then we can save some work and avoid scraping. 
