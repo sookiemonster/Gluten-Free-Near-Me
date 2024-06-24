@@ -19,6 +19,11 @@ export function Point(lat, long) {
 var Database = function() {
    // Initialize Database manager
    this.pool = new Pool({ ssl: true });
+
+   this.pool.on('error', (error) => {
+      console.error(error);
+      this.pool = null;
+   })
    
    // Query methods
    this.updateRestaurantDetails = updateRestaurantDetails.bind(this);
@@ -37,6 +42,8 @@ var Database = function() {
  * @returns {Promise|RestaurantDetails} Returns a promise for an object following the restaurant details format
  */
 async function getRestaurant(id) {
+   if (!this.pool) { this.pool = new Pool({ ssl: true }); }
+
    const query = {
       text: "SELECT * FROM places WHERE id = $1",
       values: [id]
@@ -66,6 +73,8 @@ async function getRestaurant(id) {
  * @returns {Promise|Array|RestaurantDetails} An array of objects following the RestaurantDetails format
  */
 async function getAllInBounds(bottomLeft, topRight) {
+   if (!this.pool) { this.pool = new Pool({ ssl: true }); }
+
    const query = {
       text: "SELECT * FROM places WHERE lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4",
       values: [bottomLeft.lat, topRight.lat, bottomLeft.long, topRight.long]
@@ -90,6 +99,8 @@ async function getAllInBounds(bottomLeft, topRight) {
  * @returns The query result
  */
 async function updateRestaurantDetails(resJSON) {
+   if (!this.pool) { this.pool = new Pool({ ssl: true }); }
+
    // Do not propogate details if error. Only store ID.
    if (isError(resJSON)) { voidExceptID(resJSON); }
 
@@ -111,6 +122,7 @@ async function updateRestaurantDetails(resJSON) {
  */
 async function pushLog(center) {
    if (!center.lat || !center.long) { return; }
+   if (!this.pool) { this.pool = new Pool({ ssl: true }); }
    
    // Store logs with 4 decimal places (since highly unlikely for very close coordinates to be the same)
    let lat = center.lat.toFixed(4);
@@ -136,6 +148,8 @@ async function pushLog(center) {
  */
 async function isValidSearch(center) {
    if (!center) { return; }
+
+   if (!this.pool) { this.pool = new Pool({ ssl: true }); }
 
    // 20 days for a search nearby request to be stale; get all logs that are near the specified point
    const query = {
