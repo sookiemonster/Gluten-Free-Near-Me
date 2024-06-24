@@ -57,10 +57,16 @@ let findNearby = (map) => {
    fetch("https://localhost:5000/api/find-nearby", options)
       .then((response) => { return response.json() })
       .then((batchJSON) => {
+            let emptyBatchCount = 0;
             batchJSON.forEach((batch) => {
                console.log("expecting", batch);
+               if (batch[0] === -1) { emptyBatchCount++; return; }
                batch.forEach(place => {store.dispatch(expect(place))})
             });
+            console.log(emptyBatchCount);
+            if (emptyBatchCount == batchJSON.length) {
+               map.setOptions({gestureHandling: "auto "})
+            }
          }
       )
       .catch((error) => console.error("An error has occurred: " + error));

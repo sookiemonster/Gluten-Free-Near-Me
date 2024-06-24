@@ -14,7 +14,7 @@ const itemNameSelector = '.bWZFsc';
 const itemDescSelector = '.gQjSre';
 
 // Redefine timeout & configure browser options
-export const TIMEOUT_MS = 4000; 
+export const TIMEOUT_MS = 2000; 
 
 const cluster = await Cluster.launch({
   concurrency: Cluster.CONCURRENCY_CONTEXT,

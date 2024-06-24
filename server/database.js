@@ -4,8 +4,8 @@ const { Pool } = pg;
 import 'dotenv/config'; 
 
 import { isError, voidExceptID, needsReview } from './gf-codes.js';
-const LATITUDE_TOLERANCE = 0.001; // .001 degrees ~= 100m
-const LONGITUDE_TOLERANCE = 0.001;
+const LATITUDE_TOLERANCE = 0.0005; // .001 degrees ~= 100m
+const LONGITUDE_TOLERANCE = 0.0005;
 
 /**
  * Creates a Point object representing a pair of coordinates (latitude, longitude)
