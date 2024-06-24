@@ -44,7 +44,10 @@ function App() {
       <APIProvider apiKey={process.env.REACT_APP_API_KEY}>
       <div className="App">
         <div id="sidebar">
-          <h1>Gluten Free Near Me</h1>
+          <header>
+            <h1>Gluten Free Near Me</h1>
+            <h2>Let's find you something GF to munch on.</h2>
+          </header>
           <Restaurants />
             <nav id="nav">
                 <a className="active" href="/">Home</a>

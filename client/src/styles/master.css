@@ -294,6 +294,19 @@ h1 {
   color: #FFFFFF;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
 #sidebar {
   grid-area: sidebar;
   position: relative;
