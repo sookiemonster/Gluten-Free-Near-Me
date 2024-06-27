@@ -36,7 +36,7 @@ router.post('/find-nearby', (req, res) => {
                console.error(err);
                isValid = true;
             }).then(() => {
-               if (!isValid) { return; }
+               if (!isValid) { resolve([-1]); }
                console.log("Ranking: ");
                rankNearbyPlaces(point.lat, point.long)
                   .then((ids) => resolve(ids));

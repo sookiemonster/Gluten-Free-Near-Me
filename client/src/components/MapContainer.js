@@ -1,6 +1,6 @@
 import { useMap, Map, MapControl, ControlPosition, Marker, useApiIsLoaded } from '@vis.gl/react-google-maps';
 import store from '../redux/Store.js';
-import { restrictViewportMarkers, storeMap } from '../redux/RestaurantSlice.js';
+import { restrictViewportMarkers, markIncomplete, storeMap } from '../redux/RestaurantSlice.js';
 import React, { useEffect, useState } from 'react'; 
 import { useSelector } from 'react-redux';
 import AutocompleteSearch from './AutocompleteSearch.js';
@@ -68,6 +68,7 @@ function MapHandler({place}) {
          // Pan to the lat / long location of the selected place
          if (place.geometry?.location) {
             map.panTo(place.geometry?.location);
+            store.dispatch(markIncomplete());
          }
    }, [map, place]);
 
@@ -77,6 +78,7 @@ function MapHandler({place}) {
 
       map.addListener('idle', () => {
          store.dispatch(restrictViewportMarkers());
+         store.dispatch(markIncomplete());
       });
    }, [map]);
 
@@ -85,10 +87,22 @@ function MapHandler({place}) {
 
 function MapContainer() {
    const [selectedPlace, setSelectedPlace] = useState(null);
+   const [overlay, setOverlay] = useState(null);
 
    let restaurants = useSelector((state) => state.restaurants.renderedRestaurants);
+   let stillExpecting = useSelector((state) => state.restaurants.expecting);
+   
+   useEffect(() => {
+      if (stillExpecting.size > 0) {
+         setOverlay(<div id='pending-overlay'></div>);
+      } else {
+         setOverlay(null);
+      }
+   }, [stillExpecting]);
+
    return (
       <div id="map-container">
+         { overlay }
          <Map
             id="map"
             style={{width: '100%', height: '100%'}}

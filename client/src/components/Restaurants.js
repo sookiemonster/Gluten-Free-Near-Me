@@ -142,15 +142,36 @@ function Restaurant ({name, id, summary, rating, mapUri, gfrank, location, revie
    );
 }
 
+function NoRestaurantsMessage() {
+   return (<div id="not-found-container">
+      <span id="sad-face">:(</span>
+      <h3>It seems like we couldn't find anything here.</h3>
+      <span className='note'>*There might be GF options, 
+but we don't have the data to to say for certain</span>
+      <span className='retry-prompt'>Try giving another area a look!</span>
+   </div>);
+}
+
+
 function Restaurants() {
    let restaurants = useSelector((state) => state.restaurants.renderedRestaurants); 
    let stillExpecting = useSelector((state) => state.restaurants.expecting);  
+   const searchCompleted = useSelector((state) => state.restaurants.searchCompleted);  
    const [pending, setPending] = useState("");
+   const [notFoundMessage, setNotFoundMessage] = useState("");
    
    useEffect(() => {
       if (stillExpecting.size === 0) {
-         setPending("")
+         setPending(null);
+         
+         if (searchCompleted && restaurants.length === 0) {
+            setNotFoundMessage(NoRestaurantsMessage);
+         } else {
+            setNotFoundMessage(null);
+         }
       } else {
+         // Remove not found message (if there was one to begin with)
+         setNotFoundMessage(null);
          setPending(
          <div id="pending-parse-notif">Checking {stillExpecting.size} restaurants
          <ColorRing
@@ -164,11 +185,12 @@ function Restaurants() {
          />
          </div>)
       }
-   }, [stillExpecting]);
+   }, [stillExpecting, searchCompleted, restaurants]);
 
    return (
    <div id="restaurants">
-      {pending}
+      { pending }
+      { notFoundMessage }
       { restaurants.map((place) => <Restaurant key={place.id} name ={place.name} id={place.id} summary={place.summary} rating={place.rating} mapUri={place.mapuri} gfrank={place.gfrank} reviews={place.reviews} menu={place.items} location={{lat : Number(place.lat), lng : Number(place.long) }} /> )}
    </div>
    );

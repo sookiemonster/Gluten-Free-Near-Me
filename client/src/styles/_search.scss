@@ -60,7 +60,7 @@
 
 @keyframes pending {
    0%   {background-color: $button-body}
-   50%  {background-color: color.scale($button-body, $lightness: 50%)}
+   50%  {background-color: color.scale($button-body, $lightness: 25%)}
    100% {background-color: $button-body}
 }
 

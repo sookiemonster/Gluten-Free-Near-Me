@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useMap } from '@vis.gl/react-google-maps';
 import { Grid } from 'react-loader-spinner';
 
-import { useSelector } from 'react-redux';
+import { batch, useSelector } from 'react-redux';
 import store from '../redux/Store';
-import { expect, clearExpectations } from '../redux/RestaurantSlice';
+import { expect, clearExpectations, complete, markIncomplete } from '../redux/RestaurantSlice';
 
 // Define offset to cast multiple nearby searches
 const offset = 0.004;
@@ -63,9 +63,13 @@ let findNearby = (map) => {
                if (batch[0] === -1) { emptyBatchCount++; return; }
                batch.forEach(place => {store.dispatch(expect(place))})
             });
-            console.log(emptyBatchCount);
-            if (emptyBatchCount == batchJSON.length) {
-               map.setOptions({gestureHandling: "auto "})
+            // console.log(emptyBatchCount);
+            store.dispatch(markIncomplete());
+            console.log(emptyBatchCount, " : ", batchJSON);
+            if (emptyBatchCount === batchJSON.length) {
+               // No places nearby to be searched
+               map.setOptions({gestureHandling: "auto "});
+               store.dispatch(complete());
             }
          }
       )
@@ -77,7 +81,7 @@ function Finder() {
    const map = useMap("map");
    let stillExpecting = useSelector((state) => state.restaurants.expecting); 
    const [buttonText, setButtonText] = useState("Search Here");
-   const [buttonPending, setButtonPending] = useState("");
+   const [buttonPending, setButtonPending] = useState(null);
 
    let loadingIcon = <Grid
             visible={true}
@@ -92,7 +96,7 @@ function Finder() {
    useEffect(() => {
       if (stillExpecting.size === 0) {
          setButtonText("Search Here");
-         setButtonPending("");
+         setButtonPending(null);
       } else {
          setButtonText(<>{loadingIcon}Seaching{loadingIcon}</>);
          setButtonPending("pending");

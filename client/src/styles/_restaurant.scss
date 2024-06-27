@@ -224,3 +224,40 @@
    50%  {background-color: color.scale($scroll-bg-dark, $lightness: 30%, $saturation: -20%)}
    100% {background-color: $scroll-bg-dark}
 }
+
+#not-found-container {
+   display: flex;
+   width: 75%;
+   gap: 25px;
+   
+   flex-direction: column;
+   text-align: center;
+   
+   color: $white;
+   margin: auto;
+   padding: 30px;
+
+   #sad-face {
+      display: block;
+      font-size: 4rem;
+      margin: 0 0 0 1rem;
+      transform: rotate(0.25turn);
+   }
+
+   h3 {
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 1.5rem;
+   }
+
+   .note {
+      font-weight: 300;
+      font-size: 1rem;
+      opacity: 0.75;
+   }
+
+   .retry-prompt {
+      font-weight: 600;
+      font-size: 1.1rem;
+   }
+}

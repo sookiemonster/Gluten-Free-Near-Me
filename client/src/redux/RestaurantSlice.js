@@ -7,7 +7,7 @@ const LONG_TOLERANCE = .001;
 
 const resSlice = createSlice({
   name: 'restaurants',
-  initialState: { resList: [], renderedRestaurants: [], idSet: new Set(), expecting: new Set(), mapObject: null },
+  initialState: { resList: [], renderedRestaurants: [], idSet: new Set(), expecting: new Set(), mapObject: null, searchCompleted: false },
   reducers: {
     storeMap(state, action) {
       // If not the right action / no map object provided don't modify the state
@@ -27,6 +27,7 @@ const resSlice = createSlice({
       let updatedResList = state.resList.slice();
       let updatedIdSet = new Set(state.idSet);
       let updatedExpectations = new Set(state.expecting);
+      let updatedCompletion = false;
 
       // Only allow the restaurant to be rendered if it has GF options
       if (action.payload.gfrank > 0) { 
@@ -36,7 +37,8 @@ const resSlice = createSlice({
       updatedExpectations.delete(action.payload.id);
 
       if (updatedExpectations.size === 0 && state.mapObject) { 
-        state.mapObject.setOptions({gestureHandling: "auto "})
+        state.mapObject.setOptions({gestureHandling: "auto "});
+        updatedCompletion = true;
       }
 
       // console.log("Restaurant being added: ", action.payload.id, action.payload.name);
@@ -45,6 +47,7 @@ const resSlice = createSlice({
 
       return {
          ...state,
+         searchCompleted : updatedCompletion,
          idSet : updatedIdSet,
          resList: updatedResList, 
          expecting: updatedExpectations
@@ -72,37 +75,6 @@ const resSlice = createSlice({
         expecting: new Set()
       }
     },
-
-    /**
-     * WIP. DO NOT USE. 
-     * @param state Redux state
-     * @param action An action whose payload is in the form { lat: <NUMBER>, lng: <NUMBER> }
-     * @returns An updated state
-     */
-  //   resSort(state, action) {
-  //     if (action.type !== 'restaurants/resSort') { return state; }
-      
-  //     // Create a new centerpoint
-  //     let newCenter = new CenterPoint(action.payload);
-  //     console.log(newCenter);
-
-  //     // Create copies to maintain immutability
-  //     let updatedResList = state.resList.slice();
-  //     updatedResList.sort( newCenter.compare );
-
-  //     console.log(updatedResList);
-  //     for (let obj of updatedResList) {
-  //       console.log(obj);
-  //     }
-
-  //     // console.log('adding restaurant:');
-  //     // console.log(action.payload);
-  //     return {
-  //       ...state,
-  //       resList: updatedResList
-  //     }
-  //   }
-  // },
 
   /**
    * Filters markers so that only those in the viewport are rendered
@@ -132,9 +104,27 @@ const resSlice = createSlice({
       renderedRestaurants: updatedRenderList
     }
   },
+
+  complete(state, action) {
+    if (action.type !== 'restaurants/complete' || !state.mapObject) { return state; }
+
+    return {
+      ...state, 
+      searchCompleted: true
+    }
+  },
+
+  markIncomplete(state, action) {
+    if (action.type !== 'restaurants/markIncomplete' || !state.mapObject) { return state; }
+
+    return {
+      ...state, 
+      searchCompleted: false
+    }
+  }
   
 }
 })
 
-export const { resAdded, restrictViewportMarkers, storeMap, expect, clearExpectations} = resSlice.actions
+export const { resAdded, restrictViewportMarkers, storeMap, expect, clearExpectations, complete, markIncomplete } = resSlice.actions
 export default resSlice.reducer

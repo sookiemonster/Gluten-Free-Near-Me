@@ -6,7 +6,7 @@ import Finder from './components/Finder.js';
 
 // Import Redux-related Components & info
 import { Provider } from 'react-redux'
-import { receive, resAdded, restrictViewportMarkers } from './redux/RestaurantSlice.js';
+import { startSearch, resAdded, restrictViewportMarkers } from './redux/RestaurantSlice.js';
 import store from './redux/Store.js';
 
 // Improt Google API Provider
