@@ -14,7 +14,8 @@ const itemNameSelector = '.bWZFsc';
 const itemDescSelector = '.gQjSre';
 
 // Redefine timeout & configure browser options
-export const TIMEOUT_MS = 2000; 
+export const TIMEOUT_MS = 500; 
+// export const TIMEOUT_MS = 0; 
 
 const cluster = await Cluster.launch({
   concurrency: Cluster.CONCURRENCY_CONTEXT,
@@ -41,6 +42,7 @@ await cluster.task(async({ page, data }) => {
   });
 
   try {
+    await page.waitForNavigation({waitUntil: 'domcontentloaded'});
     await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
   } catch (error) {
     // Order Online button doesn't appear
