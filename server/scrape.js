@@ -15,7 +15,6 @@ const itemDescSelector = '.gQjSre';
 
 // Redefine timeout & configure browser options
 export const TIMEOUT_MS = 500; 
-// export const TIMEOUT_MS = 0; 
 
 const cluster = await Cluster.launch({
   concurrency: Cluster.CONCURRENCY_CONTEXT,
