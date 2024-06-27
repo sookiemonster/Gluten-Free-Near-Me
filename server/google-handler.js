@@ -159,13 +159,21 @@ var parseRestaurantInfo = async(restaurant) => {
       resJSON.gfrank = codes.SELF_DESCRIBED_GF;
       console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
-      db.updateRestaurantDetails(resJSON);
+      try {
+         db.updateRestaurantDetails(resJSON);
+      } catch (error) {
+         console.error("There was an error trying to update restaurant details:", resJSON.name);
+      }
    
    } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
       resJSON.gfrank = codes.COMMENTS_MENTION_GF;
       console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
-      db.updateRestaurantDetails(resJSON);
+      try {
+         db.updateRestaurantDetails(resJSON);
+      } catch (error) {
+         console.error("There was an error trying to update restaurant details:", resJSON.name);
+      }
 
    } else {
       getGFMenu(resJSON)
@@ -188,7 +196,6 @@ var rankPlaces = async(placeData) => {
       
       db.getRestaurant(restaurant.id)
          .then((resJSON) => {
-            // console.log(resJSON);
             appEmitter.broadcastRestaurant(resJSON);
          })
          .catch((err) => {

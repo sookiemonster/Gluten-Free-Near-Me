@@ -14,7 +14,7 @@ const itemNameSelector = '.bWZFsc';
 const itemDescSelector = '.gQjSre';
 
 // Redefine timeout & configure browser options
-export const TIMEOUT_MS = 500; 
+export const TIMEOUT_MS = 5000; 
 
 const cluster = await Cluster.launch({
   concurrency: Cluster.CONCURRENCY_CONTEXT,
@@ -23,6 +23,8 @@ const cluster = await Cluster.launch({
 
 await cluster.task(async({ page, data }) => {
   const mapuri = data;
+  page.setDefaultTimeout(TIMEOUT_MS);
+  page.setDefaultNavigationTimeout(TIMEOUT_MS);
 
   try {
     await page.goto(mapuri);
@@ -36,23 +38,30 @@ await cluster.task(async({ page, data }) => {
   // Disable image loading
   await page.setRequestInterception(true);
   page.on('request', (req) => {
-    if(req.resourceType() === 'image' || req.resourceType() === 'media') { req.abort();}
+    if(req.resourceType() === 'image' || req.resourceType() === 'media' || req.resourceType() === 'stylesheet' || req.resourceType() === 'font') { req.abort();}
     else { req.continue(); }
   });
 
+  let mapstart = Date.now();
   try {
     await page.waitForNavigation({waitUntil: 'domcontentloaded'});
-    await page.waitForSelector(orderOnlineSelector, {timeout: TIMEOUT_MS});
+    console.log("Took", Date.now() - mapstart, " ms to load the Google Maps DOM", mapuri);
+    await page.waitForSelector(orderOnlineSelector);
+    console.log("Took", Date.now() - mapstart, " ms to load the Google Maps Page", mapuri);
   } catch (error) {
     // Order Online button doesn't appear
+    console.log("Took", Date.now() - mapstart, " ms to have an error loading load the Google Order Online Selector (on Maps)", mapuri);
     throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
   await page.click(orderOnlineSelector);
   await page.waitForNavigation({waitUntil: 'domcontentloaded'});
+  let foodStart = Date.now();
   try {
-    await page.waitForSelector(itemContainerSelector, {timeout: TIMEOUT_MS});
+    await page.waitForSelector(itemContainerSelector);
+    console.log("Took", Date.now() - foodStart, " ms to load the Google Foods Page", mapuri);
   } catch (error) {
     // Google Foods menu doesn't appear (only lists third-party providers)
+    console.log("Took", Date.now() - foodStart, " ms to have trouble accessing the menu on the Google Foods Page", mapuri);
     throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
 

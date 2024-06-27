@@ -21,11 +21,14 @@ var Database = function() {
    this.initializeDatabase = () => {
       if (this.pool) return; 
 
-      this.pool = new Pool({ ssl: true, idleTimeoutMillis: 0 });
+      this.pool = new Pool({ 
+         ssl: true, 
+         idleTimeoutMillis: 120000,
+         connectionTimeoutMillis: 120000
+      });
    
       this.pool.on('error', (error) => {
          console.error(error);
-         console.error("TIMEOUT!");
          this.pool = null;
       })
    }
