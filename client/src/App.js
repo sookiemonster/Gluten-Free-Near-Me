@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import MapContainer from './components/MapContainer.js';
 import Restaurants from './components/Restaurants.js';
-import Finder from './components/Finder.js';
 
 // Import Redux-related Components & info
 import { Provider } from 'react-redux'
@@ -43,8 +42,15 @@ function App() {
     <Provider store={store}>
       <APIProvider apiKey={process.env.REACT_APP_API_KEY}>
       <div className="App">
+        <header id="mobile-header">
+          <div>
+            <h1>Gluten Free Near Me</h1>
+            <h2>Let's find you something GF to munch on.</h2>
+          </div>
+          <div id="hamburger"></div>
+        </header>
         <div id="sidebar">
-          <header>
+          <header id="sidebar-header">
             <h1>Gluten Free Near Me</h1>
             <h2>Let's find you something GF to munch on.</h2>
           </header>

@@ -184,6 +184,16 @@
    }
 }
 
+@media screen and (width <= $width-cutoff), (orientation: portrait) {
+   #restaurants {
+      overflow-y: visible;
+      width: 100%;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0;
+   }
+}
+
 #restaurants::-webkit-scrollbar {
    width: 1ch;
 }

@@ -3,8 +3,8 @@
 h1 {
    margin: 0;
    padding:0;
-   font-weight: 900;
-   font-size: 32;
+   font-size: 2rem;
+   font-weight: 800;
    color: $white;
 }
 
@@ -17,8 +17,8 @@ h2 {
    opacity: 0.75;
 }
 
-header {
-   margin-bottom: 10px;
+#mobile-header {
+   display: none;
 }
 
 #sidebar {
@@ -31,8 +31,38 @@ header {
    height: 100vh;
    padding: 45px 15px 30px 30px;
    background-color: $dark;
+
+   header {
+      margin-bottom: 10px;
+   }
 }
 
+@media screen and (width <= $width-cutoff), (orientation: portrait) {
+   #sidebar {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 3vh 3vw;
+
+
+      header { display: none; }
+
+      nav { display: none; }
+   }
+
+   #mobile-header {
+      grid-area: mobile-header;
+
+      display: flex;
+      width: 100vw;
+      padding: 20px;
+
+      background-color: $dark;
+      
+      align-items: center;
+      z-index: 99;
+   }
+}
 
 nav {
    display: flex;
