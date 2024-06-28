@@ -1,6 +1,5 @@
 // Specify DB details via environment variables
-import pg from 'pg';
-const { Pool } = pg;
+import postgres from 'postgres';
 import 'dotenv/config'; 
 
 import { isError, voidExceptID, needsReview } from './gf-codes.js';
@@ -19,18 +18,13 @@ export function Point(lat, long) {
 var Database = function() {
    // Initialize Database manager
    this.initializeDatabase = () => {
-      if (this.pool) return; 
+      if (this.connection) return; 
 
-      this.pool = new Pool({ 
+      this.connection = postgres({ 
          ssl: true, 
-         idleTimeoutMillis: 120000,
-         connectionTimeoutMillis: 120000
+         idle_timeout: 30,
+         connect_timeout: 60 * 30
       });
-   
-      this.pool.on('error', (error) => {
-         console.error(error);
-         this.pool = null;
-      })
    }
 
    this.initializeDatabase();
@@ -54,20 +48,16 @@ var Database = function() {
 async function getRestaurant(id) {
    this.initializeDatabase();
 
-   const query = {
-      text: "SELECT * FROM places WHERE id = $1",
-      values: [id]
-   }
-
    return new Promise((resolve, reject) => {
-      this.pool.query(query)
+      this.connection`SELECT * FROM places WHERE id = ${id}`
          .then((res) => {
             // If not found / it's been previously inaccessible
-            if (!res.rows[0] || needsReview(res.rows[0])) { throw null; }
-            resolve(res.rows[0]);
+            console.log(res);
+            if (!res || res.length == 0 || needsReview(res)) { reject(null); }
+            resolve(res);
          })
          .catch((err) => {
-            // console.log(err);
+            console.log(err);
             reject(null);
          })
    });
@@ -85,16 +75,12 @@ async function getRestaurant(id) {
 async function getAllInBounds(bottomLeft, topRight) {
    this.initializeDatabase();
 
-   const query = {
-      text: "SELECT * FROM places WHERE lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4",
-      values: [bottomLeft.lat, topRight.lat, bottomLeft.long, topRight.long]
-   }
-
    return new Promise((resolve, reject) => {
-      this.pool.query(query)
+      this.connection`SELECT * FROM places WHERE lat BETWEEN ${bottomLeft.lat} AND ${topRight.lat} AND long BETWEEN ${bottomLeft.long} AND ${topRight.long}`
          .then((res) => {
             // If not found / it's been previously inaccessible
-            resolve(res.rows);
+            console.log("Bounded:", res);
+            resolve(res);
          })
          .catch((err) => {
             console.log(err);
@@ -114,14 +100,14 @@ async function updateRestaurantDetails(resJSON) {
    // Do not propogate details if error. Only store ID.
    if (isError(resJSON)) { voidExceptID(resJSON); }
 
-   const query = {
-      text: `INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items, rating) 
-               VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
-               ON CONFLICT(id) 
-               DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, rating, last_updated) = ($2, $3, $4, $5, $6, $7, $8, $9, $10, NOW()::DATE)`,
-      values: [resJSON.id, resJSON.name, resJSON.lat, resJSON.long, resJSON.mapuri, resJSON.summary, resJSON.gfrank, resJSON.reviews, resJSON.items, resJSON.rating]
-   };
-   return this.pool.query(query);
+   return new Promise((resolve, reject) => {
+      this.connection`INSERT INTO places (id, name, lat, long, mapuri, summary, gfrank, reviews, items, rating) 
+         VALUES(${resJSON.id}, ${resJSON.name}, ${resJSON.lat}, ${resJSON.long}, ${resJSON.mapuri}, ${resJSON.summary}, ${resJSON.gfrank}, ${resJSON.reviews}, ${resJSON.items}, ${resJSON.rating}) 
+         ON CONFLICT(id) 
+         DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, rating, last_updated) = (${resJSON.name}, ${resJSON.lat}, ${resJSON.long}, ${resJSON.mapuri}, ${resJSON.summary}, ${resJSON.gfrank}, ${resJSON.reviews}, ${resJSON.items}, ${resJSON.rating}, NOW()::DATE)` 
+         .then(resolve(`Upserted ${resJSON.id} (${resJSON.name}) successfully.`))
+         .catch(resolve(`Error upserting ${resJSON.id} (${resJSON.name})`))
+      });
 }
 
 /**
@@ -131,21 +117,21 @@ async function updateRestaurantDetails(resJSON) {
  * @returns The result of the query
  */
 async function pushLog(center) {
-   if (!center.lat || !center.long) { return; }
-   this.initializeDatabase();
+   // if (!center.lat || !center.long) { return; }
+   // this.initializeDatabase();
    
-   // Store logs with 4 decimal places (since highly unlikely for very close coordinates to be the same)
-   let lat = center.lat.toFixed(4);
-   let long = center.long.toFixed(4);
-   // Create a unique string token by appending latitudes and longitudes
-   const query = {
-      text: `INSERT INTO log (id, lat, long) 
-               VALUES($1, $2, $3) 
-               ON CONFLICT(id) 
-               DO UPDATE SET last_updated = NOW()::DATE`,
-      values: [lat.toString() + long.toString(), lat, long]
-   }
-   return this.pool.query(query);
+   // // Store logs with 4 decimal places (since highly unlikely for very close coordinates to be the same)
+   // let lat = center.lat.toFixed(4);
+   // let long = center.long.toFixed(4);
+   // // Create a unique string token by appending latitudes and longitudes
+   // const query = {
+   //    text: `INSERT INTO log (id, lat, long) 
+   //             VALUES($1, $2, $3) 
+   //             ON CONFLICT(id) 
+   //             DO UPDATE SET last_updated = NOW()::DATE`,
+   //    values: [lat.toString() + long.toString(), lat, long]
+   // }
+   // return this.pool.query(query);
 }
 
 /**
@@ -157,27 +143,46 @@ async function pushLog(center) {
  * @returns True if the given point should be used as a center for a Nearby Search. False if it should not be.
  */
 async function isValidSearch(center) {
-   if (!center) { return; }
+   // if (!center) { return; }
 
-   this.initializeDatabase();
+   // this.initializeDatabase();
 
-   // 20 days for a search nearby request to be stale; get all logs that are near the specified point
-   const query = {
-      text: `SELECT id FROM log WHERE last_updated >= NOW()::DATE - INTERVAL '20 days' AND lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4`,
-      values: [center.lat - LATITUDE_TOLERANCE, center.lat + LATITUDE_TOLERANCE, center.long - LONGITUDE_TOLERANCE, center.long + LONGITUDE_TOLERANCE]
-   }
+   // // 20 days for a search nearby request to be stale; get all logs that are near the specified point
+   // const query = {
+   //    text: `SELECT id FROM log WHERE last_updated >= NOW()::DATE - INTERVAL '20 days' AND lat BETWEEN $1 AND $2 AND long BETWEEN $3 AND $4`,
+   //    values: [center.lat - LATITUDE_TOLERANCE, center.lat + LATITUDE_TOLERANCE, center.long - LONGITUDE_TOLERANCE, center.long + LONGITUDE_TOLERANCE]
+   // }
 
-   return new Promise((resolve, reject) => {
-      this.pool.query(query)
-         .then((res) => {
-            // console.log(res);
-            return resolve(res.rows.length == 0);
-         })
-         .catch((err) => {
-            console.log(err)
-            return reject(true);
-         });
-   });
+   // return new Promise((resolve, reject) => {
+   //    this.pool.query(query)
+   //       .then((res) => {
+   //          // console.log(res);
+   //          return resolve(res.rows.length == 0);
+   //       })
+   //       .catch((err) => {
+   //          console.log(err)
+   //          return reject(true);
+   //       });
+   // });
 }
+
+let test = new Database();
+test.updateRestaurantDetails({
+   "id": "ChIJN4tQRExZwokRxJDkc7_g5yU",
+   "name": "Zerza Moroccan Mediterranean",
+   "lat": "40.717942",
+   "long": "-73.988239",
+   "mapuri": "https://maps.google.com/?cid=2731398811911229636",
+   "summary": "Moroccan and Mediterranean fare dished up fast in a casual eatery inside Essex Market.",
+   "gfrank": "0",
+   "reviews": [],
+   "items": [],
+   "last_updated": "2024-06-23T04:00:00.000Z",
+   "rating": "4.4"
+})
+.then(res => console.log(res));
+
+// test.getRestaurant("ChIJN4tQRExZwokRxJDkc7_g5yU");
+// test.getAllInBounds(Point(40.71, -74), Point(40.72, -73));
 
 export { Database };

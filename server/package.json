@@ -13,7 +13,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-fetch": "^3.3.2",
-    "pg": "^8.12.0",
+    "postgres": "^3.4.4",
     "puppeteer": "^22.10.0",
     "puppeteer-cluster": "^0.24.0",
     "socket.io": "^4.7.5"
