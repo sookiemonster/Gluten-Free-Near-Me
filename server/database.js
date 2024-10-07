@@ -59,7 +59,7 @@ async function getRestaurant(id) {
             resolve(res);
          })
          .catch((err) => {
-            console.log(err);
+            console.log("Could not retrieve restaurant from DB", id, err);
             reject(null);
          })
    });
@@ -81,7 +81,7 @@ async function getAllInBounds(bottomLeft, topRight) {
       this.connection`SELECT * FROM places WHERE lat BETWEEN ${bottomLeft.lat} AND ${topRight.lat} AND long BETWEEN ${bottomLeft.long} AND ${topRight.long}`
          .then((res) => resolve(res))
          .catch((err) => {
-            console.error(err);
+            console.log("Error Querying In Bound Restaurants: ", err);
             reject([]);
          })
    });
@@ -105,8 +105,8 @@ async function updateRestaurantDetails(resJSON) {
          DO UPDATE SET (name, lat, long, mapuri, summary, gfrank, reviews, items, rating, last_updated) = (${resJSON.name}, ${resJSON.lat}, ${resJSON.long}, ${resJSON.mapuri}, ${resJSON.summary}, ${resJSON.gfrank}, ${resJSON.reviews}, ${resJSON.items}, ${resJSON.rating}, NOW()::DATE)` 
          .then(resolve(`Upserted ${resJSON.id} (${resJSON.name}) successfully.`))
          .catch((error) => {
-            console.error(error);
-            console.error(`Error upserting ${resJSON.id} (${resJSON.name})`);
+            console.log("Error: ", error);
+            console.log(`Error upserting ${resJSON.id} (${resJSON.name})`);
             resolve(`Error upserting ${resJSON.id} (${resJSON.name})`);
          })
       });
@@ -133,8 +133,8 @@ async function pushLog(center) {
          DO UPDATE SET last_updated = NOW()::DATE`
          .then(resolve(`Logged (${lat}, ${long}) successfully`))
          .catch((error) => {
-            console.error(error);
-            console.error(`Error logging (${lat}, ${long})`);
+            console.log("Error:", error);
+            console.log(`Error logging (${lat}, ${long})`);
             resolve(`Error logging (${lat}, ${long})`);
          })
    });
@@ -159,8 +159,8 @@ async function isValidSearch(center) {
          AND long BETWEEN ${center.long - LONGITUDE_TOLERANCE} AND ${center.long + LONGITUDE_TOLERANCE}`
          .then(res => resolve(res.length === 0))
          .catch((error) => {
-            console.error(error);
-            console.error(`Could not validate search point (${center.lat}, ${center.long})`);
+            console.log("Error: " + error);
+            console.log(`Could not validate search point (${center.lat}, ${center.long})`);
             resolve(true);
          })
    });

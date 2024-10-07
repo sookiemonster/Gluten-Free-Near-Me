@@ -11,29 +11,26 @@ router.post('/find-nearby', (req, res) => {
    let searchFoci = req.body.searchFoci;
    db.getAllInBounds(bottomLeft, topRight)
       .then((res) => {
-         console.log(res);
          appEmitter.broadcastBatch(res);
       })
       .catch((err) => {
-         console.error("error bounds checking");
-         console.error(err);
+         console.log("error bounds checking: ", err);
       });
 
    let searchPromises = [];
    let isValid = false;
    for (let point of searchFoci) {
-      console.log(point);
+      console.log("Search Point: ", point);
       searchPromises.push(new Promise((resolve) => {
          db.isValidSearch(point)
             .then((validationResult) => {
                isValid = validationResult;
-               console.log(point);
-               console.log(isValid);
+               // console.log(point);
+               // console.log(isValid);
             })
             .catch(err => {
                // There was an error querying the database, so just use this search point
-               console.error("There was an error querying the database.");
-               console.error(err);
+               console.log("There was an error querying the database.", err);
                isValid = true;
             }).then(() => {
                if (!isValid) { resolve([-1]); }
@@ -47,13 +44,11 @@ router.post('/find-nearby', (req, res) => {
    
    Promise.all(searchPromises)
       .then((allIDsWrapper) => {
-         console.log("all ids: ");
-         console.log(allIDsWrapper);
-         console.log("all id end");
+         console.log("all ids: ", allIDsWrapper, "\nall ids end");
          res.send(allIDsWrapper);
       }) 
       .catch((err) => {
-         console.error(err);
+         console.log("Error:", err);
       })
 });
 

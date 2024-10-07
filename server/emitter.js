@@ -12,6 +12,8 @@ var Emitter = function (app, io) {
  * @param {RestaurantDetails} resJSON 
  */
 function broadcastRestaurant(resJSON) {
+   console.log("broadcasting RECEIVED PACKET:", resJSON, resJSON.id);
+   // console.log("broadcasting:", resJSON.id, resJSON.name, resJSON.gfrank);
    this.io.emit('restaurant', resJSON);
 }
 

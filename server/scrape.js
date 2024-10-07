@@ -22,6 +22,7 @@ const cluster = await Cluster.launch({
 })
 
 await cluster.task(async({ page, data }) => {
+  console.log(`ATTEMPTING SCRAPE: ${data}`)
   const mapuri = data;
   page.setDefaultTimeout(TIMEOUT_MS);
   page.setDefaultNavigationTimeout(TIMEOUT_MS);
@@ -50,7 +51,7 @@ await cluster.task(async({ page, data }) => {
     console.log("Took", Date.now() - mapstart, " ms to load the Google Maps Page", mapuri);
   } catch (error) {
     // Order Online button doesn't appear
-    console.log("Took", Date.now() - mapstart, " ms to have an error loading load the Google Order Online Selector (on Maps)", mapuri);
+    console.log("Took", Date.now() - mapstart, " ms. But errored on loading the Google Order Online Selector (on Maps)", mapuri);
     throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
   await page.click(orderOnlineSelector);
@@ -64,6 +65,8 @@ await cluster.task(async({ page, data }) => {
     console.log("Took", Date.now() - foodStart, " ms to have trouble accessing the menu on the Google Foods Page", mapuri);
     throw {name: "MENU_NOT_FOUND", message: "Could not access menu given the URL: " + mapuri};
   }
+
+  console.log("MADE IT TO MENU_ITEMS")
 
   const menuItems = await page.evaluate((itemContainerSelector, itemNameSelector, itemDescSelector) => {
     // Get all menu item containers
@@ -89,7 +92,10 @@ await cluster.task(async({ page, data }) => {
  * @param {RestaurantDetails} resJSON The restaurant details object to store the newly scraped menu information
  */
 let getGFMenu = async(resJSON) => {
-  if (!resJSON) { return null; }
+  if (!resJSON) { 
+    console.log("No restaurant supplied to get a GF Menu.")
+    return null; 
+  }
 
   let menuItems = [];
   
@@ -99,14 +105,9 @@ let getGFMenu = async(resJSON) => {
   }
   catch (error) {
       // Stub error handling for now
-      if (error.name === "MENU_NOT_FOUND") { 
-        resJSON.gfrank = codes.MENU_NOT_ACCESSIBLE;
-        return resJSON; 
-      }
-      if (error.name === "LINK_NOT_ACCESSIBLE") { 
-        resJSON.gfrank = codes.LINK_INACCESSIBLE;
-        return resJSON; 
-      }
+      if (error.name === "MENU_NOT_FOUND") { resJSON.gfrank = codes.MENU_NOT_ACCESSIBLE; }
+      if (error.name === "LINK_NOT_ACCESSIBLE") { resJSON.gfrank = codes.LINK_INACCESSIBLE; }
+      return resJSON; 
   }
   
   // No explicitly-asserted GF items available
@@ -115,6 +116,7 @@ let getGFMenu = async(resJSON) => {
   } else {
     resJSON.items = menuItems;
     resJSON.gfrank = codes.HAS_GF_ITEMS;
+    console.log("IT HAS GF.", resJSON);
   }
   return resJSON;
 }

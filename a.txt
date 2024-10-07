@@ -1,0 +1,2473 @@
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server>
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server>
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server>
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server>
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server>
+PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server> .\env\Scripts\Activate.ps1
+(env) PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server> npm start
+(env) PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server> node .\app.js
+C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server\node_modules\puppeteer-cluster\dist\Cluster.js:119
+                throw new Error(`Unable to launch browser, error message: ${err.message}`);
+                      ^
+
+Error: Unable to launch browser, error message: Could not find Chrome (ver. 127.0.6533.88). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: C:\Users\legos\.cache\puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+    at Cluster.<anonymous> (C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server\node_modules\puppeteer-cluster\dist\Cluster.js:119:23)
+    at Generator.throw (<anonymous>)
+    at rejected (C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server\node_modules\puppeteer-cluster\dist\Cluster.js:6:65)
+
+Node.js v22.9.0
+(env) PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server> node .\app.js
+Server listening on http://localhost:5000
+user connected
+user connected
+user connected
+{
+  viewportBounds: {
+    bottomLeft: { lat: 40.71553169864387, long: -73.9886746263938 },
+    topRight: { lat: 40.71926824892458, long: -73.98132537360618 }
+  },
+  searchFoci: [
+    { lat: 40.717399973784225, long: -73.9886746263938 },
+    { lat: 40.717399973784225, long: -73.9846746263938 },
+    { lat: 40.717399973784225, long: -73.9806746263938 }
+  ]
+}
+Search Point:  { lat: 40.717399973784225, long: -73.9886746263938 }
+Search Point:  { lat: 40.717399973784225, long: -73.9846746263938 }
+Search Point:  { lat: 40.717399973784225, long: -73.9806746263938 }
+Ranking:
+Ranking:
+Ranking:
+all ids:  [ [ -1 ], [ -1 ], [ -1 ] ]
+all ids end
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZq6ciBZwokRYeqojMxKO5I',
+  name: 'Chomps-Élysées',
+  lat: '40.718039',
+  long: '-73.988191',
+  mapuri: 'https://maps.google.com/?cid=10537097995557071457',
+  summary: null,
+  gfrank: '1',
+  reviews: [
+    {
+      author: 'Karina Krepp',
+      rating: 5,
+      text: 'Essex market just got tastier and healthier. Home cooked, slow cooked and delicious. The owner is on sight and very caring. I’m addicted to her gluten free corn bread. Soup is top notch and unique flavor profiles. Like your Mama made! Eat here and feel well.',
+      publishDate: '2024-01-24'
+    }
+  ],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '5.0'
+} ChIJzZq6ciBZwokRYeqojMxKO5I
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+  name: 'Kings Co Imperial LES',
+  lat: '40.717942',
+  long: '-73.985416',
+  mapuri: 'https://maps.google.com/?cid=12180710303954052801',
+  summary: 'Trendy Chinese restaurant and cocktail bar in the Lower East Side offering comfort food and happy hour drinks.\n' +
+    'Popular dishes include soup dumplings, scallion pancakes, and Hong Kong style noodles. The menu has vegetarian options and gluten-free dishes, as well as shareable plates for group dining.\n' +
+    "The atmosphere is relaxed, with dark wood, dim lighting, and a bar. There's also a Williamsburg outpost with a patio. People say the service is fast.",
+  gfrank: '3',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.5'
+} ChIJwbkWUIBZwokRwSYfO3yTCqk
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJC5CfUYBZwokR-EDRy1grj50',
+  name: 'The Delancey Rooftop',
+  lat: '40.717971',
+  long: '-73.985289',
+  mapuri: 'https://maps.google.com/?cid=11353340846000914680',
+  summary: 'Nightlife spot includes a plush lounge, canopied roof deck & basement performance space.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.0'
+} ChIJC5CfUYBZwokR-EDRy1grj50
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJAzBrToBZwokRPX6CM-wuHnc',
+  name: 'Nakamura',
+  lat: '40.717889',
+  long: '-73.985163',
+  mapuri: 'https://maps.google.com/?cid=8583349531826093629',
+  summary: 'A top Japanese chef prepares a variety of ramen bowls in a narrow space with table & counter seats.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.5'
+} ChIJAzBrToBZwokRPX6CM-wuHnc
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJk1s5AIFZwokRymNr0rhKWFE',
+  name: 'Davelle',
+  lat: '40.718539',
+  long: '-73.986068',
+  mapuri: 'https://maps.google.com/?cid=5861517072687391690',
+  summary: 'Japanese cafe offering set breakfasts and lunches, plus coffee, tea, and matcha lattes.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.3'
+} ChIJk1s5AIFZwokRymNr0rhKWFE
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+  name: 'CANTINA SUNDOWN',
+  lat: '40.718266',
+  long: '-73.986343',
+  mapuri: 'https://maps.google.com/?cid=15442327149912943372',
+  summary: null,
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.8'
+} ChIJzZpq7c9ZwokRDGvu07kqTtY
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJN4tQRExZwokRxJDkc7_g5yU',
+  name: 'Zerza Mediterrano',
+  lat: '40.717942',
+  long: '-73.988239',
+  mapuri: 'https://maps.google.com/?cid=2731398811911229636',
+  summary: 'Moroccan and Mediterranean fare dished up fast in a casual eatery inside Essex Market.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.3'
+} ChIJN4tQRExZwokRxJDkc7_g5yU
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+  name: 'Mille Nonne',
+  lat: '40.718241',
+  long: '-73.988107',
+  mapuri: 'https://maps.google.com/?cid=2283207673435424266',
+  summary: 'Made-to-order Italian dishes cooked in small batches and using locally sourced ingredients.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.8'
+} ChIJY0fn8VVZwokRCoaQM0iVrx8
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJqz58WU5ZwokRC3njFxARjL4',
+  name: 'Zaab Burger',
+  lat: '40.718039',
+  long: '-73.988191',
+  mapuri: 'https://maps.google.com/?cid=13730368124763732235',
+  summary: null,
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.7'
+} ChIJqz58WU5ZwokRC3njFxARjL4
+Attempting to rank: Puebla Mexican food ChIJIYJaPYFZwokRTywuTfTHfm8 https://maps.google.com/?cid=8034078637356362831
+Attempting to rank: Dominican Cravings ChIJ1_zFa31ZwokR-cP5ZwLQcj0 https://maps.google.com/?cid=4427830092411552761
+Attempting to rank: Zerza Mediterrano ChIJN4tQRExZwokRxJDkc7_g5yU https://maps.google.com/?cid=2731398811911229636
+Attempting to rank: Café d’Avignon ChIJLYyQPIFZwokRqX4UJK7ar3E https://maps.google.com/?cid=8192006688674709161
+Attempting to rank: Comida peruana ceviche ChIJqfPucQBZwokRCzDTmIKfyZE https://maps.google.com/?cid=10505102989076934667
+Attempting to rank: Essex Market ChIJ7fydz4BZwokRl6FuOJM5QPU https://maps.google.com/?cid=17672188242271576471
+Attempting to rank: Chomps-Élysées ChIJzZq6ciBZwokRYeqojMxKO5I https://maps.google.com/?cid=10537097995557071457
+Attempting to rank: Zaab Burger ChIJqz58WU5ZwokRC3njFxARjL4 https://maps.google.com/?cid=13730368124763732235
+Attempting to rank: Nordic Preserves Fish and Wildlife Company ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y https://maps.google.com/?cid=16584269749403301445
+Attempting to rank: Cheeky Sandwiches ChIJCUBtyylawokRxSQdG7CLg4g https://maps.google.com/?cid=9836859599592694981
+Attempting to rank: Mila's Bistro ChIJ9bxKhOVZwokR5CI4ozPw8GQ https://maps.google.com/?cid=7273577502775714532
+Attempting to rank: Chloe 81 ChIJv4IFN4dZwokR9wJBHoeVlgs https://maps.google.com/?cid=835019188484506359
+Attempting to rank: Shopsin's ChIJ_____4BZwokRwuOBV5usHR4 https://maps.google.com/?cid=2170080378650485698
+Attempting to rank: Salad Joon ChIJNxi3aTJZwokR22BQhiSpRjw https://maps.google.com/?cid=4343344864982753499
+Attempting to rank: Dunkin' ChIJq6eUUIdZwokRt5fTwxfm2sU https://maps.google.com/?cid=14256960560138786743
+Attempting to rank: Kotti Berliner Döner Kebab ChIJETfDCpBZwokRWCPROPqs8SM https://maps.google.com/?cid=2590041451409777496
+Attempting to rank: Don Ceviche (Market) ChIJm9uu_FpZwokR875MVLu2loI https://maps.google.com/?cid=9409909387126685427
+Attempting to rank: Mercado Lima ChIJ54dqHE5ZwokRWKgl1yBa30I https://maps.google.com/?cid=4818669223404742744
+Attempting to rank: Mille Nonne ChIJY0fn8VVZwokRCoaQM0iVrx8 https://maps.google.com/?cid=2283207673435424266
+Attempting to rank: Nom Wah ChIJs8YpRbtZwokRzLGXZ0ALhkk https://maps.google.com/?cid=5297934382891774412
+Queue ids: [
+  'ChIJIYJaPYFZwokRTywuTfTHfm8',
+  'ChIJ1_zFa31ZwokR-cP5ZwLQcj0',
+  'ChIJN4tQRExZwokRxJDkc7_g5yU',
+  'ChIJLYyQPIFZwokRqX4UJK7ar3E',
+  'ChIJqfPucQBZwokRCzDTmIKfyZE',
+  'ChIJ7fydz4BZwokRl6FuOJM5QPU',
+  'ChIJzZq6ciBZwokRYeqojMxKO5I',
+  'ChIJqz58WU5ZwokRC3njFxARjL4',
+  'ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y',
+  'ChIJCUBtyylawokRxSQdG7CLg4g',
+  'ChIJ9bxKhOVZwokR5CI4ozPw8GQ',
+  'ChIJv4IFN4dZwokR9wJBHoeVlgs',
+  'ChIJ_____4BZwokRwuOBV5usHR4',
+  'ChIJNxi3aTJZwokR22BQhiSpRjw',
+  'ChIJq6eUUIdZwokRt5fTwxfm2sU',
+  'ChIJETfDCpBZwokRWCPROPqs8SM',
+  'ChIJm9uu_FpZwokR875MVLu2loI',
+  'ChIJ54dqHE5ZwokRWKgl1yBa30I',
+  'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+  'ChIJs8YpRbtZwokRzLGXZ0ALhkk'
+]
+user connected
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ1_zFa31ZwokR-cP5ZwLQcj0 https://maps.google.com/?cid=4427830092411552761
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ1_zFa31ZwokR-cP5ZwLQcj0',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ1_zFa31ZwokR-cP5ZwLQcj0
+Successfully retrieved restaurant. So should be broadcasted:  ChIJIYJaPYFZwokRTywuTfTHfm8 https://maps.google.com/?cid=8034078637356362831
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJIYJaPYFZwokRTywuTfTHfm8',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJIYJaPYFZwokRTywuTfTHfm8
+Successfully retrieved restaurant. So should be broadcasted:  ChIJN4tQRExZwokRxJDkc7_g5yU https://maps.google.com/?cid=2731398811911229636
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJN4tQRExZwokRxJDkc7_g5yU',
+  name: 'Zerza Mediterrano',
+  lat: '40.717942',
+  long: '-73.988239',
+  mapuri: 'https://maps.google.com/?cid=2731398811911229636',
+  summary: 'Moroccan and Mediterranean fare dished up fast in a casual eatery inside Essex Market.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.3'
+} ChIJN4tQRExZwokRxJDkc7_g5yU
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ9bxKhOVZwokR5CI4ozPw8GQ https://maps.google.com/?cid=7273577502775714532
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ9bxKhOVZwokR5CI4ozPw8GQ',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ9bxKhOVZwokR5CI4ozPw8GQ
+Successfully retrieved restaurant. So should be broadcasted:  ChIJv4IFN4dZwokR9wJBHoeVlgs https://maps.google.com/?cid=835019188484506359
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJv4IFN4dZwokR9wJBHoeVlgs',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJv4IFN4dZwokR9wJBHoeVlgs
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ_____4BZwokRwuOBV5usHR4 https://maps.google.com/?cid=2170080378650485698
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ_____4BZwokRwuOBV5usHR4',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ_____4BZwokRwuOBV5usHR4
+Successfully retrieved restaurant. So should be broadcasted:  ChIJNxi3aTJZwokR22BQhiSpRjw https://maps.google.com/?cid=4343344864982753499
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJNxi3aTJZwokR22BQhiSpRjw',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJNxi3aTJZwokR22BQhiSpRjw
+Successfully retrieved restaurant. So should be broadcasted:  ChIJCUBtyylawokRxSQdG7CLg4g https://maps.google.com/?cid=9836859599592694981
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJCUBtyylawokRxSQdG7CLg4g',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJCUBtyylawokRxSQdG7CLg4g
+Successfully retrieved restaurant. So should be broadcasted:  ChIJq6eUUIdZwokRt5fTwxfm2sU https://maps.google.com/?cid=14256960560138786743
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJq6eUUIdZwokRt5fTwxfm2sU',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJq6eUUIdZwokRt5fTwxfm2sU
+Successfully retrieved restaurant. So should be broadcasted:  ChIJETfDCpBZwokRWCPROPqs8SM https://maps.google.com/?cid=2590041451409777496
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJETfDCpBZwokRWCPROPqs8SM',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJETfDCpBZwokRWCPROPqs8SM
+Successfully retrieved restaurant. So should be broadcasted:  ChIJm9uu_FpZwokR875MVLu2loI https://maps.google.com/?cid=9409909387126685427
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJm9uu_FpZwokR875MVLu2loI',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJm9uu_FpZwokR875MVLu2loI
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ54dqHE5ZwokRWKgl1yBa30I https://maps.google.com/?cid=4818669223404742744
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ54dqHE5ZwokRWKgl1yBa30I',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ54dqHE5ZwokRWKgl1yBa30I
+Successfully retrieved restaurant. So should be broadcasted:  ChIJY0fn8VVZwokRCoaQM0iVrx8 https://maps.google.com/?cid=2283207673435424266
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+  name: 'Mille Nonne',
+  lat: '40.718241',
+  long: '-73.988107',
+  mapuri: 'https://maps.google.com/?cid=2283207673435424266',
+  summary: 'Made-to-order Italian dishes cooked in small batches and using locally sourced ingredients.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.8'
+} ChIJY0fn8VVZwokRCoaQM0iVrx8
+Successfully retrieved restaurant. So should be broadcasted:  ChIJs8YpRbtZwokRzLGXZ0ALhkk https://maps.google.com/?cid=5297934382891774412
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJs8YpRbtZwokRzLGXZ0ALhkk',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJs8YpRbtZwokRzLGXZ0ALhkk
+Attempting to rank: Champion Pizza Colombia ChIJRwSnOgBZwokRkBLZyT9IC8k https://maps.google.com/?cid=14486752065173918352
+Attempting to rank: Makabely ChIJRY2vrH9ZwokRZnenIJD6Zkc https://maps.google.com/?cid=5145075121247450982
+Attempting to rank: La Isla cafe ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Queue ids: [
+  'ChIJRwSnOgBZwokRkBLZyT9IC8k',
+  'ChIJRY2vrH9ZwokRZnenIJD6Zkc',
+  'ChIJMW5LJoBZwokRrRcyMT6swsQ'
+]
+Successfully retrieved restaurant. So should be broadcasted:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJMW5LJoBZwokRrRcyMT6swsQ
+Successfully retrieved restaurant. So should be broadcasted:  ChIJRwSnOgBZwokRkBLZyT9IC8k https://maps.google.com/?cid=14486752065173918352
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJRwSnOgBZwokRkBLZyT9IC8k',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJRwSnOgBZwokRkBLZyT9IC8k
+Successfully retrieved restaurant. So should be broadcasted:  ChIJRY2vrH9ZwokRZnenIJD6Zkc https://maps.google.com/?cid=5145075121247450982
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJRY2vrH9ZwokRZnenIJD6Zkc',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJRY2vrH9ZwokRZnenIJD6Zkc
+Attempting to rank: Nakamura ChIJAzBrToBZwokRPX6CM-wuHnc https://maps.google.com/?cid=8583349531826093629
+Attempting to rank: Niche ChIJ6azpBXBZwokRWCfVgOpaj9g https://maps.google.com/?cid=15604791197092357976
+Attempting to rank: The Delancey Rooftop ChIJC5CfUYBZwokR-EDRy1grj50 https://maps.google.com/?cid=11353340846000914680
+Attempting to rank: Kings Co Imperial LES ChIJwbkWUIBZwokRwSYfO3yTCqk https://maps.google.com/?cid=12180710303954052801
+Attempting to rank: Delancy st pizza ChIJfU-taONZwokR-jjgWpFSuhU https://maps.google.com/?cid=1565654604713048314
+Attempting to rank: City hut pizza ChIJc1k9pVNZwokRaEPxn6-Y1zo https://maps.google.com/?cid=4240025454262698856
+Attempting to rank: L’origine Italian food ChIJ94_uXy5ZwokR1DINhVLcHrs https://maps.google.com/?cid=13483456581371507412
+Attempting to rank: YongChuan ChIJvbUxn0lZwokRJVNddw78BtY https://maps.google.com/?cid=15422291113039188773
+Attempting to rank: La Isla cafe ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Attempting to rank: Bd Famous Pizza ChIJmeGv-IBZwokRqqlw-kvF3Hw https://maps.google.com/?cid=8997283085694314922
+Attempting to rank: CANTINA SUNDOWN ChIJzZpq7c9ZwokRDGvu07kqTtY https://maps.google.com/?cid=15442327149912943372
+Attempting to rank: Davelle ChIJk1s5AIFZwokRymNr0rhKWFE https://maps.google.com/?cid=5861517072687391690
+Attempting to rank: Cloud Vietnamese Restaurant ChIJ_zhAZkFZwokR1nh6AOLdqmg https://maps.google.com/?cid=7542084488725690582
+Attempting to rank: Black Cat LES ChIJjW5AuIFZwokRdNPH7jFGigM https://maps.google.com/?cid=255093509173269364
+Attempting to rank: Joey Roses ChIJyRRi4bpZwokR03CRX3x-RHc https://maps.google.com/?cid=8594133061574160595
+Attempting to rank: Rivington Pizza ChIJQZVRKktZwokRBOu_go5KoqI https://maps.google.com/?cid=11719011156310878980
+Attempting to rank: Burger King ChIJQfy8_IBZwokRHIRnHWQcur8 https://maps.google.com/?cid=13815386023228048412
+Attempting to rank: Cibao ChIJGarru4FZwokRhCrFKKyvH5s https://maps.google.com/?cid=11177845954110106244
+Attempting to rank: Delilah ChIJVRKnqIFZwokR-_lNJPSShr0 https://maps.google.com/?cid=13656764497326373371
+Attempting to rank: Hazi Halal Food ChIJIa28BjZZwokRwkT_LXhBGyM https://maps.google.com/?cid=2529687600122250434
+Queue ids: [
+  'ChIJAzBrToBZwokRPX6CM-wuHnc',
+  'ChIJ6azpBXBZwokRWCfVgOpaj9g',
+  'ChIJC5CfUYBZwokR-EDRy1grj50',
+  'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+  'ChIJfU-taONZwokR-jjgWpFSuhU',
+  'ChIJc1k9pVNZwokRaEPxn6-Y1zo',
+  'ChIJ94_uXy5ZwokR1DINhVLcHrs',
+  'ChIJvbUxn0lZwokRJVNddw78BtY',
+  'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  'ChIJmeGv-IBZwokRqqlw-kvF3Hw',
+  'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+  'ChIJk1s5AIFZwokRymNr0rhKWFE',
+  'ChIJ_zhAZkFZwokR1nh6AOLdqmg',
+  'ChIJjW5AuIFZwokRdNPH7jFGigM',
+  'ChIJyRRi4bpZwokR03CRX3x-RHc',
+  'ChIJQZVRKktZwokRBOu_go5KoqI',
+  'ChIJQfy8_IBZwokRHIRnHWQcur8',
+  'ChIJGarru4FZwokRhCrFKKyvH5s',
+  'ChIJVRKnqIFZwokR-_lNJPSShr0',
+  'ChIJIa28BjZZwokRwkT_LXhBGyM'
+]
+Successfully retrieved restaurant. So should be broadcasted:  ChIJqfPucQBZwokRCzDTmIKfyZE https://maps.google.com/?cid=10505102989076934667
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJqfPucQBZwokRCzDTmIKfyZE',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJqfPucQBZwokRCzDTmIKfyZE
+Successfully retrieved restaurant. So should be broadcasted:  ChIJLYyQPIFZwokRqX4UJK7ar3E https://maps.google.com/?cid=8192006688674709161
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJLYyQPIFZwokRqX4UJK7ar3E',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJLYyQPIFZwokRqX4UJK7ar3E
+Successfully retrieved restaurant. So should be broadcasted:  ChIJAzBrToBZwokRPX6CM-wuHnc https://maps.google.com/?cid=8583349531826093629
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJAzBrToBZwokRPX6CM-wuHnc',
+  name: 'Nakamura',
+  lat: '40.717889',
+  long: '-73.985163',
+  mapuri: 'https://maps.google.com/?cid=8583349531826093629',
+  summary: 'A top Japanese chef prepares a variety of ramen bowls in a narrow space with table & counter seats.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.5'
+} ChIJAzBrToBZwokRPX6CM-wuHnc
+Successfully retrieved restaurant. So should be broadcasted:  ChIJfU-taONZwokR-jjgWpFSuhU https://maps.google.com/?cid=1565654604713048314
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJfU-taONZwokR-jjgWpFSuhU',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJfU-taONZwokR-jjgWpFSuhU
+Successfully retrieved restaurant. So should be broadcasted:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJMW5LJoBZwokRrRcyMT6swsQ
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ_zhAZkFZwokR1nh6AOLdqmg https://maps.google.com/?cid=7542084488725690582
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ_zhAZkFZwokR1nh6AOLdqmg',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ_zhAZkFZwokR1nh6AOLdqmg
+Successfully retrieved restaurant. So should be broadcasted:  ChIJQfy8_IBZwokRHIRnHWQcur8 https://maps.google.com/?cid=13815386023228048412
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJQfy8_IBZwokRHIRnHWQcur8',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJQfy8_IBZwokRHIRnHWQcur8
+Successfully retrieved restaurant. So should be broadcasted:  ChIJwbkWUIBZwokRwSYfO3yTCqk https://maps.google.com/?cid=12180710303954052801
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+  name: 'Kings Co Imperial LES',
+  lat: '40.717942',
+  long: '-73.985416',
+  mapuri: 'https://maps.google.com/?cid=12180710303954052801',
+  summary: 'Trendy Chinese restaurant and cocktail bar in the Lower East Side offering comfort food and happy hour drinks.\n' +
+    'Popular dishes include soup dumplings, scallion pancakes, and Hong Kong style noodles. The menu has vegetarian options and gluten-free dishes, as well as shareable plates for group dining.\n' +
+    "The atmosphere is relaxed, with dark wood, dim lighting, and a bar. There's also a Williamsburg outpost with a patio. People say the service is fast.",
+  gfrank: '3',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.5'
+} ChIJwbkWUIBZwokRwSYfO3yTCqk
+Successfully retrieved restaurant. So should be broadcasted:  ChIJvbUxn0lZwokRJVNddw78BtY https://maps.google.com/?cid=15422291113039188773
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJvbUxn0lZwokRJVNddw78BtY',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJvbUxn0lZwokRJVNddw78BtY
+Successfully retrieved restaurant. So should be broadcasted:  ChIJk1s5AIFZwokRymNr0rhKWFE https://maps.google.com/?cid=5861517072687391690
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJk1s5AIFZwokRymNr0rhKWFE',
+  name: 'Davelle',
+  lat: '40.718539',
+  long: '-73.986068',
+  mapuri: 'https://maps.google.com/?cid=5861517072687391690',
+  summary: 'Japanese cafe offering set breakfasts and lunches, plus coffee, tea, and matcha lattes.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.3'
+} ChIJk1s5AIFZwokRymNr0rhKWFE
+Successfully retrieved restaurant. So should be broadcasted:  ChIJQZVRKktZwokRBOu_go5KoqI https://maps.google.com/?cid=11719011156310878980
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJQZVRKktZwokRBOu_go5KoqI',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJQZVRKktZwokRBOu_go5KoqI
+Successfully retrieved restaurant. So should be broadcasted:  ChIJIa28BjZZwokRwkT_LXhBGyM https://maps.google.com/?cid=2529687600122250434
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJIa28BjZZwokRwkT_LXhBGyM',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJIa28BjZZwokRwkT_LXhBGyM
+Successfully retrieved restaurant. So should be broadcasted:  ChIJC5CfUYBZwokR-EDRy1grj50 https://maps.google.com/?cid=11353340846000914680
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJC5CfUYBZwokR-EDRy1grj50',
+  name: 'The Delancey Rooftop',
+  lat: '40.717971',
+  long: '-73.985289',
+  mapuri: 'https://maps.google.com/?cid=11353340846000914680',
+  summary: 'Nightlife spot includes a plush lounge, canopied roof deck & basement performance space.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.0'
+} ChIJC5CfUYBZwokR-EDRy1grj50
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ94_uXy5ZwokR1DINhVLcHrs https://maps.google.com/?cid=13483456581371507412
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ94_uXy5ZwokR1DINhVLcHrs',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ94_uXy5ZwokR1DINhVLcHrs
+Successfully retrieved restaurant. So should be broadcasted:  ChIJzZpq7c9ZwokRDGvu07kqTtY https://maps.google.com/?cid=15442327149912943372
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+  name: 'CANTINA SUNDOWN',
+  lat: '40.718266',
+  long: '-73.986343',
+  mapuri: 'https://maps.google.com/?cid=15442327149912943372',
+  summary: null,
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.8'
+} ChIJzZpq7c9ZwokRDGvu07kqTtY
+Successfully retrieved restaurant. So should be broadcasted:  ChIJyRRi4bpZwokR03CRX3x-RHc https://maps.google.com/?cid=8594133061574160595
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJyRRi4bpZwokR03CRX3x-RHc',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJyRRi4bpZwokR03CRX3x-RHc
+Successfully retrieved restaurant. So should be broadcasted:  ChIJVRKnqIFZwokR-_lNJPSShr0 https://maps.google.com/?cid=13656764497326373371
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJVRKnqIFZwokR-_lNJPSShr0',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJVRKnqIFZwokR-_lNJPSShr0
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ6azpBXBZwokRWCfVgOpaj9g https://maps.google.com/?cid=15604791197092357976
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ6azpBXBZwokRWCfVgOpaj9g',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ6azpBXBZwokRWCfVgOpaj9g
+Successfully retrieved restaurant. So should be broadcasted:  ChIJc1k9pVNZwokRaEPxn6-Y1zo https://maps.google.com/?cid=4240025454262698856
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJc1k9pVNZwokRaEPxn6-Y1zo',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJc1k9pVNZwokRaEPxn6-Y1zo
+Successfully retrieved restaurant. So should be broadcasted:  ChIJmeGv-IBZwokRqqlw-kvF3Hw https://maps.google.com/?cid=8997283085694314922
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJmeGv-IBZwokRqqlw-kvF3Hw',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJmeGv-IBZwokRqqlw-kvF3Hw
+Successfully retrieved restaurant. So should be broadcasted:  ChIJjW5AuIFZwokRdNPH7jFGigM https://maps.google.com/?cid=255093509173269364
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJjW5AuIFZwokRdNPH7jFGigM',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJjW5AuIFZwokRdNPH7jFGigM
+Successfully retrieved restaurant. So should be broadcasted:  ChIJGarru4FZwokRhCrFKKyvH5s https://maps.google.com/?cid=11177845954110106244
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJGarru4FZwokRhCrFKKyvH5s',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJGarru4FZwokRhCrFKKyvH5s
+Successfully retrieved restaurant. So should be broadcasted:  ChIJzZq6ciBZwokRYeqojMxKO5I https://maps.google.com/?cid=10537097995557071457
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZq6ciBZwokRYeqojMxKO5I',
+  name: 'Chomps-Élysées',
+  lat: '40.718039',
+  long: '-73.988191',
+  mapuri: 'https://maps.google.com/?cid=10537097995557071457',
+  summary: null,
+  gfrank: '1',
+  reviews: [
+    {
+      author: 'Karina Krepp',
+      rating: 5,
+      text: 'Essex market just got tastier and healthier. Home cooked, slow cooked and delicious. The owner is on sight and very caring. I’m addicted to her gluten free corn bread. Soup is top notch and unique flavor profiles. Like your Mama made! Eat here and feel well.',
+      publishDate: '2024-01-24'
+    }
+  ],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '5.0'
+} ChIJzZq6ciBZwokRYeqojMxKO5I
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y https://maps.google.com/?cid=16584269749403301445
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y
+Successfully retrieved restaurant. So should be broadcasted:  ChIJ7fydz4BZwokRl6FuOJM5QPU https://maps.google.com/?cid=17672188242271576471
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ7fydz4BZwokRl6FuOJM5QPU',
+  name: null,
+  lat: null,
+  long: null,
+  mapuri: null,
+  summary: null,
+  gfrank: '-1',
+  reviews: null,
+  items: null,
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: null
+} ChIJ7fydz4BZwokRl6FuOJM5QPU
+Successfully retrieved restaurant. So should be broadcasted:  ChIJqz58WU5ZwokRC3njFxARjL4 https://maps.google.com/?cid=13730368124763732235
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJqz58WU5ZwokRC3njFxARjL4',
+  name: 'Zaab Burger',
+  lat: '40.718039',
+  long: '-73.988191',
+  mapuri: 'https://maps.google.com/?cid=13730368124763732235',
+  summary: null,
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.7'
+} ChIJqz58WU5ZwokRC3njFxARjL4
+{
+  viewportBounds: {
+    bottomLeft: { lat: 40.720705678852454, long: -73.9966042952511 },
+    topRight: { lat: 40.72444193871933, long: -73.98925504246348 }
+  },
+  searchFoci: [
+    { lat: 40.722573808785896, long: -73.9966042952511 },
+    { lat: 40.722573808785896, long: -73.9926042952511 },
+    { lat: 40.722573808785896, long: -73.98860429525111 }
+  ]
+}
+Search Point:  { lat: 40.722573808785896, long: -73.9966042952511 }
+Search Point:  { lat: 40.722573808785896, long: -73.9926042952511 }
+Search Point:  { lat: 40.722573808785896, long: -73.98860429525111 }
+Ranking:
+Ranking:
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJafErewZZwokR4G9MfA9CsbY',
+  name: 'Birria-Landia NYC',
+  lat: '40.724133',
+  long: '-73.993163',
+  mapuri: 'https://maps.google.com/?cid=13164375820057997280',
+  summary: 'Popular food truck offering Tijuana-style birria de res tacos, quesadillas and consomé.',
+  gfrank: '0',
+  reviews: [],
+  items: [],
+  last_updated: 2024-10-07T00:00:00.000Z,
+  rating: '4.7'
+} ChIJafErewZZwokR4G9MfA9CsbY
+Ranking:
+Attempting to rank: Only Love Strangers ChIJ61jIXZVZwokR_P_DcuCU4s0 https://maps.google.com/?cid=14835583814230867964
+Attempting to rank: Houston Fresh Pizza ChIJ1_TOjYNZwokRvOPiBIMk2n0 https://maps.google.com/?cid=9068600944805209020
+Attempting to rank: 99¢ Pizza ChIJb0z0l5ZZwokRDgrd8Vyl_hI https://maps.google.com/?cid=1368713155380578830
+Attempting to rank: Fossetta ChIJ9RRDNShZwokRkVa5XZq-rxw https://maps.google.com/?cid=2067080324193015441
+Attempting to rank: Russ & Daughters ChIJ7VEEjYNZwokRS0bdsXA3uyg https://maps.google.com/?cid=2935000539321943627
+Attempting to rank: Bereket ChIJeWbJ7INZwokRT1QvnaNe0tk https://maps.google.com/?cid=15695711708149404751
+Attempting to rank: Sudzy POS ChIJ0TbQWsVZwokR9H4QrG8veEU https://maps.google.com/?cid=5005803142496943860
+Attempting to rank: Don Chicken Manhattan / 돈치킨 맨해튼 ChIJC6rfiNtZwokRkNESm7lVwZ0 https://maps.google.com/?cid=11367461190118855056
+Attempting to rank: Kisa ChIJ3YtkUgBZwokRMd5buqhS9ps https://maps.google.com/?cid=11238260804784217649
+Attempting to rank: EatCheeseburger ChIJNeaJIwBZwokRelM8GvCSJzM https://maps.google.com/?cid=3686076379956007802
+Attempting to rank: NYC Halal Chicken & Burger's ChIJRWKU8HdZwokRJr6IK61_g0c https://maps.google.com/?cid=5153102780378431014
+Attempting to rank: NY Halal Gyro (Les) ChIJyf2cdw1ZwokRh0Mi1erXhkE https://maps.google.com/?cid=4721698662942655367
+Attempting to rank: NYC Falafel Co ChIJFWBqC4RZwokRAB-gcWsyThI https://maps.google.com/?cid=1319047177915342592
+Attempting to rank: Ankara #3 ChIJ3bRYUpFZwokRvN6bGIOhgQs https://maps.google.com/?cid=829121390838537916
+Attempting to rank: Blue Ribbon Sushi Izakaya ChIJZ6cVB49ZwokRtaudHruZUaQ https://maps.google.com/?cid=11840413924285328309
+Attempting to rank: Blue Ribbon Kanpai Garden ChIJoyQr8YNZwokRdL0uw5E15Eg https://maps.google.com/?cid=5252381965581991284
+Attempting to rank: Claw Daddy's ChIJ87wo8YNZwokRBSipaEXDd8g https://maps.google.com/?cid=14445229032690231301
+Attempting to rank: Juice Press ChIJ4Wa2fHxZwokRwdHg9d1SjuQ https://maps.google.com/?cid=16469192000606884289
+Attempting to rank: Oaxaca Guerreros Food Truck ChIJ-9TnOgBZwokRsnliou0RfJM https://maps.google.com/?cid=10627388933016811954
+Queue ids: [
+  'ChIJ61jIXZVZwokR_P_DcuCU4s0',
+  'ChIJ1_TOjYNZwokRvOPiBIMk2n0',
+  'ChIJb0z0l5ZZwokRDgrd8Vyl_hI',
+  'ChIJ9RRDNShZwokRkVa5XZq-rxw',
+  'ChIJ7VEEjYNZwokRS0bdsXA3uyg',
+  'ChIJeWbJ7INZwokRT1QvnaNe0tk',
+  'ChIJ0TbQWsVZwokR9H4QrG8veEU',
+  'ChIJC6rfiNtZwokRkNESm7lVwZ0',
+  'ChIJ3YtkUgBZwokRMd5buqhS9ps',
+  'ChIJNeaJIwBZwokRelM8GvCSJzM',
+  'ChIJRWKU8HdZwokRJr6IK61_g0c',
+  'ChIJyf2cdw1ZwokRh0Mi1erXhkE',
+  'ChIJFWBqC4RZwokRAB-gcWsyThI',
+  'ChIJ3bRYUpFZwokRvN6bGIOhgQs',
+  'ChIJZ6cVB49ZwokRtaudHruZUaQ',
+  'ChIJoyQr8YNZwokRdL0uw5E15Eg',
+  'ChIJ87wo8YNZwokRBSipaEXDd8g',
+  'ChIJ4Wa2fHxZwokRwdHg9d1SjuQ',
+  'ChIJ-9TnOgBZwokRsnliou0RfJM'
+]
+Did not find rest. in DB. So calling to be parsed:  ChIJeWbJ7INZwokRT1QvnaNe0tk https://maps.google.com/?cid=15695711708149404751
+Attempting parseRestaurantInfo:  ChIJeWbJ7INZwokRT1QvnaNe0tk https://maps.google.com/?cid=15695711708149404751
+Did not find rest. in DB. So calling to be parsed:  ChIJoyQr8YNZwokRdL0uw5E15Eg https://maps.google.com/?cid=5252381965581991284
+Attempting parseRestaurantInfo:  ChIJoyQr8YNZwokRdL0uw5E15Eg https://maps.google.com/?cid=5252381965581991284
+Did not find rest. in DB. So calling to be parsed:  ChIJ0TbQWsVZwokR9H4QrG8veEU https://maps.google.com/?cid=5005803142496943860
+Attempting parseRestaurantInfo:  ChIJ0TbQWsVZwokR9H4QrG8veEU https://maps.google.com/?cid=5005803142496943860
+Did not find rest. in DB. So calling to be parsed:  ChIJ87wo8YNZwokRBSipaEXDd8g https://maps.google.com/?cid=14445229032690231301
+Attempting parseRestaurantInfo:  ChIJ87wo8YNZwokRBSipaEXDd8g https://maps.google.com/?cid=14445229032690231301
+Did not find rest. in DB. So calling to be parsed:  ChIJC6rfiNtZwokRkNESm7lVwZ0 https://maps.google.com/?cid=11367461190118855056
+Attempting parseRestaurantInfo:  ChIJC6rfiNtZwokRkNESm7lVwZ0 https://maps.google.com/?cid=11367461190118855056
+Did not find rest. in DB. So calling to be parsed:  ChIJ4Wa2fHxZwokRwdHg9d1SjuQ https://maps.google.com/?cid=16469192000606884289
+Attempting parseRestaurantInfo:  ChIJ4Wa2fHxZwokRwdHg9d1SjuQ https://maps.google.com/?cid=16469192000606884289
+Did not find rest. in DB. So calling to be parsed:  ChIJ3YtkUgBZwokRMd5buqhS9ps https://maps.google.com/?cid=11238260804784217649
+Attempting parseRestaurantInfo:  ChIJ3YtkUgBZwokRMd5buqhS9ps https://maps.google.com/?cid=11238260804784217649
+Did not find rest. in DB. So calling to be parsed:  ChIJ-9TnOgBZwokRsnliou0RfJM https://maps.google.com/?cid=10627388933016811954
+Attempting parseRestaurantInfo:  ChIJ-9TnOgBZwokRsnliou0RfJM https://maps.google.com/?cid=10627388933016811954
+Did not find rest. in DB. So calling to be parsed:  ChIJb0z0l5ZZwokRDgrd8Vyl_hI https://maps.google.com/?cid=1368713155380578830
+Attempting parseRestaurantInfo:  ChIJb0z0l5ZZwokRDgrd8Vyl_hI https://maps.google.com/?cid=1368713155380578830
+Did not find rest. in DB. So calling to be parsed:  ChIJFWBqC4RZwokRAB-gcWsyThI https://maps.google.com/?cid=1319047177915342592
+Attempting parseRestaurantInfo:  ChIJFWBqC4RZwokRAB-gcWsyThI https://maps.google.com/?cid=1319047177915342592
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJFWBqC4RZwokRAB-gcWsyThI',
+  name: 'NYC Falafel Co',
+  lat: 40.722536,
+  long: -73.989167,
+  mapuri: 'https://maps.google.com/?cid=1319047177915342592',
+  rating: 4.6,
+  summary: 'Cozy deli turning out falafels, gyros & other Middle Eastern bites, plus fruit smoothies & juices.',
+  gfrank: 1,
+  reviews: [
+    {
+      author: 'Ryan Giese',
+      rating: 5,
+      text: 'Stopped in during lunch on my walk. Amazing experience. I’m gluten free and they were hyper accommodating! Sawyer was a great help and took my issue serious! Would easily come back!',
+      publishDate: '2024-09-19'
+    }
+  ],
+  items: [],
+  resolveAttempts: 0
+} ChIJFWBqC4RZwokRAB-gcWsyThI
+Did not find rest. in DB. So calling to be parsed:  ChIJ1_TOjYNZwokRvOPiBIMk2n0 https://maps.google.com/?cid=9068600944805209020
+Attempting parseRestaurantInfo:  ChIJ1_TOjYNZwokRvOPiBIMk2n0 https://maps.google.com/?cid=9068600944805209020
+Did not find rest. in DB. So calling to be parsed:  ChIJyf2cdw1ZwokRh0Mi1erXhkE https://maps.google.com/?cid=4721698662942655367
+Attempting parseRestaurantInfo:  ChIJyf2cdw1ZwokRh0Mi1erXhkE https://maps.google.com/?cid=4721698662942655367
+Did not find rest. in DB. So calling to be parsed:  ChIJ7VEEjYNZwokRS0bdsXA3uyg https://maps.google.com/?cid=2935000539321943627
+Attempting parseRestaurantInfo:  ChIJ7VEEjYNZwokRS0bdsXA3uyg https://maps.google.com/?cid=2935000539321943627
+Did not find rest. in DB. So calling to be parsed:  ChIJZ6cVB49ZwokRtaudHruZUaQ https://maps.google.com/?cid=11840413924285328309
+Attempting parseRestaurantInfo:  ChIJZ6cVB49ZwokRtaudHruZUaQ https://maps.google.com/?cid=11840413924285328309
+Did not find rest. in DB. So calling to be parsed:  ChIJ9RRDNShZwokRkVa5XZq-rxw https://maps.google.com/?cid=2067080324193015441
+Attempting parseRestaurantInfo:  ChIJ9RRDNShZwokRkVa5XZq-rxw https://maps.google.com/?cid=2067080324193015441
+Did not find rest. in DB. So calling to be parsed:  ChIJ3bRYUpFZwokRvN6bGIOhgQs https://maps.google.com/?cid=829121390838537916
+Attempting parseRestaurantInfo:  ChIJ3bRYUpFZwokRvN6bGIOhgQs https://maps.google.com/?cid=829121390838537916
+Did not find rest. in DB. So calling to be parsed:  ChIJNeaJIwBZwokRelM8GvCSJzM https://maps.google.com/?cid=3686076379956007802
+Attempting parseRestaurantInfo:  ChIJNeaJIwBZwokRelM8GvCSJzM https://maps.google.com/?cid=3686076379956007802
+Did not find rest. in DB. So calling to be parsed:  ChIJ61jIXZVZwokR_P_DcuCU4s0 https://maps.google.com/?cid=14835583814230867964
+Attempting parseRestaurantInfo:  ChIJ61jIXZVZwokR_P_DcuCU4s0 https://maps.google.com/?cid=14835583814230867964
+Did not find rest. in DB. So calling to be parsed:  ChIJRWKU8HdZwokRJr6IK61_g0c https://maps.google.com/?cid=5153102780378431014
+Attempting parseRestaurantInfo:  ChIJRWKU8HdZwokRJr6IK61_g0c https://maps.google.com/?cid=5153102780378431014
+Attempting to rank: Forsythia ChIJ6Xa02cFZwokRv_5HQ3fHoHk https://maps.google.com/?cid=8764224189906812607
+Attempting to rank: Karvouna Mezze ChIJnXBePYFZwokRZ96gLANqHtg https://maps.google.com/?cid=15573001123359940199
+Attempting to rank: Bonnie Vee ChIJ8xsd0oVZwokR4xG-3Q5lBX4 https://maps.google.com/?cid=9080775338186641891
+Attempting to rank: Grilled Cheese Society ChIJx2qUuaNZwokROdec3E_14bM https://maps.google.com/?cid=12961910925901485881
+Attempting to rank: Pinks Cantina - Grab n' Go LES ChIJ08QQj7tZwokRadBCtCsdcXI https://maps.google.com/?cid=8246404466237165673
+Attempting to rank: Freemans ChIJRcCC14VZwokRvJiDo29-IGM https://maps.google.com/?cid=7142848026959386812
+Attempting to rank: Popular ChIJo87v9XtZwokRlqt9AmVRSz0 https://maps.google.com/?cid=4416713353842240406
+Attempting to rank: Floret ChIJdYV-0xxZwokRNRdcEYLhftk https://maps.google.com/?cid=15672211702049150773
+Attempting to rank: Spicy Moon - Bowery ChIJAb8jiJZZwokROX7aeBYf2I4 https://maps.google.com/?cid=10293011129732595257
+Attempting to rank: Katra Lounge & Event Space ChIJdd6KDIZZwokR_yF3VSqJBFE https://maps.google.com/?cid=5837941831894508031
+Attempting to rank: Weddings Danville Restaurant ChIJsyhtAq9ZwokRxQvnhbSb6lE https://maps.google.com/?cid=5902701461265386437
+Attempting to rank: Greywind ChIJVVUl_YVZwokRabjBkV1SLzM https://maps.google.com/?cid=3688257181670553705
+Attempting to rank: Café Habana ChIJPQOh8YVZwokRE2WsbZI4tOk https://maps.google.com/?cid=16840147108201522451
+Attempting to rank: PUBLIC ChIJB4f7_IVZwokRJD9LcOYEo6M https://maps.google.com/?cid=11791273637159059236
+Attempting to rank: Habana To Go ChIJV8eE8YVZwokR-WGCwMoDDDY https://maps.google.com/?cid=3894491947116683769
+Attempting to rank: Bowery Pizza ChIJjcW2qIVZwokRMoJxZqh6Jj0 https://maps.google.com/?cid=4406344149120418354
+Attempting to rank: Genji Sushi ChIJXUhSroVZwokReILDY5J5Hnc https://maps.google.com/?cid=8583431609460687480
+Attempting to rank: Halal Cart ChIJRXzYrIVZwokRsRIyDexTxJQ https://maps.google.com/?cid=10719785286347395761
+Attempting to rank: Loreley Beer Garden ChIJhV1tboZZwokRCNghkde1e2w https://maps.google.com/?cid=7817041515689138184
+Attempting to rank: Fishwife ChIJ03DRYgBZwokRLB96v7clb_0 https://maps.google.com/?cid=18261856485132345132
+Queue ids: [
+  'ChIJ6Xa02cFZwokRv_5HQ3fHoHk',
+  'ChIJnXBePYFZwokRZ96gLANqHtg',
+  'ChIJ8xsd0oVZwokR4xG-3Q5lBX4',
+  'ChIJx2qUuaNZwokROdec3E_14bM',
+  'ChIJ08QQj7tZwokRadBCtCsdcXI',
+  'ChIJRcCC14VZwokRvJiDo29-IGM',
+  'ChIJo87v9XtZwokRlqt9AmVRSz0',
+  'ChIJdYV-0xxZwokRNRdcEYLhftk',
+  'ChIJAb8jiJZZwokROX7aeBYf2I4',
+  'ChIJdd6KDIZZwokR_yF3VSqJBFE',
+  'ChIJsyhtAq9ZwokRxQvnhbSb6lE',
+  'ChIJVVUl_YVZwokRabjBkV1SLzM',
+  'ChIJPQOh8YVZwokRE2WsbZI4tOk',
+  'ChIJB4f7_IVZwokRJD9LcOYEo6M',
+  'ChIJV8eE8YVZwokR-WGCwMoDDDY',
+  'ChIJjcW2qIVZwokRMoJxZqh6Jj0',
+  'ChIJXUhSroVZwokReILDY5J5Hnc',
+  'ChIJRXzYrIVZwokRsRIyDexTxJQ',
+  'ChIJhV1tboZZwokRCNghkde1e2w',
+  'ChIJ03DRYgBZwokRLB96v7clb_0'
+]
+Attempting to rank: 5ive Spice Taco & Banh Mi ChIJO1_22AhZwokRm6t3InR_YCQ https://maps.google.com/?cid=2621235119900830619
+Attempting to rank: Lulu ChIJs8MdNo9ZwokRa0jHjKur9M4 https://maps.google.com/?cid=14912733019420182635
+Attempting to rank: Little Ruby's SoHo ChIJeSToyohZwokRVHVIMsXPIUk https://maps.google.com/?cid=5269721484859307348
+Attempting to rank: Rubirosa ChIJs8MdNo9ZwokRTPUHiArLC-o https://maps.google.com/?cid=16864796475711288652
+Attempting to rank: Regina's Grocery - Mulberry ChIJtTZe-3JZwokR-ZqUOsZQj5g https://maps.google.com/?cid=10993094027751234297
+Attempting to rank: Oakberry Acai ChIJh55_mpRZwokREhms8zo1-Js https://maps.google.com/?cid=11238791397415590162
+Attempting to rank: Upside Pizza ChIJJ4RaxFlZwokRPhaSd7t35H0 https://maps.google.com/?cid=9071507196479673918
+Attempting to rank: INDAY - SoHo ChIJ16Yd5Z1ZwokRwe1lwi5mwGE https://maps.google.com/?cid=7043742168223444417
+Attempting to rank: Kabirs Kuisine - Halal Cart ChIJvUx5zohZwokRIxQxq0afocM https://maps.google.com/?cid=14096723434515010595
+Attempting to rank: JOE & THE JUICE ChIJpb5oK49ZwokRNuv5dBirYQs https://maps.google.com/?cid=820124728688241462
+Attempting to rank: CAVA ChIJc08MyYhZwokR4qW5U71ANJ0 https://maps.google.com/?cid=11327750144641312226
+Attempting to rank: Baya Bar - Acai & Smoothie Shop ChIJj_i9JxVZwokRUG7tDarMxD8 https://maps.google.com/?cid=4595022550574919248
+Attempting to rank: Spring Lounge ChIJV6QByYhZwokR_LRSbt9s0gU https://maps.google.com/?cid=419517422183298300
+Attempting to rank: taïm mediterranean kitchen ChIJ4Us1t4hZwokRGsBUjumzejE https://maps.google.com/?cid=3565359870713839642
+Attempting to rank: Broken Coconut ChIJTQjdv5pZwokRDywywKG0sL4 https://maps.google.com/?cid=13740681069914631183
+Attempting to rank: Chipotle Mexican Grill ChIJ9STgPZpZwokRFSx5QHqhfDU https://maps.google.com/?cid=3854132927562066965
+Attempting to rank: The Crosby Bar ChIJpYIgKY9ZwokRG4V7_MMagCo https://maps.google.com/?cid=3062477175668835611
+Attempting to rank: Jack's Wife Freda ChIJA4i114hZwokRaqeyrmI80x0 https://maps.google.com/?cid=2149127841721263978
+Attempting to rank: Sant Ambroeus Lafayette ChIJC2jHPo9ZwokR_1oNEY13rM4 https://maps.google.com/?cid=14892409515567569663
+Attempting to rank: Local 92 ChIJk1kUppxZwokRwBm5qT4qC3U https://maps.google.com/?cid=8433881175805204928
+Queue ids: [
+  'ChIJO1_22AhZwokRm6t3InR_YCQ',
+  'ChIJs8MdNo9ZwokRa0jHjKur9M4',
+  'ChIJeSToyohZwokRVHVIMsXPIUk',
+  'ChIJs8MdNo9ZwokRTPUHiArLC-o',
+  'ChIJtTZe-3JZwokR-ZqUOsZQj5g',
+  'ChIJh55_mpRZwokREhms8zo1-Js',
+  'ChIJJ4RaxFlZwokRPhaSd7t35H0',
+  'ChIJ16Yd5Z1ZwokRwe1lwi5mwGE',
+  'ChIJvUx5zohZwokRIxQxq0afocM',
+  'ChIJpb5oK49ZwokRNuv5dBirYQs',
+  'ChIJc08MyYhZwokR4qW5U71ANJ0',
+  'ChIJj_i9JxVZwokRUG7tDarMxD8',
+  'ChIJV6QByYhZwokR_LRSbt9s0gU',
+  'ChIJ4Us1t4hZwokRGsBUjumzejE',
+  'ChIJTQjdv5pZwokRDywywKG0sL4',
+  'ChIJ9STgPZpZwokRFSx5QHqhfDU',
+  'ChIJpYIgKY9ZwokRG4V7_MMagCo',
+  'ChIJA4i114hZwokRaqeyrmI80x0',
+  'ChIJC2jHPo9ZwokR_1oNEY13rM4',
+  'ChIJk1kUppxZwokRwBm5qT4qC3U'
+]
+all ids:  [
+  [
+    'ChIJO1_22AhZwokRm6t3InR_YCQ',
+    'ChIJs8MdNo9ZwokRa0jHjKur9M4',
+    'ChIJeSToyohZwokRVHVIMsXPIUk',
+    'ChIJs8MdNo9ZwokRTPUHiArLC-o',
+    'ChIJtTZe-3JZwokR-ZqUOsZQj5g',
+    'ChIJh55_mpRZwokREhms8zo1-Js',
+    'ChIJJ4RaxFlZwokRPhaSd7t35H0',
+    'ChIJ16Yd5Z1ZwokRwe1lwi5mwGE',
+    'ChIJvUx5zohZwokRIxQxq0afocM',
+    'ChIJpb5oK49ZwokRNuv5dBirYQs',
+    'ChIJc08MyYhZwokR4qW5U71ANJ0',
+    'ChIJj_i9JxVZwokRUG7tDarMxD8',
+    'ChIJV6QByYhZwokR_LRSbt9s0gU',
+    'ChIJ4Us1t4hZwokRGsBUjumzejE',
+    'ChIJTQjdv5pZwokRDywywKG0sL4',
+    'ChIJ9STgPZpZwokRFSx5QHqhfDU',
+    'ChIJpYIgKY9ZwokRG4V7_MMagCo',
+    'ChIJA4i114hZwokRaqeyrmI80x0',
+    'ChIJC2jHPo9ZwokR_1oNEY13rM4',
+    'ChIJk1kUppxZwokRwBm5qT4qC3U'
+  ],
+  [
+    'ChIJ6Xa02cFZwokRv_5HQ3fHoHk',
+    'ChIJnXBePYFZwokRZ96gLANqHtg',
+    'ChIJ8xsd0oVZwokR4xG-3Q5lBX4',
+    'ChIJx2qUuaNZwokROdec3E_14bM',
+    'ChIJ08QQj7tZwokRadBCtCsdcXI',
+    'ChIJRcCC14VZwokRvJiDo29-IGM',
+    'ChIJo87v9XtZwokRlqt9AmVRSz0',
+    'ChIJdYV-0xxZwokRNRdcEYLhftk',
+    'ChIJAb8jiJZZwokROX7aeBYf2I4',
+    'ChIJdd6KDIZZwokR_yF3VSqJBFE',
+    'ChIJsyhtAq9ZwokRxQvnhbSb6lE',
+    'ChIJVVUl_YVZwokRabjBkV1SLzM',
+    'ChIJPQOh8YVZwokRE2WsbZI4tOk',
+    'ChIJB4f7_IVZwokRJD9LcOYEo6M',
+    'ChIJV8eE8YVZwokR-WGCwMoDDDY',
+    'ChIJjcW2qIVZwokRMoJxZqh6Jj0',
+    'ChIJXUhSroVZwokReILDY5J5Hnc',
+    'ChIJRXzYrIVZwokRsRIyDexTxJQ',
+    'ChIJhV1tboZZwokRCNghkde1e2w',
+    'ChIJ03DRYgBZwokRLB96v7clb_0'
+  ],
+  [
+    'ChIJ61jIXZVZwokR_P_DcuCU4s0',
+    'ChIJ1_TOjYNZwokRvOPiBIMk2n0',
+    'ChIJb0z0l5ZZwokRDgrd8Vyl_hI',
+    'ChIJ9RRDNShZwokRkVa5XZq-rxw',
+    'ChIJ7VEEjYNZwokRS0bdsXA3uyg',
+    'ChIJeWbJ7INZwokRT1QvnaNe0tk',
+    'ChIJ0TbQWsVZwokR9H4QrG8veEU',
+    'ChIJC6rfiNtZwokRkNESm7lVwZ0',
+    'ChIJ3YtkUgBZwokRMd5buqhS9ps',
+    'ChIJNeaJIwBZwokRelM8GvCSJzM',
+    'ChIJRWKU8HdZwokRJr6IK61_g0c',
+    'ChIJyf2cdw1ZwokRh0Mi1erXhkE',
+    'ChIJFWBqC4RZwokRAB-gcWsyThI',
+    'ChIJ3bRYUpFZwokRvN6bGIOhgQs',
+    'ChIJZ6cVB49ZwokRtaudHruZUaQ',
+    'ChIJoyQr8YNZwokRdL0uw5E15Eg',
+    'ChIJ87wo8YNZwokRBSipaEXDd8g',
+    'ChIJ4Wa2fHxZwokRwdHg9d1SjuQ',
+    'ChIJ-9TnOgBZwokRsnliou0RfJM'
+  ]
+]
+all ids end
+Did not find rest. in DB. So calling to be parsed:  ChIJnXBePYFZwokRZ96gLANqHtg https://maps.google.com/?cid=15573001123359940199
+Attempting parseRestaurantInfo:  ChIJnXBePYFZwokRZ96gLANqHtg https://maps.google.com/?cid=15573001123359940199
+Did not find rest. in DB. So calling to be parsed:  ChIJdd6KDIZZwokR_yF3VSqJBFE https://maps.google.com/?cid=5837941831894508031
+Attempting parseRestaurantInfo:  ChIJdd6KDIZZwokR_yF3VSqJBFE https://maps.google.com/?cid=5837941831894508031
+Did not find rest. in DB. So calling to be parsed:  ChIJRXzYrIVZwokRsRIyDexTxJQ https://maps.google.com/?cid=10719785286347395761
+Attempting parseRestaurantInfo:  ChIJRXzYrIVZwokRsRIyDexTxJQ https://maps.google.com/?cid=10719785286347395761
+Did not find rest. in DB. So calling to be parsed:  ChIJx2qUuaNZwokROdec3E_14bM https://maps.google.com/?cid=12961910925901485881
+Attempting parseRestaurantInfo:  ChIJx2qUuaNZwokROdec3E_14bM https://maps.google.com/?cid=12961910925901485881
+Did not find rest. in DB. So calling to be parsed:  ChIJVVUl_YVZwokRabjBkV1SLzM https://maps.google.com/?cid=3688257181670553705
+Attempting parseRestaurantInfo:  ChIJVVUl_YVZwokRabjBkV1SLzM https://maps.google.com/?cid=3688257181670553705
+Did not find rest. in DB. So calling to be parsed:  ChIJ03DRYgBZwokRLB96v7clb_0 https://maps.google.com/?cid=18261856485132345132
+Attempting parseRestaurantInfo:  ChIJ03DRYgBZwokRLB96v7clb_0 https://maps.google.com/?cid=18261856485132345132
+Did not find rest. in DB. So calling to be parsed:  ChIJ6Xa02cFZwokRv_5HQ3fHoHk https://maps.google.com/?cid=8764224189906812607
+Attempting parseRestaurantInfo:  ChIJ6Xa02cFZwokRv_5HQ3fHoHk https://maps.google.com/?cid=8764224189906812607
+Did not find rest. in DB. So calling to be parsed:  ChIJAb8jiJZZwokROX7aeBYf2I4 https://maps.google.com/?cid=10293011129732595257
+Attempting parseRestaurantInfo:  ChIJAb8jiJZZwokROX7aeBYf2I4 https://maps.google.com/?cid=10293011129732595257
+Did not find rest. in DB. So calling to be parsed:  ChIJXUhSroVZwokReILDY5J5Hnc https://maps.google.com/?cid=8583431609460687480
+Attempting parseRestaurantInfo:  ChIJXUhSroVZwokReILDY5J5Hnc https://maps.google.com/?cid=8583431609460687480
+Did not find rest. in DB. So calling to be parsed:  ChIJ8xsd0oVZwokR4xG-3Q5lBX4 https://maps.google.com/?cid=9080775338186641891
+Attempting parseRestaurantInfo:  ChIJ8xsd0oVZwokR4xG-3Q5lBX4 https://maps.google.com/?cid=9080775338186641891
+Did not find rest. in DB. So calling to be parsed:  ChIJsyhtAq9ZwokRxQvnhbSb6lE https://maps.google.com/?cid=5902701461265386437
+Attempting parseRestaurantInfo:  ChIJsyhtAq9ZwokRxQvnhbSb6lE https://maps.google.com/?cid=5902701461265386437
+Did not find rest. in DB. So calling to be parsed:  ChIJhV1tboZZwokRCNghkde1e2w https://maps.google.com/?cid=7817041515689138184
+Attempting parseRestaurantInfo:  ChIJhV1tboZZwokRCNghkde1e2w https://maps.google.com/?cid=7817041515689138184
+Did not find rest. in DB. So calling to be parsed:  ChIJRcCC14VZwokRvJiDo29-IGM https://maps.google.com/?cid=7142848026959386812
+Attempting parseRestaurantInfo:  ChIJRcCC14VZwokRvJiDo29-IGM https://maps.google.com/?cid=7142848026959386812
+Did not find rest. in DB. So calling to be parsed:  ChIJB4f7_IVZwokRJD9LcOYEo6M https://maps.google.com/?cid=11791273637159059236
+Attempting parseRestaurantInfo:  ChIJB4f7_IVZwokRJD9LcOYEo6M https://maps.google.com/?cid=11791273637159059236
+Did not find rest. in DB. So calling to be parsed:  ChIJ08QQj7tZwokRadBCtCsdcXI https://maps.google.com/?cid=8246404466237165673
+Attempting parseRestaurantInfo:  ChIJ08QQj7tZwokRadBCtCsdcXI https://maps.google.com/?cid=8246404466237165673
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ08QQj7tZwokRadBCtCsdcXI',
+  name: "Pinks Cantina - Grab n' Go LES",
+  lat: 40.7223137,
+  long: -73.9919902,
+  mapuri: 'https://maps.google.com/?cid=8246404466237165673',
+  rating: 4.4,
+  summary: 'Neon-accented Mexican eatery preparing tacos & rice bowls, with vegan & gluten-free options.',
+  gfrank: 3,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ08QQj7tZwokRadBCtCsdcXI
+Did not find rest. in DB. So calling to be parsed:  ChIJPQOh8YVZwokRE2WsbZI4tOk https://maps.google.com/?cid=16840147108201522451
+Attempting parseRestaurantInfo:  ChIJPQOh8YVZwokRE2WsbZI4tOk https://maps.google.com/?cid=16840147108201522451
+Did not find rest. in DB. So calling to be parsed:  ChIJdYV-0xxZwokRNRdcEYLhftk https://maps.google.com/?cid=15672211702049150773
+Attempting parseRestaurantInfo:  ChIJdYV-0xxZwokRNRdcEYLhftk https://maps.google.com/?cid=15672211702049150773
+Did not find rest. in DB. So calling to be parsed:  ChIJjcW2qIVZwokRMoJxZqh6Jj0 https://maps.google.com/?cid=4406344149120418354
+Attempting parseRestaurantInfo:  ChIJjcW2qIVZwokRMoJxZqh6Jj0 https://maps.google.com/?cid=4406344149120418354
+Did not find rest. in DB. So calling to be parsed:  ChIJo87v9XtZwokRlqt9AmVRSz0 https://maps.google.com/?cid=4416713353842240406
+Attempting parseRestaurantInfo:  ChIJo87v9XtZwokRlqt9AmVRSz0 https://maps.google.com/?cid=4416713353842240406
+Did not find rest. in DB. So calling to be parsed:  ChIJV8eE8YVZwokR-WGCwMoDDDY https://maps.google.com/?cid=3894491947116683769
+Attempting parseRestaurantInfo:  ChIJV8eE8YVZwokR-WGCwMoDDDY https://maps.google.com/?cid=3894491947116683769
+Did not find rest. in DB. So calling to be parsed:  ChIJJ4RaxFlZwokRPhaSd7t35H0 https://maps.google.com/?cid=9071507196479673918
+Attempting parseRestaurantInfo:  ChIJJ4RaxFlZwokRPhaSd7t35H0 https://maps.google.com/?cid=9071507196479673918
+Did not find rest. in DB. So calling to be parsed:  ChIJTQjdv5pZwokRDywywKG0sL4 https://maps.google.com/?cid=13740681069914631183
+Attempting parseRestaurantInfo:  ChIJTQjdv5pZwokRDywywKG0sL4 https://maps.google.com/?cid=13740681069914631183
+Did not find rest. in DB. So calling to be parsed:  ChIJtTZe-3JZwokR-ZqUOsZQj5g https://maps.google.com/?cid=10993094027751234297
+Attempting parseRestaurantInfo:  ChIJtTZe-3JZwokR-ZqUOsZQj5g https://maps.google.com/?cid=10993094027751234297
+Did not find rest. in DB. So calling to be parsed:  ChIJV6QByYhZwokR_LRSbt9s0gU https://maps.google.com/?cid=419517422183298300
+Attempting parseRestaurantInfo:  ChIJV6QByYhZwokR_LRSbt9s0gU https://maps.google.com/?cid=419517422183298300
+Did not find rest. in DB. So calling to be parsed:  ChIJs8MdNo9ZwokRTPUHiArLC-o https://maps.google.com/?cid=16864796475711288652
+Attempting parseRestaurantInfo:  ChIJs8MdNo9ZwokRTPUHiArLC-o https://maps.google.com/?cid=16864796475711288652
+Did not find rest. in DB. So calling to be parsed:  ChIJj_i9JxVZwokRUG7tDarMxD8 https://maps.google.com/?cid=4595022550574919248
+Attempting parseRestaurantInfo:  ChIJj_i9JxVZwokRUG7tDarMxD8 https://maps.google.com/?cid=4595022550574919248
+Did not find rest. in DB. So calling to be parsed:  ChIJk1kUppxZwokRwBm5qT4qC3U https://maps.google.com/?cid=8433881175805204928
+Attempting parseRestaurantInfo:  ChIJk1kUppxZwokRwBm5qT4qC3U https://maps.google.com/?cid=8433881175805204928
+Did not find rest. in DB. So calling to be parsed:  ChIJh55_mpRZwokREhms8zo1-Js https://maps.google.com/?cid=11238791397415590162
+Attempting parseRestaurantInfo:  ChIJh55_mpRZwokREhms8zo1-Js https://maps.google.com/?cid=11238791397415590162
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJh55_mpRZwokREhms8zo1-Js',
+  name: 'Oakberry Acai',
+  lat: 40.7221166,
+  long: -73.9963862,
+  mapuri: 'https://maps.google.com/?cid=11238791397415590162',
+  rating: 4.6,
+  summary: 'Build-your-own acai bowls and smoothies with organic ingredients and superfood toppings.',
+  gfrank: 1,
+  reviews: [
+    {
+      author: 'Ruby Chan',
+      rating: 5,
+      text: 'You can first choose the size, then personalize with a variety of toppings. Oakberry is a staple to fulfill your Açaí cravings as they have many locations across the country, making it convenient to pick up a bowl anytime, anywhere.\n' +
+        '\n' +
+        "We ordered the mid size (16oz) - of course we loaded up our Açaí bowls because the price includes UNLIMITED toppings. I've to say it was really filling. Absolutely loved this refreshing and healthy treat.\n" +
+        '\n' +
+        '1. Açaí Bowl (Works)\n' +
+        '* Vegan granola (gluten-free granola also available)\n' +
+        '* Chia pudding (must-order)\n' +
+        '* Honey (for some sweetness)\n' +
+        '* Strawberry, Blueberry (my favorite fruits, making the bowl colorful)\n' +
+        '* Cashew (crunchyyyy)\n' +
+        '\n' +
+        '2. Açaí Bowls (Works)\n' +
+        '* Vegan granola\n' +
+        '* Peanut butter\n' +
+        '* Chia pudding\n' +
+        '* Honey\n' +
+        '* Banana, Goji berry',
+      publishDate: '2023-12-10'
+    }
+  ],
+  items: [],
+  resolveAttempts: 0
+} ChIJh55_mpRZwokREhms8zo1-Js
+Did not find rest. in DB. So calling to be parsed:  ChIJ4Us1t4hZwokRGsBUjumzejE https://maps.google.com/?cid=3565359870713839642
+Attempting parseRestaurantInfo:  ChIJ4Us1t4hZwokRGsBUjumzejE https://maps.google.com/?cid=3565359870713839642
+Did not find rest. in DB. So calling to be parsed:  ChIJs8MdNo9ZwokRa0jHjKur9M4 https://maps.google.com/?cid=14912733019420182635
+Attempting parseRestaurantInfo:  ChIJs8MdNo9ZwokRa0jHjKur9M4 https://maps.google.com/?cid=14912733019420182635
+Did not find rest. in DB. So calling to be parsed:  ChIJpb5oK49ZwokRNuv5dBirYQs https://maps.google.com/?cid=820124728688241462
+Attempting parseRestaurantInfo:  ChIJpb5oK49ZwokRNuv5dBirYQs https://maps.google.com/?cid=820124728688241462
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJpb5oK49ZwokRNuv5dBirYQs',
+  name: 'JOE & THE JUICE',
+  lat: 40.7226266,
+  long: -73.99739079999999,
+  mapuri: 'https://maps.google.com/?cid=820124728688241462',
+  rating: 4,
+  summary: 'Coffee and juices share the menu at this relaxed chain with gluten-free and vegan options.',
+  gfrank: 3,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJpb5oK49ZwokRNuv5dBirYQs
+Did not find rest. in DB. So calling to be parsed:  ChIJA4i114hZwokRaqeyrmI80x0 https://maps.google.com/?cid=2149127841721263978
+Attempting parseRestaurantInfo:  ChIJA4i114hZwokRaqeyrmI80x0 https://maps.google.com/?cid=2149127841721263978
+Did not find rest. in DB. So calling to be parsed:  ChIJ16Yd5Z1ZwokRwe1lwi5mwGE https://maps.google.com/?cid=7043742168223444417
+Attempting parseRestaurantInfo:  ChIJ16Yd5Z1ZwokRwe1lwi5mwGE https://maps.google.com/?cid=7043742168223444417
+Did not find rest. in DB. So calling to be parsed:  ChIJ9STgPZpZwokRFSx5QHqhfDU https://maps.google.com/?cid=3854132927562066965
+Attempting parseRestaurantInfo:  ChIJ9STgPZpZwokRFSx5QHqhfDU https://maps.google.com/?cid=3854132927562066965
+Did not find rest. in DB. So calling to be parsed:  ChIJO1_22AhZwokRm6t3InR_YCQ https://maps.google.com/?cid=2621235119900830619
+Attempting parseRestaurantInfo:  ChIJO1_22AhZwokRm6t3InR_YCQ https://maps.google.com/?cid=2621235119900830619
+Did not find rest. in DB. So calling to be parsed:  ChIJvUx5zohZwokRIxQxq0afocM https://maps.google.com/?cid=14096723434515010595
+Attempting parseRestaurantInfo:  ChIJvUx5zohZwokRIxQxq0afocM https://maps.google.com/?cid=14096723434515010595
+Did not find rest. in DB. So calling to be parsed:  ChIJpYIgKY9ZwokRG4V7_MMagCo https://maps.google.com/?cid=3062477175668835611
+Attempting parseRestaurantInfo:  ChIJpYIgKY9ZwokRG4V7_MMagCo https://maps.google.com/?cid=3062477175668835611
+Did not find rest. in DB. So calling to be parsed:  ChIJeSToyohZwokRVHVIMsXPIUk https://maps.google.com/?cid=5269721484859307348
+Attempting parseRestaurantInfo:  ChIJeSToyohZwokRVHVIMsXPIUk https://maps.google.com/?cid=5269721484859307348
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJeSToyohZwokRVHVIMsXPIUk',
+  name: "Little Ruby's SoHo",
+  lat: 40.7223288,
+  long: -73.9962484,
+  mapuri: 'https://maps.google.com/?cid=5269721484859307348',
+  rating: 4.4,
+  summary: 'Laid-back restaurant in Nolita featuring Australian-influenced dishes, plus coffee, beer, wine, and cocktails.\n' +
+    'Popular for breakfast, lunch, and dinner, the menu features burgers, fries, and pasta. People recommend the sweet potato fries, the juicy burgers, and the shrimp pasta. There are also vegetarian, vegan, and gluten-free options.\n' +
+    'Featuring a cute, cozy ambiance, the venue has a gender-neutral restroom. Reviews say the service is friendly and fast.\n' +
+    'Customers typically spend $20–30.',
+  gfrank: 3,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJeSToyohZwokRVHVIMsXPIUk
+Did not find rest. in DB. So calling to be parsed:  ChIJc08MyYhZwokR4qW5U71ANJ0 https://maps.google.com/?cid=11327750144641312226
+Attempting parseRestaurantInfo:  ChIJc08MyYhZwokR4qW5U71ANJ0 https://maps.google.com/?cid=11327750144641312226
+Did not find rest. in DB. So calling to be parsed:  ChIJC2jHPo9ZwokR_1oNEY13rM4 https://maps.google.com/?cid=14892409515567569663
+Attempting parseRestaurantInfo:  ChIJC2jHPo9ZwokR_1oNEY13rM4 https://maps.google.com/?cid=14892409515567569663
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJC2jHPo9ZwokR_1oNEY13rM4',
+  name: 'Sant Ambroeus Lafayette',
+  lat: 40.723346199999995,
+  long: -73.99652569999999,
+  mapuri: 'https://maps.google.com/?cid=14892409515567569663',
+  rating: 4.4,
+  summary: 'Italian restaurant in Nolita serving authentic dishes for breakfast, brunch, lunch, and dinner.\n' +
+    'The menu features homemade pastas, plus desserts and a great tea selection. Vegetarian and gluten-free options are available. Frequently ordered items include the linguine alle vongole, Sant Ambroeus oatmeal, and Sant Ambroeus eggs benedict.\n' +
+    "The venue has a welcoming atmosphere with a bar, and offers takeout and delivery. It's also available for private events. Reviews often mention the attentive staff.",
+  gfrank: 3,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJC2jHPo9ZwokR_1oNEY13rM4
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJC6rfiNtZwokRkNESm7lVwZ0',
+  name: 'Don Chicken Manhattan / 돈치킨 맨해튼',
+  lat: 40.7227487,
+  long: -73.98907530000001,
+  mapuri: 'https://maps.google.com/?cid=11367461190118855056',
+  rating: 5,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJC6rfiNtZwokRkNESm7lVwZ0
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ0TbQWsVZwokR9H4QrG8veEU',
+  name: 'Sudzy POS',
+  lat: 40.7224569,
+  long: -73.9882028,
+  mapuri: 'https://maps.google.com/?cid=5005803142496943860',
+  rating: undefined,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ0TbQWsVZwokR9H4QrG8veEU
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJoyQr8YNZwokRdL0uw5E15Eg',
+  name: 'Blue Ribbon Kanpai Garden',
+  lat: 40.7221127,
+  long: -73.9883256,
+  mapuri: 'https://maps.google.com/?cid=5252381965581991284',
+  rating: 4.3,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJoyQr8YNZwokRdL0uw5E15Eg
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ87wo8YNZwokRBSipaEXDd8g',
+  name: "Claw Daddy's",
+  lat: 40.7220552,
+  long: -73.98840299999999,
+  mapuri: 'https://maps.google.com/?cid=14445229032690231301',
+  rating: 4.3,
+  summary: "Airy, laid-back joint featuring Cajun-Creole seafood boils & po' boys, plus a raw bar & craft beer.",
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ87wo8YNZwokRBSipaEXDd8g
+Took 1539  ms to load the Google Maps DOM https://maps.google.com/?cid=15695711708149404751
+Took 6561  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=15695711708149404751
+Took 8439  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=10627388933016811954
+Took 5008  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=16469192000606884289
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ4Wa2fHxZwokRwdHg9d1SjuQ',
+  name: 'Juice Press',
+  lat: 40.7223554,
+  long: -73.9879141,
+  mapuri: 'https://maps.google.com/?cid=16469192000606884289',
+  rating: 3,
+  summary: 'Chain for health-conscious, organic eats offering smoothies, vegan raw foods & juice cleanses.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ4Wa2fHxZwokRwdHg9d1SjuQ
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJb0z0l5ZZwokRDgrd8Vyl_hI',
+  name: '99¢ Pizza',
+  lat: 40.7226788,
+  long: -73.988438,
+  mapuri: 'https://maps.google.com/?cid=1368713155380578830',
+  rating: 3.1,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJb0z0l5ZZwokRDgrd8Vyl_hI
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJeWbJ7INZwokRT1QvnaNe0tk',
+  name: 'Bereket',
+  lat: 40.7226083,
+  long: -73.9882045,
+  mapuri: 'https://maps.google.com/?cid=15695711708149404751',
+  rating: 4.1,
+  summary: "Kebabs & Turkish fare are served cafeteria-style at this cash-only spot that's open late.",
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJeWbJ7INZwokRT1QvnaNe0tk
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ-9TnOgBZwokRsnliou0RfJM',
+  name: 'Oaxaca Guerreros Food Truck',
+  lat: 40.7231814,
+  long: -73.9886472,
+  mapuri: 'https://maps.google.com/?cid=10627388933016811954',
+  rating: undefined,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ-9TnOgBZwokRsnliou0RfJM
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ3YtkUgBZwokRMd5buqhS9ps',
+  name: 'Kisa',
+  lat: 40.7227487,
+  long: -73.98907530000001,
+  mapuri: 'https://maps.google.com/?cid=11238260804784217649',
+  rating: 4.7,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ3YtkUgBZwokRMd5buqhS9ps
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJyf2cdw1ZwokRh0Mi1erXhkE',
+  name: 'NY Halal Gyro (Les)',
+  lat: 40.722508100000006,
+  long: -73.98913569999999,
+  mapuri: 'https://maps.google.com/?cid=4721698662942655367',
+  rating: 3.5,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJyf2cdw1ZwokRh0Mi1erXhkE
+Took 1578  ms to load the Google Maps DOM https://maps.google.com/?cid=9068600944805209020
+Took 3461  ms to load the Google Maps DOM https://maps.google.com/?cid=11840413924285328309
+Took 3113  ms to load the Google Maps DOM https://maps.google.com/?cid=2935000539321943627
+Took 3784  ms to load the Google Maps DOM https://maps.google.com/?cid=2067080324193015441
+Took 6591  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=9068600944805209020
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ1_TOjYNZwokRvOPiBIMk2n0',
+  name: 'Houston Fresh Pizza',
+  lat: 40.7226024,
+  long: -73.98839509999999,
+  mapuri: 'https://maps.google.com/?cid=9068600944805209020',
+  rating: 3.2,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ1_TOjYNZwokRvOPiBIMk2n0
+Took 8464  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=11840413924285328309
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJZ6cVB49ZwokRtaudHruZUaQ',
+  name: 'Blue Ribbon Sushi Izakaya',
+  lat: 40.722135,
+  long: -73.988438,
+  mapuri: 'https://maps.google.com/?cid=11840413924285328309',
+  rating: 4.4,
+  summary: 'Vast Japanese menu of sushi & small plates plus sake & cocktails in the trendy Sixty LES Hotel.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJZ6cVB49ZwokRtaudHruZUaQ
+Took 8115  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=2935000539321943627
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ7VEEjYNZwokRS0bdsXA3uyg',
+  name: 'Russ & Daughters',
+  lat: 40.7225803,
+  long: -73.9883134,
+  mapuri: 'https://maps.google.com/?cid=2935000539321943627',
+  rating: 4.6,
+  summary: 'Family-owned shop offering high-end smoked fish, caviar & New York-style specialty foods since 1914.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ7VEEjYNZwokRS0bdsXA3uyg
+Took 8796  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=2067080324193015441
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ9RRDNShZwokRkVa5XZq-rxw',
+  name: 'Fossetta',
+  lat: 40.7223736,
+  long: -73.9885396,
+  mapuri: 'https://maps.google.com/?cid=2067080324193015441',
+  rating: 4.7,
+  summary: 'Relaxed restaurant supplying Italian fare such as bucatini amatriciana, plus wine, beer and cocktails.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ9RRDNShZwokRkVa5XZq-rxw
+Took 2442  ms to load the Google Maps DOM https://maps.google.com/?cid=829121390838537916
+Took 2645  ms to load the Google Maps DOM https://maps.google.com/?cid=3686076379956007802
+Took 95023  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=829121390838537916
+Took 88981  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=14835583814230867964
+user connected
+user connected
+user connected
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJRWKU8HdZwokRJr6IK61_g0c',
+  name: "NYC Halal Chicken & Burger's",
+  lat: 40.722508100000006,
+  long: -73.98913569999999,
+  mapuri: 'https://maps.google.com/?cid=5153102780378431014',
+  rating: undefined,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJRWKU8HdZwokRJr6IK61_g0c
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ3bRYUpFZwokRvN6bGIOhgQs',
+  name: 'Ankara #3',
+  lat: 40.722572899999996,
+  long: -73.9880809,
+  mapuri: 'https://maps.google.com/?cid=829121390838537916',
+  rating: 4.3,
+  summary: 'Gyro, shawarma, falafel and other Turkish eats are offered at this casual joint.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ3bRYUpFZwokRvN6bGIOhgQs
+Took 91417  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=3686076379956007802
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJnXBePYFZwokRZ96gLANqHtg',
+  name: 'Karvouna Mezze',
+  lat: 40.7225034,
+  long: -73.9928511,
+  mapuri: 'https://maps.google.com/?cid=15573001123359940199',
+  rating: 4.5,
+  summary: 'Warm setting for classic Greek plates, from grilled & rotisserie meats to various mezze.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJnXBePYFZwokRZ96gLANqHtg
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJNeaJIwBZwokRelM8GvCSJzM',
+  name: 'EatCheeseburger',
+  lat: 40.722508100000006,
+  long: -73.98913569999999,
+  mapuri: 'https://maps.google.com/?cid=3686076379956007802',
+  rating: undefined,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJNeaJIwBZwokRelM8GvCSJzM
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ61jIXZVZwokR_P_DcuCU4s0',
+  name: 'Only Love Strangers',
+  lat: 40.722613599999995,
+  long: -73.98852389999999,
+  mapuri: 'https://maps.google.com/?cid=14835583814230867964',
+  rating: 4.6,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ61jIXZVZwokR_P_DcuCU4s0
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJdd6KDIZZwokR_yF3VSqJBFE',
+  name: 'Katra Lounge & Event Space',
+  lat: 40.7216929,
+  long: -73.9931265,
+  mapuri: 'https://maps.google.com/?cid=5837941831894508031',
+  rating: 3.9,
+  summary: 'Moroccan-themed duplex lounge offering hookahs, pillow-filled banquettes & occasional belly dancing.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJdd6KDIZZwokR_yF3VSqJBFE
+Took 14  ms to load the Google Maps DOM https://maps.google.com/?cid=18261856485132345132
+Took 23  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=18261856485132345132
+^C
+(env) PS C:\Users\legos\Desktop\Work\Github\Gluten-Free-Near-Me\server> node .\app.js
+Server listening on http://localhost:5000
+user connected
+user connected
+user connected
+{
+  viewportBounds: {
+    bottomLeft: { lat: 40.71553169864387, long: -73.9886746263938 },
+    topRight: { lat: 40.71926824892458, long: -73.98132537360618 }
+  },
+  searchFoci: [
+    { lat: 40.717399973784225, long: -73.9886746263938 },
+    { lat: 40.717399973784225, long: -73.9846746263938 },
+    { lat: 40.717399973784225, long: -73.9806746263938 }
+  ]
+}
+Search Point:  { lat: 40.717399973784225, long: -73.9886746263938 }
+Search Point:  { lat: 40.717399973784225, long: -73.9846746263938 }
+Search Point:  { lat: 40.717399973784225, long: -73.9806746263938 }
+user connected
+Ranking:
+Ranking:
+Ranking:
+Attempting to rank: Champion Pizza Colombia ChIJRwSnOgBZwokRkBLZyT9IC8k https://maps.google.com/?cid=14486752065173918352
+Attempting to rank: Makabely ChIJRY2vrH9ZwokRZnenIJD6Zkc https://maps.google.com/?cid=5145075121247450982
+Attempting to rank: La Isla cafe ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Queue ids: [
+  'ChIJRwSnOgBZwokRkBLZyT9IC8k',
+  'ChIJRY2vrH9ZwokRZnenIJD6Zkc',
+  'ChIJMW5LJoBZwokRrRcyMT6swsQ'
+]
+Did not find rest. in DB. So calling to be parsed:  ChIJRwSnOgBZwokRkBLZyT9IC8k https://maps.google.com/?cid=14486752065173918352
+Attempting parseRestaurantInfo:  ChIJRwSnOgBZwokRkBLZyT9IC8k https://maps.google.com/?cid=14486752065173918352
+Did not find rest. in DB. So calling to be parsed:  ChIJRY2vrH9ZwokRZnenIJD6Zkc https://maps.google.com/?cid=5145075121247450982
+Attempting parseRestaurantInfo:  ChIJRY2vrH9ZwokRZnenIJD6Zkc https://maps.google.com/?cid=5145075121247450982
+Did not find rest. in DB. So calling to be parsed:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Attempting parseRestaurantInfo:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Attempting to rank: Nakamura ChIJAzBrToBZwokRPX6CM-wuHnc https://maps.google.com/?cid=8583349531826093629
+Attempting to rank: Niche ChIJ6azpBXBZwokRWCfVgOpaj9g https://maps.google.com/?cid=15604791197092357976
+Attempting to rank: The Delancey Rooftop ChIJC5CfUYBZwokR-EDRy1grj50 https://maps.google.com/?cid=11353340846000914680
+Attempting to rank: Kings Co Imperial LES ChIJwbkWUIBZwokRwSYfO3yTCqk https://maps.google.com/?cid=12180710303954052801
+Attempting to rank: Delancy st pizza ChIJfU-taONZwokR-jjgWpFSuhU https://maps.google.com/?cid=1565654604713048314
+Attempting to rank: City hut pizza ChIJc1k9pVNZwokRaEPxn6-Y1zo https://maps.google.com/?cid=4240025454262698856
+Attempting to rank: L’origine Italian food ChIJ94_uXy5ZwokR1DINhVLcHrs https://maps.google.com/?cid=13483456581371507412
+Attempting to rank: YongChuan ChIJvbUxn0lZwokRJVNddw78BtY https://maps.google.com/?cid=15422291113039188773
+Attempting to rank: La Isla cafe ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Attempting to rank: Bd Famous Pizza ChIJmeGv-IBZwokRqqlw-kvF3Hw https://maps.google.com/?cid=8997283085694314922
+Attempting to rank: CANTINA SUNDOWN ChIJzZpq7c9ZwokRDGvu07kqTtY https://maps.google.com/?cid=15442327149912943372
+Attempting to rank: Davelle ChIJk1s5AIFZwokRymNr0rhKWFE https://maps.google.com/?cid=5861517072687391690
+Attempting to rank: Cloud Vietnamese Restaurant ChIJ_zhAZkFZwokR1nh6AOLdqmg https://maps.google.com/?cid=7542084488725690582
+Attempting to rank: Black Cat LES ChIJjW5AuIFZwokRdNPH7jFGigM https://maps.google.com/?cid=255093509173269364
+Attempting to rank: Joey Roses ChIJyRRi4bpZwokR03CRX3x-RHc https://maps.google.com/?cid=8594133061574160595
+Attempting to rank: Rivington Pizza ChIJQZVRKktZwokRBOu_go5KoqI https://maps.google.com/?cid=11719011156310878980
+Attempting to rank: Burger King ChIJQfy8_IBZwokRHIRnHWQcur8 https://maps.google.com/?cid=13815386023228048412
+Attempting to rank: Cibao ChIJGarru4FZwokRhCrFKKyvH5s https://maps.google.com/?cid=11177845954110106244
+Attempting to rank: Delilah ChIJVRKnqIFZwokR-_lNJPSShr0 https://maps.google.com/?cid=13656764497326373371
+Attempting to rank: Hazi Halal Food ChIJIa28BjZZwokRwkT_LXhBGyM https://maps.google.com/?cid=2529687600122250434
+Queue ids: [
+  'ChIJAzBrToBZwokRPX6CM-wuHnc',
+  'ChIJ6azpBXBZwokRWCfVgOpaj9g',
+  'ChIJC5CfUYBZwokR-EDRy1grj50',
+  'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+  'ChIJfU-taONZwokR-jjgWpFSuhU',
+  'ChIJc1k9pVNZwokRaEPxn6-Y1zo',
+  'ChIJ94_uXy5ZwokR1DINhVLcHrs',
+  'ChIJvbUxn0lZwokRJVNddw78BtY',
+  'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  'ChIJmeGv-IBZwokRqqlw-kvF3Hw',
+  'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+  'ChIJk1s5AIFZwokRymNr0rhKWFE',
+  'ChIJ_zhAZkFZwokR1nh6AOLdqmg',
+  'ChIJjW5AuIFZwokRdNPH7jFGigM',
+  'ChIJyRRi4bpZwokR03CRX3x-RHc',
+  'ChIJQZVRKktZwokRBOu_go5KoqI',
+  'ChIJQfy8_IBZwokRHIRnHWQcur8',
+  'ChIJGarru4FZwokRhCrFKKyvH5s',
+  'ChIJVRKnqIFZwokR-_lNJPSShr0',
+  'ChIJIa28BjZZwokRwkT_LXhBGyM'
+]
+Attempting to rank: Puebla Mexican food ChIJIYJaPYFZwokRTywuTfTHfm8 https://maps.google.com/?cid=8034078637356362831
+Attempting to rank: Dominican Cravings ChIJ1_zFa31ZwokR-cP5ZwLQcj0 https://maps.google.com/?cid=4427830092411552761
+Attempting to rank: Zerza Mediterrano ChIJN4tQRExZwokRxJDkc7_g5yU https://maps.google.com/?cid=2731398811911229636
+Attempting to rank: Café d’Avignon ChIJLYyQPIFZwokRqX4UJK7ar3E https://maps.google.com/?cid=8192006688674709161
+Attempting to rank: Comida peruana ceviche ChIJqfPucQBZwokRCzDTmIKfyZE https://maps.google.com/?cid=10505102989076934667
+Attempting to rank: Essex Market ChIJ7fydz4BZwokRl6FuOJM5QPU https://maps.google.com/?cid=17672188242271576471
+Attempting to rank: Chomps-Élysées ChIJzZq6ciBZwokRYeqojMxKO5I https://maps.google.com/?cid=10537097995557071457
+Attempting to rank: Zaab Burger ChIJqz58WU5ZwokRC3njFxARjL4 https://maps.google.com/?cid=13730368124763732235
+Attempting to rank: Nordic Preserves Fish and Wildlife Company ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y https://maps.google.com/?cid=16584269749403301445
+Attempting to rank: Cheeky Sandwiches ChIJCUBtyylawokRxSQdG7CLg4g https://maps.google.com/?cid=9836859599592694981
+Attempting to rank: Mila's Bistro ChIJ9bxKhOVZwokR5CI4ozPw8GQ https://maps.google.com/?cid=7273577502775714532
+Attempting to rank: Chloe 81 ChIJv4IFN4dZwokR9wJBHoeVlgs https://maps.google.com/?cid=835019188484506359
+Attempting to rank: Shopsin's ChIJ_____4BZwokRwuOBV5usHR4 https://maps.google.com/?cid=2170080378650485698
+Attempting to rank: Salad Joon ChIJNxi3aTJZwokR22BQhiSpRjw https://maps.google.com/?cid=4343344864982753499
+Attempting to rank: Dunkin' ChIJq6eUUIdZwokRt5fTwxfm2sU https://maps.google.com/?cid=14256960560138786743
+Attempting to rank: Kotti Berliner Döner Kebab ChIJETfDCpBZwokRWCPROPqs8SM https://maps.google.com/?cid=2590041451409777496
+Attempting to rank: Don Ceviche (Market) ChIJm9uu_FpZwokR875MVLu2loI https://maps.google.com/?cid=9409909387126685427
+Attempting to rank: Mercado Lima ChIJ54dqHE5ZwokRWKgl1yBa30I https://maps.google.com/?cid=4818669223404742744
+Attempting to rank: Mille Nonne ChIJY0fn8VVZwokRCoaQM0iVrx8 https://maps.google.com/?cid=2283207673435424266
+Attempting to rank: Nom Wah ChIJs8YpRbtZwokRzLGXZ0ALhkk https://maps.google.com/?cid=5297934382891774412
+Queue ids: [
+  'ChIJIYJaPYFZwokRTywuTfTHfm8',
+  'ChIJ1_zFa31ZwokR-cP5ZwLQcj0',
+  'ChIJN4tQRExZwokRxJDkc7_g5yU',
+  'ChIJLYyQPIFZwokRqX4UJK7ar3E',
+  'ChIJqfPucQBZwokRCzDTmIKfyZE',
+  'ChIJ7fydz4BZwokRl6FuOJM5QPU',
+  'ChIJzZq6ciBZwokRYeqojMxKO5I',
+  'ChIJqz58WU5ZwokRC3njFxARjL4',
+  'ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y',
+  'ChIJCUBtyylawokRxSQdG7CLg4g',
+  'ChIJ9bxKhOVZwokR5CI4ozPw8GQ',
+  'ChIJv4IFN4dZwokR9wJBHoeVlgs',
+  'ChIJ_____4BZwokRwuOBV5usHR4',
+  'ChIJNxi3aTJZwokR22BQhiSpRjw',
+  'ChIJq6eUUIdZwokRt5fTwxfm2sU',
+  'ChIJETfDCpBZwokRWCPROPqs8SM',
+  'ChIJm9uu_FpZwokR875MVLu2loI',
+  'ChIJ54dqHE5ZwokRWKgl1yBa30I',
+  'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+  'ChIJs8YpRbtZwokRzLGXZ0ALhkk'
+]
+all ids:  [
+  [
+    'ChIJIYJaPYFZwokRTywuTfTHfm8',
+    'ChIJ1_zFa31ZwokR-cP5ZwLQcj0',
+    'ChIJN4tQRExZwokRxJDkc7_g5yU',
+    'ChIJLYyQPIFZwokRqX4UJK7ar3E',
+    'ChIJqfPucQBZwokRCzDTmIKfyZE',
+    'ChIJ7fydz4BZwokRl6FuOJM5QPU',
+    'ChIJzZq6ciBZwokRYeqojMxKO5I',
+    'ChIJqz58WU5ZwokRC3njFxARjL4',
+    'ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y',
+    'ChIJCUBtyylawokRxSQdG7CLg4g',
+    'ChIJ9bxKhOVZwokR5CI4ozPw8GQ',
+    'ChIJv4IFN4dZwokR9wJBHoeVlgs',
+    'ChIJ_____4BZwokRwuOBV5usHR4',
+    'ChIJNxi3aTJZwokR22BQhiSpRjw',
+    'ChIJq6eUUIdZwokRt5fTwxfm2sU',
+    'ChIJETfDCpBZwokRWCPROPqs8SM',
+    'ChIJm9uu_FpZwokR875MVLu2loI',
+    'ChIJ54dqHE5ZwokRWKgl1yBa30I',
+    'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+    'ChIJs8YpRbtZwokRzLGXZ0ALhkk'
+  ],
+  [
+    'ChIJAzBrToBZwokRPX6CM-wuHnc',
+    'ChIJ6azpBXBZwokRWCfVgOpaj9g',
+    'ChIJC5CfUYBZwokR-EDRy1grj50',
+    'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+    'ChIJfU-taONZwokR-jjgWpFSuhU',
+    'ChIJc1k9pVNZwokRaEPxn6-Y1zo',
+    'ChIJ94_uXy5ZwokR1DINhVLcHrs',
+    'ChIJvbUxn0lZwokRJVNddw78BtY',
+    'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+    'ChIJmeGv-IBZwokRqqlw-kvF3Hw',
+    'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+    'ChIJk1s5AIFZwokRymNr0rhKWFE',
+    'ChIJ_zhAZkFZwokR1nh6AOLdqmg',
+    'ChIJjW5AuIFZwokRdNPH7jFGigM',
+    'ChIJyRRi4bpZwokR03CRX3x-RHc',
+    'ChIJQZVRKktZwokRBOu_go5KoqI',
+    'ChIJQfy8_IBZwokRHIRnHWQcur8',
+    'ChIJGarru4FZwokRhCrFKKyvH5s',
+    'ChIJVRKnqIFZwokR-_lNJPSShr0',
+    'ChIJIa28BjZZwokRwkT_LXhBGyM'
+  ],
+  [
+    'ChIJRwSnOgBZwokRkBLZyT9IC8k',
+    'ChIJRY2vrH9ZwokRZnenIJD6Zkc',
+    'ChIJMW5LJoBZwokRrRcyMT6swsQ'
+  ]
+]
+all ids end
+Did not find rest. in DB. So calling to be parsed:  ChIJAzBrToBZwokRPX6CM-wuHnc https://maps.google.com/?cid=8583349531826093629
+Attempting parseRestaurantInfo:  ChIJAzBrToBZwokRPX6CM-wuHnc https://maps.google.com/?cid=8583349531826093629
+Did not find rest. in DB. So calling to be parsed:  ChIJmeGv-IBZwokRqqlw-kvF3Hw https://maps.google.com/?cid=8997283085694314922
+Attempting parseRestaurantInfo:  ChIJmeGv-IBZwokRqqlw-kvF3Hw https://maps.google.com/?cid=8997283085694314922
+Did not find rest. in DB. So calling to be parsed:  ChIJk1s5AIFZwokRymNr0rhKWFE https://maps.google.com/?cid=5861517072687391690
+Attempting parseRestaurantInfo:  ChIJk1s5AIFZwokRymNr0rhKWFE https://maps.google.com/?cid=5861517072687391690
+Did not find rest. in DB. So calling to be parsed:  ChIJjW5AuIFZwokRdNPH7jFGigM https://maps.google.com/?cid=255093509173269364
+Attempting parseRestaurantInfo:  ChIJjW5AuIFZwokRdNPH7jFGigM https://maps.google.com/?cid=255093509173269364
+Did not find rest. in DB. So calling to be parsed:  ChIJQZVRKktZwokRBOu_go5KoqI https://maps.google.com/?cid=11719011156310878980
+Attempting parseRestaurantInfo:  ChIJQZVRKktZwokRBOu_go5KoqI https://maps.google.com/?cid=11719011156310878980
+Did not find rest. in DB. So calling to be parsed:  ChIJGarru4FZwokRhCrFKKyvH5s https://maps.google.com/?cid=11177845954110106244
+Attempting parseRestaurantInfo:  ChIJGarru4FZwokRhCrFKKyvH5s https://maps.google.com/?cid=11177845954110106244
+Did not find rest. in DB. So calling to be parsed:  ChIJIa28BjZZwokRwkT_LXhBGyM https://maps.google.com/?cid=2529687600122250434
+Attempting parseRestaurantInfo:  ChIJIa28BjZZwokRwkT_LXhBGyM https://maps.google.com/?cid=2529687600122250434
+Did not find rest. in DB. So calling to be parsed:  ChIJ6azpBXBZwokRWCfVgOpaj9g https://maps.google.com/?cid=15604791197092357976
+Attempting parseRestaurantInfo:  ChIJ6azpBXBZwokRWCfVgOpaj9g https://maps.google.com/?cid=15604791197092357976
+Did not find rest. in DB. So calling to be parsed:  ChIJzZpq7c9ZwokRDGvu07kqTtY https://maps.google.com/?cid=15442327149912943372
+Attempting parseRestaurantInfo:  ChIJzZpq7c9ZwokRDGvu07kqTtY https://maps.google.com/?cid=15442327149912943372
+Did not find rest. in DB. So calling to be parsed:  ChIJ_zhAZkFZwokR1nh6AOLdqmg https://maps.google.com/?cid=7542084488725690582
+Attempting parseRestaurantInfo:  ChIJ_zhAZkFZwokR1nh6AOLdqmg https://maps.google.com/?cid=7542084488725690582
+Did not find rest. in DB. So calling to be parsed:  ChIJyRRi4bpZwokR03CRX3x-RHc https://maps.google.com/?cid=8594133061574160595
+Attempting parseRestaurantInfo:  ChIJyRRi4bpZwokR03CRX3x-RHc https://maps.google.com/?cid=8594133061574160595
+Did not find rest. in DB. So calling to be parsed:  ChIJQfy8_IBZwokRHIRnHWQcur8 https://maps.google.com/?cid=13815386023228048412
+Attempting parseRestaurantInfo:  ChIJQfy8_IBZwokRHIRnHWQcur8 https://maps.google.com/?cid=13815386023228048412
+Did not find rest. in DB. So calling to be parsed:  ChIJVRKnqIFZwokR-_lNJPSShr0 https://maps.google.com/?cid=13656764497326373371
+Attempting parseRestaurantInfo:  ChIJVRKnqIFZwokR-_lNJPSShr0 https://maps.google.com/?cid=13656764497326373371
+Did not find rest. in DB. So calling to be parsed:  ChIJIYJaPYFZwokRTywuTfTHfm8 https://maps.google.com/?cid=8034078637356362831
+Attempting parseRestaurantInfo:  ChIJIYJaPYFZwokRTywuTfTHfm8 https://maps.google.com/?cid=8034078637356362831
+Did not find rest. in DB. So calling to be parsed:  ChIJN4tQRExZwokRxJDkc7_g5yU https://maps.google.com/?cid=2731398811911229636
+Attempting parseRestaurantInfo:  ChIJN4tQRExZwokRxJDkc7_g5yU https://maps.google.com/?cid=2731398811911229636
+Did not find rest. in DB. So calling to be parsed:  ChIJqfPucQBZwokRCzDTmIKfyZE https://maps.google.com/?cid=10505102989076934667
+Attempting parseRestaurantInfo:  ChIJqfPucQBZwokRCzDTmIKfyZE https://maps.google.com/?cid=10505102989076934667
+Did not find rest. in DB. So calling to be parsed:  ChIJzZq6ciBZwokRYeqojMxKO5I https://maps.google.com/?cid=10537097995557071457
+Attempting parseRestaurantInfo:  ChIJzZq6ciBZwokRYeqojMxKO5I https://maps.google.com/?cid=10537097995557071457
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZq6ciBZwokRYeqojMxKO5I',
+  name: 'Chomps-Élysées',
+  lat: 40.7180385,
+  long: -73.9881911,
+  mapuri: 'https://maps.google.com/?cid=10537097995557071457',
+  rating: 5,
+  summary: undefined,
+  gfrank: 1,
+  reviews: [
+    {
+      author: 'Karina Krepp',
+      rating: 5,
+      text: 'Essex market just got tastier and healthier. Home cooked, slow cooked and delicious. The owner is on sight and very caring. I’m addicted to her gluten free corn bread. Soup is top notch and unique flavor profiles. Like your Mama made! Eat here and feel well.',
+      publishDate: '2024-01-24'
+    }
+  ],
+  items: [],
+  resolveAttempts: 0
+} ChIJzZq6ciBZwokRYeqojMxKO5I
+Did not find rest. in DB. So calling to be parsed:  ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y https://maps.google.com/?cid=16584269749403301445
+Attempting parseRestaurantInfo:  ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y https://maps.google.com/?cid=16584269749403301445
+Did not find rest. in DB. So calling to be parsed:  ChIJ9bxKhOVZwokR5CI4ozPw8GQ https://maps.google.com/?cid=7273577502775714532
+Attempting parseRestaurantInfo:  ChIJ9bxKhOVZwokR5CI4ozPw8GQ https://maps.google.com/?cid=7273577502775714532
+Did not find rest. in DB. So calling to be parsed:  ChIJ_____4BZwokRwuOBV5usHR4 https://maps.google.com/?cid=2170080378650485698
+Attempting parseRestaurantInfo:  ChIJ_____4BZwokRwuOBV5usHR4 https://maps.google.com/?cid=2170080378650485698
+Did not find rest. in DB. So calling to be parsed:  ChIJq6eUUIdZwokRt5fTwxfm2sU https://maps.google.com/?cid=14256960560138786743
+Attempting parseRestaurantInfo:  ChIJq6eUUIdZwokRt5fTwxfm2sU https://maps.google.com/?cid=14256960560138786743
+Did not find rest. in DB. So calling to be parsed:  ChIJm9uu_FpZwokR875MVLu2loI https://maps.google.com/?cid=9409909387126685427
+Attempting parseRestaurantInfo:  ChIJm9uu_FpZwokR875MVLu2loI https://maps.google.com/?cid=9409909387126685427
+Did not find rest. in DB. So calling to be parsed:  ChIJY0fn8VVZwokRCoaQM0iVrx8 https://maps.google.com/?cid=2283207673435424266
+Attempting parseRestaurantInfo:  ChIJY0fn8VVZwokRCoaQM0iVrx8 https://maps.google.com/?cid=2283207673435424266
+Did not find rest. in DB. So calling to be parsed:  ChIJC5CfUYBZwokR-EDRy1grj50 https://maps.google.com/?cid=11353340846000914680
+Attempting parseRestaurantInfo:  ChIJC5CfUYBZwokR-EDRy1grj50 https://maps.google.com/?cid=11353340846000914680
+Did not find rest. in DB. So calling to be parsed:  ChIJ1_zFa31ZwokR-cP5ZwLQcj0 https://maps.google.com/?cid=4427830092411552761
+Attempting parseRestaurantInfo:  ChIJ1_zFa31ZwokR-cP5ZwLQcj0 https://maps.google.com/?cid=4427830092411552761
+Did not find rest. in DB. So calling to be parsed:  ChIJLYyQPIFZwokRqX4UJK7ar3E https://maps.google.com/?cid=8192006688674709161
+Attempting parseRestaurantInfo:  ChIJLYyQPIFZwokRqX4UJK7ar3E https://maps.google.com/?cid=8192006688674709161
+Did not find rest. in DB. So calling to be parsed:  ChIJ7fydz4BZwokRl6FuOJM5QPU https://maps.google.com/?cid=17672188242271576471
+Attempting parseRestaurantInfo:  ChIJ7fydz4BZwokRl6FuOJM5QPU https://maps.google.com/?cid=17672188242271576471
+Did not find rest. in DB. So calling to be parsed:  ChIJqz58WU5ZwokRC3njFxARjL4 https://maps.google.com/?cid=13730368124763732235
+Attempting parseRestaurantInfo:  ChIJqz58WU5ZwokRC3njFxARjL4 https://maps.google.com/?cid=13730368124763732235
+Did not find rest. in DB. So calling to be parsed:  ChIJCUBtyylawokRxSQdG7CLg4g https://maps.google.com/?cid=9836859599592694981
+Attempting parseRestaurantInfo:  ChIJCUBtyylawokRxSQdG7CLg4g https://maps.google.com/?cid=9836859599592694981
+Did not find rest. in DB. So calling to be parsed:  ChIJv4IFN4dZwokR9wJBHoeVlgs https://maps.google.com/?cid=835019188484506359
+Attempting parseRestaurantInfo:  ChIJv4IFN4dZwokR9wJBHoeVlgs https://maps.google.com/?cid=835019188484506359
+Did not find rest. in DB. So calling to be parsed:  ChIJNxi3aTJZwokR22BQhiSpRjw https://maps.google.com/?cid=4343344864982753499
+Attempting parseRestaurantInfo:  ChIJNxi3aTJZwokR22BQhiSpRjw https://maps.google.com/?cid=4343344864982753499
+Did not find rest. in DB. So calling to be parsed:  ChIJETfDCpBZwokRWCPROPqs8SM https://maps.google.com/?cid=2590041451409777496
+Attempting parseRestaurantInfo:  ChIJETfDCpBZwokRWCPROPqs8SM https://maps.google.com/?cid=2590041451409777496
+Did not find rest. in DB. So calling to be parsed:  ChIJ54dqHE5ZwokRWKgl1yBa30I https://maps.google.com/?cid=4818669223404742744
+Attempting parseRestaurantInfo:  ChIJ54dqHE5ZwokRWKgl1yBa30I https://maps.google.com/?cid=4818669223404742744
+Did not find rest. in DB. So calling to be parsed:  ChIJs8YpRbtZwokRzLGXZ0ALhkk https://maps.google.com/?cid=5297934382891774412
+Attempting parseRestaurantInfo:  ChIJs8YpRbtZwokRzLGXZ0ALhkk https://maps.google.com/?cid=5297934382891774412
+user connected
+Did not find rest. in DB. So calling to be parsed:  ChIJfU-taONZwokR-jjgWpFSuhU https://maps.google.com/?cid=1565654604713048314
+Attempting parseRestaurantInfo:  ChIJfU-taONZwokR-jjgWpFSuhU https://maps.google.com/?cid=1565654604713048314
+Did not find rest. in DB. So calling to be parsed:  ChIJ94_uXy5ZwokR1DINhVLcHrs https://maps.google.com/?cid=13483456581371507412
+Attempting parseRestaurantInfo:  ChIJ94_uXy5ZwokR1DINhVLcHrs https://maps.google.com/?cid=13483456581371507412
+Did not find rest. in DB. So calling to be parsed:  ChIJc1k9pVNZwokRaEPxn6-Y1zo https://maps.google.com/?cid=4240025454262698856
+Attempting parseRestaurantInfo:  ChIJc1k9pVNZwokRaEPxn6-Y1zo https://maps.google.com/?cid=4240025454262698856
+Did not find rest. in DB. So calling to be parsed:  ChIJvbUxn0lZwokRJVNddw78BtY https://maps.google.com/?cid=15422291113039188773
+Attempting parseRestaurantInfo:  ChIJvbUxn0lZwokRJVNddw78BtY https://maps.google.com/?cid=15422291113039188773
+Did not find rest. in DB. So calling to be parsed:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Attempting parseRestaurantInfo:  ChIJMW5LJoBZwokRrRcyMT6swsQ https://maps.google.com/?cid=14178083960029058989
+Did not find rest. in DB. So calling to be parsed:  ChIJwbkWUIBZwokRwSYfO3yTCqk https://maps.google.com/?cid=12180710303954052801
+Attempting parseRestaurantInfo:  ChIJwbkWUIBZwokRwSYfO3yTCqk https://maps.google.com/?cid=12180710303954052801
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJwbkWUIBZwokRwSYfO3yTCqk',
+  name: 'Kings Co Imperial LES',
+  lat: 40.717941599999996,
+  long: -73.9854156,
+  mapuri: 'https://maps.google.com/?cid=12180710303954052801',
+  rating: 4.5,
+  summary: 'Trendy Chinese restaurant and cocktail bar in the Lower East Side offering comfort food and happy hour drinks.\n' +
+    'Popular dishes include soup dumplings, scallion pancakes, and Hong Kong style noodles. The menu has vegetarian options and gluten-free dishes, as well as shareable plates for group dining.\n' +
+    "The atmosphere is relaxed, with dark wood, dim lighting, and a bar. There's also a Williamsburg outpost with a patio. People say the service is fast.",
+  gfrank: 3,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJwbkWUIBZwokRwSYfO3yTCqk
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJRwSnOgBZwokRkBLZyT9IC8k',
+  name: 'Champion Pizza Colombia',
+  lat: 40.7173394,
+  long: -73.9804602,
+  mapuri: 'https://maps.google.com/?cid=14486752065173918352',
+  rating: undefined,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJRwSnOgBZwokRkBLZyT9IC8k
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJRY2vrH9ZwokRZnenIJD6Zkc',
+  name: 'Makabely',
+  lat: 40.7173395,
+  long: -73.9804601,
+  mapuri: 'https://maps.google.com/?cid=5145075121247450982',
+  rating: 3.9,
+  summary: 'Classic storefront offering New York-style pies & slices, sandwiches & salads in no-frills digs.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJRY2vrH9ZwokRZnenIJD6Zkc
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  name: 'La Isla cafe',
+  lat: 40.7172559,
+  long: -73.9832073,
+  mapuri: 'https://maps.google.com/?cid=14178083960029058989',
+  rating: 4.2,
+  summary: 'Counter-serve nook offering Dominican-style chicken, roast pork & stews plus coffee & desserts.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJMW5LJoBZwokRrRcyMT6swsQ
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJmeGv-IBZwokRqqlw-kvF3Hw',
+  name: 'Bd Famous Pizza',
+  lat: 40.718131299999996,
+  long: -73.98601599999999,
+  mapuri: 'https://maps.google.com/?cid=8997283085694314922',
+  rating: 4,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJmeGv-IBZwokRqqlw-kvF3Hw
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJAzBrToBZwokRPX6CM-wuHnc',
+  name: 'Nakamura',
+  lat: 40.717888699999996,
+  long: -73.9851633,
+  mapuri: 'https://maps.google.com/?cid=8583349531826093629',
+  rating: 4.5,
+  summary: 'A top Japanese chef prepares a variety of ramen bowls in a narrow space with table & counter seats.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJAzBrToBZwokRPX6CM-wuHnc
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJQZVRKktZwokRBOu_go5KoqI',
+  name: 'Rivington Pizza',
+  lat: 40.7190629,
+  long: -73.984653,
+  mapuri: 'https://maps.google.com/?cid=11719011156310878980',
+  rating: 4.2,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJQZVRKktZwokRBOu_go5KoqI
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJk1s5AIFZwokRymNr0rhKWFE',
+  name: 'Davelle',
+  lat: 40.7185385,
+  long: -73.9860676,
+  mapuri: 'https://maps.google.com/?cid=5861517072687391690',
+  rating: 4.3,
+  summary: 'Japanese cafe offering set breakfasts and lunches, plus coffee, tea, and matcha lattes.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJk1s5AIFZwokRymNr0rhKWFE
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJjW5AuIFZwokRdNPH7jFGigM',
+  name: 'Black Cat LES',
+  lat: 40.7190149,
+  long: -73.9845769,
+  mapuri: 'https://maps.google.com/?cid=255093509173269364',
+  rating: 4.3,
+  summary: 'Chill coffee shop with a living-room setup providing carefully sourced light bites & gourmet teas.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJjW5AuIFZwokRdNPH7jFGigM
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJGarru4FZwokRhCrFKKyvH5s',
+  name: 'Cibao',
+  lat: 40.7191785,
+  long: -73.98481199999999,
+  mapuri: 'https://maps.google.com/?cid=11177845954110106244',
+  rating: 4.1,
+  summary: 'Early-to-late joint providing classic Cuban eats in a no-frills, counter-serve setup, plus delivery.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJGarru4FZwokRhCrFKKyvH5s
+Took 2610  ms to load the Google Maps DOM https://maps.google.com/?cid=2529687600122250434
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ6azpBXBZwokRWCfVgOpaj9g',
+  name: 'Niche',
+  lat: 40.71789220000001,
+  long: -73.98519879999999,
+  mapuri: 'https://maps.google.com/?cid=15604791197092357976',
+  rating: 4.2,
+  summary: 'Compact eatery with communal table specializing in mazemen, a brothless ramen piled with toppings.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ6azpBXBZwokRWCfVgOpaj9g
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJzZpq7c9ZwokRDGvu07kqTtY',
+  name: 'CANTINA SUNDOWN',
+  lat: 40.7182663,
+  long: -73.98634299999999,
+  mapuri: 'https://maps.google.com/?cid=15442327149912943372',
+  rating: 4.8,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJzZpq7c9ZwokRDGvu07kqTtY
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ_zhAZkFZwokR1nh6AOLdqmg',
+  name: 'Cloud Vietnamese Restaurant',
+  lat: 40.7189185,
+  long: -73.9852756,
+  mapuri: 'https://maps.google.com/?cid=7542084488725690582',
+  rating: 4.7,
+  summary: 'Casual eatery offering Vietnamese comfort foods, including vegetarian options, plus coffee.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ_zhAZkFZwokR1nh6AOLdqmg
+Took 7615  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=2529687600122250434
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJIa28BjZZwokRwkT_LXhBGyM',
+  name: 'Hazi Halal Food',
+  lat: 40.7164903,
+  long: -73.9867718,
+  mapuri: 'https://maps.google.com/?cid=2529687600122250434',
+  rating: 4.3,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJIa28BjZZwokRwkT_LXhBGyM
+Took 2041  ms to load the Google Maps DOM https://maps.google.com/?cid=8594133061574160595
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJVRKnqIFZwokR-_lNJPSShr0',
+  name: 'Delilah',
+  lat: 40.7190559,
+  long: -73.9856564,
+  mapuri: 'https://maps.google.com/?cid=13656764497326373371',
+  rating: 4.2,
+  summary: 'Stylish lounge offering Mediterranean tapas, cocktails & late night hours, plus weekend brunch.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJVRKnqIFZwokR-_lNJPSShr0
+Took 7051  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=8594133061574160595
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJIYJaPYFZwokRTywuTfTHfm8',
+  name: 'Puebla Mexican food',
+  lat: 40.717711099999995,
+  long: -73.9883037,
+  mapuri: 'https://maps.google.com/?cid=8034078637356362831',
+  rating: 3.8,
+  summary: 'Burritos, enchiladas & other familiar Mexican options doled out in a bare-bones storefront.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJIYJaPYFZwokRTywuTfTHfm8
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJQfy8_IBZwokRHIRnHWQcur8',
+  name: 'Burger King',
+  lat: 40.7183445,
+  long: -73.9865792,
+  mapuri: 'https://maps.google.com/?cid=13815386023228048412',
+  rating: 3.4,
+  summary: 'Well-known fast-food chain serving grilled burgers, fries & shakes.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJQfy8_IBZwokRHIRnHWQcur8
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJyRRi4bpZwokR03CRX3x-RHc',
+  name: 'Joey Roses',
+  lat: 40.7190113,
+  long: -73.9845007,
+  mapuri: 'https://maps.google.com/?cid=8594133061574160595',
+  rating: 4.7,
+  summary: 'Everyday shop serving specialty sandwiches with prosciutto & porchetta, plus crispy brussel sprouts.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJyRRi4bpZwokR03CRX3x-RHc
+Took 2391  ms to load the Google Maps DOM https://maps.google.com/?cid=2731398811911229636
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ_____4BZwokRwuOBV5usHR4',
+  name: "Shopsin's",
+  lat: 40.71819620000001,
+  long: -73.9880857,
+  mapuri: 'https://maps.google.com/?cid=2170080378650485698',
+  rating: 4.3,
+  summary: 'Pocket-sized eatery inside Essex Street Market doling out a lengthy, eclectic menu of diner fare.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ_____4BZwokRwuOBV5usHR4
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ9bxKhOVZwokR5CI4ozPw8GQ',
+  name: "Mila's Bistro",
+  lat: 40.718021799999995,
+  long: -73.9895269,
+  mapuri: 'https://maps.google.com/?cid=7273577502775714532',
+  rating: 4.5,
+  summary: 'French bistro offering dinner and weekend brunch, plus happy-hour cocktails and oysters.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ9bxKhOVZwokR5CI4ozPw8GQ
+Took 7409  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=2731398811911229636
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJN4tQRExZwokRxJDkc7_g5yU',
+  name: 'Zerza Mediterrano',
+  lat: 40.7179417,
+  long: -73.9882391,
+  mapuri: 'https://maps.google.com/?cid=2731398811911229636',
+  rating: 4.3,
+  summary: 'Moroccan and Mediterranean fare dished up fast in a casual eatery inside Essex Market.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJN4tQRExZwokRxJDkc7_g5yU
+Took 2539  ms to load the Google Maps DOM https://maps.google.com/?cid=10505102989076934667
+Took 2345  ms to load the Google Maps DOM https://maps.google.com/?cid=16584269749403301445
+Took 7548  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=10505102989076934667
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJqfPucQBZwokRCzDTmIKfyZE',
+  name: 'Comida peruana ceviche',
+  lat: 40.7179392,
+  long: -73.9882185,
+  mapuri: 'https://maps.google.com/?cid=10505102989076934667',
+  rating: undefined,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJqfPucQBZwokRCzDTmIKfyZE
+Took 2553  ms to load the Google Maps DOM https://maps.google.com/?cid=2283207673435424266
+Took 7346  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=16584269749403301445
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y',
+  name: 'Nordic Preserves Fish and Wildlife Company',
+  lat: 40.7180385,
+  long: -73.9881911,
+  mapuri: 'https://maps.google.com/?cid=16584269749403301445',
+  rating: 4.7,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y
+Took 2584  ms to load the Google Maps DOM https://maps.google.com/?cid=14256960560138786743
+Took 2648  ms to load the Google Maps DOM https://maps.google.com/?cid=9409909387126685427
+Took 7557  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=2283207673435424266
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJY0fn8VVZwokRCoaQM0iVrx8',
+  name: 'Mille Nonne',
+  lat: 40.7182408,
+  long: -73.988107,
+  mapuri: 'https://maps.google.com/?cid=2283207673435424266',
+  rating: 4.8,
+  summary: 'Made-to-order Italian dishes cooked in small batches and using locally sourced ingredients.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJY0fn8VVZwokRCoaQM0iVrx8
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ1_zFa31ZwokR-cP5ZwLQcj0',
+  name: 'Dominican Cravings',
+  lat: 40.7178788,
+  long: -73.9883384,
+  mapuri: 'https://maps.google.com/?cid=4427830092411552761',
+  rating: 4,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ1_zFa31ZwokR-cP5ZwLQcj0
+Took 7587  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=14256960560138786743
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJq6eUUIdZwokRt5fTwxfm2sU',
+  name: "Dunkin'",
+  lat: 40.7167155,
+  long: -73.9895421,
+  mapuri: 'https://maps.google.com/?cid=14256960560138786743',
+  rating: 3.9,
+  summary: 'Long-running chain serving signature breakfast items & a variety of coffee drinks.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJq6eUUIdZwokRt5fTwxfm2sU
+Took 2492  ms to load the Google Maps DOM https://maps.google.com/?cid=11353340846000914680
+Took 7664  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=9409909387126685427
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJm9uu_FpZwokR875MVLu2loI',
+  name: 'Don Ceviche (Market)',
+  lat: 40.7182408,
+  long: -73.988107,
+  mapuri: 'https://maps.google.com/?cid=9409909387126685427',
+  rating: 4.4,
+  summary: 'Ceviche and other traditional Peruvian dishes served in a casual restaurant inside Essex Market.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJm9uu_FpZwokR875MVLu2loI
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ7fydz4BZwokRl6FuOJM5QPU',
+  name: 'Essex Market',
+  lat: 40.7180004,
+  long: -73.98819,
+  mapuri: 'https://maps.google.com/?cid=17672188242271576471',
+  rating: 4.5,
+  summary: 'Indoor market with rows of vendors specializing in meat, fish, cheese, produce & specialty foods.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ7fydz4BZwokRl6FuOJM5QPU
+Took 2299  ms to load the Google Maps DOM https://maps.google.com/?cid=8192006688674709161
+Took 7514  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=11353340846000914680
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJC5CfUYBZwokR-EDRy1grj50',
+  name: 'The Delancey Rooftop',
+  lat: 40.717971299999995,
+  long: -73.9852887,
+  mapuri: 'https://maps.google.com/?cid=11353340846000914680',
+  rating: 4,
+  summary: 'Nightlife spot includes a plush lounge, canopied roof deck & basement performance space.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJC5CfUYBZwokR-EDRy1grj50
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJCUBtyylawokRxSQdG7CLg4g',
+  name: 'Cheeky Sandwiches',
+  lat: 40.7180385,
+  long: -73.9881911,
+  mapuri: 'https://maps.google.com/?cid=9836859599592694981',
+  rating: 4.6,
+  summary: 'A hip sandwich shop offering a select menu of po’ boys & other Big Easy bites in a tiny storefront.',
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJCUBtyylawokRxSQdG7CLg4g
+Took 1806  ms to load the Google Maps DOM https://maps.google.com/?cid=13730368124763732235
+Took 7314  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=8192006688674709161
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJLYyQPIFZwokRqX4UJK7ar3E',
+  name: 'Café d’Avignon',
+  lat: 40.7179417,
+  long: -73.9882391,
+  mapuri: 'https://maps.google.com/?cid=8192006688674709161',
+  rating: 4.3,
+  summary: 'Established bakery supplying a range of traditional European-style breads & pastries.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJLYyQPIFZwokRqX4UJK7ar3E
+Took 6843  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=13730368124763732235
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJqz58WU5ZwokRC3njFxARjL4',
+  name: 'Zaab Burger',
+  lat: 40.7180385,
+  long: -73.9881911,
+  mapuri: 'https://maps.google.com/?cid=13730368124763732235',
+  rating: 4.7,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJqz58WU5ZwokRC3njFxARjL4
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJETfDCpBZwokRWCPROPqs8SM',
+  name: 'Kotti Berliner Döner Kebab',
+  lat: 40.7182408,
+  long: -73.988107,
+  mapuri: 'https://maps.google.com/?cid=2590041451409777496',
+  rating: 4.5,
+  summary: undefined,
+  gfrank: 0,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJETfDCpBZwokRWCPROPqs8SM
+Took 2239  ms to load the Google Maps DOM https://maps.google.com/?cid=4343344864982753499
+Took 1663  ms to load the Google Maps DOM https://maps.google.com/?cid=835019188484506359
+Took 7240  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=4343344864982753499
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJNxi3aTJZwokR22BQhiSpRjw',
+  name: 'Salad Joon',
+  lat: 40.7181916,
+  long: -73.9880567,
+  mapuri: 'https://maps.google.com/?cid=4343344864982753499',
+  rating: 4.9,
+  summary: 'Health food restaurant offering lunch and dinner for takeout in Essex Market on the Lower East Side.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJNxi3aTJZwokR22BQhiSpRjw
+Took 1806  ms to load the Google Maps DOM https://maps.google.com/?cid=4818669223404742744
+Took 6720  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=835019188484506359
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJv4IFN4dZwokR9wJBHoeVlgs',
+  name: 'Chloe 81',
+  lat: 40.7180543,
+  long: -73.9895095,
+  mapuri: 'https://maps.google.com/?cid=835019188484506359',
+  rating: 3.2,
+  summary: 'Upscale, exclusive basement lounge in a small basement space attracting a hip, in-the-know crowd.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJv4IFN4dZwokR9wJBHoeVlgs
+Took 2467  ms to load the Google Maps DOM https://maps.google.com/?cid=5297934382891774412
+Took 1637  ms to load the Google Maps DOM https://maps.google.com/?cid=1565654604713048314
+Took 6807  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=4818669223404742744
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ54dqHE5ZwokRWKgl1yBa30I',
+  name: 'Mercado Lima',
+  lat: 40.7182408,
+  long: -73.988107,
+  mapuri: 'https://maps.google.com/?cid=4818669223404742744',
+  rating: 4.8,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ54dqHE5ZwokRWKgl1yBa30I
+Took 2588  ms to load the Google Maps DOM https://maps.google.com/?cid=13483456581371507412
+Took 7472  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=5297934382891774412
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJs8YpRbtZwokRzLGXZ0ALhkk',
+  name: 'Nom Wah',
+  lat: 40.7182566,
+  long: -73.9881462,
+  mapuri: 'https://maps.google.com/?cid=5297934382891774412',
+  rating: 4.5,
+  summary: 'Hip, laid-back Chinese eatery offering a wide range of dim sum specialties, plus tea & pastries.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJs8YpRbtZwokRzLGXZ0ALhkk
+Took 2405  ms to load the Google Maps DOM https://maps.google.com/?cid=4240025454262698856
+Took 6638  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=1565654604713048314
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJfU-taONZwokR-jjgWpFSuhU',
+  name: 'Delancy st pizza',
+  lat: 40.7180676,
+  long: -73.9854658,
+  mapuri: 'https://maps.google.com/?cid=1565654604713048314',
+  rating: 5,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJfU-taONZwokR-jjgWpFSuhU
+Took 2170  ms to load the Google Maps DOM https://maps.google.com/?cid=15422291113039188773
+Took 7591  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=13483456581371507412
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJ94_uXy5ZwokR1DINhVLcHrs',
+  name: 'L’origine Italian food',
+  lat: 40.7180676,
+  long: -73.9854658,
+  mapuri: 'https://maps.google.com/?cid=13483456581371507412',
+  rating: 5,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJ94_uXy5ZwokR1DINhVLcHrs
+Took 7407  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=4240025454262698856
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJc1k9pVNZwokRaEPxn6-Y1zo',
+  name: 'City hut pizza',
+  lat: 40.7180676,
+  long: -73.9854658,
+  mapuri: 'https://maps.google.com/?cid=4240025454262698856',
+  rating: 4.3,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJc1k9pVNZwokRaEPxn6-Y1zo
+Took 2304  ms to load the Google Maps DOM https://maps.google.com/?cid=14178083960029058989
+Took 7176  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=15422291113039188773
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJvbUxn0lZwokRJVNddw78BtY',
+  name: 'YongChuan',
+  lat: 40.7182555,
+  long: -73.98522969999999,
+  mapuri: 'https://maps.google.com/?cid=15422291113039188773',
+  rating: 4.8,
+  summary: undefined,
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJvbUxn0lZwokRJVNddw78BtY
+Took 7310  ms. But errored on loading the Google Order Online Selector (on Maps) https://maps.google.com/?cid=14178083960029058989
+broadcasting RECEIVED PACKET: {
+  id: 'ChIJMW5LJoBZwokRrRcyMT6swsQ',
+  name: 'La Isla cafe',
+  lat: 40.7172559,
+  long: -73.9832073,
+  mapuri: 'https://maps.google.com/?cid=14178083960029058989',
+  rating: 4.2,
+  summary: 'Counter-serve nook offering Dominican-style chicken, roast pork & stews plus coffee & desserts.',
+  gfrank: -1,
+  reviews: [],
+  items: [],
+  resolveAttempts: 0
+} ChIJMW5LJoBZwokRrRcyMT6swsQ

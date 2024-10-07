@@ -65,7 +65,7 @@ let rankNearbyPlaces = async(lat, long) => {
          })
          .then(nearbyPlaces => { 
             if (nearbyPlaces?.error?.code == 400) { throw nearbyPlaces; }
-            console.log(nearbyPlaces);
+            // console.log(nearbyPlaces);
             
             // Validate placeData list
             if (!Array.isArray(nearbyPlaces.places) || nearbyPlaces.places.length == 0) {
@@ -74,14 +74,12 @@ let rankNearbyPlaces = async(lat, long) => {
             }
             rankPlaces(nearbyPlaces);
             // Return an array of IDs corresponding to the places to be scraped 
-
-            console.log("add ids");
             let ids = nearbyPlaces.places.map(place => place.id);
-            console.log(ids);
+            console.log("Queue ids:", ids);
             resolve(ids); 
          })
          .catch(err => { 
-            console.error(err);
+            console.log("Error: ", err);
             resolve([-2]);
          })
    });
@@ -153,35 +151,35 @@ var findGFReviews = (restaurantReviews, storeGFReviews) => {
 }
 
 var parseRestaurantInfo = async(restaurant) => {
+   console.log("Attempting parseRestaurantInfo: ", restaurant.id, restaurant.googleMapsUri)
    let resJSON = codes.RestaurantDetails(restaurant.id, restaurant.googleMapsUri, restaurant.location.latitude, restaurant.location.longitude, restaurant.displayName.text, restaurant.rating);
 
    if (findGFSummary(restaurant, resJSON)) {
       resJSON.gfrank = codes.SELF_DESCRIBED_GF;
-      console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
       try {
          db.updateRestaurantDetails(resJSON);
       } catch (error) {
-         console.error("There was an error trying to update restaurant details:", resJSON.name);
+         console.log("There was an error trying to update restaurant details:", resJSON.name, resJSON.id);
       }
-   
+      
    } else if (findGFReviews(restaurant.reviews, resJSON.reviews)) {
       resJSON.gfrank = codes.COMMENTS_MENTION_GF;
-      console.log(resJSON);
       appEmitter.broadcastRestaurant(resJSON);
       try {
          db.updateRestaurantDetails(resJSON);
       } catch (error) {
-         console.error("There was an error trying to update restaurant details:", resJSON.name);
+         console.log("There was an error trying to update restaurant details:", resJSON.name, resJSON.id);
       }
 
    } else {
       getGFMenu(resJSON)
          .then(resJSON => {
+            console.log("Acquired GF menu: ", resJSON)
             appEmitter.broadcastRestaurant(resJSON);
             db.updateRestaurantDetails(resJSON);
          })
-         .catch(err => console.error(err));    
+         .catch(err => console.log("Could not get GF Menu: ", err));    
    }
 }
 
@@ -192,14 +190,17 @@ var parseRestaurantInfo = async(restaurant) => {
 var rankPlaces = async(placeData) => {
    placeData.places.forEach((restaurant) => {
       if (!restaurant) { return; }
-      console.log(restaurant.displayName.text);
+      console.log("Attempting to rank: " + restaurant.displayName.text, restaurant.id, restaurant.googleMapsUri);
       
       db.getRestaurant(restaurant.id)
          .then((resJSON) => {
-            appEmitter.broadcastRestaurant(resJSON);
+            if (!resJSON) { console.log("RES NOT FOUND"); }
+            console.log("Successfully retrieved restaurant. So should be broadcasted: ", restaurant.id, restaurant.googleMapsUri)
+            appEmitter.broadcastRestaurant(resJSON[0]);
          })
          .catch((err) => {
-            console.error(err);
+            // console.log(err);
+            console.log("Did not find rest. in DB. So calling to be parsed: ", restaurant.id, restaurant.googleMapsUri)
             parseRestaurantInfo(restaurant);
          });
    });

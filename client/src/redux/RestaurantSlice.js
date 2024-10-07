@@ -35,6 +35,7 @@ const resSlice = createSlice({
       }
       updatedIdSet.add(action.payload.id);      
       updatedExpectations.delete(action.payload.id);
+      console.log("Currently Expecting: ", updatedExpectations);
 
       if (state.idSet.size > 0 && updatedExpectations.size === 0 && state.mapObject) { 
         state.mapObject.setOptions({gestureHandling: "auto "});
@@ -61,6 +62,7 @@ const resSlice = createSlice({
       let updatedExpectations = new Set(state.expecting);
       updatedExpectations.add(action.payload);
       console.log("Currently Expecting: ", updatedExpectations.size, "restaurants");
+      console.log("Currently Expecting: ", updatedExpectations);
 
       return {
          ...state,
