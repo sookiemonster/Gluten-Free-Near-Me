@@ -54,7 +54,7 @@ let findNearby = (map) => {
    }
 
    // Now the API will emit locations within this region. 
-   fetch("https://localhost:5000/api/find-nearby", options)
+   fetch("http://localhost:5000/api/find-nearby", options)
       .then((response) => { return response.json() })
       .then((batchJSON) => {
             let emptyBatchCount = 0;

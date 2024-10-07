@@ -10,7 +10,6 @@ import store from './redux/Store.js';
 
 // Improt Google API Provider
 import { APIProvider } from '@vis.gl/react-google-maps';
-
 // Import client web-socket connection
 import io from 'socket.io-client';
 import './styles/master.css';
@@ -21,7 +20,9 @@ enableMapSet();
 
 function App() {
   // Connect to server using web-sockets
-  const socket = io("wss://localhost:5000", { transports : ['websocket'] });
+  // const socket = io("wss://localhost:5000", { transports : ['websocket'] });
+  const socket = io("http://localhost:5000", { transports : ['websocket'] });
+  // const socket = io("ws://localhost:5000");
 
   // Define events for web-socket
   useEffect(() => {
@@ -35,8 +36,12 @@ function App() {
     socket.on('connect', () => console.log('connected'));
     socket.on('disconnect', () => console.log('disconnected'));
     socket.on('restaurant', onRestaurantFound);
+    socket.on("connect_error", (err) => {
+      console.log(err.message);
+      console.log(err.description);
+      console.log(err.context);
+    });
   }, [socket]);
-
 
   return (
     <Provider store={store}>

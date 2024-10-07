@@ -3,9 +3,9 @@ import path from 'path';
 import cors from 'cors';
 
 import { Server } from 'socket.io';
-import { createServer } from 'node:https';
+// import { createServer } from 'node:https';
 import * as fs from 'node:fs';
-// import { createServer } from 'node:http';
+import { createServer } from 'node:http';
 
 import { router as indexRouter } from './routes/index.js';
 import { router as apiRouter } from './routes/api.js';
@@ -14,32 +14,39 @@ import { Database } from './database.js';
 
 const SERVER_PORT = 5000;
 const CLIENT_PORT = 3000;
+const SERVER_URL = `http://localhost:${SERVER_PORT}`
+const CLIENT_URL = `http://localhost:${CLIENT_PORT}`
 
-const httpsOptions = {
-  key: fs.readFileSync('localhost-key.pem'),
-  cert: fs.readFileSync('localhost.pem'),
-};
+// const httpsOptions = {
+//   key: fs.readFileSync('localhost.key').toString(),
+//   cert: fs.readFileSync('localhost.pem').toString()
+// };
 
 const app = express();
 // Allow fetch from client
-app.use(cors({origin: `http://localhost:${CLIENT_PORT}`}));
+app.use(cors({origin: CLIENT_URL}));
 
-const server = createServer(httpsOptions, app);
+// const server = createServer(httpsOptions, app);
+const server = createServer(app);
 
-const io = new Server(server, cors(
-  { origin: `http://localhost:${CLIENT_PORT}`, 
-    methods: ["GET", "POST"]
+const io = new Server(server, {
+  cors: {
+    origin: CLIENT_URL,
+    methods: ["GET", "POST"]  
   }
-));
+});
+
+io.engine.on("connection_error", (err) => {
+  console.log(err.req);      // the request object
+  console.log(err.code);     // the error code, for example 1
+  console.log(err.message);  // the error message, for example "Session ID unknown"
+  console.log(err.context);  // some additional error context
+});
 
 const appEmitter = new Emitter(app, io);
 const db = new Database();
 
 app.use(express.json());
-
-
-// app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
@@ -67,6 +74,6 @@ io.on('connection', (socket) => {
 
 server.listen(SERVER_PORT, (err) => {
   if (err) console.log("Error in server setup")
-    console.log(`Server listening on https://localhost:${SERVER_PORT}`);
+    console.log(`Server listening on ${SERVER_URL}`);
 })
 export { app, appEmitter, db };
