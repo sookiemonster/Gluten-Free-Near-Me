@@ -137,3 +137,6 @@ secret
 
 # SVG Files
 *.ai
+
+# Environment
+env
